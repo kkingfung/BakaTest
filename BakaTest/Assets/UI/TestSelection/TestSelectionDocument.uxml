@@ -1,0 +1,90 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="TestSelectionStyles.uss" />
+
+    <ui:VisualElement name="Root" class="root">
+        <!-- Background -->
+        <ui:VisualElement name="Background" class="background" />
+
+        <!-- Main Container -->
+        <ui:VisualElement name="MainContainer" class="main-container">
+
+            <!-- Header -->
+            <ui:VisualElement name="Header" class="header">
+                <ui:Label text="Select Your Test" name="TitleLabel" class="title-label" />
+                <ui:Label text="Choose subject and difficulty to earn points" name="SubtitleLabel" class="subtitle-label" />
+            </ui:VisualElement>
+
+            <!-- Content Area -->
+            <ui:VisualElement name="ContentArea" class="content-area">
+
+                <!-- Subject Selection -->
+                <ui:VisualElement name="SubjectSection" class="section">
+                    <ui:Label text="Subject" class="section-title" />
+                    <ui:VisualElement name="SubjectButtons" class="button-group">
+                        <ui:Button text="Math" name="MathButton" class="subject-button" />
+                        <ui:Button text="Science" name="ScienceButton" class="subject-button" />
+                        <ui:Button text="English" name="EnglishButton" class="subject-button" />
+                        <ui:Button text="History" name="HistoryButton" class="subject-button" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+                <!-- Difficulty Selection -->
+                <ui:VisualElement name="DifficultySection" class="section">
+                    <ui:Label text="Difficulty" class="section-title" />
+                    <ui:VisualElement name="DifficultyButtons" class="button-group">
+                        <ui:Button text="Elementary" name="ElementaryButton" class="difficulty-button" />
+                        <ui:Button text="Middle School" name="MiddleSchoolButton" class="difficulty-button" />
+                        <ui:Button text="High School" name="HighSchoolButton" class="difficulty-button" />
+                        <ui:Button text="University" name="UniversityButton" class="difficulty-button" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+                <!-- Test Info Panel -->
+                <ui:VisualElement name="TestInfoPanel" class="info-panel">
+                    <ui:Label text="Test Information" class="panel-title" />
+
+                    <ui:VisualElement name="InfoRow1" class="info-row">
+                        <ui:Label text="Questions:" class="info-label" />
+                        <ui:Label text="10" name="QuestionsCountLabel" class="info-value" />
+                    </ui:VisualElement>
+
+                    <ui:VisualElement name="InfoRow2" class="info-row">
+                        <ui:Label text="Time Limit:" class="info-label" />
+                        <ui:Label text="5:00" name="TimeLimitLabel" class="info-value" />
+                    </ui:VisualElement>
+
+                    <ui:VisualElement name="InfoRow3" class="info-row">
+                        <ui:Label text="Points Per Question:" class="info-label" />
+                        <ui:Label text="10" name="PointsPerQuestionLabel" class="info-value" />
+                    </ui:VisualElement>
+
+                    <ui:VisualElement name="InfoRow4" class="info-row">
+                        <ui:Label text="Daily Points Earned:" class="info-label" />
+                        <ui:Label text="0 / 1000" name="DailyProgressLabel" class="info-value" />
+                    </ui:VisualElement>
+
+                    <ui:VisualElement name="Separator" class="separator" />
+
+                    <ui:VisualElement name="InfoRow5" class="info-row total-row">
+                        <ui:Label text="Potential Points:" class="info-label-total" />
+                        <ui:Label text="100" name="TotalPointsLabel" class="info-value-total" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+                <!-- Daily Limit Warning (Hidden by default) -->
+                <ui:VisualElement name="DailyLimitWarning" class="warning-panel" style="display: none;">
+                    <ui:Label text="⚠ Daily point limit reached for this subject!" class="warning-text" />
+                    <ui:Label text="You can still practice, but won't earn points." class="warning-subtext" />
+                </ui:VisualElement>
+
+            </ui:VisualElement>
+
+            <!-- Footer Buttons -->
+            <ui:VisualElement name="Footer" class="footer">
+                <ui:Button text="Back to Menu" name="BackButton" class="footer-button secondary-button" />
+                <ui:Button text="Start Test" name="StartTestButton" class="footer-button primary-button" />
+            </ui:VisualElement>
+
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

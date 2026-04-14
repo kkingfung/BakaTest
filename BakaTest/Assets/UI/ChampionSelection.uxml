@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <Style src="ChampionSelection.uss" />
+
+    <ui:VisualElement name="Root" class="root">
+        <!-- Header Section -->
+        <ui:VisualElement class="header">
+            <ui:Label text="チャンピオン選択" class="title" />
+            <ui:Label name="PlayerCoinsLabel" text="Coins: 0" class="coins-label" />
+        </ui:VisualElement>
+
+        <!-- Filter Section -->
+        <ui:VisualElement class="filter-section">
+            <ui:Button name="FilterAllButton" text="全て" class="filter-button" />
+            <ui:Button name="FilterOwnedButton" text="所有" class="filter-button" />
+            <ui:Button name="FilterFreeButton" text="無料" class="filter-button" />
+            <ui:Button name="FilterLockedButton" text="ロック" class="filter-button" />
+        </ui:VisualElement>
+
+        <!-- Main Content Section -->
+        <ui:VisualElement class="content-section">
+            <!-- Champion List (Left Panel) -->
+            <ui:VisualElement class="list-panel">
+                <ui:Label text="チャンピオン一覧" class="panel-title" />
+                <ui:ScrollView name="ChampionListScrollView" class="champion-list-scroll">
+                    <ui:VisualElement name="ChampionListContainer" class="champion-list-container" />
+                </ui:ScrollView>
+            </ui:VisualElement>
+
+            <!-- Champion Details (Right Panel) -->
+            <ui:VisualElement class="details-panel">
+                <!-- Champion Header -->
+                <ui:VisualElement class="champion-header">
+                    <ui:Label name="ChampionNameLabel" text="チャンピオン名" class="champion-name" />
+                    <ui:VisualElement class="champion-meta">
+                        <ui:Label name="ChampionRoleLabel" text="Role: -" class="champion-role" />
+                        <ui:Label name="ChampionElementLabel" text="Element: -" class="champion-element" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+                <!-- Status Indicators -->
+                <ui:VisualElement class="status-indicators">
+                    <ui:VisualElement name="OwnedIndicator" class="owned-indicator">
+                        <ui:Label text="✓ 所有済み" class="status-text owned-text" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="FreeRotationIndicator" class="free-indicator">
+                        <ui:Label text="★ 無料" class="status-text free-text" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="LockedIndicator" class="locked-indicator">
+                        <ui:Label text="🔒 ロック" class="status-text locked-text" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+                <!-- Champion Description -->
+                <ui:VisualElement class="description-section">
+                    <ui:Label name="ChampionDescriptionLabel" text="説明文がここに表示されます。" class="champion-description" />
+                </ui:VisualElement>
+
+                <!-- Base Stats -->
+                <ui:VisualElement class="stats-section">
+                    <ui:Label text="基本ステータス" class="section-title" />
+                    <ui:VisualElement class="stats-grid">
+                        <ui:Label name="BaseHPLabel" text="HP: 0" class="stat-label hp-stat" />
+                        <ui:Label name="BaseAttackLabel" text="ATK: 0" class="stat-label atk-stat" />
+                        <ui:Label name="BaseDefenseLabel" text="DEF: 0" class="stat-label def-stat" />
+                        <ui:Label name="BaseSpeedLabel" text="SPD: 0" class="stat-label spd-stat" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+                <!-- Subject Affinity -->
+                <ui:VisualElement class="affinity-section">
+                    <ui:Label text="教科親和性" class="section-title" />
+                    <ui:VisualElement class="affinity-grid">
+                        <ui:Label name="MathAffinityLabel" text="Math → ATK: 0.00x" class="affinity-label math-affinity" />
+                        <ui:Label name="ScienceAffinityLabel" text="Science → DEF: 0.00x" class="affinity-label science-affinity" />
+                        <ui:Label name="EnglishAffinityLabel" text="English → SPD: 0.00x" class="affinity-label english-affinity" />
+                        <ui:Label name="HistoryAffinityLabel" text="History → HP: 0.00x" class="affinity-label history-affinity" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+                <!-- Unlock Section -->
+                <ui:VisualElement class="unlock-section">
+                    <ui:Label name="UnlockCostLabel" text="Cost: 0 Coins" class="unlock-cost" />
+                    <ui:Button name="UnlockButton" text="アンロック" class="unlock-button" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Back Button -->
+        <ui:VisualElement class="footer">
+            <ui:Button name="BackButton" text="戻る" class="back-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

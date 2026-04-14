@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <Style src="Battle.uss" />
+
+    <ui:VisualElement name="Root" class="root">
+        <!-- Header -->
+        <ui:VisualElement class="header">
+            <ui:Label name="TitleLabel" text="バトル" class="title" />
+            <ui:Label name="StatusLabel" text="バトル開始待機中" class="status-label" />
+        </ui:VisualElement>
+
+        <!-- Battle Arena -->
+        <ui:VisualElement class="battle-arena">
+            <!-- Player 1 (Left Side) -->
+            <ui:VisualElement class="player-section player1">
+                <ui:Label name="Player1NameLabel" text="Player 1" class="player-name" />
+                <ui:VisualElement class="champion-card">
+                    <ui:VisualElement class="champion-portrait">
+                        <!-- TODO: Add champion sprite -->
+                        <ui:Label text="P1" class="portrait-placeholder" />
+                    </ui:VisualElement>
+                    <ui:Label name="Player1ChampionLabel" text="Champion Name" class="champion-name" />
+                    <ui:VisualElement class="stats-section">
+                        <ui:Label name="Player1HPLabel" text="HP: 1000 / 1000" class="hp-label" />
+                        <ui:ProgressBar name="Player1HPBar" value="100" class="hp-bar" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <!-- VS Label -->
+            <ui:VisualElement class="vs-section">
+                <ui:Label text="VS" class="vs-label" />
+            </ui:VisualElement>
+
+            <!-- Player 2 (Right Side) -->
+            <ui:VisualElement class="player-section player2">
+                <ui:Label name="Player2NameLabel" text="Player 2" class="player-name" />
+                <ui:VisualElement class="champion-card">
+                    <ui:VisualElement class="champion-portrait">
+                        <!-- TODO: Add champion sprite -->
+                        <ui:Label text="P2" class="portrait-placeholder" />
+                    </ui:VisualElement>
+                    <ui:Label name="Player2ChampionLabel" text="Champion Name" class="champion-name" />
+                    <ui:VisualElement class="stats-section">
+                        <ui:Label name="Player2HPLabel" text="HP: 1000 / 1000" class="hp-label" />
+                        <ui:ProgressBar name="Player2HPBar" value="100" class="hp-bar" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Battle Log -->
+        <ui:VisualElement class="log-section">
+            <ui:Label text="バトルログ" class="log-title" />
+            <ui:ScrollView name="BattleLogScrollView" class="log-scroll">
+                <ui:Label name="BattleLogLabel" text="バトルを開始してください..." class="log-text" />
+            </ui:ScrollView>
+        </ui:VisualElement>
+
+        <!-- Controls -->
+        <ui:VisualElement class="controls-section">
+            <ui:Button name="StartBattleButton" text="バトル開始" class="control-button start-button" />
+            <ui:Button name="UseItemButton" text="アイテム使用" class="control-button item-button" />
+            <ui:Button name="AbortButton" text="中断" class="control-button abort-button" />
+            <ui:Button name="ToResultsButton" text="結果を見る" class="control-button results-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

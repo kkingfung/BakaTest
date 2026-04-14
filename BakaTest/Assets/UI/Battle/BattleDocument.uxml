@@ -1,0 +1,126 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Battle/BattleStyles.uss?fileID=7433441132597879392&amp;guid=PLACEHOLDER&amp;type=3#BattleStyles" />
+
+    <ui:VisualElement name="Root" class="root">
+
+        <!-- Battle Arena Header -->
+        <ui:VisualElement name="HeaderPanel" class="header-panel">
+            <ui:Label text="BATTLE ARENA" name="TitleLabel" class="title-label" />
+            <ui:Label text="00:00" name="BattleTimerLabel" class="battle-timer-label" />
+        </ui:VisualElement>
+
+        <!-- Main Battle Area -->
+        <ui:VisualElement name="BattleArea" class="battle-area">
+
+            <!-- Player Champion (Left) -->
+            <ui:VisualElement name="PlayerChampionPanel" class="champion-panel player-panel">
+                <ui:Label text="Your Champion" class="champion-label" />
+
+                <!-- Player Portrait -->
+                <ui:VisualElement name="PlayerPortrait" class="champion-portrait">
+                    <ui:Label text="?" class="portrait-placeholder" />
+                </ui:VisualElement>
+
+                <!-- Player Name and Stats -->
+                <ui:Label text="Champion Name" name="PlayerNameLabel" class="champion-name-label" />
+
+                <!-- Health Bar -->
+                <ui:VisualElement class="health-bar-container">
+                    <ui:Label text="HP" class="health-label" />
+                    <ui:VisualElement class="health-bar-bg">
+                        <ui:VisualElement name="PlayerHealthBar" class="health-bar-fill player-health" />
+                    </ui:VisualElement>
+                    <ui:Label text="1000/1000" name="PlayerHealthLabel" class="health-value-label" />
+                </ui:VisualElement>
+
+                <!-- Status Effects -->
+                <ui:VisualElement name="PlayerStatusPanel" class="status-panel">
+                    <!-- Status effects added dynamically -->
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <!-- Center Battle Visualization -->
+            <ui:VisualElement name="BattleVisualization" class="battle-visualization">
+                <ui:Label text="⚔" class="battle-icon" />
+                <ui:Label text="Battle in Progress..." name="BattleStatusLabel" class="battle-status-label" />
+            </ui:VisualElement>
+
+            <!-- Opponent Champion (Right) -->
+            <ui:VisualElement name="OpponentChampionPanel" class="champion-panel opponent-panel">
+                <ui:Label text="Opponent" class="champion-label" />
+
+                <!-- Opponent Portrait -->
+                <ui:VisualElement name="OpponentPortrait" class="champion-portrait">
+                    <ui:Label text="?" class="portrait-placeholder" />
+                </ui:VisualElement>
+
+                <!-- Opponent Name and Stats -->
+                <ui:Label text="Champion Name" name="OpponentNameLabel" class="champion-name-label" />
+
+                <!-- Health Bar -->
+                <ui:VisualElement class="health-bar-container">
+                    <ui:Label text="HP" class="health-label" />
+                    <ui:VisualElement class="health-bar-bg">
+                        <ui:VisualElement name="OpponentHealthBar" class="health-bar-fill opponent-health" />
+                    </ui:VisualElement>
+                    <ui:Label text="1000/1000" name="OpponentHealthLabel" class="health-value-label" />
+                </ui:VisualElement>
+
+                <!-- Status Effects -->
+                <ui:VisualElement name="OpponentStatusPanel" class="status-panel">
+                    <!-- Status effects added dynamically -->
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+        </ui:VisualElement>
+
+        <!-- Battle Log -->
+        <ui:VisualElement name="BattleLogPanel" class="battle-log-panel">
+            <ui:Label text="Battle Log" class="section-label" />
+            <ui:ScrollView name="BattleLogScroll" class="battle-log-scroll">
+                <!-- Battle messages added dynamically -->
+            </ui:ScrollView>
+        </ui:VisualElement>
+
+        <!-- Item Slots (Manual Usage) -->
+        <ui:VisualElement name="ItemPanel" class="item-panel">
+            <ui:Label text="Items (Tap to Use)" class="section-label" />
+            <ui:VisualElement name="ItemSlots" class="item-slots">
+                <ui:Button name="ItemSlot0" class="item-slot">
+                    <ui:Label text="Empty" class="item-slot-label" />
+                </ui:Button>
+                <ui:Button name="ItemSlot1" class="item-slot">
+                    <ui:Label text="Empty" class="item-slot-label" />
+                </ui:Button>
+                <ui:Button name="ItemSlot2" class="item-slot">
+                    <ui:Label text="Empty" class="item-slot-label" />
+                </ui:Button>
+                <ui:Button name="ItemSlot3" class="item-slot">
+                    <ui:Label text="Empty" class="item-slot-label" />
+                </ui:Button>
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Battle Result Overlay (Hidden by default) -->
+        <ui:VisualElement name="ResultOverlay" class="result-overlay" style="display: none;">
+            <ui:VisualElement name="ResultPanel" class="result-panel">
+                <ui:Label text="VICTORY!" name="ResultTitleLabel" class="result-title-label" />
+                <ui:Label text="You defeated your opponent!" name="ResultMessageLabel" class="result-message-label" />
+
+                <!-- Rewards -->
+                <ui:VisualElement name="RewardsPanel" class="rewards-panel">
+                    <ui:Label text="Rewards" class="rewards-title" />
+                    <ui:Label text="+150 Battle Coins" name="RewardCoinsLabel" class="reward-label" />
+                    <ui:Label text="+50 XP" name="RewardXPLabel" class="reward-label" />
+                </ui:VisualElement>
+
+                <!-- Buttons -->
+                <ui:VisualElement class="result-buttons">
+                    <ui:Button text="View Details" name="ViewDetailsButton" class="result-button secondary-button" />
+                    <ui:Button text="Continue" name="ContinueButton" class="result-button primary-button" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+    </ui:VisualElement>
+</ui:UXML>

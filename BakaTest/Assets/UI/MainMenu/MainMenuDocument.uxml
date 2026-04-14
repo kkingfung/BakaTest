@@ -1,0 +1,134 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/MainMenu/MainMenuStyles.uss?fileID=7433441132597879392&amp;guid=PLACEHOLDER&amp;type=3#MainMenuStyles" />
+
+    <ui:VisualElement name="Root" class="root">
+
+        <!-- Header with Title and Player Info -->
+        <ui:VisualElement name="HeaderPanel" class="header-panel">
+            <ui:VisualElement name="TitleSection" class="title-section">
+                <ui:Label text="BAKATEST" name="GameTitleLabel" class="game-title-label" />
+                <ui:Label text="Academic Battle Arena" name="GameSubtitleLabel" class="game-subtitle-label" />
+            </ui:VisualElement>
+
+            <ui:VisualElement name="PlayerInfoSection" class="player-info-section">
+                <ui:Label text="Player Name" name="PlayerNameLabel" class="player-name-label" />
+                <ui:VisualElement class="currency-container">
+                    <ui:Label text="Battle Coins:" class="currency-label" />
+                    <ui:Label text="0" name="BattleCoinsLabel" class="currency-value-label" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Main Content Area -->
+        <ui:VisualElement name="MainContent" class="main-content">
+
+            <!-- Left Panel: Daily Progress -->
+            <ui:VisualElement name="LeftPanel" class="side-panel">
+                <ui:Label text="Daily Progress" class="panel-title" />
+
+                <!-- Test Points Summary -->
+                <ui:VisualElement name="TestPointsPanel" class="test-points-panel">
+                    <ui:VisualElement class="subject-points-row">
+                        <ui:Label text="Math:" class="subject-name-label" />
+                        <ui:Label text="0" name="MathPointsLabel" class="points-label" />
+                    </ui:VisualElement>
+
+                    <ui:VisualElement class="subject-points-row">
+                        <ui:Label text="Science:" class="subject-name-label" />
+                        <ui:Label text="0" name="SciencePointsLabel" class="points-label" />
+                    </ui:VisualElement>
+
+                    <ui:VisualElement class="subject-points-row">
+                        <ui:Label text="English:" class="subject-name-label" />
+                        <ui:Label text="0" name="EnglishPointsLabel" class="points-label" />
+                    </ui:VisualElement>
+
+                    <ui:VisualElement class="subject-points-row">
+                        <ui:Label text="History:" class="subject-name-label" />
+                        <ui:Label text="0" name="HistoryPointsLabel" class="points-label" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+                <!-- Daily Tests Remaining -->
+                <ui:VisualElement name="DailyTestsPanel" class="daily-tests-panel">
+                    <ui:Label text="Tests Remaining Today" class="section-label" />
+                    <ui:Label text="5/5" name="TestsRemainingLabel" class="tests-remaining-label" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <!-- Center Panel: Main Menu Buttons -->
+            <ui:VisualElement name="CenterPanel" class="center-panel">
+                <ui:Button name="TakeTestButton" class="menu-button primary-menu-button">
+                    <ui:Label text="📝" class="button-icon" />
+                    <ui:Label text="Take Test" class="button-label" />
+                </ui:Button>
+
+                <ui:Button name="BattleButton" class="menu-button primary-menu-button">
+                    <ui:Label text="⚔" class="button-icon" />
+                    <ui:Label text="Battle" class="button-label" />
+                </ui:Button>
+
+                <ui:Button name="ChampionsButton" class="menu-button secondary-menu-button">
+                    <ui:Label text="👥" class="button-icon" />
+                    <ui:Label text="Champions" class="button-label" />
+                </ui:Button>
+
+                <ui:Button name="InventoryButton" class="menu-button secondary-menu-button">
+                    <ui:Label text="🎒" class="button-icon" />
+                    <ui:Label text="Inventory" class="button-label" />
+                </ui:Button>
+
+                <ui:Button name="LeaderboardButton" class="menu-button secondary-menu-button">
+                    <ui:Label text="🏆" class="button-icon" />
+                    <ui:Label text="Leaderboard" class="button-label" />
+                </ui:Button>
+            </ui:VisualElement>
+
+            <!-- Right Panel: Quick Stats and Settings -->
+            <ui:VisualElement name="RightPanel" class="side-panel">
+                <ui:Label text="Quick Stats" class="panel-title" />
+
+                <!-- Player Stats -->
+                <ui:VisualElement name="PlayerStatsPanel" class="player-stats-panel">
+                    <ui:VisualElement class="stat-row">
+                        <ui:Label text="Level:" class="stat-label" />
+                        <ui:Label text="1" name="PlayerLevelLabel" class="stat-value-label" />
+                    </ui:VisualElement>
+
+                    <ui:VisualElement class="stat-row">
+                        <ui:Label text="Total Tests:" class="stat-label" />
+                        <ui:Label text="0" name="TotalTestsLabel" class="stat-value-label" />
+                    </ui:VisualElement>
+
+                    <ui:VisualElement class="stat-row">
+                        <ui:Label text="Total Battles:" class="stat-label" />
+                        <ui:Label text="0" name="TotalBattlesLabel" class="stat-value-label" />
+                    </ui:VisualElement>
+
+                    <ui:VisualElement class="stat-row">
+                        <ui:Label text="Win Rate:" class="stat-label" />
+                        <ui:Label text="0%" name="WinRateLabel" class="stat-value-label" />
+                    </ui:VisualElement>
+
+                    <ui:VisualElement class="stat-row">
+                        <ui:Label text="Champions:" class="stat-label" />
+                        <ui:Label text="0/20" name="ChampionsOwnedLabel" class="stat-value-label" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+                <!-- Settings Buttons -->
+                <ui:VisualElement name="SettingsPanel" class="settings-panel">
+                    <ui:Button text="⚙ Settings" name="SettingsButton" class="settings-button" />
+                    <ui:Button text="❌ Quit" name="QuitButton" class="quit-button" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+        </ui:VisualElement>
+
+        <!-- Footer with Version Info -->
+        <ui:VisualElement name="FooterPanel" class="footer-panel">
+            <ui:Label text="BakaTest v1.0.0 - Academic Battle Arena" class="footer-label" />
+        </ui:VisualElement>
+
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <Style src="PointAllocation.uss" />
+
+    <ui:VisualElement name="Root" class="root">
+        <!-- Header Section -->
+        <ui:VisualElement class="header">
+            <ui:Label text="ポイント配分" class="title" />
+        </ui:VisualElement>
+
+        <!-- Champion Selection Section -->
+        <ui:VisualElement class="champion-section">
+            <ui:Label text="チャンピオン選択" class="section-title" />
+            <ui:DropdownField name="ChampionDropdown" class="champion-dropdown" />
+
+            <ui:VisualElement class="champion-info">
+                <ui:Label name="ChampionNameLabel" text="チャンピオン名" class="champion-name" />
+                <ui:VisualElement class="champion-details">
+                    <ui:Label name="ChampionRoleLabel" text="Role: -" class="champion-detail" />
+                    <ui:Label name="ChampionElementLabel" text="Element: -" class="champion-detail" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Point Allocation Section -->
+        <ui:VisualElement class="allocation-section">
+            <ui:Label text="教科ポイント配分" class="section-title" />
+
+            <!-- Math -->
+            <ui:VisualElement class="subject-control">
+                <ui:Label text="数学 (Math)" class="subject-label" />
+                <ui:VisualElement class="slider-container">
+                    <ui:SliderInt name="MathSlider" low-value="0" high-value="100" class="subject-slider" />
+                    <ui:VisualElement class="point-labels">
+                        <ui:Label name="MathAllocatedLabel" text="0" class="allocated-label" />
+                        <ui:Label name="MathRemainingLabel" text="残り: 0" class="remaining-label" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <!-- Science -->
+            <ui:VisualElement class="subject-control">
+                <ui:Label text="理科 (Science)" class="subject-label" />
+                <ui:VisualElement class="slider-container">
+                    <ui:SliderInt name="ScienceSlider" low-value="0" high-value="100" class="subject-slider" />
+                    <ui:VisualElement class="point-labels">
+                        <ui:Label name="ScienceAllocatedLabel" text="0" class="allocated-label" />
+                        <ui:Label name="ScienceRemainingLabel" text="残り: 0" class="remaining-label" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <!-- English -->
+            <ui:VisualElement class="subject-control">
+                <ui:Label text="英語 (English)" class="subject-label" />
+                <ui:VisualElement class="slider-container">
+                    <ui:SliderInt name="EnglishSlider" low-value="0" high-value="100" class="subject-slider" />
+                    <ui:VisualElement class="point-labels">
+                        <ui:Label name="EnglishAllocatedLabel" text="0" class="allocated-label" />
+                        <ui:Label name="EnglishRemainingLabel" text="残り: 0" class="remaining-label" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <!-- History -->
+            <ui:VisualElement class="subject-control">
+                <ui:Label text="歴史 (History)" class="subject-label" />
+                <ui:VisualElement class="slider-container">
+                    <ui:SliderInt name="HistorySlider" low-value="0" high-value="100" class="subject-slider" />
+                    <ui:VisualElement class="point-labels">
+                        <ui:Label name="HistoryAllocatedLabel" text="0" class="allocated-label" />
+                        <ui:Label name="HistoryRemainingLabel" text="残り: 0" class="remaining-label" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Predicted Stats Section -->
+        <ui:VisualElement class="stats-section">
+            <ui:Label text="予測ステータス" class="section-title" />
+            <ui:VisualElement class="stats-grid">
+                <ui:Label name="PredictedHPLabel" text="HP: 0" class="stat-label" />
+                <ui:Label name="PredictedAttackLabel" text="ATK: 0" class="stat-label" />
+                <ui:Label name="PredictedDefenseLabel" text="DEF: 0" class="stat-label" />
+                <ui:Label name="PredictedSpeedLabel" text="SPD: 0" class="stat-label" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Action Buttons -->
+        <ui:VisualElement class="action-section">
+            <ui:Button name="ResetButton" text="リセット" class="action-button reset-button" />
+            <ui:Button name="StartBattleButton" text="バトル開始" class="action-button start-button" />
+            <ui:Button name="BackButton" text="戻る" class="action-button back-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

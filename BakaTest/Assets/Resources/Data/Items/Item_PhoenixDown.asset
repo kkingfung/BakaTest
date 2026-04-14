@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840d7ffc522101f4d95e043587dda988, type: 3}
+  m_Name: Item_PhoenixDown
+  m_EditorClassIdentifier: BakaTest.Data::BakaTest.Data.Items.ItemData
+  itemId: item_phoenix_down
+  itemName: "\u4E0D\u6B7B\u9CE5\u306E\u7FBD\u6839"
+  description: "\u6226\u95D8\u4E0D\u80FD\u306B\u306A\u3063\u305F\u3068\u304D\u3001\u81EA\u52D5\u7684\u306B50%\u306EHP\u3067\u5FA9\u6D3B\u3059\u308B\u3002"
+  itemType: 3
+  rarity: 4
+  target: 0
+  buyPrice: 1000
+  healAmount: 0
+  attackBonus: 0
+  defenseBonus: 0
+  speedBonus: 0
+  criticalBonus: 0
+  dodgeBonus: 0
+  damageMultiplier: 1
+  durationTurns: -1
+  hasReviveEffect: 1
+  reviveHealthPercent: 0.5
+  hasInvincibilityEffect: 0
+  invincibilityTurns: 1
+  causesStun: 0
+  stunTurns: 1
+  causesPoison: 0
+  poisonDamagePerTurn: 0
+  poisonDurationTurns: 3
+  maxUsesPerBattle: 1
+  cooldownTurns: 0

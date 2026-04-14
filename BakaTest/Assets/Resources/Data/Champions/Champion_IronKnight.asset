@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89fab50f6c1d8e43bd79e52b76ad2fa, type: 3}
+  m_Name: Champion_IronKnight
+  m_EditorClassIdentifier: BakaTest.Data::BakaTest.Data.Champions.ChampionData
+  championId: iron_knight
+  championName: "\u9244\u58C1\u306E\u9A0E\u58EB"
+  description: "\u6B74\u53F2\u306E\u77E5\u8B58\u3092\u529B\u306B\u5909\u3048\u308B\u9632\u5FA1\u306E\u30A8\u30AD\u30B9\u30D1\u30FC\u30C8"
+  icon: {fileID: 0}
+  modelPrefab: {fileID: 0}
+  role: 0
+  element: 0
+  baseStats:
+    HP: 1200
+    Attack: 80
+    Defense: 150
+    Speed: 40
+  subjectAffinity:
+    MathToAttackRatio: 0.5
+    ScienceToDefenseRatio: 0.8
+    EnglishToSpeedRatio: 0.3
+    HistoryToHPRatio: 1.5
+  passiveName: Passive Ability
+  passiveDescription: 
+  activeSkillName: Active Skill
+  activeSkillDescription: 
+  skillCooldown: 10
+  criticalChance: 0.1
+  dodgeChance: 0.05
+  unlockCost: 1000

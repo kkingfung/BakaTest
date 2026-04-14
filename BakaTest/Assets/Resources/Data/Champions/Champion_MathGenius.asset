@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89fab50f6c1d8e43bd79e52b76ad2fa, type: 3}
+  m_Name: Champion_MathGenius
+  m_EditorClassIdentifier: BakaTest.Data::BakaTest.Data.Champions.ChampionData
+  championId: math_genius
+  championName: "\u6570\u5B66\u306E\u5929\u624D"
+  description: "\u6570\u5B66\u306E\u529B\u3067\u6575\u3092\u6483\u7834\u3059\u308B\u9AD8\u706B\u529B\u30A2\u30BF\u30C3\u30AB\u30FC"
+  icon: {fileID: 0}
+  modelPrefab: {fileID: 0}
+  role: 1
+  element: 3
+  baseStats:
+    HP: 800
+    Attack: 180
+    Defense: 70
+    Speed: 90
+  subjectAffinity:
+    MathToAttackRatio: 1.8
+    ScienceToDefenseRatio: 0.4
+    EnglishToSpeedRatio: 0.7
+    HistoryToHPRatio: 0.6
+  passiveName: Passive Ability
+  passiveDescription: 
+  activeSkillName: Active Skill
+  activeSkillDescription: 
+  skillCooldown: 10
+  criticalChance: 0.25
+  dodgeChance: 0.15
+  unlockCost: 1000

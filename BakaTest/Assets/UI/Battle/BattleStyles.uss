@@ -1,0 +1,372 @@
+/* ===== ROOT ===== */
+.root {
+    flex-grow: 1;
+    background-color: rgb(20, 25, 35);
+    padding: 0;
+}
+
+/* ===== HEADER ===== */
+.header-panel {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: rgba(30, 40, 60, 0.9);
+    border-bottom-width: 3px;
+    border-bottom-color: rgb(100, 150, 255);
+}
+
+.title-label {
+    font-size: 32px;
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+}
+
+.battle-timer-label {
+    font-size: 28px;
+    color: rgb(100, 200, 255);
+    -unity-font-style: bold;
+}
+
+/* ===== BATTLE AREA ===== */
+.battle-area {
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px;
+}
+
+/* ===== CHAMPION PANELS ===== */
+.champion-panel {
+    width: 30%;
+    background-color: rgba(40, 50, 70, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+    border-width: 2px;
+    border-color: rgba(100, 150, 255, 0.3);
+}
+
+.player-panel {
+    align-items: flex-start;
+}
+
+.opponent-panel {
+    align-items: flex-end;
+}
+
+.champion-label {
+    font-size: 18px;
+    color: rgb(150, 170, 200);
+    margin-bottom: 10px;
+}
+
+.champion-portrait {
+    width: 120px;
+    height: 120px;
+    background-color: rgba(60, 70, 90, 0.8);
+    border-radius: 60px;
+    border-width: 3px;
+    border-color: rgb(100, 150, 255);
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.portrait-placeholder {
+    font-size: 60px;
+    color: rgb(150, 150, 150);
+}
+
+.champion-name-label {
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+    margin-bottom: 15px;
+}
+
+/* ===== HEALTH BARS ===== */
+.health-bar-container {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.health-label {
+    font-size: 16px;
+    color: rgb(200, 220, 255);
+    margin-bottom: 5px;
+}
+
+.health-bar-bg {
+    height: 30px;
+    background-color: rgba(60, 60, 80, 0.8);
+    border-radius: 15px;
+    overflow: hidden;
+    border-width: 2px;
+    border-color: rgba(100, 150, 255, 0.5);
+}
+
+.health-bar-fill {
+    height: 100%;
+    width: 100%;
+    transition-duration: 0.3s;
+}
+
+.player-health {
+    background-color: rgb(100, 220, 100);
+}
+
+.opponent-health {
+    background-color: rgb(255, 100, 100);
+}
+
+.health-value-label {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+    margin-top: 5px;
+}
+
+/* ===== STATUS EFFECTS ===== */
+.status-panel {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.status-effect {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(100, 150, 255, 0.6);
+    border-radius: 20px;
+    margin: 3px;
+    justify-content: center;
+    align-items: center;
+}
+
+.status-effect-icon {
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+}
+
+/* ===== CENTER BATTLE VISUALIZATION ===== */
+.battle-visualization {
+    width: 35%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(50, 60, 80, 0.4);
+    border-radius: 20px;
+    padding: 40px;
+    border-width: 2px;
+    border-color: rgba(100, 150, 255, 0.3);
+}
+
+.battle-icon {
+    font-size: 80px;
+    color: rgb(255, 200, 100);
+    margin-bottom: 20px;
+}
+
+.battle-status-label {
+    font-size: 22px;
+    color: rgb(200, 220, 255);
+    -unity-font-style: bold;
+    text-align: middle-center;
+}
+
+/* ===== BATTLE LOG ===== */
+.battle-log-panel {
+    background-color: rgba(30, 40, 60, 0.8);
+    padding: 15px 30px;
+    border-top-width: 2px;
+    border-top-color: rgba(100, 150, 255, 0.3);
+    height: 150px;
+}
+
+.section-label {
+    font-size: 18px;
+    color: rgb(150, 170, 200);
+    margin-bottom: 10px;
+    -unity-font-style: bold;
+}
+
+.battle-log-scroll {
+    flex-grow: 1;
+    background-color: rgba(20, 25, 35, 0.6);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.battle-log-message {
+    font-size: 14px;
+    color: rgb(200, 220, 255);
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.battle-log-message.damage {
+    color: rgb(255, 150, 150);
+}
+
+.battle-log-message.heal {
+    color: rgb(150, 255, 150);
+}
+
+.battle-log-message.critical {
+    color: rgb(255, 200, 100);
+    -unity-font-style: bold;
+}
+
+.battle-log-message.system {
+    color: rgb(150, 170, 200);
+    -unity-font-style: italic;
+}
+
+/* ===== ITEM PANEL ===== */
+.item-panel {
+    background-color: rgba(30, 40, 60, 0.8);
+    padding: 15px 30px;
+    border-top-width: 2px;
+    border-top-color: rgba(100, 150, 255, 0.3);
+}
+
+.item-slots {
+    flex-direction: row;
+    justify-content: center;
+}
+
+.item-slot {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(50, 60, 80, 0.6);
+    border-radius: 15px;
+    border-width: 2px;
+    border-color: rgba(100, 150, 255, 0.3);
+    margin: 0 10px;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 0.2s;
+}
+
+.item-slot:hover {
+    background-color: rgba(60, 70, 90, 0.8);
+    scale: 1.05;
+    border-color: rgb(100, 150, 255);
+}
+
+.item-slot:active {
+    scale: 0.95;
+}
+
+.item-slot.disabled {
+    opacity: 0.4;
+}
+
+.item-slot-label {
+    font-size: 14px;
+    color: rgb(200, 220, 255);
+    text-align: middle-center;
+}
+
+/* ===== RESULT OVERLAY ===== */
+.result-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+}
+
+.result-panel {
+    width: 600px;
+    background-color: rgba(40, 50, 70, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    border-width: 3px;
+    border-color: rgb(100, 150, 255);
+    align-items: center;
+}
+
+.result-title-label {
+    font-size: 48px;
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+    margin-bottom: 20px;
+}
+
+.result-title-label.victory {
+    color: rgb(100, 255, 100);
+}
+
+.result-title-label.defeat {
+    color: rgb(255, 100, 100);
+}
+
+.result-message-label {
+    font-size: 20px;
+    color: rgb(200, 220, 255);
+    margin-bottom: 30px;
+    text-align: middle-center;
+}
+
+/* ===== REWARDS ===== */
+.rewards-panel {
+    width: 100%;
+    background-color: rgba(50, 60, 80, 0.6);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.rewards-title {
+    font-size: 22px;
+    color: rgb(255, 200, 100);
+    -unity-font-style: bold;
+    margin-bottom: 15px;
+}
+
+.reward-label {
+    font-size: 18px;
+    color: rgb(150, 255, 150);
+    margin-bottom: 8px;
+}
+
+/* ===== RESULT BUTTONS ===== */
+.result-buttons {
+    flex-direction: row;
+    justify-content: center;
+}
+
+.result-button {
+    width: 200px;
+    height: 60px;
+    font-size: 20px;
+    border-radius: 10px;
+    margin: 0 10px;
+    transition-duration: 0.2s;
+}
+
+.primary-button {
+    background-color: rgb(100, 150, 255);
+    color: rgb(255, 255, 255);
+    border-width: 0;
+}
+
+.primary-button:hover {
+    background-color: rgb(120, 170, 255);
+    scale: 1.05;
+}
+
+.secondary-button {
+    background-color: rgba(80, 100, 140, 0.8);
+    color: rgb(200, 220, 255);
+    border-width: 2px;
+    border-color: rgb(100, 150, 255);
+}
+
+.secondary-button:hover {
+    background-color: rgba(100, 120, 160, 0.9);
+    scale: 1.05;
+}

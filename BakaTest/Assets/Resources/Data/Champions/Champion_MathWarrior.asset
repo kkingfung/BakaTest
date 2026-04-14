@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89fab50f6c1d8e43bd79e52b76ad2fa, type: 3}
+  m_Name: Champion_MathWarrior
+  m_EditorClassIdentifier: BakaTest.Data::BakaTest.Data.Champions.ChampionData
+  championId: champion_math_warrior
+  championName: Math Warrior
+  description: A fierce warrior who converts mathematical knowledge into devastating
+    attacks.
+  icon: {fileID: 21300000, guid: 5fdf328b109c723409746abb499fbc23, type: 3}
+  modelPrefab: {fileID: 3371209851704607221, guid: ee97cb0d42863da48a7823104da8c6e7, type: 3}
+  role: 1
+  element: 0
+  baseStats:
+    HP: 800
+    Attack: 120
+    Defense: 40
+    Speed: 70
+  subjectAffinity:
+    MathToAttackRatio: 0.8
+    ScienceToDefenseRatio: 0.2
+    EnglishToSpeedRatio: 0.3
+    HistoryToHPRatio: 1.5
+  passiveName: Passive Ability
+  passiveDescription: 
+  activeSkillName: Active Skill
+  activeSkillDescription: 
+  skillCooldown: 10
+  criticalChance: 0.2
+  dodgeChance: 0.08
+  unlockCost: 1000

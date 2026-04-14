@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b6de07157eb9e48bf0461df27fdb45, type: 3}
+  m_Name: QuestionBank_Science_Elementary
+  m_EditorClassIdentifier: BakaTest.Data::BakaTest.Data.Tests.QuestionBankData
+  bankId: bank_science_elementary
+  bankName: "Science - \u5C0F\u5B66\u6821"
+  subject: 1
+  difficulty: 0
+  questions:
+  - questionText: "\u6C34\u306E\u6CB8\u70B9\u306F\u6442\u6C0F\u4F55\u5EA6?"
+    choice0: "0\u5EA6"
+    choice1: "50\u5EA6"
+    choice2: "100\u5EA6"
+    choice3: "150\u5EA6"
+    choice4: "200\u5EA6"
+    correctAnswerIndex: 2
+    explanation: "\u6C34\u306F100\u2103\u3067\u6CB8\u9A30\u3057\u307E\u3059\u3002"
+  - questionText: "\u690D\u7269\u304C\u5149\u5408\u6210\u3067\u4F5C\u308A\u51FA\u3059\u306E\u306F?"
+    choice0: "\u4E8C\u9178\u5316\u70AD\u7D20"
+    choice1: "\u9178\u7D20"
+    choice2: "\u7A92\u7D20"
+    choice3: "\u6C34\u7D20"
+    choice4: "\u30E1\u30BF\u30F3"
+    correctAnswerIndex: 1
+    explanation: "\u5149\u5408\u6210\u306B\u3088\u308A\u9178\u7D20\u304C\u4F5C\u3089\u308C\u307E\u3059\u3002"
+  - questionText: "\u592A\u967D\u7CFB\u3067\u4E00\u756A\u5927\u304D\u306A\u60D1\u661F\u306F?"
+    choice0: "\u5730\u7403"
+    choice1: "\u706B\u661F"
+    choice2: "\u6728\u661F"
+    choice3: "\u571F\u661F"
+    choice4: "\u5929\u738B\u661F"
+    correctAnswerIndex: 2
+    explanation: "\u6728\u661F\u306F\u592A\u967D\u7CFB\u6700\u5927\u306E\u60D1\u661F\u3067\u3059\u3002"
+  - questionText: "\u6C34\u306E\u6CB8\u70B9\u306F\u6442\u6C0F\u4F55\u5EA6?"
+    choice0: "0\u5EA6"
+    choice1: "50\u5EA6"
+    choice2: "100\u5EA6"
+    choice3: "150\u5EA6"
+    choice4: "200\u5EA6"
+    correctAnswerIndex: 2
+    explanation: "\u6C34\u306F100\u2103\u3067\u6CB8\u9A30\u3057\u307E\u3059\u3002"
+  - questionText: "\u690D\u7269\u304C\u5149\u5408\u6210\u3067\u4F5C\u308A\u51FA\u3059\u306E\u306F?"
+    choice0: "\u4E8C\u9178\u5316\u70AD\u7D20"
+    choice1: "\u9178\u7D20"
+    choice2: "\u7A92\u7D20"
+    choice3: "\u6C34\u7D20"
+    choice4: "\u30E1\u30BF\u30F3"
+    correctAnswerIndex: 1
+    explanation: "\u5149\u5408\u6210\u306B\u3088\u308A\u9178\u7D20\u304C\u4F5C\u3089\u308C\u307E\u3059\u3002"
+  - questionText: "\u592A\u967D\u7CFB\u3067\u4E00\u756A\u5927\u304D\u306A\u60D1\u661F\u306F?"
+    choice0: "\u5730\u7403"
+    choice1: "\u706B\u661F"
+    choice2: "\u6728\u661F"
+    choice3: "\u571F\u661F"
+    choice4: "\u5929\u738B\u661F"
+    correctAnswerIndex: 2
+    explanation: "\u6728\u661F\u306F\u592A\u967D\u7CFB\u6700\u5927\u306E\u60D1\u661F\u3067\u3059\u3002"
+  - questionText: "\u6C34\u306E\u6CB8\u70B9\u306F\u6442\u6C0F\u4F55\u5EA6?"
+    choice0: "0\u5EA6"
+    choice1: "50\u5EA6"
+    choice2: "100\u5EA6"
+    choice3: "150\u5EA6"
+    choice4: "200\u5EA6"
+    correctAnswerIndex: 2
+    explanation: "\u6C34\u306F100\u2103\u3067\u6CB8\u9A30\u3057\u307E\u3059\u3002"
+  - questionText: "\u690D\u7269\u304C\u5149\u5408\u6210\u3067\u4F5C\u308A\u51FA\u3059\u306E\u306F?"
+    choice0: "\u4E8C\u9178\u5316\u70AD\u7D20"
+    choice1: "\u9178\u7D20"
+    choice2: "\u7A92\u7D20"
+    choice3: "\u6C34\u7D20"
+    choice4: "\u30E1\u30BF\u30F3"
+    correctAnswerIndex: 1
+    explanation: "\u5149\u5408\u6210\u306B\u3088\u308A\u9178\u7D20\u304C\u4F5C\u3089\u308C\u307E\u3059\u3002"
+  - questionText: "\u592A\u967D\u7CFB\u3067\u4E00\u756A\u5927\u304D\u306A\u60D1\u661F\u306F?"
+    choice0: "\u5730\u7403"
+    choice1: "\u706B\u661F"
+    choice2: "\u6728\u661F"
+    choice3: "\u571F\u661F"
+    choice4: "\u5929\u738B\u661F"
+    correctAnswerIndex: 2
+    explanation: "\u6728\u661F\u306F\u592A\u967D\u7CFB\u6700\u5927\u306E\u60D1\u661F\u3067\u3059\u3002"
+  - questionText: "\u6C34\u306E\u6CB8\u70B9\u306F\u6442\u6C0F\u4F55\u5EA6?"
+    choice0: "0\u5EA6"
+    choice1: "50\u5EA6"
+    choice2: "100\u5EA6"
+    choice3: "150\u5EA6"
+    choice4: "200\u5EA6"
+    correctAnswerIndex: 2
+    explanation: "\u6C34\u306F100\u2103\u3067\u6CB8\u9A30\u3057\u307E\u3059\u3002"

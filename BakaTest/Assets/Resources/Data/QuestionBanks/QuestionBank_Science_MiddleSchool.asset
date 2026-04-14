@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b6de07157eb9e48bf0461df27fdb45, type: 3}
+  m_Name: QuestionBank_Science_MiddleSchool
+  m_EditorClassIdentifier: BakaTest.Data::BakaTest.Data.Tests.QuestionBankData
+  bankId: bank_science_middleschool
+  bankName: "Science - \u4E2D\u5B66\u6821"
+  subject: 1
+  difficulty: 1
+  questions:
+  - questionText: "\u96FB\u6D41\u306E\u5358\u4F4D\u306F?"
+    choice0: "\u30DC\u30EB\u30C8(V)"
+    choice1: "\u30A2\u30F3\u30DA\u30A2(A)"
+    choice2: "\u30AA\u30FC\u30E0(\u03A9)"
+    choice3: "\u30EF\u30C3\u30C8(W)"
+    choice4: "\u30B8\u30E5\u30FC\u30EB(J)"
+    correctAnswerIndex: 1
+    explanation: "\u96FB\u6D41\u306E\u5358\u4F4D\u306F\u30A2\u30F3\u30DA\u30A2(A)\u3067\u3059\u3002"
+  - questionText: "\u7D30\u80DE\u306E\u6838\u306B\u542B\u307E\u308C\u308B\u907A\u4F1D\u60C5\u5831\u3092\u6301\u3064\u7269\u8CEA\u306F?"
+    choice0: "\u30BF\u30F3\u30D1\u30AF\u8CEA"
+    choice1: "\u8102\u8CEA"
+    choice2: "\u70AD\u6C34\u5316\u7269"
+    choice3: DNA
+    choice4: RNA
+    correctAnswerIndex: 3
+    explanation: "DNA\u304C\u907A\u4F1D\u60C5\u5831\u3092\u4FDD\u6301\u3057\u3066\u3044\u307E\u3059\u3002"
+  - questionText: "\u5316\u5B66\u5F0FH\u2082O\u304C\u8868\u3059\u7269\u8CEA\u306F?"
+    choice0: "\u6C34\u7D20"
+    choice1: "\u9178\u7D20"
+    choice2: "\u6C34"
+    choice3: "\u904E\u9178\u5316\u6C34\u7D20"
+    choice4: "\u4E8C\u9178\u5316\u70AD\u7D20"
+    correctAnswerIndex: 2
+    explanation: "H\u2082O\u306F\u6C34\u306E\u5316\u5B66\u5F0F\u3067\u3059\u3002"
+  - questionText: "\u96FB\u6D41\u306E\u5358\u4F4D\u306F?"
+    choice0: "\u30DC\u30EB\u30C8(V)"
+    choice1: "\u30A2\u30F3\u30DA\u30A2(A)"
+    choice2: "\u30AA\u30FC\u30E0(\u03A9)"
+    choice3: "\u30EF\u30C3\u30C8(W)"
+    choice4: "\u30B8\u30E5\u30FC\u30EB(J)"
+    correctAnswerIndex: 1
+    explanation: "\u96FB\u6D41\u306E\u5358\u4F4D\u306F\u30A2\u30F3\u30DA\u30A2(A)\u3067\u3059\u3002"
+  - questionText: "\u7D30\u80DE\u306E\u6838\u306B\u542B\u307E\u308C\u308B\u907A\u4F1D\u60C5\u5831\u3092\u6301\u3064\u7269\u8CEA\u306F?"
+    choice0: "\u30BF\u30F3\u30D1\u30AF\u8CEA"
+    choice1: "\u8102\u8CEA"
+    choice2: "\u70AD\u6C34\u5316\u7269"
+    choice3: DNA
+    choice4: RNA
+    correctAnswerIndex: 3
+    explanation: "DNA\u304C\u907A\u4F1D\u60C5\u5831\u3092\u4FDD\u6301\u3057\u3066\u3044\u307E\u3059\u3002"
+  - questionText: "\u5316\u5B66\u5F0FH\u2082O\u304C\u8868\u3059\u7269\u8CEA\u306F?"
+    choice0: "\u6C34\u7D20"
+    choice1: "\u9178\u7D20"
+    choice2: "\u6C34"
+    choice3: "\u904E\u9178\u5316\u6C34\u7D20"
+    choice4: "\u4E8C\u9178\u5316\u70AD\u7D20"
+    correctAnswerIndex: 2
+    explanation: "H\u2082O\u306F\u6C34\u306E\u5316\u5B66\u5F0F\u3067\u3059\u3002"
+  - questionText: "\u96FB\u6D41\u306E\u5358\u4F4D\u306F?"
+    choice0: "\u30DC\u30EB\u30C8(V)"
+    choice1: "\u30A2\u30F3\u30DA\u30A2(A)"
+    choice2: "\u30AA\u30FC\u30E0(\u03A9)"
+    choice3: "\u30EF\u30C3\u30C8(W)"
+    choice4: "\u30B8\u30E5\u30FC\u30EB(J)"
+    correctAnswerIndex: 1
+    explanation: "\u96FB\u6D41\u306E\u5358\u4F4D\u306F\u30A2\u30F3\u30DA\u30A2(A)\u3067\u3059\u3002"
+  - questionText: "\u7D30\u80DE\u306E\u6838\u306B\u542B\u307E\u308C\u308B\u907A\u4F1D\u60C5\u5831\u3092\u6301\u3064\u7269\u8CEA\u306F?"
+    choice0: "\u30BF\u30F3\u30D1\u30AF\u8CEA"
+    choice1: "\u8102\u8CEA"
+    choice2: "\u70AD\u6C34\u5316\u7269"
+    choice3: DNA
+    choice4: RNA
+    correctAnswerIndex: 3
+    explanation: "DNA\u304C\u907A\u4F1D\u60C5\u5831\u3092\u4FDD\u6301\u3057\u3066\u3044\u307E\u3059\u3002"
+  - questionText: "\u5316\u5B66\u5F0FH\u2082O\u304C\u8868\u3059\u7269\u8CEA\u306F?"
+    choice0: "\u6C34\u7D20"
+    choice1: "\u9178\u7D20"
+    choice2: "\u6C34"
+    choice3: "\u904E\u9178\u5316\u6C34\u7D20"
+    choice4: "\u4E8C\u9178\u5316\u70AD\u7D20"
+    correctAnswerIndex: 2
+    explanation: "H\u2082O\u306F\u6C34\u306E\u5316\u5B66\u5F0F\u3067\u3059\u3002"
+  - questionText: "\u96FB\u6D41\u306E\u5358\u4F4D\u306F?"
+    choice0: "\u30DC\u30EB\u30C8(V)"
+    choice1: "\u30A2\u30F3\u30DA\u30A2(A)"
+    choice2: "\u30AA\u30FC\u30E0(\u03A9)"
+    choice3: "\u30EF\u30C3\u30C8(W)"
+    choice4: "\u30B8\u30E5\u30FC\u30EB(J)"
+    correctAnswerIndex: 1
+    explanation: "\u96FB\u6D41\u306E\u5358\u4F4D\u306F\u30A2\u30F3\u30DA\u30A2(A)\u3067\u3059\u3002"

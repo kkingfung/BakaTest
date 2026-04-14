@@ -1,0 +1,82 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="TestTakingStyles.uss" />
+    <Style src="../Common/GlobalTheme.uss" />
+
+    <ui:VisualElement name="Root" class="root">
+        <!-- Background -->
+        <ui:VisualElement name="Background" class="background" />
+
+        <!-- Main Container -->
+        <ui:VisualElement name="MainContainer" class="main-container">
+            
+            <!-- Header -->
+            <ui:VisualElement name="Header" class="header">
+                <ui:VisualElement name="HeaderTop" class="header-top">
+                    <ui:Label text="Math - Elementary" name="SubjectLabel" class="subject-label" />
+                    <ui:Label text="5:00" name="TimerLabel" class="timer-label" />
+                </ui:VisualElement>
+                <ui:VisualElement name="HeaderBottom" class="header-bottom">
+                    <ui:Label text="Question 1/10" name="QuestionNumberLabel" class="question-number-label" />
+                    <ui:VisualElement name="ProgressBar" class="progress-bar">
+                        <ui:VisualElement name="ProgressFill" class="progress-fill" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <!-- Content Area -->
+            <ui:VisualElement name="ContentArea" class="content-area">
+                
+                <!-- Question Panel -->
+                <ui:VisualElement name="QuestionPanel" class="question-panel">
+                    <ui:Label text="What is 2 + 2?" name="QuestionText" class="question-text" />
+                </ui:VisualElement>
+
+                <!-- Answers Container -->
+                <ui:VisualElement name="AnswersContainer" class="answers-container">
+                    <ui:Button name="AnswerA" class="answer-button">
+                        <ui:Label text="A" class="answer-letter" />
+                        <ui:Label text="Answer A text goes here" class="answer-text" />
+                    </ui:Button>
+                    <ui:Button name="AnswerB" class="answer-button">
+                        <ui:Label text="B" class="answer-letter" />
+                        <ui:Label text="Answer B text goes here" class="answer-text" />
+                    </ui:Button>
+                    <ui:Button name="AnswerC" class="answer-button">
+                        <ui:Label text="C" class="answer-letter" />
+                        <ui:Label text="Answer C text goes here" class="answer-text" />
+                    </ui:Button>
+                    <ui:Button name="AnswerD" class="answer-button">
+                        <ui:Label text="D" class="answer-letter" />
+                        <ui:Label text="Answer D text goes here" class="answer-text" />
+                    </ui:Button>
+                    <ui:Button name="AnswerE" class="answer-button">
+                        <ui:Label text="E" class="answer-letter" />
+                        <ui:Label text="Answer E text goes here" class="answer-text" />
+                    </ui:Button>
+                </ui:VisualElement>
+
+            </ui:VisualElement>
+
+            <!-- Footer Navigation -->
+            <ui:VisualElement name="Footer" class="footer">
+                <ui:Button text="Previous" name="PreviousButton" class="nav-button secondary-button" />
+                <ui:VisualElement name="FooterCenter" class="footer-center">
+                    <ui:Button text="Skip" name="SkipButton" class="skip-button" />
+                    <ui:Label text="3 Unanswered" name="UnansweredLabel" class="unanswered-label" />
+                </ui:VisualElement>
+                <ui:Button text="Next" name="NextButton" class="nav-button primary-button" />
+            </ui:VisualElement>
+
+            <!-- Submit Panel (Hidden by default, shown on last question) -->
+            <ui:VisualElement name="SubmitPanel" class="submit-panel" style="display: none;">
+                <ui:Label text="⚠ Ready to submit?" class="submit-warning" />
+                <ui:Label text="You have 3 unanswered questions." name="SubmitWarningText" class="submit-warning-text" />
+                <ui:VisualElement name="SubmitButtons" class="submit-buttons">
+                    <ui:Button text="Review Answers" name="ReviewButton" class="button secondary-button" />
+                    <ui:Button text="Submit Test" name="SubmitButton" class="button primary-button" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

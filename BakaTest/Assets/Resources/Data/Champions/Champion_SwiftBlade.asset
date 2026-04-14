@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89fab50f6c1d8e43bd79e52b76ad2fa, type: 3}
+  m_Name: Champion_SwiftBlade
+  m_EditorClassIdentifier: BakaTest.Data::BakaTest.Data.Champions.ChampionData
+  championId: swift_blade
+  championName: "\u8FC5\u901F\u306E\u5203"
+  description: "\u9AD8\u901F\u3067\u6575\u3092\u5727\u5012\u3059\u308B\u30A2\u30B5\u30B7\u30F3"
+  icon: {fileID: 0}
+  modelPrefab: {fileID: 0}
+  role: 4
+  element: 0
+  baseStats:
+    HP: 700
+    Attack: 150
+    Defense: 60
+    Speed: 140
+  subjectAffinity:
+    MathToAttackRatio: 1.2
+    ScienceToDefenseRatio: 0.3
+    EnglishToSpeedRatio: 1.4
+    HistoryToHPRatio: 0.5
+  passiveName: Passive Ability
+  passiveDescription: 
+  activeSkillName: Active Skill
+  activeSkillDescription: 
+  skillCooldown: 10
+  criticalChance: 0.35
+  dodgeChance: 0.3
+  unlockCost: 1000

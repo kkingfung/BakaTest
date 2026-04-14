@@ -1,0 +1,44 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="TestSelection.uss" />
+    <ui:VisualElement name="Root" class="root">
+        <!-- ヘッダー -->
+        <ui:VisualElement name="HeaderPanel" class="header-panel">
+            <ui:Label text="テスト選択" name="TitleLabel" class="title" />
+            <ui:Label text="教科と難易度を選んでテストを開始しましょう" name="SubtitleLabel" class="subtitle" />
+        </ui:VisualElement>
+        
+        <!-- 選択パネル -->
+        <ui:VisualElement name="SelectionPanel" class="selection-panel">
+            <!-- 教科選択 -->
+            <ui:VisualElement name="SubjectContainer" class="control-container">
+                <ui:Label text="教科を選択" name="SubjectLabel" class="control-label" />
+                <ui:DropdownField name="SubjectDropdown" class="dropdown" />
+            </ui:VisualElement>
+            
+            <!-- 難易度選択 -->
+            <ui:VisualElement name="DifficultyContainer" class="control-container">
+                <ui:Label text="難易度を選択" name="DifficultyLabel" class="control-label" />
+                <ui:DropdownField name="DifficultyDropdown" class="dropdown" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        
+        <!-- ポイント情報パネル -->
+        <ui:VisualElement name="PointsInfoPanel" class="points-info-panel">
+            <ui:Label text="本日のポイント獲得状況" name="PointsInfoTitle" class="section-title" />
+            
+            <ui:VisualElement name="PointsStatsContainer" class="points-stats-container">
+                <ui:Label text="残り獲得可能: 1000 ポイント" name="RemainingPointsLabel" class="points-stat-label remaining" />
+                <ui:Label text="本日獲得済み: 0 ポイント" name="TodaysEarnedLabel" class="points-stat-label earned" />
+                <ui:Label text="1日の上限: 1000 ポイント" name="DailyCapLabel" class="points-stat-label cap" />
+            </ui:VisualElement>
+            
+            <ui:Label text="※ 1日あたり各教科1000ポイントまで獲得できます" name="NoteLabel" class="note-label" />
+        </ui:VisualElement>
+        
+        <!-- アクションボタン -->
+        <ui:VisualElement name="ActionPanel" class="action-panel">
+            <ui:Button text="テスト開始" name="StartTestButton" class="start-button" />
+            <ui:Button text="戻る" name="BackButton" class="back-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

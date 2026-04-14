@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89fab50f6c1d8e43bd79e52b76ad2fa, type: 3}
+  m_Name: Champion_BalancedMage
+  m_EditorClassIdentifier: BakaTest.Data::BakaTest.Data.Champions.ChampionData
+  championId: champion_balanced_mage
+  championName: Balanced Mage
+  description: A versatile caster with balanced stats across all subjects.
+  icon: {fileID: 21300000, guid: f8288995e6e0f704996c1f76f3b0a944, type: 3}
+  modelPrefab: {fileID: 7808259262855837012, guid: 3a1ae0fe117759d48a13a9df68c7554a, type: 3}
+  role: 3
+  element: 1
+  baseStats:
+    HP: 850
+    Attack: 85
+    Defense: 55
+    Speed: 75
+  subjectAffinity:
+    MathToAttackRatio: 0.5
+    ScienceToDefenseRatio: 0.5
+    EnglishToSpeedRatio: 0.5
+    HistoryToHPRatio: 2
+  passiveName: Passive Ability
+  passiveDescription: 
+  activeSkillName: Active Skill
+  activeSkillDescription: 
+  skillCooldown: 10
+  criticalChance: 0.15
+  dodgeChance: 0.12
+  unlockCost: 1000

@@ -1,0 +1,303 @@
+/* ================================================
+   Test Selection Screen - Styles
+   ================================================ */
+
+/* Root */
+.root {
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Background */
+.background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(20, 25, 35);
+}
+
+/* Main Container */
+.main-container {
+    width: 90%;
+    max-width: 1200px;
+    height: 90%;
+    padding: 40px;
+    background-color: rgba(30, 35, 45, 0.95);
+    border-radius: 20px;
+    border-width: 2px;
+    border-color: rgba(100, 150, 255, 0.5);
+}
+
+/* ================================================
+   Header
+   ================================================ */
+
+.header {
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.title-label {
+    font-size: 48px;
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    margin-bottom: 10px;
+}
+
+.subtitle-label {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    -unity-text-align: middle-center;
+}
+
+/* ================================================
+   Content Area
+   ================================================ */
+
+.content-area {
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Section */
+.section {
+    flex-basis: 48%;
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 24px;
+    color: rgb(100, 150, 255);
+    -unity-font-style: bold;
+    margin-bottom: 15px;
+}
+
+/* Button Group */
+.button-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Subject Buttons */
+.subject-button {
+    width: 48%;
+    height: 80px;
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(50, 60, 80, 0.8);
+    border-radius: 12px;
+    border-width: 2px;
+    border-color: rgba(100, 150, 255, 0.3);
+    transition-duration: 0.2s;
+}
+
+.subject-button:hover {
+    background-color: rgba(70, 90, 120, 0.9);
+    border-color: rgba(100, 150, 255, 0.6);
+    scale: 1.05;
+}
+
+.subject-button:active {
+    background-color: rgba(100, 150, 255, 0.5);
+    scale: 0.98;
+}
+
+.subject-button.selected {
+    background-color: rgba(100, 150, 255, 0.7);
+    border-color: rgb(100, 150, 255);
+    border-width: 3px;
+}
+
+/* Difficulty Buttons */
+.difficulty-button {
+    width: 48%;
+    height: 80px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(50, 60, 80, 0.8);
+    border-radius: 12px;
+    border-width: 2px;
+    border-color: rgba(150, 100, 255, 0.3);
+    transition-duration: 0.2s;
+}
+
+.difficulty-button:hover {
+    background-color: rgba(70, 90, 120, 0.9);
+    border-color: rgba(150, 100, 255, 0.6);
+    scale: 1.05;
+}
+
+.difficulty-button:active {
+    background-color: rgba(150, 100, 255, 0.5);
+    scale: 0.98;
+}
+
+.difficulty-button.selected {
+    background-color: rgba(150, 100, 255, 0.7);
+    border-color: rgb(150, 100, 255);
+    border-width: 3px;
+}
+
+/* ================================================
+   Info Panel
+   ================================================ */
+
+.info-panel {
+    flex-basis: 48%;
+    padding: 25px;
+    background-color: rgba(40, 50, 70, 0.6);
+    border-radius: 15px;
+    border-width: 2px;
+    border-color: rgba(100, 150, 255, 0.3);
+}
+
+.panel-title {
+    font-size: 26px;
+    color: rgb(100, 200, 255);
+    -unity-font-style: bold;
+    margin-bottom: 20px;
+    -unity-text-align: middle-center;
+}
+
+.info-row {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: rgba(50, 60, 80, 0.4);
+    border-radius: 8px;
+}
+
+.info-label {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.info-value {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+}
+
+.separator {
+    height: 2px;
+    background-color: rgba(100, 150, 255, 0.3);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.total-row {
+    background-color: rgba(100, 150, 255, 0.2);
+    border-width: 2px;
+    border-color: rgba(100, 150, 255, 0.5);
+}
+
+.info-label-total {
+    font-size: 22px;
+    color: rgb(100, 200, 255);
+    -unity-font-style: bold;
+}
+
+.info-value-total {
+    font-size: 26px;
+    color: rgb(100, 255, 150);
+    -unity-font-style: bold;
+}
+
+/* ================================================
+   Warning Panel
+   ================================================ */
+
+.warning-panel {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: rgba(255, 150, 50, 0.2);
+    border-radius: 12px;
+    border-width: 2px;
+    border-color: rgba(255, 150, 50, 0.6);
+    align-items: center;
+}
+
+.warning-text {
+    font-size: 20px;
+    color: rgb(255, 200, 100);
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    margin-bottom: 5px;
+}
+
+.warning-subtext {
+    font-size: 16px;
+    color: rgba(255, 200, 100, 0.8);
+    -unity-text-align: middle-center;
+}
+
+/* ================================================
+   Footer
+   ================================================ */
+
+.footer {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.footer-button {
+    width: 48%;
+    height: 70px;
+    font-size: 24px;
+    border-radius: 15px;
+    border-width: 2px;
+    transition-duration: 0.2s;
+}
+
+.secondary-button {
+    color: rgb(255, 255, 255);
+    background-color: rgba(100, 100, 100, 0.6);
+    border-color: rgba(150, 150, 150, 0.5);
+}
+
+.secondary-button:hover {
+    background-color: rgba(120, 120, 120, 0.8);
+    border-color: rgba(180, 180, 180, 0.7);
+    scale: 1.02;
+}
+
+.secondary-button:active {
+    background-color: rgba(80, 80, 80, 0.8);
+    scale: 0.98;
+}
+
+.primary-button {
+    color: rgb(255, 255, 255);
+    background-color: rgba(100, 200, 100, 0.7);
+    border-color: rgba(100, 255, 100, 0.6);
+    -unity-font-style: bold;
+}
+
+.primary-button:hover {
+    background-color: rgba(120, 220, 120, 0.9);
+    border-color: rgba(100, 255, 100, 0.8);
+    scale: 1.02;
+}
+
+.primary-button:active {
+    background-color: rgba(80, 180, 80, 0.9);
+    scale: 0.98;
+}
+
+.primary-button:disabled {
+    background-color: rgba(80, 80, 80, 0.5);
+    border-color: rgba(100, 100, 100, 0.3);
+    color: rgba(255, 255, 255, 0.4);
+}

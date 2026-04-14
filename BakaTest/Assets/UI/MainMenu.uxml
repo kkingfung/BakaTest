@@ -1,0 +1,46 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="MainMenu.uss" />
+    <ui:VisualElement name="Root" class="root">
+        <!-- タイトル -->
+        <ui:VisualElement name="TitlePanel" class="title-panel">
+            <ui:Label text="Academic Battle Arena" name="TitleLabel" class="title" />
+            <ui:Label text="バカとテストと召喚獣" name="SubtitleLabel" class="subtitle" />
+        </ui:VisualElement>
+        
+        <!-- プレイヤー情報パネル -->
+        <ui:VisualElement name="PlayerInfoPanel" class="player-info-panel">
+            <ui:Label text="所有リソース" name="PlayerInfoTitle" class="section-title" />
+            
+            <!-- ポイント表示 -->
+            <ui:VisualElement name="PointsContainer" class="points-container">
+                <ui:VisualElement name="PointsColumn1" class="points-column">
+                    <ui:Label text="数学: 0" name="MathPointsLabel" class="points-label" />
+                    <ui:Label text="理科: 0" name="SciencePointsLabel" class="points-label" />
+                </ui:VisualElement>
+                <ui:VisualElement name="PointsColumn2" class="points-column">
+                    <ui:Label text="英語: 0" name="EnglishPointsLabel" class="points-label" />
+                    <ui:Label text="歴史: 0" name="HistoryPointsLabel" class="points-label" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            
+            <!-- その他の情報 -->
+            <ui:VisualElement name="OtherInfoContainer" class="other-info-container">
+                <ui:Label text="コイン: 0" name="BattleCoinsLabel" class="info-label" />
+                <ui:Label text="所有チャンピオン: 0" name="ChampionsCountLabel" class="info-label" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        
+        <!-- メニューボタン -->
+        <ui:VisualElement name="MenuButtonsPanel" class="menu-buttons-panel">
+            <ui:Button text="テストを受ける" name="TestSelectionButton" class="menu-button" />
+            <ui:Button text="チャンピオン選択" name="ChampionSelectionButton" class="menu-button" />
+            <ui:Button text="ポイント配分" name="PointAllocationButton" class="menu-button" />
+            <ui:Button text="設定" name="SettingsButton" class="menu-button" />
+        </ui:VisualElement>
+        
+        <!-- フッター -->
+        <ui:VisualElement name="FooterPanel" class="footer-panel">
+            <ui:Button text="ゲーム終了" name="ExitButton" class="exit-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

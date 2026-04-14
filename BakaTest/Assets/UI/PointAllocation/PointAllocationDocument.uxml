@@ -1,0 +1,148 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <Style src="PointAllocationStyles.uss" />
+    <Style src="../Common/GlobalTheme.uss" />
+    
+    <ui:VisualElement name="Root" class="root">
+        <!-- Header -->
+        <ui:VisualElement name="Header" class="header">
+            <ui:Label text="Point Allocation" name="TitleLabel" class="title-label" />
+            <ui:Label text="Distribute your test points to power up your champion" class="subtitle-label" />
+        </ui:VisualElement>
+        
+        <!-- Main Content (Two Columns) -->
+        <ui:VisualElement name="MainContent" class="main-content">
+            <!-- Left Panel: Available Points -->
+            <ui:VisualElement name="LeftPanel" class="left-panel">
+                <ui:Label text="Available Points" class="panel-title" />
+                
+                <!-- Math Points -->
+                <ui:VisualElement name="MathPointsPanel" class="subject-panel math-panel">
+                    <ui:Label text="Math" class="subject-label" />
+                    <ui:Label text="500" name="MathAvailableLabel" class="points-available-label" />
+                    
+                    <ui:VisualElement class="allocation-control">
+                        <ui:Slider name="MathSlider" low-value="0" high-value="500" class="allocation-slider" />
+                        <ui:Label text="0" name="MathAllocatedLabel" class="points-allocated-label" />
+                    </ui:VisualElement>
+                    
+                    <ui:Label text="→ +0 Attack" name="MathPreviewLabel" class="stat-preview-label" />
+                </ui:VisualElement>
+                
+                <!-- Science Points -->
+                <ui:VisualElement name="SciencePointsPanel" class="subject-panel science-panel">
+                    <ui:Label text="Science" class="subject-label" />
+                    <ui:Label text="300" name="ScienceAvailableLabel" class="points-available-label" />
+                    
+                    <ui:VisualElement class="allocation-control">
+                        <ui:Slider name="ScienceSlider" low-value="0" high-value="300" class="allocation-slider" />
+                        <ui:Label text="0" name="ScienceAllocatedLabel" class="points-allocated-label" />
+                    </ui:VisualElement>
+                    
+                    <ui:Label text="→ +0 Defense" name="SciencePreviewLabel" class="stat-preview-label" />
+                </ui:VisualElement>
+                
+                <!-- English Points -->
+                <ui:VisualElement name="EnglishPointsPanel" class="subject-panel english-panel">
+                    <ui:Label text="English" class="subject-label" />
+                    <ui:Label text="400" name="EnglishAvailableLabel" class="points-available-label" />
+                    
+                    <ui:VisualElement class="allocation-control">
+                        <ui:Slider name="EnglishSlider" low-value="0" high-value="400" class="allocation-slider" />
+                        <ui:Label text="0" name="EnglishAllocatedLabel" class="points-allocated-label" />
+                    </ui:VisualElement>
+                    
+                    <ui:Label text="→ +0 Speed" name="EnglishPreviewLabel" class="stat-preview-label" />
+                </ui:VisualElement>
+                
+                <!-- History Points -->
+                <ui:VisualElement name="HistoryPointsPanel" class="subject-panel history-panel">
+                    <ui:Label text="History" class="subject-label" />
+                    <ui:Label text="200" name="HistoryAvailableLabel" class="points-available-label" />
+                    
+                    <ui:VisualElement class="allocation-control">
+                        <ui:Slider name="HistorySlider" low-value="0" high-value="200" class="allocation-slider" />
+                        <ui:Label text="0" name="HistoryAllocatedLabel" class="points-allocated-label" />
+                    </ui:VisualElement>
+                    
+                    <ui:Label text="→ +0 HP" name="HistoryPreviewLabel" class="stat-preview-label" />
+                </ui:VisualElement>
+                
+                <!-- Total Allocated -->
+                <ui:VisualElement name="TotalPanel" class="total-panel">
+                    <ui:Label text="Total Points Allocated:" class="total-label" />
+                    <ui:Label text="0 / 1400" name="TotalAllocatedLabel" class="total-value-label" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            
+            <!-- Right Panel: Champion Preview -->
+            <ui:VisualElement name="RightPanel" class="right-panel">
+                <ui:Label text="Champion Stats" class="panel-title" />
+                
+                <!-- Champion Info -->
+                <ui:VisualElement name="ChampionInfoPanel" class="champion-info-panel">
+                    <ui:VisualElement name="ChampionPortrait" class="champion-portrait">
+                        <ui:Label text="?" class="portrait-placeholder" />
+                    </ui:VisualElement>
+                    
+                    <ui:Label text="No Champion Selected" name="ChampionNameLabel" class="champion-name-label" />
+                    <ui:Label text="Tank" name="ChampionRoleLabel" class="champion-role-label" />
+                </ui:VisualElement>
+                
+                <!-- Stats Display -->
+                <ui:VisualElement name="StatsPanel" class="stats-panel">
+                    <!-- HP -->
+                    <ui:VisualElement class="stat-row">
+                        <ui:Label text="HP:" class="stat-name-label" />
+                        <ui:Label text="1000" name="BaseHPLabel" class="stat-base-label" />
+                        <ui:Label text="→" class="stat-arrow" />
+                        <ui:Label text="1000" name="FinalHPLabel" class="stat-final-label" />
+                        <ui:Label text="(+0)" name="BonusHPLabel" class="stat-bonus-label" />
+                    </ui:VisualElement>
+                    
+                    <!-- Attack -->
+                    <ui:VisualElement class="stat-row">
+                        <ui:Label text="Attack:" class="stat-name-label" />
+                        <ui:Label text="150" name="BaseAttackLabel" class="stat-base-label" />
+                        <ui:Label text="→" class="stat-arrow" />
+                        <ui:Label text="150" name="FinalAttackLabel" class="stat-final-label" />
+                        <ui:Label text="(+0)" name="BonusAttackLabel" class="stat-bonus-label" />
+                    </ui:VisualElement>
+                    
+                    <!-- Defense -->
+                    <ui:VisualElement class="stat-row">
+                        <ui:Label text="Defense:" class="stat-name-label" />
+                        <ui:Label text="80" name="BaseDefenseLabel" class="stat-base-label" />
+                        <ui:Label text="→" class="stat-arrow" />
+                        <ui:Label text="80" name="FinalDefenseLabel" class="stat-final-label" />
+                        <ui:Label text="(+0)" name="BonusDefenseLabel" class="stat-bonus-label" />
+                    </ui:VisualElement>
+                    
+                    <!-- Speed -->
+                    <ui:VisualElement class="stat-row">
+                        <ui:Label text="Speed:" class="stat-name-label" />
+                        <ui:Label text="50" name="BaseSpeedLabel" class="stat-base-label" />
+                        <ui:Label text="→" class="stat-arrow" />
+                        <ui:Label text="50" name="FinalSpeedLabel" class="stat-final-label" />
+                        <ui:Label text="(+0)" name="BonusSpeedLabel" class="stat-bonus-label" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                
+                <!-- Affinity Info -->
+                <ui:VisualElement name="AffinityPanel" class="affinity-panel">
+                    <ui:Label text="Subject Affinity" class="affinity-title" />
+                    <ui:Label text="Math → Attack: 1.5x" name="MathAffinityLabel" class="affinity-label" />
+                    <ui:Label text="Science → Defense: 1.2x" name="ScienceAffinityLabel" class="affinity-label" />
+                    <ui:Label text="English → Speed: 1.0x" name="EnglishAffinityLabel" class="affinity-label" />
+                    <ui:Label text="History → HP: 2.0x" name="HistoryAffinityLabel" class="affinity-label" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        
+        <!-- Action Buttons -->
+        <ui:VisualElement name="ActionPanel" class="action-panel">
+            <ui:Button text="Reset" name="ResetButton" class="button secondary-button" />
+            <ui:Button text="Confirm Allocation" name="ConfirmButton" class="button primary-button confirm-button" />
+            <ui:Button text="Back" name="BackButton" class="button secondary-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

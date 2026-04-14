@@ -1,0 +1,177 @@
+/* Root Container */
+.root {
+    flex-grow: 1;
+    background-color: rgb(30, 30, 40);
+    padding: 40px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Header Panel */
+.header-panel {
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.title {
+    font-size: 42px;
+    color: rgb(255, 215, 0);
+    -unity-font-style: bold;
+    margin-bottom: 10px;
+    -unity-text-align: middle-center;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: rgb(200, 200, 200);
+    -unity-text-align: middle-center;
+}
+
+/* Selection Panel */
+.selection-panel {
+    width: 600px;
+    background-color: rgb(45, 45, 60);
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-width: 2px;
+    border-color: rgb(100, 100, 120);
+}
+
+.control-container {
+    flex-direction: row;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.control-label {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+    min-width: 180px;
+    margin-right: 20px;
+}
+
+.dropdown {
+    flex-grow: 1;
+    height: 40px;
+    font-size: 16px;
+    background-color: rgb(60, 60, 80);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: rgb(100, 100, 120);
+}
+
+/* Points Info Panel */
+.points-info-panel {
+    width: 600px;
+    background-color: rgb(45, 45, 60);
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-width: 2px;
+    border-color: rgb(100, 100, 120);
+}
+
+.section-title {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+    margin-bottom: 20px;
+    -unity-text-align: middle-center;
+}
+
+.points-stats-container {
+    flex-direction: column;
+    align-items: center;
+}
+
+.points-stat-label {
+    font-size: 18px;
+    margin: 8px 0;
+    -unity-font-style: bold;
+}
+
+.points-stat-label.remaining {
+    color: rgb(100, 255, 100);
+    font-size: 22px;
+}
+
+.points-stat-label.earned {
+    color: rgb(100, 200, 255);
+}
+
+.points-stat-label.cap {
+    color: rgb(200, 200, 200);
+}
+
+.note-label {
+    font-size: 14px;
+    color: rgb(180, 180, 180);
+    -unity-text-align: middle-center;
+    margin-top: 15px;
+    -unity-font-style: italic;
+}
+
+/* Action Panel */
+.action-panel {
+    width: 600px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.start-button {
+    width: 250px;
+    height: 70px;
+    font-size: 24px;
+    background-color: rgb(50, 180, 50);
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-width: 3px;
+    border-color: rgb(80, 220, 80);
+    -unity-font-style: bold;
+    transition-duration: 0.2s;
+}
+
+.start-button:hover:enabled {
+    background-color: rgb(70, 200, 70);
+    border-color: rgb(100, 240, 100);
+    scale: 1.05;
+}
+
+.start-button:active:enabled {
+    background-color: rgb(40, 160, 40);
+    scale: 0.98;
+}
+
+.start-button:disabled {
+    background-color: rgb(80, 80, 80);
+    border-color: rgb(100, 100, 100);
+    color: rgb(150, 150, 150);
+}
+
+.back-button {
+    width: 200px;
+    height: 60px;
+    font-size: 20px;
+    background-color: rgb(100, 100, 120);
+    color: rgb(255, 255, 255);
+    border-radius: 8px;
+    border-width: 2px;
+    border-color: rgb(130, 130, 150);
+    -unity-font-style: bold;
+    transition-duration: 0.2s;
+}
+
+.back-button:hover {
+    background-color: rgb(120, 120, 140);
+    border-color: rgb(150, 150, 170);
+    scale: 1.05;
+}
+
+.back-button:active {
+    background-color: rgb(80, 80, 100);
+    scale: 0.98;
+}

@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b6de07157eb9e48bf0461df27fdb45, type: 3}
+  m_Name: QuestionBank_Math_University
+  m_EditorClassIdentifier: BakaTest.Data::BakaTest.Data.Tests.QuestionBankData
+  bankId: bank_math_university
+  bankName: "Math - \u5927\u5B66"
+  subject: 0
+  difficulty: 3
+  questions:
+  - questionText: "lim(x\u21920) (sin x)/x = ?"
+    choice0: 0
+    choice1: 1
+    choice2: "\u221E"
+    choice3: -1
+    choice4: "\u4E0D\u5B9A"
+    correctAnswerIndex: 1
+    explanation: "\u6709\u540D\u306A\u6975\u9650: lim(x\u21920) (sin x)/x = 1"
+  - questionText: d/dx (e^x) = ?
+    choice0: e^x
+    choice1: e
+    choice2: xe^(x-1)
+    choice3: ln x
+    choice4: x
+    correctAnswerIndex: 0
+    explanation: "e^x\u306E\u5C0E\u95A2\u6570\u306Fe^x\u81EA\u8EAB\u3067\u3059\u3002"
+  - questionText: "\u222B 2x dx = ?"
+    choice0: x
+    choice1: "x\xB2 + C"
+    choice2: "2x\xB2 + C"
+    choice3: "x\xB2/2 + C"
+    choice4: 2x + C
+    correctAnswerIndex: 1
+    explanation: "x\u306E\u7A4D\u5206\u306F x\xB2/2\u306A\u306E\u3067\u30012x\u306E\u7A4D\u5206\u306F
+      x\xB2 + C"
+  - questionText: "lim(x\u21920) (sin x)/x = ?"
+    choice0: 0
+    choice1: 1
+    choice2: "\u221E"
+    choice3: -1
+    choice4: "\u4E0D\u5B9A"
+    correctAnswerIndex: 1
+    explanation: "\u6709\u540D\u306A\u6975\u9650: lim(x\u21920) (sin x)/x = 1"
+  - questionText: d/dx (e^x) = ?
+    choice0: e^x
+    choice1: e
+    choice2: xe^(x-1)
+    choice3: ln x
+    choice4: x
+    correctAnswerIndex: 0
+    explanation: "e^x\u306E\u5C0E\u95A2\u6570\u306Fe^x\u81EA\u8EAB\u3067\u3059\u3002"
+  - questionText: "\u222B 2x dx = ?"
+    choice0: x
+    choice1: "x\xB2 + C"
+    choice2: "2x\xB2 + C"
+    choice3: "x\xB2/2 + C"
+    choice4: 2x + C
+    correctAnswerIndex: 1
+    explanation: "x\u306E\u7A4D\u5206\u306F x\xB2/2\u306A\u306E\u3067\u30012x\u306E\u7A4D\u5206\u306F
+      x\xB2 + C"
+  - questionText: "lim(x\u21920) (sin x)/x = ?"
+    choice0: 0
+    choice1: 1
+    choice2: "\u221E"
+    choice3: -1
+    choice4: "\u4E0D\u5B9A"
+    correctAnswerIndex: 1
+    explanation: "\u6709\u540D\u306A\u6975\u9650: lim(x\u21920) (sin x)/x = 1"
+  - questionText: d/dx (e^x) = ?
+    choice0: e^x
+    choice1: e
+    choice2: xe^(x-1)
+    choice3: ln x
+    choice4: x
+    correctAnswerIndex: 0
+    explanation: "e^x\u306E\u5C0E\u95A2\u6570\u306Fe^x\u81EA\u8EAB\u3067\u3059\u3002"
+  - questionText: "\u222B 2x dx = ?"
+    choice0: x
+    choice1: "x\xB2 + C"
+    choice2: "2x\xB2 + C"
+    choice3: "x\xB2/2 + C"
+    choice4: 2x + C
+    correctAnswerIndex: 1
+    explanation: "x\u306E\u7A4D\u5206\u306F x\xB2/2\u306A\u306E\u3067\u30012x\u306E\u7A4D\u5206\u306F
+      x\xB2 + C"
+  - questionText: "lim(x\u21920) (sin x)/x = ?"
+    choice0: 0
+    choice1: 1
+    choice2: "\u221E"
+    choice3: -1
+    choice4: "\u4E0D\u5B9A"
+    correctAnswerIndex: 1
+    explanation: "\u6709\u540D\u306A\u6975\u9650: lim(x\u21920) (sin x)/x = 1"

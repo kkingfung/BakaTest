@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <Style src="Results.uss" />
+
+    <ui:VisualElement name="Root" class="root">
+        <!-- Header Section -->
+        <ui:VisualElement class="header">
+            <ui:Label name="TitleLabel" text="結果" class="title" />
+            <ui:VisualElement name="VictoryIndicator" class="victory-indicator">
+                <ui:Label text="★ 成功 ★" class="victory-text" />
+            </ui:VisualElement>
+            <ui:VisualElement name="DefeatIndicator" class="defeat-indicator">
+                <ui:Label text="✖ 失敗 ✖" class="defeat-text" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Result Summary -->
+        <ui:VisualElement class="summary-section">
+            <ui:Label name="ResultSummaryLabel" text="結果サマリー" class="summary-text" />
+        </ui:VisualElement>
+
+        <!-- Test Result Section -->
+        <ui:VisualElement name="TestResultSection" class="result-section test-result-section">
+            <ui:Label text="テスト結果詳細" class="section-title" />
+
+            <ui:VisualElement class="result-grid">
+                <ui:VisualElement class="result-row">
+                    <ui:Label text="教科:" class="result-label" />
+                    <ui:Label name="SubjectLabel" text="-" class="result-value subject-value" />
+                </ui:VisualElement>
+
+                <ui:VisualElement class="result-row">
+                    <ui:Label text="難易度:" class="result-label" />
+                    <ui:Label name="DifficultyLabel" text="-" class="result-value difficulty-value" />
+                </ui:VisualElement>
+
+                <ui:VisualElement class="result-row">
+                    <ui:Label text="スコア:" class="result-label" />
+                    <ui:Label name="ScoreLabel" text="0 / 0" class="result-value score-value" />
+                </ui:VisualElement>
+
+                <ui:VisualElement class="result-row">
+                    <ui:Label text="正答率:" class="result-label" />
+                    <ui:Label name="AccuracyLabel" text="0%" class="result-value accuracy-value" />
+                </ui:VisualElement>
+
+                <ui:VisualElement class="result-row">
+                    <ui:Label text="獲得ポイント:" class="result-label" />
+                    <ui:Label name="PointsEarnedLabel" text="+0" class="result-value points-value" />
+                </ui:VisualElement>
+
+                <ui:VisualElement class="result-row">
+                    <ui:Label text="所要時間:" class="result-label" />
+                    <ui:Label name="TimeLabel" text="0 分" class="result-value time-value" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <ui:Label name="DailyCapWarningLabel" text="" class="warning-label" />
+        </ui:VisualElement>
+
+        <!-- Battle Result Section -->
+        <ui:VisualElement name="BattleResultSection" class="result-section battle-result-section">
+            <ui:Label text="バトル結果詳細" class="section-title" />
+
+            <ui:VisualElement class="result-grid">
+                <ui:VisualElement class="result-row">
+                    <ui:Label name="WinnerLabel" text="勝者: -" class="result-value winner-value" />
+                </ui:VisualElement>
+
+                <ui:VisualElement class="result-row">
+                    <ui:Label name="LoserLabel" text="敗者: -" class="result-value loser-value" />
+                </ui:VisualElement>
+
+                <ui:VisualElement class="result-row">
+                    <ui:Label name="TurnCountLabel" text="ターン数: 0" class="result-value turn-value" />
+                </ui:VisualElement>
+
+                <ui:VisualElement class="result-row">
+                    <ui:Label name="DurationLabel" text="所要時間: 0 秒" class="result-value duration-value" />
+                </ui:VisualElement>
+
+                <ui:VisualElement class="result-row">
+                    <ui:Label name="CoinsEarnedLabel" text="獲得コイン: 0" class="result-value coins-value" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Action Buttons -->
+        <ui:VisualElement class="action-section">
+            <ui:Button name="ContinueButton" text="続ける" class="action-button continue-button" />
+            <ui:Button name="PlayAgainButton" text="もう一度" class="action-button play-again-button" />
+            <ui:Button name="BackToMenuButton" text="メニューへ" class="action-button menu-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

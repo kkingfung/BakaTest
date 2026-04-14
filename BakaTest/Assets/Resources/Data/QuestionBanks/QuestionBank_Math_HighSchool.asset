@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b6de07157eb9e48bf0461df27fdb45, type: 3}
+  m_Name: QuestionBank_Math_HighSchool
+  m_EditorClassIdentifier: BakaTest.Data::BakaTest.Data.Tests.QuestionBankData
+  bankId: bank_math_highschool
+  bankName: "Math - \u9AD8\u6821"
+  subject: 0
+  difficulty: 2
+  questions:
+  - questionText: "sin 30\xB0 = ?"
+    choice0: 0
+    choice1: 1/2
+    choice2: "\u221A2/2"
+    choice3: "\u221A3/2"
+    choice4: 1
+    correctAnswerIndex: 1
+    explanation: "30\u5EA6\u306E\u6B63\u5F26\u306F1/2\u3067\u3059\u3002"
+  - questionText: "log\u2082 8 = ?"
+    choice0: 1
+    choice1: 2
+    choice2: 3
+    choice3: 4
+    choice4: 5
+    correctAnswerIndex: 2
+    explanation: "2\xB3 = 8\u306A\u306E\u3067\u3001log\u2082 8 = 3"
+  - questionText: "(x + 2)(x - 3)\u3092\u5C55\u958B\u3059\u308B\u3068?"
+    choice0: "x\xB2 - x - 6"
+    choice1: "x\xB2 + x - 6"
+    choice2: "x\xB2 - x + 6"
+    choice3: "x\xB2 + x + 6"
+    choice4: "x\xB2 - 5x - 6"
+    correctAnswerIndex: 0
+    explanation: "(x+2)(x-3) = x\xB2 - 3x + 2x - 6 = x\xB2 - x - 6"
+  - questionText: "sin 30\xB0 = ?"
+    choice0: 0
+    choice1: 1/2
+    choice2: "\u221A2/2"
+    choice3: "\u221A3/2"
+    choice4: 1
+    correctAnswerIndex: 1
+    explanation: "30\u5EA6\u306E\u6B63\u5F26\u306F1/2\u3067\u3059\u3002"
+  - questionText: "log\u2082 8 = ?"
+    choice0: 1
+    choice1: 2
+    choice2: 3
+    choice3: 4
+    choice4: 5
+    correctAnswerIndex: 2
+    explanation: "2\xB3 = 8\u306A\u306E\u3067\u3001log\u2082 8 = 3"
+  - questionText: "(x + 2)(x - 3)\u3092\u5C55\u958B\u3059\u308B\u3068?"
+    choice0: "x\xB2 - x - 6"
+    choice1: "x\xB2 + x - 6"
+    choice2: "x\xB2 - x + 6"
+    choice3: "x\xB2 + x + 6"
+    choice4: "x\xB2 - 5x - 6"
+    correctAnswerIndex: 0
+    explanation: "(x+2)(x-3) = x\xB2 - 3x + 2x - 6 = x\xB2 - x - 6"
+  - questionText: "sin 30\xB0 = ?"
+    choice0: 0
+    choice1: 1/2
+    choice2: "\u221A2/2"
+    choice3: "\u221A3/2"
+    choice4: 1
+    correctAnswerIndex: 1
+    explanation: "30\u5EA6\u306E\u6B63\u5F26\u306F1/2\u3067\u3059\u3002"
+  - questionText: "log\u2082 8 = ?"
+    choice0: 1
+    choice1: 2
+    choice2: 3
+    choice3: 4
+    choice4: 5
+    correctAnswerIndex: 2
+    explanation: "2\xB3 = 8\u306A\u306E\u3067\u3001log\u2082 8 = 3"
+  - questionText: "(x + 2)(x - 3)\u3092\u5C55\u958B\u3059\u308B\u3068?"
+    choice0: "x\xB2 - x - 6"
+    choice1: "x\xB2 + x - 6"
+    choice2: "x\xB2 - x + 6"
+    choice3: "x\xB2 + x + 6"
+    choice4: "x\xB2 - 5x - 6"
+    correctAnswerIndex: 0
+    explanation: "(x+2)(x-3) = x\xB2 - 3x + 2x - 6 = x\xB2 - x - 6"
+  - questionText: "sin 30\xB0 = ?"
+    choice0: 0
+    choice1: 1/2
+    choice2: "\u221A2/2"
+    choice3: "\u221A3/2"
+    choice4: 1
+    correctAnswerIndex: 1
+    explanation: "30\u5EA6\u306E\u6B63\u5F26\u306F1/2\u3067\u3059\u3002"

@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840d7ffc522101f4d95e043587dda988, type: 3}
+  m_Name: Item_IronSkinPotion
+  m_EditorClassIdentifier: BakaTest.Data::BakaTest.Data.Items.ItemData
+  itemId: item_iron_skin_potion
+  itemName: "\u9244\u306E\u76AE\u819A\u30DD\u30FC\u30B7\u30E7\u30F3"
+  description: "\u9632\u5FA1\u529B\u309260\u5897\u52A0\u3055\u305B\u308B\uFF084\u30BF\u30FC\u30F3\u6301\u7D9A\uFF09\u3002"
+  itemType: 1
+  rarity: 1
+  target: 0
+  buyPrice: 180
+  healAmount: 0
+  attackBonus: 0
+  defenseBonus: 60
+  speedBonus: 0
+  criticalBonus: 0
+  dodgeBonus: 0
+  damageMultiplier: 1
+  durationTurns: 4
+  hasReviveEffect: 0
+  reviveHealthPercent: 0.5
+  hasInvincibilityEffect: 0
+  invincibilityTurns: 1
+  causesStun: 0
+  stunTurns: 1
+  causesPoison: 0
+  poisonDamagePerTurn: 0
+  poisonDurationTurns: 3
+  maxUsesPerBattle: 0
+  cooldownTurns: 5

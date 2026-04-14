@@ -1,0 +1,221 @@
+/* Root Container */
+.root {
+    flex-grow: 1;
+    background-color: rgb(240, 240, 240);
+    padding: 20px;
+}
+
+/* Header Section */
+.header {
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.title {
+    font-size: 32px;
+    color: rgb(33, 33, 33);
+    -unity-font-style: bold;
+    margin-bottom: 10px;
+    -unity-text-align: upper-center;
+}
+
+.test-info {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.subject-label {
+    font-size: 20px;
+    color: rgb(66, 133, 244);
+    -unity-font-style: bold;
+    margin-right: 20px;
+}
+
+.difficulty-label {
+    font-size: 18px;
+    color: rgb(100, 100, 100);
+    -unity-font-style: normal;
+}
+
+/* Timer Section */
+.timer-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: rgb(200, 200, 200);
+    align-items: center;
+}
+
+.timer-label {
+    font-size: 40px;
+    color: rgb(52, 168, 83);
+    -unity-font-style: bold;
+    margin-bottom: 10px;
+    -unity-text-align: upper-center;
+}
+
+.timer-label.warning {
+    color: rgb(251, 188, 5);
+}
+
+.timer-label.critical {
+    color: rgb(234, 67, 53);
+}
+
+.timer-progress {
+    width: 100%;
+    height: 20px;
+}
+
+/* Progress Section */
+.progress-section {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+.question-counter {
+    font-size: 18px;
+    color: rgb(66, 133, 244);
+    -unity-font-style: bold;
+}
+
+.answered-count {
+    font-size: 16px;
+    color: rgb(100, 100, 100);
+}
+
+/* Question Section */
+.question-section {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: rgb(66, 133, 244);
+    min-height: 120px;
+}
+
+.question-text {
+    font-size: 20px;
+    color: rgb(33, 33, 33);
+    white-space: normal;
+    -unity-text-align: upper-left;
+}
+
+/* Choices Section */
+.choices-section {
+    margin-bottom: 20px;
+}
+
+.choice-button {
+    margin-bottom: 10px;
+    padding: 15px;
+    font-size: 18px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(33, 33, 33);
+    border-width: 2px;
+    border-color: rgb(200, 200, 200);
+    border-radius: 8px;
+    -unity-text-align: middle-left;
+    white-space: normal;
+    height: auto;
+    min-height: 50px;
+}
+
+.choice-button:hover {
+    background-color: rgb(232, 240, 254);
+    border-color: rgb(66, 133, 244);
+}
+
+.choice-button.selected {
+    background-color: rgb(66, 133, 244);
+    color: rgb(255, 255, 255);
+    border-color: rgb(66, 133, 244);
+    -unity-font-style: bold;
+}
+
+.choice-button:disabled {
+    opacity: 0.5;
+}
+
+/* Navigation Section */
+.navigation-section {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.nav-button {
+    width: 48%;
+    height: 50px;
+    font-size: 18px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(66, 133, 244);
+    border-width: 2px;
+    border-color: rgb(66, 133, 244);
+    border-radius: 8px;
+}
+
+.nav-button:hover {
+    background-color: rgb(66, 133, 244);
+    color: rgb(255, 255, 255);
+}
+
+.nav-button:disabled {
+    opacity: 0.3;
+    border-color: rgb(200, 200, 200);
+    color: rgb(150, 150, 150);
+}
+
+/* Action Section */
+.action-section {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.submit-button {
+    width: 60%;
+    height: 60px;
+    font-size: 20px;
+    -unity-font-style: bold;
+    background-color: rgb(52, 168, 83);
+    color: rgb(255, 255, 255);
+    border-width: 0;
+    border-radius: 10px;
+}
+
+.submit-button:hover {
+    background-color: rgb(46, 150, 74);
+}
+
+.submit-button:active {
+    background-color: rgb(40, 132, 65);
+}
+
+.back-button {
+    width: 38%;
+    height: 60px;
+    font-size: 18px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(150, 150, 150);
+    border-width: 2px;
+    border-color: rgb(200, 200, 200);
+    border-radius: 10px;
+}
+
+.back-button:hover {
+    background-color: rgb(234, 67, 53);
+    color: rgb(255, 255, 255);
+    border-color: rgb(234, 67, 53);
+}
+
+.back-button:active {
+    background-color: rgb(210, 60, 48);
+}

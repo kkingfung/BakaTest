@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840d7ffc522101f4d95e043587dda988, type: 3}
+  m_Name: Item_GuardianAngel
+  m_EditorClassIdentifier: BakaTest.Data::BakaTest.Data.Items.ItemData
+  itemId: item_guardian_angel
+  itemName: "\u5B88\u8B77\u5929\u4F7F"
+  description: "2\u30BF\u30FC\u30F3\u306E\u9593\u3001\u7121\u6575\u72B6\u614B\u306B\u306A\u308B\uFF08\u30C0\u30E1\u30FC\u30B8\u3092\u53D7\u3051\u306A\u3044\uFF09\u3002"
+  itemType: 3
+  rarity: 4
+  target: 0
+  buyPrice: 1500
+  healAmount: 0
+  attackBonus: 0
+  defenseBonus: 0
+  speedBonus: 0
+  criticalBonus: 0
+  dodgeBonus: 0
+  damageMultiplier: 1
+  durationTurns: 0
+  hasReviveEffect: 0
+  reviveHealthPercent: 0.5
+  hasInvincibilityEffect: 1
+  invincibilityTurns: 2
+  causesStun: 0
+  stunTurns: 1
+  causesPoison: 0
+  poisonDamagePerTurn: 0
+  poisonDurationTurns: 3
+  maxUsesPerBattle: 1
+  cooldownTurns: 0

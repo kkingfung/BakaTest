@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <Style src="TestTaking.uss" />
+
+    <ui:VisualElement name="Root" class="root">
+        <!-- Header Section -->
+        <ui:VisualElement class="header">
+            <ui:Label name="TitleLabel" text="テスト受験中" class="title" />
+            <ui:VisualElement class="test-info">
+                <ui:Label name="SubjectLabel" text="数学" class="subject-label" />
+                <ui:Label name="DifficultyLabel" text="小学校" class="difficulty-label" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Timer Section -->
+        <ui:VisualElement class="timer-section">
+            <ui:Label name="TimerLabel" text="05:00" class="timer-label" />
+            <ui:ProgressBar name="TimerProgressBar" value="100" class="timer-progress" />
+        </ui:VisualElement>
+
+        <!-- Progress Section -->
+        <ui:VisualElement class="progress-section">
+            <ui:Label name="QuestionCounterLabel" text="問題 1 / 10" class="question-counter" />
+            <ui:Label name="AnsweredCountLabel" text="回答済み: 0 問" class="answered-count" />
+        </ui:VisualElement>
+
+        <!-- Question Section -->
+        <ui:VisualElement class="question-section">
+            <ui:Label name="QuestionTextLabel" text="問題文がここに表示されます。" class="question-text" />
+        </ui:VisualElement>
+
+        <!-- Choices Section -->
+        <ui:VisualElement class="choices-section">
+            <ui:Button name="ChoiceButton0" text="A. 選択肢1" class="choice-button" />
+            <ui:Button name="ChoiceButton1" text="B. 選択肢2" class="choice-button" />
+            <ui:Button name="ChoiceButton2" text="C. 選択肢3" class="choice-button" />
+            <ui:Button name="ChoiceButton3" text="D. 選択肢4" class="choice-button" />
+            <ui:Button name="ChoiceButton4" text="E. 選択肢5" class="choice-button" />
+        </ui:VisualElement>
+
+        <!-- Navigation Section -->
+        <ui:VisualElement class="navigation-section">
+            <ui:Button name="PreviousButton" text="&lt; 前の問題" class="nav-button previous-button" />
+            <ui:Button name="NextButton" text="次の問題 &gt;" class="nav-button next-button" />
+        </ui:VisualElement>
+
+        <!-- Action Section -->
+        <ui:VisualElement class="action-section">
+            <ui:Button name="SubmitButton" text="テストを提出" class="submit-button" />
+            <ui:Button name="BackButton" text="中断して戻る" class="back-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

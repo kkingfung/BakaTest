@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b6de07157eb9e48bf0461df27fdb45, type: 3}
+  m_Name: QuestionBank_Science_HighSchool
+  m_EditorClassIdentifier: BakaTest.Data::BakaTest.Data.Tests.QuestionBankData
+  bankId: bank_science_highschool
+  bankName: "Science - \u9AD8\u6821"
+  subject: 1
+  difficulty: 2
+  questions:
+  - questionText: "\u30AA\u30FC\u30E0\u306E\u6CD5\u5247 V = IR \u306E I \u306F\u4F55\u3092\u8868\u3059?"
+    choice0: "\u96FB\u5727"
+    choice1: "\u96FB\u6D41"
+    choice2: "\u62B5\u6297"
+    choice3: "\u96FB\u529B"
+    choice4: "\u30A8\u30CD\u30EB\u30AE\u30FC"
+    correctAnswerIndex: 1
+    explanation: "I\u306F\u96FB\u6D41(Current)\u3092\u8868\u3057\u307E\u3059\u3002"
+  - questionText: "\u5149\u5408\u6210\u306E\u53CD\u5FDC\u5F0F\u3067\u6B63\u3057\u3044\u306E\u306F?"
+    choice0: "CO\u2082 + H\u2082O \u2192 C\u2086H\u2081\u2082O\u2086 + O\u2082"
+    choice1: "O\u2082 + H\u2082O \u2192 CO\u2082 + C\u2086H\u2081\u2082O\u2086"
+    choice2: "C\u2086H\u2081\u2082O\u2086 \u2192 CO\u2082 + H\u2082O + O\u2082"
+    choice3: "N\u2082 + O\u2082 \u2192 NO\u2082"
+    choice4: "H\u2082 + O\u2082 \u2192 H\u2082O"
+    correctAnswerIndex: 0
+    explanation: "\u5149\u5408\u6210\u306F\u4E8C\u9178\u5316\u70AD\u7D20\u3068\u6C34\u304B\u3089\u30B0\u30EB\u30B3\u30FC\u30B9\u3068\u9178\u7D20\u3092\u4F5C\u308A\u307E\u3059\u3002"
+  - questionText: "\u5468\u671F\u8868\u3067\u539F\u5B50\u756A\u53F76\u306E\u5143\u7D20\u306F?"
+    choice0: "\u7A92\u7D20"
+    choice1: "\u70AD\u7D20"
+    choice2: "\u9178\u7D20"
+    choice3: "\u30DB\u30A6\u7D20"
+    choice4: "\u30D9\u30EA\u30EA\u30A6\u30E0"
+    correctAnswerIndex: 1
+    explanation: "\u539F\u5B50\u756A\u53F76\u306F\u70AD\u7D20(C)\u3067\u3059\u3002"
+  - questionText: "\u30AA\u30FC\u30E0\u306E\u6CD5\u5247 V = IR \u306E I \u306F\u4F55\u3092\u8868\u3059?"
+    choice0: "\u96FB\u5727"
+    choice1: "\u96FB\u6D41"
+    choice2: "\u62B5\u6297"
+    choice3: "\u96FB\u529B"
+    choice4: "\u30A8\u30CD\u30EB\u30AE\u30FC"
+    correctAnswerIndex: 1
+    explanation: "I\u306F\u96FB\u6D41(Current)\u3092\u8868\u3057\u307E\u3059\u3002"
+  - questionText: "\u5149\u5408\u6210\u306E\u53CD\u5FDC\u5F0F\u3067\u6B63\u3057\u3044\u306E\u306F?"
+    choice0: "CO\u2082 + H\u2082O \u2192 C\u2086H\u2081\u2082O\u2086 + O\u2082"
+    choice1: "O\u2082 + H\u2082O \u2192 CO\u2082 + C\u2086H\u2081\u2082O\u2086"
+    choice2: "C\u2086H\u2081\u2082O\u2086 \u2192 CO\u2082 + H\u2082O + O\u2082"
+    choice3: "N\u2082 + O\u2082 \u2192 NO\u2082"
+    choice4: "H\u2082 + O\u2082 \u2192 H\u2082O"
+    correctAnswerIndex: 0
+    explanation: "\u5149\u5408\u6210\u306F\u4E8C\u9178\u5316\u70AD\u7D20\u3068\u6C34\u304B\u3089\u30B0\u30EB\u30B3\u30FC\u30B9\u3068\u9178\u7D20\u3092\u4F5C\u308A\u307E\u3059\u3002"
+  - questionText: "\u5468\u671F\u8868\u3067\u539F\u5B50\u756A\u53F76\u306E\u5143\u7D20\u306F?"
+    choice0: "\u7A92\u7D20"
+    choice1: "\u70AD\u7D20"
+    choice2: "\u9178\u7D20"
+    choice3: "\u30DB\u30A6\u7D20"
+    choice4: "\u30D9\u30EA\u30EA\u30A6\u30E0"
+    correctAnswerIndex: 1
+    explanation: "\u539F\u5B50\u756A\u53F76\u306F\u70AD\u7D20(C)\u3067\u3059\u3002"
+  - questionText: "\u30AA\u30FC\u30E0\u306E\u6CD5\u5247 V = IR \u306E I \u306F\u4F55\u3092\u8868\u3059?"
+    choice0: "\u96FB\u5727"
+    choice1: "\u96FB\u6D41"
+    choice2: "\u62B5\u6297"
+    choice3: "\u96FB\u529B"
+    choice4: "\u30A8\u30CD\u30EB\u30AE\u30FC"
+    correctAnswerIndex: 1
+    explanation: "I\u306F\u96FB\u6D41(Current)\u3092\u8868\u3057\u307E\u3059\u3002"
+  - questionText: "\u5149\u5408\u6210\u306E\u53CD\u5FDC\u5F0F\u3067\u6B63\u3057\u3044\u306E\u306F?"
+    choice0: "CO\u2082 + H\u2082O \u2192 C\u2086H\u2081\u2082O\u2086 + O\u2082"
+    choice1: "O\u2082 + H\u2082O \u2192 CO\u2082 + C\u2086H\u2081\u2082O\u2086"
+    choice2: "C\u2086H\u2081\u2082O\u2086 \u2192 CO\u2082 + H\u2082O + O\u2082"
+    choice3: "N\u2082 + O\u2082 \u2192 NO\u2082"
+    choice4: "H\u2082 + O\u2082 \u2192 H\u2082O"
+    correctAnswerIndex: 0
+    explanation: "\u5149\u5408\u6210\u306F\u4E8C\u9178\u5316\u70AD\u7D20\u3068\u6C34\u304B\u3089\u30B0\u30EB\u30B3\u30FC\u30B9\u3068\u9178\u7D20\u3092\u4F5C\u308A\u307E\u3059\u3002"
+  - questionText: "\u5468\u671F\u8868\u3067\u539F\u5B50\u756A\u53F76\u306E\u5143\u7D20\u306F?"
+    choice0: "\u7A92\u7D20"
+    choice1: "\u70AD\u7D20"
+    choice2: "\u9178\u7D20"
+    choice3: "\u30DB\u30A6\u7D20"
+    choice4: "\u30D9\u30EA\u30EA\u30A6\u30E0"
+    correctAnswerIndex: 1
+    explanation: "\u539F\u5B50\u756A\u53F76\u306F\u70AD\u7D20(C)\u3067\u3059\u3002"
+  - questionText: "\u30AA\u30FC\u30E0\u306E\u6CD5\u5247 V = IR \u306E I \u306F\u4F55\u3092\u8868\u3059?"
+    choice0: "\u96FB\u5727"
+    choice1: "\u96FB\u6D41"
+    choice2: "\u62B5\u6297"
+    choice3: "\u96FB\u529B"
+    choice4: "\u30A8\u30CD\u30EB\u30AE\u30FC"
+    correctAnswerIndex: 1
+    explanation: "I\u306F\u96FB\u6D41(Current)\u3092\u8868\u3057\u307E\u3059\u3002"

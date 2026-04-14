@@ -1,0 +1,226 @@
+/* Root Container */
+.root {
+    flex-grow: 1;
+    background-color: rgb(245, 245, 245);
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.title {
+    font-size: 36px;
+    color: rgb(33, 33, 33);
+    -unity-font-style: bold;
+    -unity-text-align: upper-center;
+}
+
+.status-label {
+    font-size: 18px;
+    color: rgb(66, 133, 244);
+    -unity-font-style: bold;
+    -unity-text-align: upper-center;
+    margin-top: 5px;
+}
+
+/* Battle Arena */
+.battle-arena {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    border-width: 2px;
+    border-color: rgb(200, 200, 200);
+    min-height: 300px;
+}
+
+.player-section {
+    width: 40%;
+}
+
+.player-name {
+    font-size: 20px;
+    color: rgb(33, 33, 33);
+    -unity-font-style: bold;
+    -unity-text-align: upper-center;
+    margin-bottom: 10px;
+}
+
+.champion-card {
+    padding: 15px;
+    background-color: rgb(250, 250, 250);
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: rgb(220, 220, 220);
+    align-items: center;
+}
+
+.champion-portrait {
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    background-color: rgb(200, 200, 200);
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.portrait-placeholder {
+    font-size: 48px;
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+}
+
+.champion-name {
+    font-size: 18px;
+    color: rgb(66, 133, 244);
+    -unity-font-style: bold;
+    -unity-text-align: upper-center;
+    margin-bottom: 15px;
+}
+
+.stats-section {
+    width: 100%;
+}
+
+.hp-label {
+    font-size: 16px;
+    color: rgb(52, 168, 83);
+    -unity-font-style: bold;
+    -unity-text-align: upper-center;
+    margin-bottom: 5px;
+}
+
+.hp-bar {
+    width: 100%;
+    height: 25px;
+    margin-top: 5px;
+}
+
+/* VS Section */
+.vs-section {
+    width: 15%;
+    align-items: center;
+    justify-content: center;
+}
+
+.vs-label {
+    font-size: 48px;
+    color: rgb(234, 67, 53);
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+}
+
+/* Player Specific Styles */
+.player1 .champion-card {
+    border-color: rgb(66, 133, 244);
+}
+
+.player2 .champion-card {
+    border-color: rgb(234, 67, 53);
+}
+
+/* Battle Log */
+.log-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: rgb(200, 200, 200);
+    min-height: 200px;
+    max-height: 300px;
+}
+
+.log-title {
+    font-size: 18px;
+    color: rgb(33, 33, 33);
+    -unity-font-style: bold;
+    margin-bottom: 10px;
+}
+
+.log-scroll {
+    flex-grow: 1;
+    background-color: rgb(250, 250, 250);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.log-text {
+    font-size: 14px;
+    color: rgb(33, 33, 33);
+    white-space: pre-wrap;
+}
+
+/* Controls */
+.controls-section {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.control-button {
+    width: 23%;
+    height: 60px;
+    font-size: 18px;
+    -unity-font-style: bold;
+    border-radius: 10px;
+    border-width: 0;
+}
+
+.start-button {
+    background-color: rgb(52, 168, 83);
+    color: rgb(255, 255, 255);
+}
+
+.start-button:hover {
+    background-color: rgb(46, 150, 74);
+}
+
+.start-button:disabled {
+    opacity: 0.3;
+}
+
+.item-button {
+    background-color: rgb(251, 188, 5);
+    color: rgb(255, 255, 255);
+}
+
+.item-button:hover {
+    background-color: rgb(225, 168, 4);
+}
+
+.item-button:disabled {
+    opacity: 0.3;
+}
+
+.abort-button {
+    background-color: rgb(150, 150, 150);
+    color: rgb(255, 255, 255);
+}
+
+.abort-button:hover {
+    background-color: rgb(234, 67, 53);
+}
+
+.abort-button:disabled {
+    opacity: 0.3;
+}
+
+.results-button {
+    background-color: rgb(66, 133, 244);
+    color: rgb(255, 255, 255);
+}
+
+.results-button:hover {
+    background-color: rgb(57, 116, 213);
+}
+
+.results-button:disabled {
+    opacity: 0.3;
+}

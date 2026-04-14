@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b6de07157eb9e48bf0461df27fdb45, type: 3}
+  m_Name: QuestionBank_Science_University
+  m_EditorClassIdentifier: BakaTest.Data::BakaTest.Data.Tests.QuestionBankData
+  bankId: bank_science_university
+  bankName: "Science - \u5927\u5B66"
+  subject: 1
+  difficulty: 3
+  questions:
+  - questionText: "\u96FB\u5B50\u306E\u30B9\u30D4\u30F3\u91CF\u5B50\u6570\u306F?"
+    choice0: 0
+    choice1: 1
+    choice2: 1/2
+    choice3: 2
+    choice4: -1
+    correctAnswerIndex: 2
+    explanation: "\u96FB\u5B50\u306F\u30B9\u30D4\u30F31/2\u306E\u30D5\u30A7\u30EB\u30DF\u7C92\u5B50\u3067\u3059\u3002"
+  - questionText: "\u30DF\u30C8\u30B3\u30F3\u30C9\u30EA\u30A2\u306E\u4E3B\u306A\u6A5F\u80FD\u306F?"
+    choice0: "\u30BF\u30F3\u30D1\u30AF\u8CEA\u5408\u6210"
+    choice1: "ATP\u5408\u6210"
+    choice2: "DNA\u8907\u88FD"
+    choice3: "\u5149\u5408\u6210"
+    choice4: "\u89E3\u7CD6\u7CFB"
+    correctAnswerIndex: 1
+    explanation: "\u30DF\u30C8\u30B3\u30F3\u30C9\u30EA\u30A2\u306F\u7D30\u80DE\u306E\u30A8\u30CD\u30EB\u30AE\u30FC\u901A\u8CA8ATP\u3092\u751F\u7523\u3057\u307E\u3059\u3002"
+  - questionText: "\u71B1\u529B\u5B66\u7B2C\u4E8C\u6CD5\u5247\u304C\u793A\u3059\u306E\u306F?"
+    choice0: "\u30A8\u30CD\u30EB\u30AE\u30FC\u4FDD\u5B58\u5247"
+    choice1: "\u30A8\u30F3\u30C8\u30ED\u30D4\u30FC\u5897\u5927\u5247"
+    choice2: "\u8CEA\u91CF\u4FDD\u5B58\u5247"
+    choice3: "\u904B\u52D5\u91CF\u4FDD\u5B58\u5247"
+    choice4: "\u89D2\u904B\u52D5\u91CF\u4FDD\u5B58\u5247"
+    correctAnswerIndex: 1
+    explanation: "\u7B2C\u4E8C\u6CD5\u5247\u306F\u30A8\u30F3\u30C8\u30ED\u30D4\u30FC\u304C\u5897\u5927\u3059\u308B\u3053\u3068\u3092\u793A\u3057\u307E\u3059\u3002"
+  - questionText: "\u96FB\u5B50\u306E\u30B9\u30D4\u30F3\u91CF\u5B50\u6570\u306F?"
+    choice0: 0
+    choice1: 1
+    choice2: 1/2
+    choice3: 2
+    choice4: -1
+    correctAnswerIndex: 2
+    explanation: "\u96FB\u5B50\u306F\u30B9\u30D4\u30F31/2\u306E\u30D5\u30A7\u30EB\u30DF\u7C92\u5B50\u3067\u3059\u3002"
+  - questionText: "\u30DF\u30C8\u30B3\u30F3\u30C9\u30EA\u30A2\u306E\u4E3B\u306A\u6A5F\u80FD\u306F?"
+    choice0: "\u30BF\u30F3\u30D1\u30AF\u8CEA\u5408\u6210"
+    choice1: "ATP\u5408\u6210"
+    choice2: "DNA\u8907\u88FD"
+    choice3: "\u5149\u5408\u6210"
+    choice4: "\u89E3\u7CD6\u7CFB"
+    correctAnswerIndex: 1
+    explanation: "\u30DF\u30C8\u30B3\u30F3\u30C9\u30EA\u30A2\u306F\u7D30\u80DE\u306E\u30A8\u30CD\u30EB\u30AE\u30FC\u901A\u8CA8ATP\u3092\u751F\u7523\u3057\u307E\u3059\u3002"
+  - questionText: "\u71B1\u529B\u5B66\u7B2C\u4E8C\u6CD5\u5247\u304C\u793A\u3059\u306E\u306F?"
+    choice0: "\u30A8\u30CD\u30EB\u30AE\u30FC\u4FDD\u5B58\u5247"
+    choice1: "\u30A8\u30F3\u30C8\u30ED\u30D4\u30FC\u5897\u5927\u5247"
+    choice2: "\u8CEA\u91CF\u4FDD\u5B58\u5247"
+    choice3: "\u904B\u52D5\u91CF\u4FDD\u5B58\u5247"
+    choice4: "\u89D2\u904B\u52D5\u91CF\u4FDD\u5B58\u5247"
+    correctAnswerIndex: 1
+    explanation: "\u7B2C\u4E8C\u6CD5\u5247\u306F\u30A8\u30F3\u30C8\u30ED\u30D4\u30FC\u304C\u5897\u5927\u3059\u308B\u3053\u3068\u3092\u793A\u3057\u307E\u3059\u3002"
+  - questionText: "\u96FB\u5B50\u306E\u30B9\u30D4\u30F3\u91CF\u5B50\u6570\u306F?"
+    choice0: 0
+    choice1: 1
+    choice2: 1/2
+    choice3: 2
+    choice4: -1
+    correctAnswerIndex: 2
+    explanation: "\u96FB\u5B50\u306F\u30B9\u30D4\u30F31/2\u306E\u30D5\u30A7\u30EB\u30DF\u7C92\u5B50\u3067\u3059\u3002"
+  - questionText: "\u30DF\u30C8\u30B3\u30F3\u30C9\u30EA\u30A2\u306E\u4E3B\u306A\u6A5F\u80FD\u306F?"
+    choice0: "\u30BF\u30F3\u30D1\u30AF\u8CEA\u5408\u6210"
+    choice1: "ATP\u5408\u6210"
+    choice2: "DNA\u8907\u88FD"
+    choice3: "\u5149\u5408\u6210"
+    choice4: "\u89E3\u7CD6\u7CFB"
+    correctAnswerIndex: 1
+    explanation: "\u30DF\u30C8\u30B3\u30F3\u30C9\u30EA\u30A2\u306F\u7D30\u80DE\u306E\u30A8\u30CD\u30EB\u30AE\u30FC\u901A\u8CA8ATP\u3092\u751F\u7523\u3057\u307E\u3059\u3002"
+  - questionText: "\u71B1\u529B\u5B66\u7B2C\u4E8C\u6CD5\u5247\u304C\u793A\u3059\u306E\u306F?"
+    choice0: "\u30A8\u30CD\u30EB\u30AE\u30FC\u4FDD\u5B58\u5247"
+    choice1: "\u30A8\u30F3\u30C8\u30ED\u30D4\u30FC\u5897\u5927\u5247"
+    choice2: "\u8CEA\u91CF\u4FDD\u5B58\u5247"
+    choice3: "\u904B\u52D5\u91CF\u4FDD\u5B58\u5247"
+    choice4: "\u89D2\u904B\u52D5\u91CF\u4FDD\u5B58\u5247"
+    correctAnswerIndex: 1
+    explanation: "\u7B2C\u4E8C\u6CD5\u5247\u306F\u30A8\u30F3\u30C8\u30ED\u30D4\u30FC\u304C\u5897\u5927\u3059\u308B\u3053\u3068\u3092\u793A\u3057\u307E\u3059\u3002"
+  - questionText: "\u96FB\u5B50\u306E\u30B9\u30D4\u30F3\u91CF\u5B50\u6570\u306F?"
+    choice0: 0
+    choice1: 1
+    choice2: 1/2
+    choice3: 2
+    choice4: -1
+    correctAnswerIndex: 2
+    explanation: "\u96FB\u5B50\u306F\u30B9\u30D4\u30F31/2\u306E\u30D5\u30A7\u30EB\u30DF\u7C92\u5B50\u3067\u3059\u3002"

@@ -1,0 +1,136 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <Style src="ChampionSelectionStyles.uss" />
+    <Style src="../Common/GlobalTheme.uss" />
+    
+    <ui:VisualElement name="Root" class="root">
+        <!-- Header -->
+        <ui:VisualElement name="Header" class="header">
+            <ui:Label text="Champion Selection" name="TitleLabel" class="title-label" />
+            <ui:Label text="Choose your champion for battle" class="subtitle-label" />
+        </ui:VisualElement>
+        
+        <!-- Main Content (Two Columns) -->
+        <ui:VisualElement name="MainContent" class="main-content">
+            <!-- Left Panel: Champion List -->
+            <ui:VisualElement name="LeftPanel" class="left-panel">
+                <ui:VisualElement name="FilterPanel" class="filter-panel">
+                    <ui:Button text="All" name="FilterAllButton" class="filter-button selected" />
+                    <ui:Button text="Owned" name="FilterOwnedButton" class="filter-button" />
+                    <ui:Button text="Free Rotation" name="FilterFreeButton" class="filter-button" />
+                </ui:VisualElement>
+                
+                <ui:ScrollView name="ChampionListScroll" class="champion-list-scroll">
+                    <!-- Champion cards will be added dynamically -->
+                    <!-- Example champion card:
+                    <ui:VisualElement class="champion-card">
+                        <ui:VisualElement class="champion-portrait">
+                            <ui:Label text="?" class="portrait-placeholder" />
+                        </ui:VisualElement>
+                        <ui:Label text="Warrior" class="champion-card-name" />
+                        <ui:Label text="Tank" class="champion-card-role" />
+                        <ui:Label text="OWNED" class="champion-card-status owned" />
+                    </ui:VisualElement>
+                    -->
+                </ui:ScrollView>
+            </ui:VisualElement>
+            
+            <!-- Right Panel: Champion Details -->
+            <ui:VisualElement name="RightPanel" class="right-panel">
+                <!-- Champion Header -->
+                <ui:VisualElement name="ChampionHeader" class="champion-header">
+                    <ui:VisualElement name="ChampionPortraitLarge" class="champion-portrait-large">
+                        <ui:Label text="?" class="portrait-placeholder-large" />
+                    </ui:VisualElement>
+                    
+                    <ui:VisualElement name="ChampionInfo" class="champion-info">
+                        <ui:Label text="No Champion Selected" name="ChampionNameLabel" class="champion-name-label" />
+                        <ui:VisualElement name="ChampionTags" class="champion-tags">
+                            <ui:Label text="Tank" name="RoleTagLabel" class="tag-label role-tag" />
+                            <ui:Label text="Fire" name="ElementTagLabel" class="tag-label element-tag" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                
+                <!-- Stats Panel -->
+                <ui:VisualElement name="StatsPanel" class="stats-panel">
+                    <ui:Label text="Combat Stats" class="panel-subtitle" />
+                    
+                    <ui:VisualElement name="StatBars" class="stat-bars">
+                        <!-- HP Bar -->
+                        <ui:VisualElement class="stat-bar-container">
+                            <ui:Label text="HP" class="stat-bar-label" />
+                            <ui:VisualElement class="stat-bar-bg">
+                                <ui:VisualElement name="HPBar" class="stat-bar-fill hp-bar" />
+                            </ui:VisualElement>
+                            <ui:Label text="1000" name="HPValueLabel" class="stat-bar-value" />
+                        </ui:VisualElement>
+                        
+                        <!-- Attack Bar -->
+                        <ui:VisualElement class="stat-bar-container">
+                            <ui:Label text="ATK" class="stat-bar-label" />
+                            <ui:VisualElement class="stat-bar-bg">
+                                <ui:VisualElement name="AttackBar" class="stat-bar-fill attack-bar" />
+                            </ui:VisualElement>
+                            <ui:Label text="150" name="AttackValueLabel" class="stat-bar-value" />
+                        </ui:VisualElement>
+                        
+                        <!-- Defense Bar -->
+                        <ui:VisualElement class="stat-bar-container">
+                            <ui:Label text="DEF" class="stat-bar-label" />
+                            <ui:VisualElement class="stat-bar-bg">
+                                <ui:VisualElement name="DefenseBar" class="stat-bar-fill defense-bar" />
+                            </ui:VisualElement>
+                            <ui:Label text="80" name="DefenseValueLabel" class="stat-bar-value" />
+                        </ui:VisualElement>
+                        
+                        <!-- Speed Bar -->
+                        <ui:VisualElement class="stat-bar-container">
+                            <ui:Label text="SPD" class="stat-bar-label" />
+                            <ui:VisualElement class="stat-bar-bg">
+                                <ui:VisualElement name="SpeedBar" class="stat-bar-fill speed-bar" />
+                            </ui:VisualElement>
+                            <ui:Label text="50" name="SpeedValueLabel" class="stat-bar-value" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    
+                    <!-- Additional Stats -->
+                    <ui:VisualElement name="AdditionalStats" class="additional-stats">
+                        <ui:VisualElement class="stat-item">
+                            <ui:Label text="Critical Chance:" class="stat-item-label" />
+                            <ui:Label text="15%" name="CritChanceLabel" class="stat-item-value" />
+                        </ui:VisualElement>
+                        
+                        <ui:VisualElement class="stat-item">
+                            <ui:Label text="Dodge Chance:" class="stat-item-label" />
+                            <ui:Label text="10%" name="DodgeChanceLabel" class="stat-item-value" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                
+                <!-- Abilities Panel -->
+                <ui:VisualElement name="AbilitiesPanel" class="abilities-panel">
+                    <ui:Label text="Abilities" class="panel-subtitle" />
+                    
+                    <ui:ScrollView name="AbilitiesScroll" class="abilities-scroll">
+                        <ui:VisualElement name="AbilityPlaceholder" class="ability-placeholder">
+                            <ui:Label text="Select a champion to view abilities" class="placeholder-text" />
+                        </ui:VisualElement>
+                        <!-- Abilities will be added dynamically -->
+                        <!-- Example ability:
+                        <ui:VisualElement class="ability-item">
+                            <ui:Label text="Shield Bash" class="ability-name" />
+                            <ui:Label text="Strikes the enemy with shield, dealing damage and stunning for 1s." class="ability-description" />
+                        </ui:VisualElement>
+                        -->
+                    </ui:ScrollView>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        
+        <!-- Action Buttons -->
+        <ui:VisualElement name="ActionPanel" class="action-panel">
+            <ui:Button text="Back" name="BackButton" class="button secondary-button" />
+            <ui:Button text="Select Champion" name="SelectButton" class="button primary-button select-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,17 @@
+{
+    "name": "BakaTest.UI",
+    "rootNamespace": "BakaTest.UI",
+    "references": [
+        "BakaTest.Core",
+        "BakaTest.Data"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

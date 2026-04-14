@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89fab50f6c1d8e43bd79e52b76ad2fa, type: 3}
+  m_Name: Champion_ScienceSorcerer
+  m_EditorClassIdentifier: BakaTest.Data::BakaTest.Data.Champions.ChampionData
+  championId: science_sorcerer
+  championName: "\u79D1\u5B66\u306E\u9B54\u8853\u5E2B"
+  description: "\u79D1\u5B66\u306E\u539F\u7406\u3092\u64CD\u308B\u9AD8\u9632\u5FA1\u30E1\u30A4\u30B8"
+  icon: {fileID: 0}
+  modelPrefab: {fileID: 0}
+  role: 3
+  element: 1
+  baseStats:
+    HP: 900
+    Attack: 120
+    Defense: 130
+    Speed: 70
+  subjectAffinity:
+    MathToAttackRatio: 0.8
+    ScienceToDefenseRatio: 1.5
+    EnglishToSpeedRatio: 0.5
+    HistoryToHPRatio: 0.7
+  passiveName: Passive Ability
+  passiveDescription: 
+  activeSkillName: Active Skill
+  activeSkillDescription: 
+  skillCooldown: 10
+  criticalChance: 0.18
+  dodgeChance: 0.1
+  unlockCost: 1000

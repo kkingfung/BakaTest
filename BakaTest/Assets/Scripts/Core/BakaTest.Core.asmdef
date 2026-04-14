@@ -1,0 +1,16 @@
+{
+    "name": "BakaTest.Core",
+    "rootNamespace": "BakaTest.Core",
+    "references": [
+        "BakaTest.Data"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

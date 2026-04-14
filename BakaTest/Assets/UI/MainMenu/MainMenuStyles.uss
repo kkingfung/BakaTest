@@ -1,0 +1,277 @@
+/* ===== ROOT ===== */
+.root {
+    flex-grow: 1;
+    background-color: rgb(20, 25, 35);
+    padding: 0;
+}
+
+/* ===== HEADER ===== */
+.header-panel {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(30, 40, 60, 0.95);
+    border-bottom-width: 3px;
+    border-bottom-color: rgb(100, 150, 255);
+}
+
+.title-section {
+    flex-direction: column;
+}
+
+.game-title-label {
+    font-size: 48px;
+    color: rgb(100, 150, 255);
+    -unity-font-style: bold;
+    margin-bottom: 5px;
+}
+
+.game-subtitle-label {
+    font-size: 18px;
+    color: rgb(150, 170, 200);
+    -unity-font-style: italic;
+}
+
+.player-info-section {
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.player-name-label {
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+    margin-bottom: 8px;
+}
+
+.currency-container {
+    flex-direction: row;
+    align-items: center;
+}
+
+.currency-label {
+    font-size: 18px;
+    color: rgb(200, 220, 255);
+    margin-right: 10px;
+}
+
+.currency-value-label {
+    font-size: 22px;
+    color: rgb(255, 200, 100);
+    -unity-font-style: bold;
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+    flex-grow: 1;
+    flex-direction: row;
+    padding: 30px;
+    justify-content: space-between;
+}
+
+/* ===== SIDE PANELS ===== */
+.side-panel {
+    width: 25%;
+    background-color: rgba(40, 50, 70, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+    border-width: 2px;
+    border-color: rgba(100, 150, 255, 0.3);
+}
+
+.panel-title {
+    font-size: 22px;
+    color: rgb(100, 150, 255);
+    -unity-font-style: bold;
+    margin-bottom: 20px;
+    text-align: upper-center;
+}
+
+/* ===== TEST POINTS PANEL ===== */
+.test-points-panel {
+    margin-bottom: 20px;
+}
+
+.subject-points-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 8px;
+    background-color: rgba(50, 60, 80, 0.6);
+    border-radius: 8px;
+}
+
+.subject-name-label {
+    font-size: 18px;
+    color: rgb(200, 220, 255);
+}
+
+.points-label {
+    font-size: 20px;
+    color: rgb(100, 255, 150);
+    -unity-font-style: bold;
+}
+
+/* ===== DAILY TESTS PANEL ===== */
+.daily-tests-panel {
+    background-color: rgba(50, 60, 80, 0.6);
+    border-radius: 10px;
+    padding: 15px;
+    align-items: center;
+}
+
+.section-label {
+    font-size: 16px;
+    color: rgb(150, 170, 200);
+    margin-bottom: 10px;
+}
+
+.tests-remaining-label {
+    font-size: 32px;
+    color: rgb(255, 200, 100);
+    -unity-font-style: bold;
+}
+
+/* ===== CENTER PANEL (MAIN BUTTONS) ===== */
+.center-panel {
+    width: 45%;
+    justify-content: center;
+    align-items: stretch;
+    padding: 0 20px;
+}
+
+.menu-button {
+    height: 100px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    border-width: 3px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 0.2s;
+}
+
+.primary-menu-button {
+    background-color: rgba(100, 150, 255, 0.8);
+    border-color: rgb(100, 150, 255);
+    height: 120px;
+}
+
+.primary-menu-button:hover {
+    background-color: rgb(120, 170, 255);
+    scale: 1.02;
+    border-color: rgb(150, 200, 255);
+}
+
+.primary-menu-button:active {
+    scale: 0.98;
+}
+
+.secondary-menu-button {
+    background-color: rgba(60, 80, 120, 0.8);
+    border-color: rgba(100, 150, 255, 0.5);
+}
+
+.secondary-menu-button:hover {
+    background-color: rgba(80, 100, 140, 0.9);
+    scale: 1.02;
+    border-color: rgb(100, 150, 255);
+}
+
+.secondary-menu-button:active {
+    scale: 0.98;
+}
+
+.button-icon {
+    font-size: 48px;
+    margin-right: 20px;
+}
+
+.button-label {
+    font-size: 28px;
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+}
+
+/* ===== PLAYER STATS PANEL ===== */
+.player-stats-panel {
+    margin-bottom: 20px;
+}
+
+.stat-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    margin-bottom: 6px;
+    background-color: rgba(50, 60, 80, 0.6);
+    border-radius: 8px;
+}
+
+.stat-label {
+    font-size: 16px;
+    color: rgb(200, 220, 255);
+}
+
+.stat-value-label {
+    font-size: 18px;
+    color: rgb(100, 255, 150);
+    -unity-font-style: bold;
+}
+
+/* ===== SETTINGS PANEL ===== */
+.settings-panel {
+    margin-top: auto;
+}
+
+.settings-button {
+    height: 50px;
+    background-color: rgba(80, 100, 140, 0.8);
+    border-color: rgba(100, 150, 255, 0.5);
+    border-width: 2px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: rgb(200, 220, 255);
+    transition-duration: 0.2s;
+}
+
+.settings-button:hover {
+    background-color: rgba(100, 120, 160, 0.9);
+    border-color: rgb(100, 150, 255);
+    scale: 1.02;
+}
+
+.quit-button {
+    height: 50px;
+    background-color: rgba(140, 60, 60, 0.8);
+    border-color: rgba(255, 100, 100, 0.5);
+    border-width: 2px;
+    border-radius: 10px;
+    font-size: 18px;
+    color: rgb(255, 200, 200);
+    transition-duration: 0.2s;
+}
+
+.quit-button:hover {
+    background-color: rgba(160, 80, 80, 0.9);
+    border-color: rgb(255, 100, 100);
+    scale: 1.02;
+}
+
+/* ===== FOOTER ===== */
+.footer-panel {
+    padding: 15px 40px;
+    background-color: rgba(30, 40, 60, 0.8);
+    border-top-width: 2px;
+    border-top-color: rgba(100, 150, 255, 0.3);
+    align-items: center;
+}
+
+.footer-label {
+    font-size: 14px;
+    color: rgb(120, 140, 170);
+    -unity-font-style: italic;
+}
