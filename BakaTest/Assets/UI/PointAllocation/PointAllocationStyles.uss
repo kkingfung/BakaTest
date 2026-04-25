@@ -3,25 +3,30 @@
 /* Root */
 .root {
     background-color: rgba(20, 25, 35, 1);
-    padding: 20px 3%;
+    flex-grow: 1;
+}
+
+.root > .unity-scroll-view__content-container {
+    padding: 2%;
+    flex-grow: 1;
 }
 
 /* Header */
 .header {
     align-items: center;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .title-label {
-    font-size: 36px;
+    font-size: 28px;
     color: rgb(255, 255, 255);
     -unity-font-style: bold;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     -unity-text-align: upper-center;
 }
 
 .subtitle-label {
-    font-size: 16px;
+    font-size: 14px;
     color: rgba(200, 210, 220, 0.7);
     -unity-text-align: upper-center;
 }
@@ -29,21 +34,21 @@
 /* Main Content - Two Column Layout */
 .main-content {
     flex-direction: row;
-    flex-grow: 1;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 /* Left Panel - Available Points */
 .left-panel {
     width: 50%;
-    padding-right: 15px;
+    padding-right: 1%;
+    flex-shrink: 0;
 }
 
 .panel-title {
-    font-size: 24px;
+    font-size: 20px;
     color: rgb(200, 210, 220);
     -unity-font-style: bold;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     -unity-text-align: upper-center;
 }
 
@@ -51,8 +56,8 @@
 .subject-panel {
     background-color: rgba(40, 50, 70, 0.7);
     border-radius: 12px;
-    padding: 15px;
-    margin-bottom: 12px;
+    padding: 10px;
+    margin-bottom: 8px;
     border-width: 2px;
 }
 
@@ -161,34 +166,35 @@
 /* Right Panel - Champion Preview */
 .right-panel {
     width: 50%;
-    padding-left: 15px;
+    padding-left: 1%;
+    flex-shrink: 0;
 }
 
 /* Champion Info */
 .champion-info-panel {
     background-color: rgba(40, 50, 70, 0.7);
-    border-radius: 15px;
-    padding: 20px;
-    margin-bottom: 15px;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
     align-items: center;
     border-width: 2px;
     border-color: rgba(100, 150, 255, 0.3);
 }
 
 .champion-portrait {
-    width: 120px;
-    height: 120px;
+    width: 80px;
+    height: 80px;
     background-color: rgba(60, 70, 90, 0.8);
-    border-radius: 60px;
-    border-width: 3px;
+    border-radius: 40px;
+    border-width: 2px;
     border-color: rgb(100, 150, 255);
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     align-items: center;
     justify-content: center;
 }
 
 .portrait-placeholder {
-    font-size: 48px;
+    font-size: 32px;
     color: rgba(200, 210, 220, 0.5);
     -unity-text-align: middle-center;
 }
@@ -209,8 +215,8 @@
 .stats-panel {
     background-color: rgba(40, 50, 70, 0.7);
     border-radius: 12px;
-    padding: 15px;
-    margin-bottom: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
 .stat-row {
@@ -262,7 +268,7 @@
 .affinity-panel {
     background-color: rgba(40, 50, 70, 0.7);
     border-radius: 12px;
-    padding: 15px;
+    padding: 10px;
 }
 
 .affinity-title {
@@ -283,19 +289,20 @@
 .action-panel {
     flex-direction: row;
     justify-content: space-around;
-    padding: 15px 0;
+    padding: 10px 0;
+    margin-top: 10px;
 }
 
 .confirm-button {
     width: 40%;
-    height: 70px;
-    font-size: 24px;
+    height: 50px;
+    font-size: 20px;
 }
 
 .secondary-button {
     width: 25%;
-    height: 60px;
-    font-size: 18px;
+    height: 50px;
+    font-size: 16px;
     background-color: rgba(60, 70, 90, 0.8);
 }
 

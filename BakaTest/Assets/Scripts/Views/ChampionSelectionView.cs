@@ -5,6 +5,7 @@ using BakaTest.Core.MVVM;
 using BakaTest.Core.Services;
 using BakaTest.Services.SceneManagement;
 using BakaTest.Services.Champions;
+using BakaTest.Services.Localization;
 using BakaTest.ViewModels;
 using BakaTest.Data.Champions;
 using System.ComponentModel;
@@ -21,6 +22,8 @@ namespace BakaTest.Views
     [RequireComponent(typeof(UIDocument))]
     public class ChampionSelectionView : ViewBase<ChampionSelectionViewModel>
     {
+        private ILocalizationService? _localizationService;
+
         // Filter buttons
         private Button? _filterAllButton;
         private Button? _filterOwnedButton;
@@ -65,6 +68,7 @@ namespace BakaTest.Views
 
             // ServiceLocatorからサービス取得
             var championService = ServiceLocator.Instance.Get<IChampionService>();
+            var localizationService = ServiceLocator.Instance.Get<ILocalizationService>();
 
             if (championService == null)
             {
@@ -72,8 +76,17 @@ namespace BakaTest.Views
                 return;
             }
 
+            if (localizationService == null)
+            {
+                Debug.LogError("[ChampionSelectionView] ILocalizationService not found in ServiceLocator!");
+                return;
+            }
+
+            // LocalizationServiceを保存
+            _localizationService = localizationService;
+
             // ViewModelを作成して設定
-            SetViewModel(new ChampionSelectionViewModel(championService));
+            SetViewModel(new ChampionSelectionViewModel(championService, localizationService));
         }
 
         protected override void OnRootVisualElementReady(VisualElement root)
@@ -298,7 +311,10 @@ namespace BakaTest.Views
             card.Add(portrait);
 
             // Name
-            var nameLabel = new Label(champion.championName);
+            var championName = _localizationService != null
+                ? champion.GetChampionName(_localizationService.CurrentLanguage)
+                : champion.GetChampionName(Data.Localization.Language.English);
+            var nameLabel = new Label(championName);
             nameLabel.AddToClassList("champion-card-name");
             card.Add(nameLabel);
 

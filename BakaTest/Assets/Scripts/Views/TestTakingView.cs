@@ -5,6 +5,7 @@ using BakaTest.Core.MVVM;
 using BakaTest.Core.Services;
 using BakaTest.Services.SceneManagement;
 using BakaTest.Services.Tests;
+using BakaTest.Services.Localization;
 using BakaTest.ViewModels;
 using System.ComponentModel;
 
@@ -61,6 +62,7 @@ namespace BakaTest.Views
 
             // ServiceLocatorからサービス取得
             var testService = ServiceLocator.Instance.Get<ITestService>();
+            var localizationService = ServiceLocator.Instance.Get<ILocalizationService>();
 
             if (testService == null)
             {
@@ -68,8 +70,14 @@ namespace BakaTest.Views
                 return;
             }
 
+            if (localizationService == null)
+            {
+                Debug.LogError("[TestTakingView] ILocalizationService not found in ServiceLocator!");
+                return;
+            }
+
             // ViewModelを作成して設定
-            SetViewModel(new TestTakingViewModel(testService));
+            SetViewModel(new TestTakingViewModel(testService, localizationService));
         }
 
         protected override void OnRootVisualElementReady(VisualElement root)

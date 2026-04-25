@@ -1,0 +1,216 @@
+/* Root Container */
+.root {
+    flex-grow: 1;
+    background-color: rgb(30, 30, 40);
+    padding: 20px;
+    justify-content: space-between;
+}
+
+/* Title Panel */
+.title-panel {
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 40px;
+    color: rgb(150, 150, 255);
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+}
+
+.subtitle {
+    font-size: 20px;
+    color: rgb(200, 200, 200);
+    -unity-text-align: middle-center;
+}
+
+/* Settings Scroll View */
+.settings-scroll {
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+/* Settings Panel */
+.settings-panel {
+    background-color: rgb(45, 45, 60);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-width: 2px;
+    border-color: rgb(100, 100, 120);
+}
+
+.panel-title {
+    font-size: 24px;
+    color: rgb(255, 215, 0);
+    -unity-font-style: bold;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(100, 100, 120);
+}
+
+/* Setting Row */
+.setting-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 10px;
+    margin: 5px 0;
+    background-color: rgb(35, 35, 50);
+    border-radius: 5px;
+}
+
+.setting-label {
+    font-size: 18px;
+    color: rgb(220, 220, 220);
+    flex-grow: 1;
+    min-width: 200px;
+}
+
+/* Control Container */
+.control-container {
+    flex-direction: row;
+    align-items: center;
+    min-width: 300px;
+}
+
+/* Volume Sliders */
+.volume-slider {
+    flex-grow: 1;
+    min-width: 200px;
+    margin-right: 15px;
+}
+
+.volume-slider > .unity-base-slider__tracker {
+    background-color: rgb(60, 60, 80);
+    border-radius: 3px;
+    height: 8px;
+}
+
+.volume-slider > .unity-base-slider__dragger {
+    background-color: rgb(100, 200, 255);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    border-width: 2px;
+    border-color: rgb(150, 220, 255);
+}
+
+.volume-slider > .unity-base-slider__dragger-border {
+    background-color: rgb(80, 150, 255);
+}
+
+/* Speed Slider */
+.speed-slider {
+    flex-grow: 1;
+    min-width: 200px;
+    margin-right: 15px;
+}
+
+.speed-slider > .unity-base-slider__tracker {
+    background-color: rgb(60, 60, 80);
+    border-radius: 3px;
+    height: 8px;
+}
+
+.speed-slider > .unity-base-slider__dragger {
+    background-color: rgb(255, 180, 100);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    border-width: 2px;
+    border-color: rgb(255, 200, 150);
+}
+
+/* Value Label */
+.value-label {
+    font-size: 16px;
+    color: rgb(100, 255, 150);
+    -unity-font-style: bold;
+    min-width: 60px;
+    -unity-text-align: middle-right;
+}
+
+/* Toggle */
+.setting-toggle {
+    min-width: 60px;
+}
+
+.setting-toggle > .unity-toggle__checkmark {
+    background-color: rgb(60, 60, 80);
+    border-color: rgb(100, 100, 120);
+    border-width: 2px;
+    border-radius: 3px;
+    width: 24px;
+    height: 24px;
+}
+
+.setting-toggle:checked > .unity-toggle__checkmark {
+    background-color: rgb(50, 150, 50);
+    border-color: rgb(80, 200, 80);
+}
+
+/* Language Dropdown */
+.language-dropdown {
+    min-width: 250px;
+    background-color: rgb(60, 60, 80);
+    border-color: rgb(100, 100, 120);
+    border-width: 1px;
+    border-radius: 5px;
+    color: rgb(220, 220, 220);
+    padding: 8px;
+    font-size: 16px;
+}
+
+.language-dropdown:hover {
+    background-color: rgb(70, 70, 90);
+}
+
+/* Action Buttons Panel */
+.action-buttons-panel {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.action-button {
+    width: 30%;
+    height: 50px;
+    font-size: 16px;
+    -unity-font-style: bold;
+    border-width: 2px;
+    border-radius: 8px;
+}
+
+.reset-button {
+    background-color: rgb(200, 100, 50);
+    border-color: rgb(255, 150, 100);
+    color: rgb(255, 255, 255);
+}
+
+.reset-button:hover {
+    background-color: rgb(220, 120, 70);
+}
+
+.save-button {
+    background-color: rgb(50, 150, 50);
+    border-color: rgb(80, 200, 80);
+    color: rgb(255, 255, 255);
+}
+
+.save-button:hover {
+    background-color: rgb(70, 180, 70);
+}
+
+.cancel-button {
+    background-color: rgb(80, 80, 100);
+    border-color: rgb(120, 120, 140);
+    color: rgb(220, 220, 220);
+}
+
+.cancel-button:hover {
+    background-color: rgb(100, 100, 120);
+}

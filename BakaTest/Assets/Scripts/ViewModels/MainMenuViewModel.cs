@@ -9,6 +9,7 @@ using BakaTest.Services.Player;
 using BakaTest.Services.Champions;
 using BakaTest.Services.Tests;
 using BakaTest.Services.Save;
+using BakaTest.Services.Localization;
 using UnityEngine;
 
 namespace BakaTest.ViewModels
@@ -26,6 +27,7 @@ namespace BakaTest.ViewModels
         private readonly IChampionService _championService;
         private readonly ITestService _testService;
         private readonly ISaveService _saveService;
+        private readonly ILocalizationService _localization;
 
         // Player Info
         private string _playerName = "Player";
@@ -180,12 +182,14 @@ namespace BakaTest.ViewModels
             IPlayerDataService playerDataService,
             IChampionService championService,
             ITestService testService,
-            ISaveService saveService)
+            ISaveService saveService,
+            ILocalizationService localization)
         {
             _playerDataService = playerDataService ?? throw new ArgumentNullException(nameof(playerDataService));
             _championService = championService ?? throw new ArgumentNullException(nameof(championService));
             _testService = testService ?? throw new ArgumentNullException(nameof(testService));
             _saveService = saveService ?? throw new ArgumentNullException(nameof(saveService));
+            _localization = localization ?? throw new ArgumentNullException(nameof(localization));
 
             // Commands初期化
             TakeTestCommand = new RelayCommand<object?>(ExecuteTakeTest);
@@ -299,7 +303,7 @@ namespace BakaTest.ViewModels
         {
             ChampionsOwned = _championService.OwnedChampions.Count;
             OnPropertyChanged(nameof(ChampionsOwnedText));
-            Debug.Log($"[MainMenuViewModel] Champion unlocked: {champion.championName}");
+            Debug.Log($"[MainMenuViewModel] Champion unlocked: {champion.GetChampionName(_localization.CurrentLanguage)}");
         }
 
         /// <summary>
@@ -346,13 +350,13 @@ namespace BakaTest.ViewModels
         private void ExecuteChampions(object? parameter)
         {
             Debug.Log("[MainMenuViewModel] Champions button clicked");
-            NavigationRequested?.Invoke(this, "ChampionSelection");
+            NavigationRequested?.Invoke(this, "ChampionShop");
         }
 
         private void ExecuteInventory(object? parameter)
         {
-            Debug.Log("[MainMenuViewModel] Inventory button clicked (not yet implemented)");
-            // TODO: インベントリ画面に遷移
+            Debug.Log("[MainMenuViewModel] Inventory button clicked");
+            NavigationRequested?.Invoke(this, "Inventory");
         }
 
         private void ExecuteLeaderboard(object? parameter)
@@ -363,8 +367,8 @@ namespace BakaTest.ViewModels
 
         private void ExecuteSettings(object? parameter)
         {
-            Debug.Log("[MainMenuViewModel] Settings button clicked (not yet implemented)");
-            // TODO: 設定画面に遷移
+            Debug.Log("[MainMenuViewModel] Settings button clicked");
+            NavigationRequested?.Invoke(this, "Settings");
         }
 
         private void ExecuteQuit(object? parameter)

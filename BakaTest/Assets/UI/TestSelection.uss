@@ -1,101 +1,110 @@
-/* Root Container */
+/* Root Container - Portrait Mobile 1080x1920 */
 .root {
     flex-grow: 1;
     background-color: rgb(30, 30, 40);
-    padding: 40px;
-    align-items: center;
-    justify-content: space-between;
+    padding-top: 80px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    align-items: stretch;
+    justify-content: flex-start;
 }
 
 /* Header Panel */
 .header-panel {
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .title {
-    font-size: 42px;
+    font-size: 52px;
     color: rgb(255, 215, 0);
     -unity-font-style: bold;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     -unity-text-align: middle-center;
+    white-space: normal;
 }
 
 .subtitle {
-    font-size: 18px;
+    font-size: 24px;
     color: rgb(200, 200, 200);
     -unity-text-align: middle-center;
+    white-space: normal;
 }
 
 /* Selection Panel */
 .selection-panel {
-    width: 600px;
+    width: 100%;
     background-color: rgb(45, 45, 60);
-    border-radius: 10px;
-    padding: 30px;
-    margin-bottom: 30px;
+    border-radius: 15px;
+    padding: 40px;
+    margin-bottom: 40px;
     border-width: 2px;
     border-color: rgb(100, 100, 120);
 }
 
+/* Control Container - Vertical Layout for Portrait */
 .control-container {
-    flex-direction: row;
-    align-items: center;
-    margin: 15px 0;
+    flex-direction: column;
+    align-items: stretch;
+    margin: 20px 0;
 }
 
 .control-label {
-    font-size: 18px;
+    font-size: 28px;
     color: rgb(255, 255, 255);
     -unity-font-style: bold;
-    min-width: 180px;
-    margin-right: 20px;
+    margin-bottom: 15px;
+    -unity-text-align: middle-left;
 }
 
 .dropdown {
-    flex-grow: 1;
-    height: 40px;
-    font-size: 16px;
+    width: 100%;
+    height: 80px;
+    font-size: 28px;
     background-color: rgb(60, 60, 80);
     color: rgb(255, 255, 255);
-    border-radius: 5px;
-    border-width: 2px;
+    border-radius: 10px;
+    border-width: 3px;
     border-color: rgb(100, 100, 120);
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 /* Points Info Panel */
 .points-info-panel {
-    width: 600px;
+    width: 100%;
     background-color: rgb(45, 45, 60);
-    border-radius: 10px;
-    padding: 25px;
-    margin-bottom: 30px;
+    border-radius: 15px;
+    padding: 40px;
+    margin-bottom: 40px;
     border-width: 2px;
     border-color: rgb(100, 100, 120);
 }
 
 .section-title {
-    font-size: 20px;
+    font-size: 32px;
     color: rgb(255, 255, 255);
     -unity-font-style: bold;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     -unity-text-align: middle-center;
 }
 
 .points-stats-container {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
 }
 
 .points-stat-label {
-    font-size: 18px;
-    margin: 8px 0;
+    font-size: 26px;
+    margin: 10px 0;
     -unity-font-style: bold;
+    -unity-text-align: middle-center;
 }
 
 .points-stat-label.remaining {
     color: rgb(100, 255, 100);
-    font-size: 22px;
+    font-size: 32px;
 }
 
 .points-stat-label.earned {
@@ -107,38 +116,40 @@
 }
 
 .note-label {
-    font-size: 14px;
+    font-size: 22px;
     color: rgb(180, 180, 180);
     -unity-text-align: middle-center;
-    margin-top: 15px;
+    margin-top: 20px;
     -unity-font-style: italic;
+    white-space: normal;
 }
 
-/* Action Panel */
+/* Action Panel - Vertical Stack for Portrait */
 .action-panel {
-    width: 600px;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: auto;
 }
 
 .start-button {
-    width: 250px;
-    height: 70px;
-    font-size: 24px;
+    width: 100%;
+    height: 100px;
+    font-size: 36px;
     background-color: rgb(50, 180, 50);
     color: rgb(255, 255, 255);
-    border-radius: 10px;
+    border-radius: 15px;
     border-width: 3px;
     border-color: rgb(80, 220, 80);
     -unity-font-style: bold;
     transition-duration: 0.2s;
+    margin-bottom: 20px;
 }
 
 .start-button:hover:enabled {
     background-color: rgb(70, 200, 70);
     border-color: rgb(100, 240, 100);
-    scale: 1.05;
+    scale: 1.02;
 }
 
 .start-button:active:enabled {
@@ -153,13 +164,13 @@
 }
 
 .back-button {
-    width: 200px;
-    height: 60px;
-    font-size: 20px;
+    width: 100%;
+    height: 85px;
+    font-size: 30px;
     background-color: rgb(100, 100, 120);
     color: rgb(255, 255, 255);
-    border-radius: 8px;
-    border-width: 2px;
+    border-radius: 15px;
+    border-width: 3px;
     border-color: rgb(130, 130, 150);
     -unity-font-style: bold;
     transition-duration: 0.2s;
@@ -168,7 +179,7 @@
 .back-button:hover {
     background-color: rgb(120, 120, 140);
     border-color: rgb(150, 150, 170);
-    scale: 1.05;
+    scale: 1.02;
 }
 
 .back-button:active {

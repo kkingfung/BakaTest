@@ -6,6 +6,7 @@ using BakaTest.Core.Services;
 using BakaTest.ViewModels;
 using BakaTest.Services.Player;
 using BakaTest.Services.SceneManagement;
+using BakaTest.Services.Localization;
 using BakaTest.Data.Tests;
 using BakaTest.Data.Battle;
 
@@ -56,6 +57,7 @@ namespace BakaTest.Views
 
             // サービス取得
             var playerDataService = ServiceLocator.Instance.Get<IPlayerDataService>();
+            var localizationService = ServiceLocator.Instance.Get<ILocalizationService>();
 
             if (playerDataService == null)
             {
@@ -63,8 +65,14 @@ namespace BakaTest.Views
                 return;
             }
 
+            if (localizationService == null)
+            {
+                Debug.LogError("[ResultsView] ILocalizationService not found!");
+                return;
+            }
+
             // ViewModelを作成して設定
-            SetViewModel(new ResultsViewModel(playerDataService));
+            SetViewModel(new ResultsViewModel(playerDataService, localizationService));
         }
 
         protected override void OnRootVisualElementReady(VisualElement root)

@@ -166,10 +166,10 @@ MonoBehaviour:
   sourceAsset: {fileID: 9197481963319205126, guid: 90a6d470ace64b146800c86b03fc8ed4, type: 3}
   m_SortingOrder: 0
   m_Position: 0
-  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceSizeMode: 0
   m_WorldSpaceWidth: 1920
   m_WorldSpaceHeight: 1080
-  m_PivotReferenceSize: 0
+  m_PivotReferenceSize: 2
   m_Pivot: 0
   m_WorldSpaceCollider: {fileID: 0}
 --- !u!4 &123668640

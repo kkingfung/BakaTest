@@ -131,8 +131,8 @@ namespace BakaTest.Editor
 
             ChampionData champion = ScriptableObject.CreateInstance<ChampionData>();
             champion.championId = id;
-            champion.championName = name;
-            champion.description = description;
+            champion.SetChampionName(BakaTest.Data.Localization.Language.Japanese, name);
+            champion.SetDescription(BakaTest.Data.Localization.Language.Japanese, description);
             champion.role = role;
             champion.element = element;
             champion.baseStats = baseStats;

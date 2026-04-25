@@ -1,0 +1,210 @@
+/* Root Container */
+.root {
+    flex-grow: 1;
+    background-color: rgb(30, 30, 40);
+    padding: 20px;
+    justify-content: space-between;
+}
+
+/* Title Panel */
+.title-panel {
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 40px;
+    color: rgb(100, 255, 150);
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+}
+
+.subtitle {
+    font-size: 20px;
+    color: rgb(200, 200, 200);
+    -unity-text-align: middle-center;
+}
+
+/* Player Info Panel */
+.player-info-panel {
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.coins-label {
+    font-size: 20px;
+    color: rgb(255, 215, 0);
+    -unity-font-style: bold;
+    margin-right: 40px;
+}
+
+.items-label {
+    font-size: 20px;
+    color: rgb(150, 200, 255);
+    -unity-font-style: bold;
+}
+
+/* Main Content */
+.main-content {
+    flex-direction: row;
+    flex-grow: 1;
+    min-height: 500px;
+}
+
+/* Item List Panel */
+.item-list-panel {
+    width: 35%;
+    background-color: rgb(45, 45, 60);
+    border-radius: 10px;
+    padding: 15px;
+    margin-right: 20px;
+    border-width: 2px;
+    border-color: rgb(100, 100, 120);
+}
+
+/* Filter Buttons */
+.filter-buttons-panel {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+
+.filter-button {
+    flex-grow: 1;
+    margin: 3px;
+    padding: 8px;
+    background-color: rgb(60, 60, 80);
+    border-color: rgb(100, 100, 120);
+    border-width: 1px;
+    border-radius: 5px;
+    color: rgb(220, 220, 220);
+    font-size: 12px;
+    min-width: 80px;
+}
+
+.filter-button:hover {
+    background-color: rgb(80, 80, 100);
+}
+
+.filter-button.selected {
+    background-color: rgb(100, 200, 150);
+    border-color: rgb(150, 255, 200);
+}
+
+/* Item List Scroll */
+.item-list-scroll {
+    flex-grow: 1;
+    background-color: rgb(35, 35, 50);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.placeholder-text {
+    color: rgb(150, 150, 150);
+    font-size: 14px;
+    -unity-text-align: middle-center;
+    margin-top: 50px;
+}
+
+/* Item Details Panel */
+.item-details-panel {
+    width: 65%;
+    background-color: rgb(45, 45, 60);
+    border-radius: 10px;
+    padding: 20px;
+    border-width: 2px;
+    border-color: rgb(100, 100, 120);
+}
+
+/* Item Basic Info */
+.item-basic-info {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(100, 100, 120);
+}
+
+.item-name {
+    font-size: 32px;
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+    margin-bottom: 10px;
+}
+
+.item-meta-info {
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.meta-label {
+    font-size: 16px;
+    color: rgb(150, 200, 255);
+    margin-right: 20px;
+}
+
+.item-description {
+    font-size: 14px;
+    color: rgb(200, 200, 200);
+    white-space: normal;
+    margin-top: 10px;
+}
+
+/* Sell Info */
+.item-sell-info {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: rgb(35, 35, 50);
+    border-radius: 5px;
+}
+
+.sell-price-label {
+    font-size: 20px;
+    color: rgb(255, 215, 0);
+    -unity-font-style: bold;
+}
+
+/* Sell Button */
+.sell-button {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    -unity-font-style: bold;
+    background-color: rgb(200, 100, 50);
+    border-color: rgb(255, 150, 100);
+    border-width: 2px;
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+}
+
+.sell-button:hover {
+    background-color: rgb(220, 120, 70);
+}
+
+.sell-button:disabled {
+    background-color: rgb(80, 80, 80);
+    border-color: rgb(100, 100, 100);
+    color: rgb(150, 150, 150);
+}
+
+/* Footer Panel */
+.footer-panel {
+    align-items: center;
+    margin-top: 15px;
+}
+
+.back-button {
+    width: 200px;
+    height: 40px;
+    font-size: 18px;
+    background-color: rgb(60, 60, 80);
+    border-color: rgb(100, 100, 120);
+    border-width: 2px;
+    border-radius: 5px;
+    color: rgb(220, 220, 220);
+}
+
+.back-button:hover {
+    background-color: rgb(80, 80, 100);
+}

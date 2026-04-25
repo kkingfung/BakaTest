@@ -6,6 +6,7 @@ using BakaTest.Core.Commands;
 using BakaTest.Data.Champions;
 using BakaTest.Data.Tests;
 using BakaTest.Services.Tests;
+using BakaTest.Services.Localization;
 using UnityEngine;
 
 namespace BakaTest.ViewModels
@@ -19,6 +20,7 @@ namespace BakaTest.ViewModels
     public class TestTakingViewModel : ViewModelBase
     {
         private readonly ITestService _testService;
+        private readonly ILocalizationService _localization;
         private TestAttempt? _currentAttempt;
 
         // 現在の状態
@@ -131,9 +133,10 @@ namespace BakaTest.ViewModels
         public event EventHandler? TestSubmitted;
         public event EventHandler? TestAborted;
 
-        public TestTakingViewModel(ITestService testService)
+        public TestTakingViewModel(ITestService testService, ILocalizationService localization)
         {
             _testService = testService ?? throw new ArgumentNullException(nameof(testService));
+            _localization = localization ?? throw new ArgumentNullException(nameof(localization));
 
             // 初期化
             for (int i = 0; i < _answerChoices.Length; i++)
@@ -201,12 +204,13 @@ namespace BakaTest.ViewModels
             // 表示テキスト更新
             SubjectText = $"{CurrentAttempt.subject} - {CurrentAttempt.difficulty}";
             QuestionNumberText = $"Question {CurrentQuestionIndex + 1}/{CurrentAttempt.questions.Count}";
-            QuestionText = question.questionText;
+            QuestionText = question.GetQuestionText(_localization.CurrentLanguage);
 
             // 選択肢を更新
+            var choices = question.GetChoices(_localization.CurrentLanguage);
             for (int i = 0; i < 5; i++)
             {
-                _answerChoices[i] = question.choices[i];
+                _answerChoices[i] = choices[i];
             }
             OnPropertyChanged(nameof(AnswerAText));
             OnPropertyChanged(nameof(AnswerBText));

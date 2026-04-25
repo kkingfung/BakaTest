@@ -211,9 +211,12 @@ namespace BakaTest.Editor
 
             if (result != null)
             {
+                var localization = ServiceLocator.Instance.Get<BakaTest.Services.Localization.ILocalizationService>();
+                var language = localization?.CurrentLanguage ?? BakaTest.Data.Localization.Language.English;
+
                 string message = $"Battle Complete!\n\n" +
-                    $"Winner: {result.Winner?.ChampionData.championName ?? "None"}\n" +
-                    $"Loser: {result.Loser?.ChampionData.championName ?? "None"}\n" +
+                    $"Winner: {result.Winner?.ChampionData.GetChampionName(language) ?? "None"}\n" +
+                    $"Loser: {result.Loser?.ChampionData.GetChampionName(language) ?? "None"}\n" +
                     $"Turns: {result.TurnCount}\n" +
                     $"Duration: {result.Duration.TotalSeconds:F2} seconds";
 
@@ -428,9 +431,12 @@ namespace BakaTest.Editor
             var points = aiService.AllocatePoints(difficulty, AIPersonality.Tactical, selectedChampion);
 
             // 結果をログ出力
+            var localization = ServiceLocator.Instance.Get<BakaTest.Services.Localization.ILocalizationService>();
+            var language = localization?.CurrentLanguage ?? BakaTest.Data.Localization.Language.English;
+
             Debug.Log($"=== AI Opponent Test ({difficulty}) ===");
             Debug.Log($"AI Name: {aiName}");
-            Debug.Log($"Champion: {selectedChampion.championName}");
+            Debug.Log($"Champion: {selectedChampion.GetChampionName(language)}");
             Debug.Log($"Total Points: {aiService.GetTotalPointsForDifficulty(difficulty)}");
             Debug.Log("Point Allocation:");
             foreach (var kvp in points)
@@ -439,7 +445,7 @@ namespace BakaTest.Editor
             }
 
             string message = $"AI Name: {aiName}\n" +
-                           $"Champion: {selectedChampion.championName}\n" +
+                           $"Champion: {selectedChampion.GetChampionName(language)}\n" +
                            $"Total Points: {aiService.GetTotalPointsForDifficulty(difficulty)}\n" +
                            $"Math: {points[Subject.Math]}\n" +
                            $"Science: {points[Subject.Science]}\n" +
@@ -571,14 +577,17 @@ namespace BakaTest.Editor
             var randomItem = allItems[UnityEngine.Random.Range(0, allItems.Length)];
             bool success = inventoryService.BuyItem(randomItem.itemId);
 
+            var localization = ServiceLocator.Instance.Get<BakaTest.Services.Localization.ILocalizationService>();
+            var language = localization?.CurrentLanguage ?? BakaTest.Data.Localization.Language.English;
+
             if (success)
             {
-                Debug.Log($"[DebugTools] Bought {randomItem.itemName}");
-                EditorUtility.DisplayDialog("Item Purchased", $"Bought {randomItem.itemName} for {randomItem.buyPrice} coins", "OK");
+                Debug.Log($"[DebugTools] Bought {randomItem.GetItemName(language)}");
+                EditorUtility.DisplayDialog("Item Purchased", $"Bought {randomItem.GetItemName(language)} for {randomItem.buyPrice} coins", "OK");
             }
             else
             {
-                EditorUtility.DisplayDialog("Purchase Failed", $"Could not buy {randomItem.itemName}. Check coins or inventory.", "OK");
+                EditorUtility.DisplayDialog("Purchase Failed", $"Could not buy {randomItem.GetItemName(language)}. Check coins or inventory.", "OK");
             }
         }
 
@@ -602,11 +611,14 @@ namespace BakaTest.Editor
                 return;
             }
 
+            var localization = ServiceLocator.Instance.Get<BakaTest.Services.Localization.ILocalizationService>();
+            var language = localization?.CurrentLanguage ?? BakaTest.Data.Localization.Language.English;
+
             string message = $"Total Items: {inventoryService.CurrentItemCount}\n\n";
             foreach (var kvp in ownedItems)
             {
                 var itemData = Resources.Load<BakaTest.Data.Items.ItemData>($"Data/Items/Item_{kvp.Key}");
-                string itemName = itemData != null ? itemData.itemName : kvp.Key;
+                string itemName = itemData != null ? itemData.GetItemName(language) : kvp.Key;
                 Debug.Log($"  {itemName}: x{kvp.Value}");
                 message += $"{itemName}: x{kvp.Value}\n";
             }
@@ -996,11 +1008,14 @@ namespace BakaTest.Editor
 
             var questions = questionBankService.GetRandomQuestions(Subject.Math, DifficultyLevel.Elementary, 5);
 
+            var localization = ServiceLocator.Instance.Get<BakaTest.Services.Localization.ILocalizationService>();
+            var language = localization?.CurrentLanguage ?? BakaTest.Data.Localization.Language.English;
+
             Debug.Log($"=== Random Math Elementary Questions ({questions.Count}) ===");
             for (int i = 0; i < questions.Count; i++)
             {
-                Debug.Log($"{i + 1}. {questions[i].questionText}");
-                Debug.Log($"   Answer: {questions[i].choices[questions[i].correctAnswerIndex]}");
+                Debug.Log($"{i + 1}. {questions[i].GetQuestionText(language)}");
+                Debug.Log($"   Answer: {questions[i].GetChoices(language)[questions[i].correctAnswerIndex]}");
             }
 
             EditorUtility.DisplayDialog("Questions Retrieved",
@@ -1073,11 +1088,14 @@ namespace BakaTest.Editor
 
             var questions = questionBankService.GenerateAIQuestions(Subject.English, DifficultyLevel.University, 10);
 
+            var localization = ServiceLocator.Instance.Get<BakaTest.Services.Localization.ILocalizationService>();
+            var language = localization?.CurrentLanguage ?? BakaTest.Data.Localization.Language.English;
+
             Debug.Log($"=== Generated AI Questions - English University ({questions.Count}) ===");
             for (int i = 0; i < questions.Count; i++)
             {
-                Debug.Log($"{i + 1}. {questions[i].questionText}");
-                Debug.Log($"   Answer: {questions[i].choices[questions[i].correctAnswerIndex]}");
+                Debug.Log($"{i + 1}. {questions[i].GetQuestionText(language)}");
+                Debug.Log($"   Answer: {questions[i].GetChoices(language)[questions[i].correctAnswerIndex]}");
                 Debug.Log($"   AI Generated: {questions[i].isAIGenerated}");
             }
 
@@ -1096,6 +1114,9 @@ namespace BakaTest.Editor
                 return;
             }
 
+            var localization = ServiceLocator.Instance.Get<BakaTest.Services.Localization.ILocalizationService>();
+            var language = localization?.CurrentLanguage ?? BakaTest.Data.Localization.Language.English;
+
             Debug.Log("=== Testing All Subjects - Elementary Level ===");
             int totalRetrieved = 0;
 
@@ -1107,7 +1128,8 @@ namespace BakaTest.Editor
 
                 foreach (var q in questions)
                 {
-                    Debug.Log($"  - {q.questionText.Substring(0, System.Math.Min(60, q.questionText.Length))}...");
+                    string questionText = q.GetQuestionText(language);
+                    Debug.Log($"  - {questionText.Substring(0, System.Math.Min(60, questionText.Length))}...");
                 }
             }
 

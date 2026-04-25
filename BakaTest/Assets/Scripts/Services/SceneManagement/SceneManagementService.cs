@@ -19,6 +19,9 @@ namespace BakaTest.Services.SceneManagement
         private const string SCENE_POINT_ALLOCATION = "PointAllocation";
         private const string SCENE_BATTLE = "Battle";
         private const string SCENE_RESULTS = "Results";
+        private const string SCENE_CHAMPION_SHOP = "ChampionShop";
+        private const string SCENE_INVENTORY = "Inventory";
+        private const string SCENE_SETTINGS = "Settings";
 
         /// <summary>
         /// 現在のシーン名
@@ -156,6 +159,30 @@ namespace BakaTest.Services.SceneManagement
         public void LoadResults()
         {
             LoadScene(SCENE_RESULTS);
+        }
+
+        /// <summary>
+        /// チャンピオンショップシーンをロードします
+        /// </summary>
+        public void LoadChampionShop()
+        {
+            LoadScene(SCENE_CHAMPION_SHOP);
+        }
+
+        /// <summary>
+        /// インベントリシーンをロードします
+        /// </summary>
+        public void LoadInventory()
+        {
+            LoadScene(SCENE_INVENTORY);
+        }
+
+        /// <summary>
+        /// 設定シーンをロードします
+        /// </summary>
+        public void LoadSettings()
+        {
+            LoadScene(SCENE_SETTINGS);
         }
     }
 }

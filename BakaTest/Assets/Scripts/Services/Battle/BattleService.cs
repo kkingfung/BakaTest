@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using BakaTest.Data.Battle;
 using BakaTest.Data.Champions;
+using BakaTest.Services.Localization;
 
 namespace BakaTest.Services.Battle
 {
@@ -12,6 +13,7 @@ namespace BakaTest.Services.Battle
     /// </summary>
     public class BattleService : IBattleService
     {
+        private readonly ILocalizationService _localization;
         private BattleResult? _currentBattle;
         private BattleSetup? _currentSetup;
         private BattleUnit? _player1Unit;
@@ -21,6 +23,14 @@ namespace BakaTest.Services.Battle
         private int _turnCount;
 
         private readonly System.Random _random = new System.Random();
+
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        public BattleService(ILocalizationService localization)
+        {
+            _localization = localization ?? throw new ArgumentNullException(nameof(localization));
+        }
 
         /// <summary>
         /// 現在進行中のバトル結果
@@ -80,7 +90,7 @@ namespace BakaTest.Services.Battle
             _battleStartTime = DateTime.Now;
             _turnCount = 0;
 
-            Debug.Log($"[BattleService] Battle started: {_player1Unit.ChampionData.championName} vs {_player2Unit.ChampionData.championName}");
+            Debug.Log($"[BattleService] Battle started: {_player1Unit.ChampionData.GetChampionName(_localization.CurrentLanguage)} vs {_player2Unit.ChampionData.GetChampionName(_localization.CurrentLanguage)}");
             BattleStarted?.Invoke(setup);
         }
 
@@ -99,7 +109,7 @@ namespace BakaTest.Services.Battle
             BattleUnit faster = _player1Unit.Speed >= _player2Unit.Speed ? _player1Unit : _player2Unit;
             BattleUnit slower = _player1Unit.Speed >= _player2Unit.Speed ? _player2Unit : _player1Unit;
 
-            Debug.Log($"[BattleService] {faster.ChampionData.championName} (SPD: {faster.Speed}) attacks first!");
+            Debug.Log($"[BattleService] {faster.ChampionData.GetChampionName(_localization.CurrentLanguage)} (SPD: {faster.Speed}) attacks first!");
 
             // 両者が生存している限りループ
             int maxTurns = 100; // 無限ループ防止
@@ -125,7 +135,7 @@ namespace BakaTest.Services.Battle
             // 結果を生成
             _currentBattle = new BattleResult(_currentSetup, winner, loser, _actionLog, _battleStartTime, _turnCount);
 
-            Debug.Log($"[BattleService] Battle ended! Winner: {winner?.ChampionData.championName ?? "None"}");
+            Debug.Log($"[BattleService] Battle ended! Winner: {(winner != null ? winner.ChampionData.GetChampionName(_localization.CurrentLanguage) : "None")}");
             BattleEnded?.Invoke(_currentBattle);
 
             return _currentBattle;
@@ -155,7 +165,7 @@ namespace BakaTest.Services.Battle
 
             if (_turnCount == 0)
             {
-                Debug.Log($"[BattleService] {faster.ChampionData.championName} (SPD: {faster.Speed}) attacks first!");
+                Debug.Log($"[BattleService] {faster.ChampionData.GetChampionName(_localization.CurrentLanguage)} (SPD: {faster.Speed}) attacks first!");
             }
 
             _turnCount++;
@@ -194,7 +204,7 @@ namespace BakaTest.Services.Battle
             // 結果を生成
             _currentBattle = new BattleResult(_currentSetup, winner, loser, _actionLog, _battleStartTime, _turnCount);
 
-            Debug.Log($"[BattleService] Battle ended! Winner: {winner?.ChampionData.championName ?? "None"}");
+            Debug.Log($"[BattleService] Battle ended! Winner: {(winner != null ? winner.ChampionData.GetChampionName(_localization.CurrentLanguage) : "None")}");
             BattleEnded?.Invoke(_currentBattle);
 
             return _currentBattle;
@@ -208,7 +218,7 @@ namespace BakaTest.Services.Battle
             // 回避判定
             if (RollDodge(defender.DodgeChance))
             {
-                BattleAction missAction = BattleAction.CreateMiss(attacker, defender);
+                BattleAction missAction = BattleAction.CreateMiss(attacker, defender, _localization.CurrentLanguage);
                 _actionLog.Add(missAction);
                 ActionPerformed?.Invoke(missAction);
                 Debug.Log($"[BattleService] {missAction.Description}");
@@ -224,8 +234,8 @@ namespace BakaTest.Services.Battle
 
             // アクション作成
             BattleAction action = isCritical
-                ? BattleAction.CreateCriticalHit(attacker, defender, finalDamage)
-                : BattleAction.CreateAttack(attacker, defender, finalDamage);
+                ? BattleAction.CreateCriticalHit(attacker, defender, finalDamage, _localization.CurrentLanguage)
+                : BattleAction.CreateAttack(attacker, defender, finalDamage, _localization.CurrentLanguage);
 
             _actionLog.Add(action);
             ActionPerformed?.Invoke(action);
@@ -320,7 +330,7 @@ namespace BakaTest.Services.Battle
             // TODO: アイテムシステム実装
             // 現在はダミー実装（回復ポーション）
             int healAmount = 100;
-            BattleAction itemAction = BattleAction.CreateItemUse(_player1Unit, itemId, healAmount);
+            BattleAction itemAction = BattleAction.CreateItemUse(_player1Unit, itemId, healAmount, _localization.CurrentLanguage);
             _actionLog.Add(itemAction);
             ActionPerformed?.Invoke(itemAction);
 

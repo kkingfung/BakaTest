@@ -1,60 +1,62 @@
-/* Root Container */
+/* Root Container - Portrait Mobile 1080x1920 */
 .root {
     flex-grow: 1;
     background-color: rgb(240, 240, 240);
-    padding: 20px;
+    padding-top: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
 }
 
 /* Header Section */
 .header {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     align-items: center;
 }
 
 .title {
-    font-size: 32px;
+    font-size: 44px;
     color: rgb(33, 33, 33);
     -unity-font-style: bold;
-    margin-bottom: 10px;
-    -unity-text-align: upper-center;
+    margin-bottom: 15px;
+    -unity-text-align: middle-center;
 }
 
+/* Test Info - Vertical Stack for Portrait */
 .test-info {
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
 .subject-label {
-    font-size: 20px;
+    font-size: 32px;
     color: rgb(66, 133, 244);
     -unity-font-style: bold;
-    margin-right: 20px;
+    margin-bottom: 8px;
 }
 
 .difficulty-label {
-    font-size: 18px;
+    font-size: 26px;
     color: rgb(100, 100, 100);
-    -unity-font-style: normal;
 }
 
 /* Timer Section */
 .timer-section {
-    margin-bottom: 20px;
-    padding: 15px;
+    margin-bottom: 25px;
+    padding: 25px;
     background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    border-width: 2px;
+    border-radius: 15px;
+    border-width: 3px;
     border-color: rgb(200, 200, 200);
     align-items: center;
 }
 
 .timer-label {
-    font-size: 40px;
+    font-size: 56px;
     color: rgb(52, 168, 83);
     -unity-font-style: bold;
-    margin-bottom: 10px;
-    -unity-text-align: upper-center;
+    margin-bottom: 15px;
+    -unity-text-align: middle-center;
 }
 
 .timer-label.warning {
@@ -67,66 +69,68 @@
 
 .timer-progress {
     width: 100%;
-    height: 20px;
+    height: 30px;
 }
 
-/* Progress Section */
+/* Progress Section - Vertical for Portrait */
 .progress-section {
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    padding: 10px 15px;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+    padding: 20px;
     background-color: rgb(255, 255, 255);
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .question-counter {
-    font-size: 18px;
+    font-size: 28px;
     color: rgb(66, 133, 244);
     -unity-font-style: bold;
+    margin-bottom: 10px;
 }
 
 .answered-count {
-    font-size: 16px;
+    font-size: 24px;
     color: rgb(100, 100, 100);
 }
 
 /* Question Section */
 .question-section {
-    margin-bottom: 20px;
-    padding: 20px;
+    margin-bottom: 25px;
+    padding: 30px;
     background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    border-width: 2px;
+    border-radius: 15px;
+    border-width: 3px;
     border-color: rgb(66, 133, 244);
-    min-height: 120px;
+    min-height: 150px;
 }
 
 .question-text {
-    font-size: 20px;
+    font-size: 28px;
     color: rgb(33, 33, 33);
     white-space: normal;
     -unity-text-align: upper-left;
+    line-height: 1.4;
 }
 
 /* Choices Section */
 .choices-section {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .choice-button {
-    margin-bottom: 10px;
-    padding: 15px;
-    font-size: 18px;
+    margin-bottom: 15px;
+    padding: 25px;
+    font-size: 26px;
     background-color: rgb(255, 255, 255);
     color: rgb(33, 33, 33);
-    border-width: 2px;
+    border-width: 3px;
     border-color: rgb(200, 200, 200);
-    border-radius: 8px;
+    border-radius: 12px;
     -unity-text-align: middle-left;
     white-space: normal;
     height: auto;
-    min-height: 50px;
+    min-height: 80px;
 }
 
 .choice-button:hover {
@@ -145,22 +149,23 @@
     opacity: 0.5;
 }
 
-/* Navigation Section */
+/* Navigation Section - Vertical for Portrait */
 .navigation-section {
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 25px;
 }
 
 .nav-button {
-    width: 48%;
-    height: 50px;
-    font-size: 18px;
+    width: 100%;
+    height: 80px;
+    font-size: 28px;
     background-color: rgb(255, 255, 255);
     color: rgb(66, 133, 244);
-    border-width: 2px;
+    border-width: 3px;
     border-color: rgb(66, 133, 244);
-    border-radius: 8px;
+    border-radius: 12px;
+    margin-bottom: 15px;
 }
 
 .nav-button:hover {
@@ -174,21 +179,22 @@
     color: rgb(150, 150, 150);
 }
 
-/* Action Section */
+/* Action Section - Vertical for Portrait */
 .action-section {
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 .submit-button {
-    width: 60%;
-    height: 60px;
-    font-size: 20px;
+    width: 100%;
+    height: 90px;
+    font-size: 32px;
     -unity-font-style: bold;
     background-color: rgb(52, 168, 83);
     color: rgb(255, 255, 255);
     border-width: 0;
-    border-radius: 10px;
+    border-radius: 15px;
+    margin-bottom: 15px;
 }
 
 .submit-button:hover {
@@ -197,17 +203,18 @@
 
 .submit-button:active {
     background-color: rgb(40, 132, 65);
+    scale: 0.98;
 }
 
 .back-button {
-    width: 38%;
-    height: 60px;
-    font-size: 18px;
+    width: 100%;
+    height: 75px;
+    font-size: 26px;
     background-color: rgb(255, 255, 255);
     color: rgb(150, 150, 150);
-    border-width: 2px;
+    border-width: 3px;
     border-color: rgb(200, 200, 200);
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 .back-button:hover {
@@ -218,4 +225,5 @@
 
 .back-button:active {
     background-color: rgb(210, 60, 48);
+    scale: 0.98;
 }

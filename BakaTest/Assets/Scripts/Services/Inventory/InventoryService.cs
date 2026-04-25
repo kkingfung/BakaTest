@@ -6,6 +6,7 @@ using UnityEngine;
 using BakaTest.Data.Items;
 using BakaTest.Services.Save;
 using BakaTest.Services.Player;
+using BakaTest.Services.Localization;
 
 namespace BakaTest.Services.Inventory
 {
@@ -16,6 +17,7 @@ namespace BakaTest.Services.Inventory
     {
         private readonly ISaveService _saveService;
         private readonly IPlayerDataService _playerDataService;
+        private readonly ILocalizationService _localization;
         private readonly Dictionary<string, ItemData> _allItems = new();
         private readonly Dictionary<string, int> _ownedItems = new();
 
@@ -43,10 +45,11 @@ namespace BakaTest.Services.Inventory
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public InventoryService(ISaveService saveService, IPlayerDataService playerDataService)
+        public InventoryService(ISaveService saveService, IPlayerDataService playerDataService, ILocalizationService localization)
         {
             _saveService = saveService ?? throw new ArgumentNullException(nameof(saveService));
             _playerDataService = playerDataService ?? throw new ArgumentNullException(nameof(playerDataService));
+            _localization = localization ?? throw new ArgumentNullException(nameof(localization));
 
             Debug.Log("[InventoryService] Initialized.");
             LoadAllItems();
@@ -66,7 +69,7 @@ namespace BakaTest.Services.Inventory
                 if (item != null && !string.IsNullOrEmpty(item.itemId))
                 {
                     _allItems[item.itemId] = item;
-                    Debug.Log($"[InventoryService] Loaded item: {item.itemName} ({item.itemId})");
+                    Debug.Log($"[InventoryService] Loaded item: {item.GetItemName(_localization.CurrentLanguage)} ({item.itemId})");
                 }
             }
 
@@ -143,7 +146,7 @@ namespace BakaTest.Services.Inventory
             _ownedItems[itemId] += quantity;
 
             var item = _allItems[itemId];
-            Debug.Log($"[InventoryService] Added {quantity}x {item.itemName}. Total: {_ownedItems[itemId]}");
+            Debug.Log($"[InventoryService] Added {quantity}x {item.GetItemName(_localization.CurrentLanguage)}. Total: {_ownedItems[itemId]}");
 
             ItemAdded?.Invoke(itemId, quantity);
             SaveData();
@@ -190,7 +193,7 @@ namespace BakaTest.Services.Inventory
             }
 
             var item = _allItems[itemId];
-            Debug.Log($"[InventoryService] Removed {quantity}x {item.itemName}. Remaining: {_ownedItems.GetValueOrDefault(itemId, 0)}");
+            Debug.Log($"[InventoryService] Removed {quantity}x {item.GetItemName(_localization.CurrentLanguage)}. Remaining: {_ownedItems.GetValueOrDefault(itemId, 0)}");
 
             ItemRemoved?.Invoke(itemId, quantity);
             SaveData();
@@ -265,7 +268,7 @@ namespace BakaTest.Services.Inventory
                 return false;
             }
 
-            Debug.Log($"[InventoryService] Purchased {quantity}x {item.itemName} for {totalCost} coins");
+            Debug.Log($"[InventoryService] Purchased {quantity}x {item.GetItemName(_localization.CurrentLanguage)} for {totalCost} coins");
             ItemPurchased?.Invoke(itemId, quantity);
 
             return true;
@@ -308,7 +311,7 @@ namespace BakaTest.Services.Inventory
             // コイン追加
             _playerDataService.AddCoins(totalValue);
 
-            Debug.Log($"[InventoryService] Sold {quantity}x {item.itemName} for {totalValue} coins");
+            Debug.Log($"[InventoryService] Sold {quantity}x {item.GetItemName(_localization.CurrentLanguage)} for {totalValue} coins");
             ItemSold?.Invoke(itemId, quantity);
 
             return true;

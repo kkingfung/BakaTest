@@ -6,6 +6,7 @@ using BakaTest.Core.Commands;
 using BakaTest.Data.Champions;
 using BakaTest.Services.Player;
 using BakaTest.Services.Champions;
+using BakaTest.Services.Localization;
 
 namespace BakaTest.ViewModels
 {
@@ -19,7 +20,8 @@ namespace BakaTest.ViewModels
     {
         private readonly IPlayerDataService _playerDataService;
         private readonly IChampionService _championService;
-        
+        private readonly ILocalizationService _localization;
+
         private ChampionData? _selectedChampion;
         
         // Available points
@@ -201,7 +203,7 @@ namespace BakaTest.ViewModels
         public int FinalSpeed => BaseSpeed + BonusSpeed;
 
         // Display Properties
-        public string ChampionName => SelectedChampion?.championName ?? "No Champion Selected";
+        public string ChampionName => SelectedChampion?.GetChampionName(_localization.CurrentLanguage) ?? "No Champion Selected";
         public string ChampionRole => SelectedChampion?.role.ToString() ?? "-";
         
         public string TotalAllocatedText => $"{TotalAllocated} / {TotalAvailable}";
@@ -228,10 +230,11 @@ namespace BakaTest.ViewModels
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public PointAllocationViewModel(IPlayerDataService playerDataService, IChampionService championService)
+        public PointAllocationViewModel(IPlayerDataService playerDataService, IChampionService championService, ILocalizationService localization)
         {
             _playerDataService = playerDataService ?? throw new ArgumentNullException(nameof(playerDataService));
             _championService = championService ?? throw new ArgumentNullException(nameof(championService));
+            _localization = localization ?? throw new ArgumentNullException(nameof(localization));
 
             // Commands
             ResetCommand = new RelayCommand<object?>(_ => ExecuteReset());

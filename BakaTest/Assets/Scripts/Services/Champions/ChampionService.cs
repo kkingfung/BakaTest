@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using BakaTest.Data.Champions;
 using BakaTest.Services.Save;
+using BakaTest.Services.Localization;
 
 namespace BakaTest.Services.Champions
 {
@@ -14,6 +15,7 @@ namespace BakaTest.Services.Champions
     public class ChampionService : IChampionService
     {
         private readonly ISaveService _saveService;
+        private readonly ILocalizationService _localization;
         private readonly Dictionary<string, ChampionData> _allChampions = new();
         private readonly HashSet<string> _ownedChampionIds = new();
         private readonly HashSet<string> _freeRotationChampionIds = new();
@@ -90,9 +92,10 @@ namespace BakaTest.Services.Champions
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public ChampionService(ISaveService saveService)
+        public ChampionService(ISaveService saveService, ILocalizationService localization)
         {
             _saveService = saveService ?? throw new ArgumentNullException(nameof(saveService));
+            _localization = localization ?? throw new ArgumentNullException(nameof(localization));
             Debug.Log("[ChampionService] Initialized.");
             LoadAllChampions();
             LoadData();
@@ -111,7 +114,7 @@ namespace BakaTest.Services.Champions
                 if (champion != null && !string.IsNullOrEmpty(champion.championId))
                 {
                     _allChampions[champion.championId] = champion;
-                    Debug.Log($"[ChampionService] Loaded champion: {champion.championName} ({champion.championId})");
+                    Debug.Log($"[ChampionService] Loaded champion: {champion.GetChampionName(_localization.CurrentLanguage)} ({champion.championId})");
                 }
             }
 
@@ -154,7 +157,7 @@ namespace BakaTest.Services.Champions
                 foreach (var champion in defaultRotation)
                 {
                     _freeRotationChampionIds.Add(champion.championId);
-                    Debug.Log($"[ChampionService] Default free rotation: {champion.championName}");
+                    Debug.Log($"[ChampionService] Default free rotation: {champion.GetChampionName(_localization.CurrentLanguage)}");
                 }
                 SaveData(); // 初回のデフォルト設定を保存
             }
@@ -245,10 +248,10 @@ namespace BakaTest.Services.Champions
             }
 
             _ownedChampionIds.Add(championId);
-            
+
             var champion = _allChampions[championId];
-            Debug.Log($"[ChampionService] Champion unlocked: {champion.championName} ({championId})");
-            
+            Debug.Log($"[ChampionService] Champion unlocked: {champion.GetChampionName(_localization.CurrentLanguage)} ({championId})");
+
             ChampionUnlocked?.Invoke(champion);
 
             SaveData();

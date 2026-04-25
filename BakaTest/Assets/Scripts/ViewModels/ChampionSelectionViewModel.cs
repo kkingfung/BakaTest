@@ -6,6 +6,7 @@ using BakaTest.Core.MVVM;
 using BakaTest.Core.Commands;
 using BakaTest.Data.Champions;
 using BakaTest.Services.Champions;
+using BakaTest.Services.Localization;
 
 namespace BakaTest.ViewModels
 {
@@ -18,7 +19,8 @@ namespace BakaTest.ViewModels
     public class ChampionSelectionViewModel : ViewModelBase
     {
         private readonly IChampionService _championService;
-        
+        private readonly ILocalizationService _localization;
+
         private List<ChampionData> _allChampions = new();
         private List<ChampionData> _filteredChampions = new();
         private ChampionData? _selectedChampion;
@@ -190,9 +192,10 @@ namespace BakaTest.ViewModels
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public ChampionSelectionViewModel(IChampionService championService)
+        public ChampionSelectionViewModel(IChampionService championService, ILocalizationService localization)
         {
             _championService = championService ?? throw new ArgumentNullException(nameof(championService));
+            _localization = localization ?? throw new ArgumentNullException(nameof(localization));
 
             // Commands
             FilterAllCommand = new RelayCommand<object?>(_ => ExecuteFilterAll());
@@ -298,7 +301,7 @@ namespace BakaTest.ViewModels
                 return;
             }
 
-            ChampionName = SelectedChampion.championName;
+            ChampionName = SelectedChampion.GetChampionName(_localization.CurrentLanguage);
             ChampionRole = SelectedChampion.role.ToString();
             ChampionElement = SelectedChampion.element.ToString();
 

@@ -82,5 +82,18 @@ namespace BakaTest.Services.Inventory
 
         /// <summary>アイテムが売却されたときに発火するイベント</summary>
         event Action<string, int>? ItemSold;
+
+        /// <summary>
+        /// アイテムデータを取得します
+        /// </summary>
+        /// <param name="itemId">アイテムID</param>
+        /// <returns>アイテムデータ（見つからない場合はnull）</returns>
+        ItemData? GetItemData(string itemId);
+
+        /// <summary>
+        /// 全アイテムデータを取得します
+        /// </summary>
+        /// <returns>全アイテムデータのリスト</returns>
+        List<ItemData> GetAllItemData();
     }
 }

@@ -232,21 +232,19 @@ namespace BakaTest.Services.Tests
                     questionId = $"q_{subject}_{difficulty}_{Guid.NewGuid()}",
                     subject = subject,
                     difficulty = difficulty,
-                    questionText = $"[DUMMY] {subject} {difficulty} Question {i + 1}: What is the answer?",
-                    choices = new string[]
-                    {
-                        "Choice A",
-                        "Choice B",
-                        "Choice C (Correct)",
-                        "Choice D",
-                        "Choice E"
-                    },
                     correctAnswerIndex = 2, // Choice C
                     pointValue = pointsPerQuestion,
                     generatedDate = DateTime.Now,
                     isAIGenerated = false,
                     isReviewed = true
                 };
+
+                question.SetQuestionText(Data.Localization.Language.English, $"[DUMMY] {subject} {difficulty} Question {i + 1}: What is the answer?");
+                question.SetChoice(Data.Localization.Language.English, 0, "Choice A");
+                question.SetChoice(Data.Localization.Language.English, 1, "Choice B");
+                question.SetChoice(Data.Localization.Language.English, 2, "Choice C (Correct)");
+                question.SetChoice(Data.Localization.Language.English, 3, "Choice D");
+                question.SetChoice(Data.Localization.Language.English, 4, "Choice E");
 
                 questions.Add(question);
             }

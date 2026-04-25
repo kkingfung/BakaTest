@@ -62,6 +62,21 @@ namespace BakaTest.Services.SceneManagement
         void LoadResults();
 
         /// <summary>
+        /// チャンピオンショップシーンをロードします
+        /// </summary>
+        void LoadChampionShop();
+
+        /// <summary>
+        /// インベントリシーンをロードします
+        /// </summary>
+        void LoadInventory();
+
+        /// <summary>
+        /// 設定シーンをロードします
+        /// </summary>
+        void LoadSettings();
+
+        /// <summary>
         /// シーンロード開始時に発火するイベント
         /// </summary>
         event Action<string>? SceneLoadStarted;

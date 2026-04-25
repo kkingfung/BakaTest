@@ -316,11 +316,13 @@ namespace BakaTest.Data.Champions
         /// </summary>
         public override string ToString()
         {
+#pragma warning disable CS0618 // Type or member is obsolete
             return $"{championName} [{role}] [{element}] - Base Stats: {baseStats}";
+#pragma warning restore CS0618
         }
 
         #region Editor Validation
-        
+
         private void OnValidate()
         {
             // IDが空の場合、アセット名から自動生成
@@ -329,11 +331,13 @@ namespace BakaTest.Data.Champions
                 championId = $"champion_{name.ToLower().Replace(" ", "_")}";
             }
 
+#pragma warning disable CS0618 // Type or member is obsolete
             // 名前が空の場合、アセット名を使用
             if (string.IsNullOrEmpty(championName))
             {
                 championName = name;
             }
+#pragma warning restore CS0618
         }
 
         #endregion

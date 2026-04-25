@@ -6,6 +6,7 @@ using BakaTest.Core.Services;
 using BakaTest.Services.SceneManagement;
 using BakaTest.Services.Tests;
 using BakaTest.Services.Player;
+using BakaTest.Services.Localization;
 using BakaTest.ViewModels;
 using BakaTest.Data.Tests;
 using System.ComponentModel;
@@ -22,6 +23,8 @@ namespace BakaTest.Views
     [RequireComponent(typeof(UIDocument))]
     public class TestResultsView : ViewBase<TestResultsViewModel>
     {
+        private ILocalizationService? _localizationService;
+
         // Header
         private Label? _titleLabel;
         private Label? _subjectLabel;
@@ -56,6 +59,7 @@ namespace BakaTest.Views
             // ServiceLocatorからサービス取得
             var testService = ServiceLocator.Instance.Get<ITestService>();
             var playerDataService = ServiceLocator.Instance.Get<IPlayerDataService>();
+            var localizationService = ServiceLocator.Instance.Get<ILocalizationService>();
 
             if (testService == null)
             {
@@ -68,6 +72,15 @@ namespace BakaTest.Views
                 Debug.LogError("[TestResultsView] IPlayerDataService not found in ServiceLocator!");
                 return;
             }
+
+            if (localizationService == null)
+            {
+                Debug.LogError("[TestResultsView] ILocalizationService not found in ServiceLocator!");
+                return;
+            }
+
+            // LocalizationServiceを保存
+            _localizationService = localizationService;
 
             // ViewModelを作成して設定
             SetViewModel(new TestResultsViewModel(testService, playerDataService));
@@ -362,7 +375,10 @@ namespace BakaTest.Views
             container.Add(statusLabel);
 
             // 問題文
-            var questionText = new Label(result.question?.questionText ?? "Unknown question");
+            var questionTextStr = result.question != null && _localizationService != null
+                ? result.question.GetQuestionText(_localizationService.CurrentLanguage)
+                : "Unknown question";
+            var questionText = new Label(questionTextStr);
             questionText.AddToClassList("question-text");
             container.Add(questionText);
 

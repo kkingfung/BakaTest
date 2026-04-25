@@ -1,5 +1,6 @@
 #nullable enable
 using System;
+using BakaTest.Data.Localization;
 
 namespace BakaTest.Data.Battle
 {
@@ -77,54 +78,60 @@ namespace BakaTest.Data.Battle
         /// <summary>
         /// 通常攻撃アクションを作成します
         /// </summary>
-        public static BattleAction CreateAttack(BattleUnit attacker, BattleUnit defender, int damage)
+        public static BattleAction CreateAttack(BattleUnit attacker, BattleUnit defender, int damage, Language language)
         {
-            string message = $"{attacker.ChampionData.championName} attacked {defender.ChampionData.championName} for {damage} damage!";
+            string attackerName = attacker.ChampionData.GetChampionName(language);
+            string defenderName = defender.ChampionData.GetChampionName(language);
+            string message = $"{attackerName} attacked {defenderName} for {damage} damage!";
 
             var action = new BattleAction(
                 BattleActionType.Attack,
-                attacker.ChampionData.championName,
-                defender.ChampionData.championName,
+                attackerName,
+                defenderName,
                 message,
                 turn: 0,
                 damage: damage
             );
 
-            defender.TakeDamage(damage);
+            defender.TakeDamage(damage, language);
             return action;
         }
 
         /// <summary>
         /// クリティカルヒットアクションを作成します
         /// </summary>
-        public static BattleAction CreateCriticalHit(BattleUnit attacker, BattleUnit defender, int damage)
+        public static BattleAction CreateCriticalHit(BattleUnit attacker, BattleUnit defender, int damage, Language language)
         {
-            string message = $"💥 CRITICAL! {attacker.ChampionData.championName} dealt {damage} damage to {defender.ChampionData.championName}!";
+            string attackerName = attacker.ChampionData.GetChampionName(language);
+            string defenderName = defender.ChampionData.GetChampionName(language);
+            string message = $"💥 CRITICAL! {attackerName} dealt {damage} damage to {defenderName}!";
 
             var action = new BattleAction(
                 BattleActionType.Critical,
-                attacker.ChampionData.championName,
-                defender.ChampionData.championName,
+                attackerName,
+                defenderName,
                 message,
                 turn: 0,
                 damage: damage
             );
 
-            defender.TakeDamage(damage);
+            defender.TakeDamage(damage, language);
             return action;
         }
 
         /// <summary>
         /// 回避アクションを作成します
         /// </summary>
-        public static BattleAction CreateMiss(BattleUnit attacker, BattleUnit defender)
+        public static BattleAction CreateMiss(BattleUnit attacker, BattleUnit defender, Language language)
         {
-            string message = $"{defender.ChampionData.championName} dodged {attacker.ChampionData.championName}'s attack!";
+            string attackerName = attacker.ChampionData.GetChampionName(language);
+            string defenderName = defender.ChampionData.GetChampionName(language);
+            string message = $"{defenderName} dodged {attackerName}'s attack!";
 
             return new BattleAction(
                 BattleActionType.Dodge,
-                attacker.ChampionData.championName,
-                defender.ChampionData.championName,
+                attackerName,
+                defenderName,
                 message,
                 turn: 0
             );
@@ -133,20 +140,21 @@ namespace BakaTest.Data.Battle
         /// <summary>
         /// アイテム使用アクションを作成します
         /// </summary>
-        public static BattleAction CreateItemUse(BattleUnit user, string itemId, int healAmount)
+        public static BattleAction CreateItemUse(BattleUnit user, string itemId, int healAmount, Language language)
         {
-            string message = $"{user.ChampionData.championName} used {itemId} and restored {healAmount} HP!";
+            string userName = user.ChampionData.GetChampionName(language);
+            string message = $"{userName} used {itemId} and restored {healAmount} HP!";
 
             var action = new BattleAction(
                 BattleActionType.Item,
-                user.ChampionData.championName,
-                user.ChampionData.championName,
+                userName,
+                userName,
                 message,
                 turn: 0,
                 healing: healAmount
             );
 
-            user.Heal(healAmount);
+            user.Heal(healAmount, language);
             return action;
         }
 

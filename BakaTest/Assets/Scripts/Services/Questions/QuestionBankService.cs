@@ -249,36 +249,45 @@ namespace BakaTest.Services.Questions
             int b = _random.Next(1, 10);
             int answer = a + b;
 
-            question.questionText = $"What is {a} + {b}?";
-            question.choices = new string[]
-            {
-                $"{answer}",
-                $"{answer + 1}",
-                $"{answer - 1}",
-                $"{answer + 2}",
-                $"{answer - 2}"
-            };
+            question.SetQuestionText(Data.Localization.Language.English, $"What is {a} + {b}?");
+            question.SetChoice(Data.Localization.Language.English, 0, $"{answer}");
+            question.SetChoice(Data.Localization.Language.English, 1, $"{answer + 1}");
+            question.SetChoice(Data.Localization.Language.English, 2, $"{answer - 1}");
+            question.SetChoice(Data.Localization.Language.English, 3, $"{answer + 2}");
+            question.SetChoice(Data.Localization.Language.English, 4, $"{answer - 2}");
             question.correctAnswerIndex = 0;
         }
 
         private void GenerateSciencePlaceholder(TestQuestion question, DifficultyLevel difficulty, int index)
         {
-            question.questionText = "What is the chemical symbol for water?";
-            question.choices = new string[] { "H2O", "CO2", "O2", "H2", "N2" };
+            question.SetQuestionText(Data.Localization.Language.English, "What is the chemical symbol for water?");
+            question.SetChoice(Data.Localization.Language.English, 0, "H2O");
+            question.SetChoice(Data.Localization.Language.English, 1, "CO2");
+            question.SetChoice(Data.Localization.Language.English, 2, "O2");
+            question.SetChoice(Data.Localization.Language.English, 3, "H2");
+            question.SetChoice(Data.Localization.Language.English, 4, "N2");
             question.correctAnswerIndex = 0;
         }
 
         private void GenerateEnglishPlaceholder(TestQuestion question, DifficultyLevel difficulty, int index)
         {
-            question.questionText = "Which word is a noun?";
-            question.choices = new string[] { "Book", "Run", "Quickly", "Happy", "Very" };
+            question.SetQuestionText(Data.Localization.Language.English, "Which word is a noun?");
+            question.SetChoice(Data.Localization.Language.English, 0, "Book");
+            question.SetChoice(Data.Localization.Language.English, 1, "Run");
+            question.SetChoice(Data.Localization.Language.English, 2, "Quickly");
+            question.SetChoice(Data.Localization.Language.English, 3, "Happy");
+            question.SetChoice(Data.Localization.Language.English, 4, "Very");
             question.correctAnswerIndex = 0;
         }
 
         private void GenerateHistoryPlaceholder(TestQuestion question, DifficultyLevel difficulty, int index)
         {
-            question.questionText = "In what year did World War II end?";
-            question.choices = new string[] { "1945", "1944", "1946", "1943", "1947" };
+            question.SetQuestionText(Data.Localization.Language.English, "In what year did World War II end?");
+            question.SetChoice(Data.Localization.Language.English, 0, "1945");
+            question.SetChoice(Data.Localization.Language.English, 1, "1944");
+            question.SetChoice(Data.Localization.Language.English, 2, "1946");
+            question.SetChoice(Data.Localization.Language.English, 3, "1943");
+            question.SetChoice(Data.Localization.Language.English, 4, "1947");
             question.correctAnswerIndex = 0;
         }
 

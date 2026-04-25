@@ -8,6 +8,7 @@ using BakaTest.Core.Services;
 using BakaTest.ViewModels;
 using BakaTest.Services.Battle;
 using BakaTest.Services.SceneManagement;
+using BakaTest.Services.Localization;
 using BakaTest.Data.Battle;
 using BakaTest.Data.Champions;
 
@@ -62,14 +63,22 @@ namespace BakaTest.Views
 
             // ServiceLocatorからサービスを取得
             var battleService = ServiceLocator.Instance.Get<IBattleService>();
+            var localizationService = ServiceLocator.Instance.Get<ILocalizationService>();
+
             if (battleService == null)
             {
                 Debug.LogError("[BattleView] IBattleService not found in ServiceLocator.");
                 return;
             }
 
+            if (localizationService == null)
+            {
+                Debug.LogError("[BattleView] ILocalizationService not found in ServiceLocator.");
+                return;
+            }
+
             // ViewModelを作成
-            var viewModel = new BattleViewModel(battleService);
+            var viewModel = new BattleViewModel(battleService, localizationService);
             SetViewModel(viewModel);
 
             // バトルセットアップを取得（前画面から渡される想定）
@@ -338,7 +347,9 @@ namespace BakaTest.Views
 
         private void OnBattleCompleted(object? sender, BattleResult result)
         {
-            Debug.Log($"[BattleView] Battle completed: {result.GetSummary()}");
+            var localization = ServiceLocator.Instance.Get<ILocalizationService>();
+            var language = localization?.CurrentLanguage ?? Data.Localization.Language.Japanese;
+            Debug.Log($"[BattleView] Battle completed: {result.GetSummary(language)}");
         }
 
         private void OnItemSlotClicked(int slotIndex)
@@ -373,7 +384,7 @@ namespace BakaTest.Views
 
             // ダミーチャンピオンデータを作成（実際にはChampionServiceから取得）
             var playerChampion = ScriptableObject.CreateInstance<ChampionData>();
-            playerChampion.championName = "Hero";
+            playerChampion.SetChampionName(Data.Localization.Language.English, "Hero");
             playerChampion.baseStats = new ChampionStats { HP = 1000, Attack = 100, Defense = 50, Speed = 80 };
             playerChampion.subjectAffinity = new SubjectAffinity
             {
@@ -386,7 +397,7 @@ namespace BakaTest.Views
             playerChampion.dodgeChance = 0.1f;
 
             var opponentChampion = ScriptableObject.CreateInstance<ChampionData>();
-            opponentChampion.championName = "Rival";
+            opponentChampion.SetChampionName(Data.Localization.Language.English, "Rival");
             opponentChampion.baseStats = new ChampionStats { HP = 950, Attack = 110, Defense = 45, Speed = 75 };
             opponentChampion.subjectAffinity = new SubjectAffinity
             {

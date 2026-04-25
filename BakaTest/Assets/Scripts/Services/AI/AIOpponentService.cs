@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using BakaTest.Data.Champions;
+using BakaTest.Services.Localization;
 
 namespace BakaTest.Services.AI
 {
@@ -12,6 +13,7 @@ namespace BakaTest.Services.AI
     /// </summary>
     public class AIOpponentService : IAIOpponentService
     {
+        private readonly ILocalizationService _localization;
         private readonly System.Random _random = new System.Random();
 
         // 難易度別の総ポイント数
@@ -51,8 +53,9 @@ namespace BakaTest.Services.AI
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public AIOpponentService()
+        public AIOpponentService(ILocalizationService localization)
         {
+            _localization = localization ?? throw new ArgumentNullException(nameof(localization));
             Debug.Log("[AIOpponentService] Initialized.");
         }
 
@@ -192,7 +195,7 @@ namespace BakaTest.Services.AI
             
             allocation[maxSubject] += remainder;
 
-            Debug.Log($"[AIOpponentService] Tactical allocation for {champion.championName}: Math={allocation[Subject.Math]}, Science={allocation[Subject.Science]}, English={allocation[Subject.English]}, History={allocation[Subject.History]}");
+            Debug.Log($"[AIOpponentService] Tactical allocation for {champion.GetChampionName(_localization.CurrentLanguage)}: Math={allocation[Subject.Math]}, Science={allocation[Subject.Science]}, English={allocation[Subject.English]}, History={allocation[Subject.History]}");
             return allocation;
         }
 
@@ -264,7 +267,7 @@ namespace BakaTest.Services.AI
                     break;
             }
 
-            Debug.Log($"[AIOpponentService] Selected champion: {selected?.championName} for {difficulty} difficulty");
+            Debug.Log($"[AIOpponentService] Selected champion: {(selected != null ? selected.GetChampionName(_localization.CurrentLanguage) : "null")} for {difficulty} difficulty");
             return selected;
         }
 

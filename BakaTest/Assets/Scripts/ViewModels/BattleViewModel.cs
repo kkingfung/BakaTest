@@ -6,6 +6,7 @@ using BakaTest.Core.MVVM;
 using BakaTest.Data.Battle;
 using BakaTest.Data.Champions;
 using BakaTest.Services.Battle;
+using BakaTest.Services.Localization;
 using UnityEngine;
 
 namespace BakaTest.ViewModels
@@ -19,6 +20,7 @@ namespace BakaTest.ViewModels
     public class BattleViewModel : ViewModelBase
     {
         private readonly IBattleService _battleService;
+        private readonly ILocalizationService _localization;
         private readonly System.Random _random;
 
         // バトル状態
@@ -167,9 +169,10 @@ namespace BakaTest.ViewModels
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public BattleViewModel(IBattleService battleService)
+        public BattleViewModel(IBattleService battleService, ILocalizationService localization)
         {
             _battleService = battleService ?? throw new ArgumentNullException(nameof(battleService));
+            _localization = localization ?? throw new ArgumentNullException(nameof(localization));
             _random = new System.Random();
             _actionLog = new List<BattleAction>();
         }
@@ -270,8 +273,8 @@ namespace BakaTest.ViewModels
         /// </summary>
         private void ExecuteAttack(BattleUnit attacker, BattleUnit defender)
         {
-            string attackerName = attacker.ChampionData.championName;
-            string defenderName = defender.ChampionData.championName;
+            string attackerName = attacker.ChampionData.GetChampionName(_localization.CurrentLanguage);
+            string defenderName = defender.ChampionData.GetChampionName(_localization.CurrentLanguage);
 
             // 回避判定
             float dodgeRoll = (float)_random.NextDouble();
@@ -309,7 +312,7 @@ namespace BakaTest.ViewModels
             finalDamage = Math.Max(1, finalDamage);
 
             // ダメージを適用
-            defender.TakeDamage(finalDamage);
+            defender.TakeDamage(finalDamage, _localization.CurrentLanguage);
 
             // ログに追加
             string actionMessage;
@@ -412,7 +415,7 @@ namespace BakaTest.ViewModels
                 // イベント発火
                 BattleCompleted?.Invoke(this, result);
 
-                Debug.Log($"[BattleViewModel] Battle ended. Winner: {winner.ChampionData.championName}");
+                Debug.Log($"[BattleViewModel] Battle ended. Winner: {winner.ChampionData.GetChampionName(_localization.CurrentLanguage)}");
             }
         }
 

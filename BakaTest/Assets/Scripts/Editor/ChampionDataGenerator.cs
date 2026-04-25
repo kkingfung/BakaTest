@@ -48,8 +48,8 @@ namespace BakaTest.Editor
             var champion = ScriptableObject.CreateInstance<ChampionData>();
 
             champion.championId = "champion_math_warrior";
-            champion.championName = "Math Warrior";
-            champion.description = "A fierce warrior who converts mathematical knowledge into devastating attacks.";
+            champion.SetChampionName(Data.Localization.Language.English, "Math Warrior");
+            champion.SetDescription(Data.Localization.Language.English, "A fierce warrior who converts mathematical knowledge into devastating attacks.");
             champion.role = ChampionRole.DPS;
             champion.element = ElementType.Fire;
 
@@ -91,8 +91,8 @@ namespace BakaTest.Editor
             var champion = ScriptableObject.CreateInstance<ChampionData>();
 
             champion.championId = "champion_science_tank";
-            champion.championName = "Science Tank";
-            champion.description = "A defensive fortress powered by scientific understanding.";
+            champion.SetChampionName(Data.Localization.Language.English, "Science Tank");
+            champion.SetDescription(Data.Localization.Language.English, "A defensive fortress powered by scientific understanding.");
             champion.role = ChampionRole.Tank;
             champion.element = ElementType.Earth;
 
@@ -134,8 +134,8 @@ namespace BakaTest.Editor
             var champion = ScriptableObject.CreateInstance<ChampionData>();
 
             champion.championId = "champion_english_assassin";
-            champion.championName = "English Assassin";
-            champion.description = "Swift and deadly, striking before opponents can react.";
+            champion.SetChampionName(Data.Localization.Language.English, "English Assassin");
+            champion.SetDescription(Data.Localization.Language.English, "Swift and deadly, striking before opponents can react.");
             champion.role = ChampionRole.Assassin;
             champion.element = ElementType.Wind;
 
@@ -177,8 +177,8 @@ namespace BakaTest.Editor
             var champion = ScriptableObject.CreateInstance<ChampionData>();
 
             champion.championId = "champion_history_guardian";
-            champion.championName = "History Guardian";
-            champion.description = "Protected by the wisdom of ages, with unmatched endurance.";
+            champion.SetChampionName(Data.Localization.Language.English, "History Guardian");
+            champion.SetDescription(Data.Localization.Language.English, "Protected by the wisdom of ages, with unmatched endurance.");
             champion.role = ChampionRole.Support;
             champion.element = ElementType.Earth;
 
@@ -220,8 +220,8 @@ namespace BakaTest.Editor
             var champion = ScriptableObject.CreateInstance<ChampionData>();
 
             champion.championId = "champion_balanced_mage";
-            champion.championName = "Balanced Mage";
-            champion.description = "A versatile caster with balanced stats across all subjects.";
+            champion.SetChampionName(Data.Localization.Language.English, "Balanced Mage");
+            champion.SetDescription(Data.Localization.Language.English, "A versatile caster with balanced stats across all subjects.");
             champion.role = ChampionRole.Mage;
             champion.element = ElementType.Water;
 
@@ -267,17 +267,17 @@ namespace BakaTest.Editor
             {
                 if (!EditorUtility.DisplayDialog(
                     "Overwrite Confirmation",
-                    $"Champion '{champion.championName}' already exists. Overwrite?",
+                    $"Champion '{champion.GetChampionName(Data.Localization.Language.English)}' already exists. Overwrite?",
                     "Yes",
                     "No"))
                 {
-                    Debug.Log($"[ChampionDataGenerator] Skipped {champion.championName}");
+                    Debug.Log($"[ChampionDataGenerator] Skipped {champion.GetChampionName(Data.Localization.Language.English)}");
                     return;
                 }
             }
 
             AssetDatabase.CreateAsset(champion, path);
-            Debug.Log($"[ChampionDataGenerator] Created {champion.championName} at {path}");
+            Debug.Log($"[ChampionDataGenerator] Created {champion.GetChampionName(Data.Localization.Language.English)} at {path}");
         }
 
         /// <summary>

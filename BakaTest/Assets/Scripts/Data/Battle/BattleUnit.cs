@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using BakaTest.Data.Champions;
+using BakaTest.Data.Localization;
 
 namespace BakaTest.Data.Battle
 {
@@ -91,25 +92,31 @@ namespace BakaTest.Data.Battle
             CriticalChance = ChampionData.criticalChance;
             DodgeChance = ChampionData.dodgeChance;
 
-            UnityEngine.Debug.Log($"[BattleUnit] {ChampionData.championName} stats calculated - HP: {MaxHP}, ATK: {Attack}, DEF: {Defense}, SPD: {Speed}");
+            // デバッグログ（英語名を使用）
+            string championName = ChampionData.GetChampionName(Language.English);
+            UnityEngine.Debug.Log($"[BattleUnit] {championName} stats calculated - HP: {MaxHP}, ATK: {Attack}, DEF: {Defense}, SPD: {Speed}");
         }
 
         /// <summary>
         /// ダメージを受けます
         /// </summary>
-        public void TakeDamage(int damage)
+        public void TakeDamage(int damage, Language language)
         {
             CurrentHP = Math.Max(0, CurrentHP - damage);
-            UnityEngine.Debug.Log($"[BattleUnit] {ChampionData.championName} took {damage} damage. HP: {CurrentHP}/{MaxHP}");
+
+            string championName = ChampionData.GetChampionName(language);
+            UnityEngine.Debug.Log($"[BattleUnit] {championName} took {damage} damage. HP: {CurrentHP}/{MaxHP}");
         }
 
         /// <summary>
         /// 回復します
         /// </summary>
-        public void Heal(int amount)
+        public void Heal(int amount, Language language)
         {
             CurrentHP = Math.Min(MaxHP, CurrentHP + amount);
-            UnityEngine.Debug.Log($"[BattleUnit] {ChampionData.championName} healed {amount}. HP: {CurrentHP}/{MaxHP}");
+
+            string championName = ChampionData.GetChampionName(language);
+            UnityEngine.Debug.Log($"[BattleUnit] {championName} healed {amount}. HP: {CurrentHP}/{MaxHP}");
         }
     }
 }

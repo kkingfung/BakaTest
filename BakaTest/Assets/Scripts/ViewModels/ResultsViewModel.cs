@@ -4,6 +4,7 @@ using UnityEngine;
 using BakaTest.Core.MVVM;
 using BakaTest.Core.Commands;
 using BakaTest.Services.Player;
+using BakaTest.Services.Localization;
 using BakaTest.Data.Tests;
 using BakaTest.Data.Battle;
 using BakaTest.Data.Champions;
@@ -19,6 +20,7 @@ namespace BakaTest.ViewModels
     public class ResultsViewModel : ViewModelBase
     {
         private readonly IPlayerDataService _playerDataService;
+        private readonly ILocalizationService _localization;
 
         /// <summary>続けるコマンド</summary>
         public RelayCommand<object?> ContinueCommand { get; }
@@ -182,9 +184,10 @@ namespace BakaTest.ViewModels
         /// <summary>もう一度プレイ要求イベント</summary>
         public event EventHandler? PlayAgainRequested;
 
-        public ResultsViewModel(IPlayerDataService playerDataService)
+        public ResultsViewModel(IPlayerDataService playerDataService, ILocalizationService localization)
         {
             _playerDataService = playerDataService ?? throw new ArgumentNullException(nameof(playerDataService));
+            _localization = localization ?? throw new ArgumentNullException(nameof(localization));
 
             // コマンド初期化
             ContinueCommand = new RelayCommand<object?>(ExecuteContinue);
@@ -213,7 +216,7 @@ namespace BakaTest.ViewModels
             BattleResult = result;
             TestResult = null;
 
-            Debug.Log($"[ResultsViewModel] Battle result set: Winner={result.Winner?.ChampionData.championName}");
+            Debug.Log($"[ResultsViewModel] Battle result set: Winner={result.Winner?.ChampionData.GetChampionName(_localization.CurrentLanguage)}");
         }
 
         /// <summary>
@@ -299,17 +302,17 @@ namespace BakaTest.ViewModels
             IsVictory = playerWon;
 
             TitleText = playerWon ? "勝利！" : "敗北...";
-            ResultSummary = BattleResult.GetSummary();
+            ResultSummary = BattleResult.GetSummary(_localization.CurrentLanguage);
 
             // 勝者と敗者
             if (BattleResult.Winner != null)
             {
-                WinnerText = $"勝者: {BattleResult.Winner.ChampionData.championName}";
+                WinnerText = $"勝者: {BattleResult.Winner.ChampionData.GetChampionName(_localization.CurrentLanguage)}";
             }
 
             if (BattleResult.Loser != null)
             {
-                LoserText = $"敗者: {BattleResult.Loser.ChampionData.championName}";
+                LoserText = $"敗者: {BattleResult.Loser.ChampionData.GetChampionName(_localization.CurrentLanguage)}";
             }
 
             // バトル統計

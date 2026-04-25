@@ -1,6 +1,7 @@
 #nullable enable
 using System;
 using System.Collections.Generic;
+using BakaTest.Data.Localization;
 
 namespace BakaTest.Data.Battle
 {
@@ -108,15 +109,15 @@ namespace BakaTest.Data.Battle
         /// <summary>
         /// バトルログの要約を取得します
         /// </summary>
-        public string GetSummary()
+        public string GetSummary(Language language)
         {
             if (Winner == null)
             {
                 return "バトルは引き分けに終わりました。";
             }
 
-            string winnerName = Winner.ChampionData.championName;
-            string loserName = Loser?.ChampionData.championName ?? "Unknown";
+            string winnerName = Winner.ChampionData.GetChampionName(language);
+            string loserName = Loser?.ChampionData.GetChampionName(language) ?? "Unknown";
 
             return $"{winnerName} が {loserName} に勝利しました！\n" +
                    $"ターン数: {TurnCount}\n" +

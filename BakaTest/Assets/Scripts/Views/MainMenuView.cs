@@ -10,6 +10,7 @@ using BakaTest.Services.Champions;
 using BakaTest.Services.Tests;
 using BakaTest.Services.Save;
 using BakaTest.Services.SceneManagement;
+using BakaTest.Services.Localization;
 
 namespace BakaTest.Views
 {
@@ -61,15 +62,16 @@ namespace BakaTest.Views
             var championService = ServiceLocator.Instance.Get<IChampionService>();
             var testService = ServiceLocator.Instance.Get<ITestService>();
             var saveService = ServiceLocator.Instance.Get<ISaveService>();
+            var localizationService = ServiceLocator.Instance.Get<ILocalizationService>();
 
-            if (playerDataService == null || championService == null || testService == null || saveService == null)
+            if (playerDataService == null || championService == null || testService == null || saveService == null || localizationService == null)
             {
                 Debug.LogError("[MainMenuView] Required services not found in ServiceLocator.");
                 return;
             }
 
             // ViewModelを作成
-            var viewModel = new MainMenuViewModel(playerDataService, championService, testService, saveService);
+            var viewModel = new MainMenuViewModel(playerDataService, championService, testService, saveService, localizationService);
             SetViewModel(viewModel);
         }
 

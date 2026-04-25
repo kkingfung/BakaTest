@@ -249,10 +249,10 @@ MonoBehaviour:
   sourceAsset: {fileID: 9197481963319205126, guid: 628177b0abbebf343bc02b993fdc30e6, type: 3}
   m_SortingOrder: 0
   m_Position: 0
-  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceSizeMode: 0
   m_WorldSpaceWidth: 1920
   m_WorldSpaceHeight: 1080
-  m_PivotReferenceSize: 0
+  m_PivotReferenceSize: 2
   m_Pivot: 0
   m_WorldSpaceCollider: {fileID: 0}
 --- !u!4 &704847809

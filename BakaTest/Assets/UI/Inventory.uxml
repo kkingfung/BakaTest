@@ -1,0 +1,62 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="Inventory.uss" />
+    <ui:VisualElement name="Root" class="root">
+        <!-- タイトル -->
+        <ui:VisualElement name="TitlePanel" class="title-panel">
+            <ui:Label text="Inventory" name="TitleLabel" class="title" />
+            <ui:Label text="インベントリ" name="SubtitleLabel" class="subtitle" />
+        </ui:VisualElement>
+        
+        <!-- プレイヤー情報 -->
+        <ui:VisualElement name="PlayerInfoPanel" class="player-info-panel">
+            <ui:Label text="Coins: 0" name="PlayerCoinsLabel" class="coins-label" />
+            <ui:Label text="Total Items: 0" name="TotalItemsLabel" class="items-label" />
+        </ui:VisualElement>
+        
+        <!-- メインコンテンツ -->
+        <ui:VisualElement name="MainContent" class="main-content">
+            <!-- 左側：アイテムリスト -->
+            <ui:VisualElement name="ItemListPanel" class="item-list-panel">
+                <!-- フィルターボタン -->
+                <ui:VisualElement name="FilterButtonsPanel" class="filter-buttons-panel">
+                    <ui:Button text="All" name="FilterAllButton" class="filter-button" />
+                    <ui:Button text="Consumable" name="FilterConsumableButton" class="filter-button" />
+                    <ui:Button text="Buff" name="FilterBuffButton" class="filter-button" />
+                    <ui:Button text="Debuff" name="FilterDebuffButton" class="filter-button" />
+                    <ui:Button text="Special" name="FilterSpecialButton" class="filter-button" />
+                </ui:VisualElement>
+                
+                <!-- アイテムリスト（プレースホルダー） -->
+                <ui:ScrollView name="ItemListScrollView" class="item-list-scroll">
+                    <ui:Label text="Item List (To be implemented with ListView)" class="placeholder-text" />
+                </ui:ScrollView>
+            </ui:VisualElement>
+            
+            <!-- 右側：アイテム詳細 -->
+            <ui:VisualElement name="ItemDetailsPanel" class="item-details-panel">
+                <!-- アイテム名と基本情報 -->
+                <ui:VisualElement name="ItemBasicInfo" class="item-basic-info">
+                    <ui:Label text="No Item Selected" name="ItemNameLabel" class="item-name" />
+                    <ui:VisualElement name="ItemMetaInfo" class="item-meta-info">
+                        <ui:Label text="Type: -" name="ItemTypeLabel" class="meta-label" />
+                        <ui:Label text="Rarity: -" name="ItemRarityLabel" class="meta-label" />
+                    </ui:VisualElement>
+                    <ui:Label text="" name="ItemDescriptionLabel" class="item-description" />
+                </ui:VisualElement>
+                
+                <!-- 売却情報 -->
+                <ui:VisualElement name="ItemSellInfo" class="item-sell-info">
+                    <ui:Label text="Sell Price: 0 Coins" name="ItemSellPriceLabel" class="sell-price-label" />
+                </ui:VisualElement>
+                
+                <!-- 売却ボタン -->
+                <ui:Button text="Sell" name="SellButton" class="sell-button" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        
+        <!-- フッター -->
+        <ui:VisualElement name="FooterPanel" class="footer-panel">
+            <ui:Button text="Back" name="BackButton" class="back-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

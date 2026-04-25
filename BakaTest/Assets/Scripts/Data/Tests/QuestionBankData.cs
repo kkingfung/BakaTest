@@ -76,6 +76,7 @@ namespace BakaTest.Data.Tests
             /// </summary>
             public TestQuestion ToTestQuestion(Subject subject, DifficultyLevel difficulty, int pointValue)
             {
+#pragma warning disable CS0618 // Type or member is obsolete
                 return new TestQuestion
                 {
                     questionId = Guid.NewGuid().ToString(),
@@ -89,6 +90,7 @@ namespace BakaTest.Data.Tests
                     isAIGenerated = false,
                     isReviewed = true
                 };
+#pragma warning restore CS0618
             }
         }
 

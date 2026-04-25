@@ -1,88 +1,90 @@
-/* Root Container */
+/* Root Container - Portrait Mobile 1080x1920 */
 .root {
     flex-grow: 1;
     background-color: rgb(245, 245, 245);
-    padding: 20px;
+    padding-top: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
 }
 
 /* Header */
 .header {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     align-items: center;
 }
 
 .title {
-    font-size: 36px;
+    font-size: 48px;
     color: rgb(33, 33, 33);
     -unity-font-style: bold;
-    -unity-text-align: upper-center;
+    -unity-text-align: middle-center;
 }
 
 .status-label {
-    font-size: 18px;
+    font-size: 24px;
     color: rgb(66, 133, 244);
     -unity-font-style: bold;
-    -unity-text-align: upper-center;
-    margin-top: 5px;
+    -unity-text-align: middle-center;
+    margin-top: 10px;
 }
 
-/* Battle Arena */
+/* Battle Arena - Vertical Stack for Portrait */
 .battle-arena {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    padding: 20px;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 25px;
+    padding: 30px;
     background-color: rgb(255, 255, 255);
     border-radius: 15px;
-    border-width: 2px;
+    border-width: 3px;
     border-color: rgb(200, 200, 200);
-    min-height: 300px;
 }
 
 .player-section {
-    width: 40%;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .player-name {
-    font-size: 20px;
+    font-size: 28px;
     color: rgb(33, 33, 33);
     -unity-font-style: bold;
-    -unity-text-align: upper-center;
-    margin-bottom: 10px;
+    -unity-text-align: middle-center;
+    margin-bottom: 15px;
 }
 
 .champion-card {
-    padding: 15px;
+    padding: 25px;
     background-color: rgb(250, 250, 250);
-    border-radius: 10px;
-    border-width: 2px;
+    border-radius: 15px;
+    border-width: 3px;
     border-color: rgb(220, 220, 220);
     align-items: center;
 }
 
 .champion-portrait {
-    width: 120px;
-    height: 120px;
-    border-radius: 60px;
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
     background-color: rgb(200, 200, 200);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     justify-content: center;
     align-items: center;
 }
 
 .portrait-placeholder {
-    font-size: 48px;
+    font-size: 60px;
     color: rgb(255, 255, 255);
     -unity-font-style: bold;
 }
 
 .champion-name {
-    font-size: 18px;
+    font-size: 26px;
     color: rgb(66, 133, 244);
     -unity-font-style: bold;
-    -unity-text-align: upper-center;
-    margin-bottom: 15px;
+    -unity-text-align: middle-center;
+    margin-bottom: 20px;
 }
 
 .stats-section {
@@ -90,28 +92,29 @@
 }
 
 .hp-label {
-    font-size: 16px;
+    font-size: 24px;
     color: rgb(52, 168, 83);
     -unity-font-style: bold;
-    -unity-text-align: upper-center;
-    margin-bottom: 5px;
+    -unity-text-align: middle-center;
+    margin-bottom: 10px;
 }
 
 .hp-bar {
     width: 100%;
-    height: 25px;
+    height: 35px;
     margin-top: 5px;
 }
 
 /* VS Section */
 .vs-section {
-    width: 15%;
+    width: 100%;
     align-items: center;
     justify-content: center;
+    padding: 20px 0;
 }
 
 .vs-label {
-    font-size: 48px;
+    font-size: 64px;
     color: rgb(234, 67, 53);
     -unity-font-style: bold;
     -unity-text-align: middle-center;
@@ -128,49 +131,51 @@
 
 /* Battle Log */
 .log-section {
-    margin-bottom: 20px;
-    padding: 15px;
+    margin-bottom: 25px;
+    padding: 25px;
     background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    border-width: 2px;
+    border-radius: 15px;
+    border-width: 3px;
     border-color: rgb(200, 200, 200);
     min-height: 200px;
     max-height: 300px;
 }
 
 .log-title {
-    font-size: 18px;
+    font-size: 26px;
     color: rgb(33, 33, 33);
     -unity-font-style: bold;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .log-scroll {
     flex-grow: 1;
     background-color: rgb(250, 250, 250);
-    border-radius: 5px;
-    padding: 10px;
+    border-radius: 10px;
+    padding: 15px;
 }
 
 .log-text {
-    font-size: 14px;
+    font-size: 20px;
     color: rgb(33, 33, 33);
     white-space: pre-wrap;
 }
 
-/* Controls */
+/* Controls - 2x2 Grid for Portrait */
 .controls-section {
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
 .control-button {
-    width: 23%;
-    height: 60px;
-    font-size: 18px;
+    width: 48%;
+    height: 85px;
+    font-size: 24px;
     -unity-font-style: bold;
-    border-radius: 10px;
+    border-radius: 15px;
     border-width: 0;
+    margin-bottom: 15px;
 }
 
 .start-button {
@@ -180,6 +185,7 @@
 
 .start-button:hover {
     background-color: rgb(46, 150, 74);
+    scale: 1.02;
 }
 
 .start-button:disabled {
@@ -193,6 +199,7 @@
 
 .item-button:hover {
     background-color: rgb(225, 168, 4);
+    scale: 1.02;
 }
 
 .item-button:disabled {
@@ -206,6 +213,7 @@
 
 .abort-button:hover {
     background-color: rgb(234, 67, 53);
+    scale: 1.02;
 }
 
 .abort-button:disabled {
@@ -219,6 +227,7 @@
 
 .results-button:hover {
     background-color: rgb(57, 116, 213);
+    scale: 1.02;
 }
 
 .results-button:disabled {

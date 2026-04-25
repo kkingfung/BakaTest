@@ -63,8 +63,8 @@ namespace BakaTest.Editor
             var item = ScriptableObject.CreateInstance<ItemData>();
 
             item.itemId = "item_health_potion";
-            item.itemName = "体力回復ポーション";
-            item.description = "HPを200回復する基本的な回復アイテム。";
+            item.SetItemName(Data.Localization.Language.Japanese, "体力回復ポーション");
+            item.SetDescription(Data.Localization.Language.Japanese, "HPを200回復する基本的な回復アイテム。");
             item.itemType = ItemType.Consumable;
             item.rarity = ItemRarity.Common;
             item.target = ItemTarget.Self;
@@ -87,8 +87,8 @@ namespace BakaTest.Editor
             var item = ScriptableObject.CreateInstance<ItemData>();
 
             item.itemId = "item_greater_health_potion";
-            item.itemName = "上級体力回復ポーション";
-            item.description = "HPを500回復する強力な回復アイテム。";
+            item.SetItemName(Data.Localization.Language.Japanese, "上級体力回復ポーション");
+            item.SetDescription(Data.Localization.Language.Japanese, "HPを500回復する強力な回復アイテム。");
             item.itemType = ItemType.Consumable;
             item.rarity = ItemRarity.Rare;
             item.target = ItemTarget.Self;
@@ -111,8 +111,8 @@ namespace BakaTest.Editor
             var item = ScriptableObject.CreateInstance<ItemData>();
 
             item.itemId = "item_phoenix_down";
-            item.itemName = "不死鳥の羽根";
-            item.description = "戦闘不能になったとき、自動的に50%のHPで復活する。";
+            item.SetItemName(Data.Localization.Language.Japanese, "不死鳥の羽根");
+            item.SetDescription(Data.Localization.Language.Japanese, "戦闘不能になったとき、自動的に50%のHPで復活する。");
             item.itemType = ItemType.Special;
             item.rarity = ItemRarity.Legendary;
             item.target = ItemTarget.Self;
@@ -140,8 +140,8 @@ namespace BakaTest.Editor
             var item = ScriptableObject.CreateInstance<ItemData>();
 
             item.itemId = "item_strength_elixir";
-            item.itemName = "力の秘薬";
-            item.description = "攻撃力を50増加させる（3ターン持続）。";
+            item.SetItemName(Data.Localization.Language.Japanese, "力の秘薬");
+            item.SetDescription(Data.Localization.Language.Japanese, "攻撃力を50増加させる（3ターン持続）。");
             item.itemType = ItemType.Buff;
             item.rarity = ItemRarity.Uncommon;
             item.target = ItemTarget.Self;
@@ -164,8 +164,8 @@ namespace BakaTest.Editor
             var item = ScriptableObject.CreateInstance<ItemData>();
 
             item.itemId = "item_iron_skin_potion";
-            item.itemName = "鉄の皮膚ポーション";
-            item.description = "防御力を60増加させる（4ターン持続）。";
+            item.SetItemName(Data.Localization.Language.Japanese, "鉄の皮膚ポーション");
+            item.SetDescription(Data.Localization.Language.Japanese, "防御力を60増加させる（4ターン持続）。");
             item.itemType = ItemType.Buff;
             item.rarity = ItemRarity.Uncommon;
             item.target = ItemTarget.Self;
@@ -188,8 +188,8 @@ namespace BakaTest.Editor
             var item = ScriptableObject.CreateInstance<ItemData>();
 
             item.itemId = "item_haste_potion";
-            item.itemName = "加速ポーション";
-            item.description = "速度を40増加させる（3ターン持続）。";
+            item.SetItemName(Data.Localization.Language.Japanese, "加速ポーション");
+            item.SetDescription(Data.Localization.Language.Japanese, "速度を40増加させる（3ターン持続）。");
             item.itemType = ItemType.Buff;
             item.rarity = ItemRarity.Rare;
             item.target = ItemTarget.Self;
@@ -212,8 +212,8 @@ namespace BakaTest.Editor
             var item = ScriptableObject.CreateInstance<ItemData>();
 
             item.itemId = "item_battle_fury";
-            item.itemName = "戦闘の狂気";
-            item.description = "クリティカル率+20%、ダメージ1.5倍（2ターン持続）。";
+            item.SetItemName(Data.Localization.Language.Japanese, "戦闘の狂気");
+            item.SetDescription(Data.Localization.Language.Japanese, "クリティカル率+20%、ダメージ1.5倍（2ターン持続）。");
             item.itemType = ItemType.Buff;
             item.rarity = ItemRarity.Epic;
             item.target = ItemTarget.Self;
@@ -237,8 +237,8 @@ namespace BakaTest.Editor
             var item = ScriptableObject.CreateInstance<ItemData>();
 
             item.itemId = "item_focus_charm";
-            item.itemName = "集中のお守り";
-            item.description = "クリティカル率+15%、回避率+10%（3ターン持続）。";
+            item.SetItemName(Data.Localization.Language.Japanese, "集中のお守り");
+            item.SetDescription(Data.Localization.Language.Japanese, "クリティカル率+15%、回避率+10%（3ターン持続）。");
             item.itemType = ItemType.Buff;
             item.rarity = ItemRarity.Rare;
             item.target = ItemTarget.Self;
@@ -266,8 +266,8 @@ namespace BakaTest.Editor
             var item = ScriptableObject.CreateInstance<ItemData>();
 
             item.itemId = "item_poison_vial";
-            item.itemName = "毒の小瓶";
-            item.description = "敵に毒を付与し、3ターンの間、毎ターン50ダメージを与える。";
+            item.SetItemName(Data.Localization.Language.Japanese, "毒の小瓶");
+            item.SetDescription(Data.Localization.Language.Japanese, "敵に毒を付与し、3ターンの間、毎ターン50ダメージを与える。");
             item.itemType = ItemType.Debuff;
             item.rarity = ItemRarity.Common;
             item.target = ItemTarget.Enemy;
@@ -292,8 +292,8 @@ namespace BakaTest.Editor
             var item = ScriptableObject.CreateInstance<ItemData>();
 
             item.itemId = "item_smoke_bomb";
-            item.itemName = "煙幕弾";
-            item.description = "敵の命中率を下げ、防御力を30減少させる（2ターン持続）。";
+            item.SetItemName(Data.Localization.Language.Japanese, "煙幕弾");
+            item.SetDescription(Data.Localization.Language.Japanese, "敵の命中率を下げ、防御力を30減少させる（2ターン持続）。");
             item.itemType = ItemType.Debuff;
             item.rarity = ItemRarity.Uncommon;
             item.target = ItemTarget.Enemy;
@@ -317,8 +317,8 @@ namespace BakaTest.Editor
             var item = ScriptableObject.CreateInstance<ItemData>();
 
             item.itemId = "item_paralyzing_dart";
-            item.itemName = "麻痺の矢";
-            item.description = "敵を1ターンの間スタン状態にする（行動不能）。";
+            item.SetItemName(Data.Localization.Language.Japanese, "麻痺の矢");
+            item.SetDescription(Data.Localization.Language.Japanese, "敵を1ターンの間スタン状態にする（行動不能）。");
             item.itemType = ItemType.Debuff;
             item.rarity = ItemRarity.Rare;
             item.target = ItemTarget.Enemy;
@@ -342,8 +342,8 @@ namespace BakaTest.Editor
             var item = ScriptableObject.CreateInstance<ItemData>();
 
             item.itemId = "item_weakening_curse";
-            item.itemName = "弱体化の呪い";
-            item.description = "敵の攻撃力-40、防御力-40、速度-30（3ターン持続）。";
+            item.SetItemName(Data.Localization.Language.Japanese, "弱体化の呪い");
+            item.SetDescription(Data.Localization.Language.Japanese, "敵の攻撃力-40、防御力-40、速度-30（3ターン持続）。");
             item.itemType = ItemType.Debuff;
             item.rarity = ItemRarity.Epic;
             item.target = ItemTarget.Enemy;
@@ -372,8 +372,8 @@ namespace BakaTest.Editor
             var item = ScriptableObject.CreateInstance<ItemData>();
 
             item.itemId = "item_guardian_angel";
-            item.itemName = "守護天使";
-            item.description = "2ターンの間、無敵状態になる（ダメージを受けない）。";
+            item.SetItemName(Data.Localization.Language.Japanese, "守護天使");
+            item.SetDescription(Data.Localization.Language.Japanese, "2ターンの間、無敵状態になる（ダメージを受けない）。");
             item.itemType = ItemType.Special;
             item.rarity = ItemRarity.Legendary;
             item.target = ItemTarget.Self;
@@ -397,8 +397,8 @@ namespace BakaTest.Editor
             var item = ScriptableObject.CreateInstance<ItemData>();
 
             item.itemId = "item_ultimate_power";
-            item.itemName = "究極の力";
-            item.description = "全ステータス+50、クリティカル率+25%、ダメージ2倍（1ターン持続）。";
+            item.SetItemName(Data.Localization.Language.Japanese, "究極の力");
+            item.SetDescription(Data.Localization.Language.Japanese, "全ステータス+50、クリティカル率+25%、ダメージ2倍（1ターン持続）。");
             item.itemType = ItemType.Special;
             item.rarity = ItemRarity.Epic;
             item.target = ItemTarget.Self;
@@ -431,17 +431,17 @@ namespace BakaTest.Editor
             {
                 if (!EditorUtility.DisplayDialog(
                     "Overwrite Confirmation",
-                    $"Item '{item.itemName}' already exists. Overwrite?",
+                    $"Item '{item.GetItemName(Data.Localization.Language.Japanese)}' already exists. Overwrite?",
                     "Yes",
                     "No"))
                 {
-                    Debug.Log($"[ItemDataGenerator] Skipped {item.itemName}");
+                    Debug.Log($"[ItemDataGenerator] Skipped {item.GetItemName(Data.Localization.Language.Japanese)}");
                     return;
                 }
             }
 
             AssetDatabase.CreateAsset(item, path);
-            Debug.Log($"[ItemDataGenerator] Created {item.itemName} at {path}");
+            Debug.Log($"[ItemDataGenerator] Created {item.GetItemName(Data.Localization.Language.Japanese)} at {path}");
         }
     }
 }

@@ -1,0 +1,93 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="ChampionShop.uss" />
+    <ui:VisualElement name="Root" class="root">
+        <!-- タイトル -->
+        <ui:VisualElement name="TitlePanel" class="title-panel">
+            <ui:Label text="Champion Shop" name="TitleLabel" class="title" />
+            <ui:Label text="チャンピオンショップ" name="SubtitleLabel" class="subtitle" />
+        </ui:VisualElement>
+        
+        <!-- プレイヤー情報 -->
+        <ui:VisualElement name="PlayerInfoPanel" class="player-info-panel">
+            <ui:Label text="Coins: 0" name="PlayerCoinsLabel" class="coins-label" />
+        </ui:VisualElement>
+        
+        <!-- メインコンテンツ -->
+        <ui:VisualElement name="MainContent" class="main-content">
+            <!-- 左側：チャンピオンリスト -->
+            <ui:VisualElement name="ChampionListPanel" class="champion-list-panel">
+                <!-- フィルターボタン -->
+                <ui:VisualElement name="FilterButtonsPanel" class="filter-buttons-panel">
+                    <ui:Button text="All" name="FilterAllButton" class="filter-button" />
+                    <ui:Button text="Owned" name="FilterOwnedButton" class="filter-button" />
+                    <ui:Button text="Unowned" name="FilterUnownedButton" class="filter-button" />
+                    <ui:Button text="Free" name="FilterFreeButton" class="filter-button" />
+                </ui:VisualElement>
+                
+                <!-- チャンピオンリスト（プレースホルダー） -->
+                <ui:ScrollView name="ChampionListScrollView" class="champion-list-scroll">
+                    <ui:Label text="Champion List (To be implemented with ListView)" class="placeholder-text" />
+                </ui:ScrollView>
+            </ui:VisualElement>
+            
+            <!-- 右側：チャンピオン詳細 -->
+            <ui:VisualElement name="ChampionDetailsPanel" class="champion-details-panel">
+                <!-- チャンピオン名と基本情報 -->
+                <ui:VisualElement name="ChampionBasicInfo" class="champion-basic-info">
+                    <ui:Label text="No Champion Selected" name="ChampionNameLabel" class="champion-name" />
+                    <ui:VisualElement name="ChampionMetaInfo" class="champion-meta-info">
+                        <ui:Label text="Role: -" name="ChampionRoleLabel" class="meta-label" />
+                        <ui:Label text="Element: -" name="ChampionElementLabel" class="meta-label" />
+                    </ui:VisualElement>
+                    <ui:Label text="" name="ChampionDescriptionLabel" class="champion-description" />
+                </ui:VisualElement>
+                
+                <!-- ステータス表示 -->
+                <ui:VisualElement name="ChampionStatsPanel" class="champion-stats-panel">
+                    <ui:Label text="Stats" class="section-title" />
+                    <ui:VisualElement name="StatsGrid" class="stats-grid">
+                        <ui:VisualElement class="stat-row">
+                            <ui:Label text="HP:" class="stat-label" />
+                            <ui:Label text="0" name="HPValueLabel" class="stat-value" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="stat-row">
+                            <ui:Label text="Attack:" class="stat-label" />
+                            <ui:Label text="0" name="AttackValueLabel" class="stat-value" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="stat-row">
+                            <ui:Label text="Defense:" class="stat-label" />
+                            <ui:Label text="0" name="DefenseValueLabel" class="stat-value" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="stat-row">
+                            <ui:Label text="Speed:" class="stat-label" />
+                            <ui:Label text="0" name="SpeedValueLabel" class="stat-value" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="stat-row">
+                            <ui:Label text="Crit Chance:" class="stat-label" />
+                            <ui:Label text="0%" name="CritChanceLabel" class="stat-value" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="stat-row">
+                            <ui:Label text="Dodge Chance:" class="stat-label" />
+                            <ui:Label text="0%" name="DodgeChanceLabel" class="stat-value" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                
+                <!-- 価格と所有情報 -->
+                <ui:VisualElement name="ChampionPurchaseInfo" class="champion-purchase-info">
+                    <ui:Label text="Price: 0 Coins" name="ChampionPriceLabel" class="price-label" />
+                    <ui:Label text="Not Owned" name="IsOwnedLabel" class="owned-label" />
+                    <ui:Label text="" name="IsFreeRotationLabel" class="free-rotation-label" />
+                </ui:VisualElement>
+                
+                <!-- 購入ボタン -->
+                <ui:Button text="Purchase" name="PurchaseButton" class="purchase-button" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        
+        <!-- フッター -->
+        <ui:VisualElement name="FooterPanel" class="footer-panel">
+            <ui:Button text="Back" name="BackButton" class="back-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

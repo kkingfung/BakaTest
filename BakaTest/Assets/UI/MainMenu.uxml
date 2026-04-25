@@ -11,16 +11,12 @@
         <ui:VisualElement name="PlayerInfoPanel" class="player-info-panel">
             <ui:Label text="所有リソース" name="PlayerInfoTitle" class="section-title" />
             
-            <!-- ポイント表示 -->
+            <!-- ポイント表示 - Portrait Mobile: Single Column -->
             <ui:VisualElement name="PointsContainer" class="points-container">
-                <ui:VisualElement name="PointsColumn1" class="points-column">
-                    <ui:Label text="数学: 0" name="MathPointsLabel" class="points-label" />
-                    <ui:Label text="理科: 0" name="SciencePointsLabel" class="points-label" />
-                </ui:VisualElement>
-                <ui:VisualElement name="PointsColumn2" class="points-column">
-                    <ui:Label text="英語: 0" name="EnglishPointsLabel" class="points-label" />
-                    <ui:Label text="歴史: 0" name="HistoryPointsLabel" class="points-label" />
-                </ui:VisualElement>
+                <ui:Label text="数学: 0" name="MathPointsLabel" class="points-label" />
+                <ui:Label text="理科: 0" name="SciencePointsLabel" class="points-label" />
+                <ui:Label text="英語: 0" name="EnglishPointsLabel" class="points-label" />
+                <ui:Label text="歴史: 0" name="HistoryPointsLabel" class="points-label" />
             </ui:VisualElement>
             
             <!-- その他の情報 -->

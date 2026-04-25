@@ -8,9 +8,11 @@ using BakaTest.Services.Battle;
 using BakaTest.Services.Save;
 using BakaTest.Services.AI;
 using BakaTest.Services.Inventory;
+using BakaTest.Services.Shop;
 using BakaTest.Services.Settings;
 using BakaTest.Services.Questions;
 using BakaTest.Services.Audio;
+using BakaTest.Services.Localization;
 using BakaTest.UI.LoadingScreen;
 using BakaTest.Data.Tests;
 
@@ -93,28 +95,39 @@ namespace BakaTest.Core.Services
             var playerDataService = new PlayerDataService(_saveService);
             ServiceLocator.Instance.Register<IPlayerDataService>(playerDataService);
 
-            // チャンピオンサービス（SaveServiceに依存）
-            var championService = new ChampionService(_saveService);
+            // ローカライゼーションサービス（他のサービスが依存するため早期に初期化）
+            var localizationService = new LocalizationService();
+            ServiceLocator.Instance.Register<ILocalizationService>(localizationService);
+
+            // システム言語を検出して設定
+            localizationService.SetLanguageFromSystem();
+
+            // チャンピオンサービス（SaveServiceとLocalizationServiceに依存）
+            var championService = new ChampionService(_saveService, localizationService);
             ServiceLocator.Instance.Register<IChampionService>(championService);
 
             // テストサービス（PlayerDataServiceに依存）
             var testService = new TestService(playerDataService);
             ServiceLocator.Instance.Register<ITestService>(testService);
 
-            // バトルサービス
-            var battleService = new BattleService();
+            // バトルサービス（LocalizationServiceに依存）
+            var battleService = new BattleService(localizationService);
             ServiceLocator.Instance.Register<IBattleService>(battleService);
 
-            // AI対戦相手サービス
-            var aiOpponentService = new AIOpponentService();
+            // AI対戦相手サービス（LocalizationServiceに依存）
+            var aiOpponentService = new AIOpponentService(localizationService);
             ServiceLocator.Instance.Register<IAIOpponentService>(aiOpponentService);
 
-            // インベントリサービス（SaveServiceとPlayerDataServiceに依存）
-            var inventoryService = new InventoryService(_saveService, playerDataService);
+            // インベントリサービス（SaveService、PlayerDataService、LocalizationServiceに依存）
+            var inventoryService = new InventoryService(_saveService, playerDataService, localizationService);
             ServiceLocator.Instance.Register<IInventoryService>(inventoryService);
 
-            // 設定サービス（SaveServiceに依存）
-            var settingsService = new SettingsService(_saveService);
+            // ショップサービス（PlayerDataService、ChampionService、InventoryService、LocalizationServiceに依存）
+            var shopService = new ShopService(playerDataService, championService, inventoryService, localizationService);
+            ServiceLocator.Instance.Register<IShopService>(shopService);
+
+            // 設定サービス（SaveServiceとLocalizationServiceに依存）
+            var settingsService = new SettingsService(_saveService, localizationService);
             ServiceLocator.Instance.Register<ISettingsService>(settingsService);
 
             // オーディオサービス（SettingsServiceに依存）

@@ -13,7 +13,7 @@ namespace BakaTest.Editor
     /// 全シーンのセットアップを自動化するエディタユーティリティ
     /// </summary>
     /// <remarks>
-    /// 不足している6つのシーン（MainMenu, TestTaking, ChampionSelection, PointAllocation, Battle, Results）を作成します。
+    /// 不足しているシーン（MainMenu, TestTaking, ChampionSelection, PointAllocation, Battle, Results, ChampionShop, Inventory, Settings）を作成します。
     /// </remarks>
     public class AllScenesSetupUtility : EditorWindow
     {
@@ -27,7 +27,10 @@ namespace BakaTest.Editor
             "ChampionSelection",
             "PointAllocation",
             "Battle",
-            "Results"
+            "Results",
+            "ChampionShop",
+            "Inventory",
+            "Settings"
         };
 
         private readonly Dictionary<string, string> _uiDocumentPaths = new Dictionary<string, string>
@@ -37,7 +40,10 @@ namespace BakaTest.Editor
             { "ChampionSelection", "Assets/UI/ChampionSelection/ChampionSelectionDocument.uxml" },
             { "PointAllocation", "Assets/UI/PointAllocation/PointAllocationDocument.uxml" },
             { "Battle", "Assets/UI/Battle/BattleDocument.uxml" },
-            { "Results", "Assets/UI/TestResults/TestResultsDocument.uxml" }
+            { "Results", "Assets/UI/TestResults/TestResultsDocument.uxml" },
+            { "ChampionShop", "Assets/UI/ChampionShop.uxml" },
+            { "Inventory", "Assets/UI/Inventory.uxml" },
+            { "Settings", "Assets/UI/Settings.uxml" }
         };
 
         private readonly Dictionary<string, string> _viewScriptNames = new Dictionary<string, string>
@@ -47,7 +53,10 @@ namespace BakaTest.Editor
             { "ChampionSelection", "ChampionSelectionView" },
             { "PointAllocation", "PointAllocationView" },
             { "Battle", "BattleView" },
-            { "Results", "ResultsView" }
+            { "Results", "ResultsView" },
+            { "ChampionShop", "ChampionShopView" },
+            { "Inventory", "InventoryView" },
+            { "Settings", "SettingsView" }
         };
 
         [MenuItem("BakaTest/Setup/Create All Missing Scenes")]
@@ -72,13 +81,16 @@ namespace BakaTest.Editor
             GUILayout.Space(10);
 
             EditorGUILayout.HelpBox(
-                "このユーティリティは不足している6つのシーンを作成します:\n\n" +
+                "このユーティリティは不足しているシーンを作成します:\n\n" +
                 "• MainMenu - メインメニュー画面\n" +
                 "• TestTaking - テスト受験画面\n" +
                 "• ChampionSelection - チャンピオン選択画面\n" +
                 "• PointAllocation - ポイント配分画面\n" +
                 "• Battle - バトル画面\n" +
-                "• Results - 結果画面\n\n" +
+                "• Results - 結果画面\n" +
+                "• ChampionShop - チャンピオンショップ画面\n" +
+                "• Inventory - インベントリ画面\n" +
+                "• Settings - 設定画面\n\n" +
                 "各シーンには自動的にUI DocumentとViewコンポーネントが設定されます。",
                 MessageType.Info
             );

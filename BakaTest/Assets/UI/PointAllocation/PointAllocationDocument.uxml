@@ -2,13 +2,13 @@
     <Style src="PointAllocationStyles.uss" />
     <Style src="../Common/GlobalTheme.uss" />
     
-    <ui:VisualElement name="Root" class="root">
+    <ui:ScrollView name="Root" class="root">
         <!-- Header -->
         <ui:VisualElement name="Header" class="header">
             <ui:Label text="Point Allocation" name="TitleLabel" class="title-label" />
             <ui:Label text="Distribute your test points to power up your champion" class="subtitle-label" />
         </ui:VisualElement>
-        
+
         <!-- Main Content (Two Columns) -->
         <ui:VisualElement name="MainContent" class="main-content">
             <!-- Left Panel: Available Points -->
@@ -144,5 +144,5 @@
             <ui:Button text="Confirm Allocation" name="ConfirmButton" class="button primary-button confirm-button" />
             <ui:Button text="Back" name="BackButton" class="button secondary-button" />
         </ui:VisualElement>
-    </ui:VisualElement>
+    </ui:ScrollView>
 </ui:UXML>

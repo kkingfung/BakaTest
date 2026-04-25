@@ -1,0 +1,112 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="Settings.uss" />
+    <ui:VisualElement name="Root" class="root">
+        <!-- タイトル -->
+        <ui:VisualElement name="TitlePanel" class="title-panel">
+            <ui:Label text="Settings" name="TitleLabel" class="title" />
+            <ui:Label text="設定" name="SubtitleLabel" class="subtitle" />
+        </ui:VisualElement>
+        
+        <!-- メインコンテンツ（スクロール可能） -->
+        <ui:ScrollView name="SettingsScrollView" class="settings-scroll">
+            <!-- オーディオ設定 -->
+            <ui:VisualElement name="AudioSettingsPanel" class="settings-panel">
+                <ui:Label text="Audio Settings" class="panel-title" />
+                
+                <ui:VisualElement name="MasterVolumeRow" class="setting-row">
+                    <ui:Label text="Master Volume" class="setting-label" />
+                    <ui:VisualElement class="control-container">
+                        <ui:Slider name="MasterVolumeSlider" low-value="0" high-value="1" class="volume-slider" />
+                        <ui:Label text="100%" name="MasterVolumeLabel" class="value-label" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                
+                <ui:VisualElement name="BGMVolumeRow" class="setting-row">
+                    <ui:Label text="BGM Volume" class="setting-label" />
+                    <ui:VisualElement class="control-container">
+                        <ui:Slider name="BGMVolumeSlider" low-value="0" high-value="1" class="volume-slider" />
+                        <ui:Label text="70%" name="BGMVolumeLabel" class="value-label" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                
+                <ui:VisualElement name="SFXVolumeRow" class="setting-row">
+                    <ui:Label text="SFX Volume" class="setting-label" />
+                    <ui:VisualElement class="control-container">
+                        <ui:Slider name="SFXVolumeSlider" low-value="0" high-value="1" class="volume-slider" />
+                        <ui:Label text="80%" name="SFXVolumeLabel" class="value-label" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                
+                <ui:VisualElement name="MuteRow" class="setting-row">
+                    <ui:Label text="Mute All" class="setting-label" />
+                    <ui:Toggle name="MuteToggle" class="setting-toggle" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            
+            <!-- 言語設定 -->
+            <ui:VisualElement name="LanguageSettingsPanel" class="settings-panel">
+                <ui:Label text="Language Settings" class="panel-title" />
+                
+                <ui:VisualElement name="LanguageRow" class="setting-row">
+                    <ui:Label text="Language" class="setting-label" />
+                    <ui:DropdownField name="LanguageDropdown" class="language-dropdown" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            
+            <!-- 通知設定 -->
+            <ui:VisualElement name="NotificationSettingsPanel" class="settings-panel">
+                <ui:Label text="Notification Settings" class="panel-title" />
+                
+                <ui:VisualElement name="EnableNotificationsRow" class="setting-row">
+                    <ui:Label text="Enable Notifications" class="setting-label" />
+                    <ui:Toggle name="EnableNotificationsToggle" class="setting-toggle" />
+                </ui:VisualElement>
+                
+                <ui:VisualElement name="EnableDailyReminderRow" class="setting-row">
+                    <ui:Label text="Daily Reminder" class="setting-label" />
+                    <ui:Toggle name="EnableDailyReminderToggle" class="setting-toggle" />
+                </ui:VisualElement>
+                
+                <ui:VisualElement name="EnableBattleInvitesRow" class="setting-row">
+                    <ui:Label text="Battle Invites" class="setting-label" />
+                    <ui:Toggle name="EnableBattleInvitesToggle" class="setting-toggle" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            
+            <!-- ゲーム設定 -->
+            <ui:VisualElement name="GameSettingsPanel" class="settings-panel">
+                <ui:Label text="Game Settings" class="panel-title" />
+                
+                <ui:VisualElement name="ShowDamageNumbersRow" class="setting-row">
+                    <ui:Label text="Show Damage Numbers" class="setting-label" />
+                    <ui:Toggle name="ShowDamageNumbersToggle" class="setting-toggle" />
+                </ui:VisualElement>
+                
+                <ui:VisualElement name="ShowSkillNamesRow" class="setting-row">
+                    <ui:Label text="Show Skill Names" class="setting-label" />
+                    <ui:Toggle name="ShowSkillNamesToggle" class="setting-toggle" />
+                </ui:VisualElement>
+                
+                <ui:VisualElement name="EnableAutoSaveRow" class="setting-row">
+                    <ui:Label text="Enable Auto Save" class="setting-label" />
+                    <ui:Toggle name="EnableAutoSaveToggle" class="setting-toggle" />
+                </ui:VisualElement>
+                
+                <ui:VisualElement name="BattleSpeedRow" class="setting-row">
+                    <ui:Label text="Battle Speed" class="setting-label" />
+                    <ui:VisualElement class="control-container">
+                        <ui:Slider name="BattleSpeedSlider" low-value="0.5" high-value="2" class="speed-slider" />
+                        <ui:Label text="1.0x" name="BattleSpeedLabel" class="value-label" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:ScrollView>
+        
+        <!-- アクションボタン -->
+        <ui:VisualElement name="ActionButtonsPanel" class="action-buttons-panel">
+            <ui:Button text="Reset to Default" name="ResetToDefaultButton" class="action-button reset-button" />
+            <ui:Button text="Save and Back" name="SaveAndBackButton" class="action-button save-button" />
+            <ui:Button text="Back without Saving" name="BackWithoutSavingButton" class="action-button cancel-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
