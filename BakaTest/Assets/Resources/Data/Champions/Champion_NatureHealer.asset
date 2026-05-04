@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b2c3d4e5f6, type: 3}
+  m_Name: Champion_NatureHealer
+  m_EditorClassIdentifier:
+  championId: nature_healer
+  nameEnglish: Nature Healer
+  nameJapanese: "\u81EA\u7136\u306E\u766C\u3057\u624B"
+  descriptionEnglish: A support healer who restores HP and provides buffs. Science and History specialist with high HP regeneration.
+  descriptionJapanese: "HP\u3092\u56DE\u5FA9\u3057\u30D0\u30D5\u3092\u4ED8\u4E0E\u3059\u308B\u30B5\u30DD\u30FC\u30C8\u30D2\u30FC\u30E9\u30FC\u3002\u7406\u79D1\u3068\u6B74\u53F2\u30B9\u30DA\u30B7\u30E3\u30EA\u30B9\u30C8\u3067\u9AD8HP\u518D\u751F\u3002"
+  role: 2
+  element: 1
+  baseStats:
+    HP: 1050
+    Attack: 70
+    Defense: 95
+    Speed: 75
+  subjectAffinity:
+    MathToAttackRatio: 0.3
+    ScienceToDefenseRatio: 0.7
+    EnglishToSpeedRatio: 0.4
+    HistoryToHPRatio: 2.3
+  criticalChance: 0.10
+  dodgeChance: 0.14
+  cost: 2600
+  portraitSprite: {fileID: 0}
+  modelPrefab: {fileID: 0}

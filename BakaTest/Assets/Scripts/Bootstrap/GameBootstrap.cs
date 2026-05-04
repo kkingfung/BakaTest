@@ -13,8 +13,10 @@ using BakaTest.Services.Settings;
 using BakaTest.Services.Questions;
 using BakaTest.Services.Audio;
 using BakaTest.Services.Localization;
+using BakaTest.Services.Tutorial;
 using BakaTest.UI.LoadingScreen;
 using BakaTest.Data.Tests;
+using BakaTest.Data.Tutorial;
 
 namespace BakaTest.Core.Services
 {
@@ -28,6 +30,7 @@ namespace BakaTest.Core.Services
     {
         [Header("Configuration")]
         [SerializeField] private TestConfig? _testConfig;
+        [SerializeField] private TutorialData? _tutorialData;
 
         [Header("Debug")]
         [SerializeField] private bool _showRegisteredServices = true;
@@ -149,6 +152,17 @@ namespace BakaTest.Core.Services
             else
             {
                 Debug.LogWarning("[GameBootstrap] TestConfig is not assigned. QuestionBankService will not be registered.");
+            }
+
+            // チュートリアルサービス（SaveService、SceneService、LocalizationServiceに依存）
+            if (_tutorialData != null)
+            {
+                var tutorialService = new TutorialService(_tutorialData, _saveService, sceneService, localizationService);
+                ServiceLocator.Instance.Register<ITutorialService>(tutorialService);
+            }
+            else
+            {
+                Debug.LogWarning("[GameBootstrap] TutorialData is not assigned. TutorialService will not be registered.");
             }
         }
 

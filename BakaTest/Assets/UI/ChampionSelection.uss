@@ -1,19 +1,30 @@
-/* Root Container */
+/*
+==============================================
+Champion Selection Screen - Responsive Design
+==============================================
+*/
+
+/* Import global theme */
+@import url("Common/GlobalTheme.uss");
+
+/* Root override for this screen */
 .root {
     flex-grow: 1;
-    background-color: rgb(20, 20, 30);
-    padding: 15px;
+    padding: 2%;
+    background-color: rgb(25, 30, 40);
 }
 
-/* Header */
+/* Header Section */
 .header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: rgb(30, 30, 45);
-    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background-color: rgba(45, 55, 75, 0.7);
+    border-radius: 12px;
+    border-width: 2px;
+    border-color: rgba(100, 150, 255, 0.3);
 }
 
 .title {
@@ -23,69 +34,54 @@
 }
 
 .coins-label {
-    font-size: 24px;
-    color: rgb(255, 200, 100);
+    font-size: 20px;
+    color: rgb(100, 255, 150);
     -unity-font-style: bold;
 }
 
 /* Filter Section */
 .filter-section {
+    margin-bottom: 16px;
+}
+
+.filter-buttons {
     flex-direction: row;
-    justify-content: space-around;
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: rgb(25, 25, 40);
-    border-radius: 8px;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .filter-button {
-    width: 23%;
-    height: 40px;
-    font-size: 18px;
-    -unity-font-style: bold;
-    background-color: rgb(60, 60, 80);
-    border-color: rgb(80, 80, 100);
-    border-width: 2px;
-    border-radius: 5px;
-    color: rgb(200, 200, 220);
+    width: 48%;
+    min-height: 48px;
+    margin-bottom: 8px;
 }
 
-.filter-button:hover {
-    background-color: rgb(80, 80, 100);
-}
-
-.filter-button.active {
-    background-color: rgb(100, 150, 200);
-    border-color: rgb(120, 170, 220);
-    color: rgb(255, 255, 255);
-}
-
-/* Content Section */
+/* Content Section - Two Column Layout */
 .content-section {
     flex-direction: row;
     flex-grow: 1;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
 }
 
-/* List Panel (Left) */
+/* Champion List Panel - Left Side */
 .list-panel {
-    width: 30%;
-    margin-right: 15px;
-    padding: 15px;
-    background-color: rgb(25, 25, 40);
-    border-radius: 8px;
+    width: 35%;
+    margin-right: 2%;
+    padding: 16px;
+    background-color: rgba(45, 55, 75, 0.7);
+    border-radius: 12px;
     border-width: 2px;
-    border-color: rgb(80, 80, 120);
+    border-color: rgba(100, 150, 255, 0.3);
 }
 
 .panel-title {
-    font-size: 20px;
-    color: rgb(200, 200, 255);
+    font-size: 22px;
+    color: rgb(255, 220, 100);
     -unity-font-style: bold;
-    margin-bottom: 10px;
-    padding: 8px;
-    background-color: rgb(40, 40, 60);
-    border-radius: 5px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom-width: 2px;
+    border-bottom-color: rgba(100, 150, 255, 0.3);
     -unity-text-align: middle-center;
 }
 
@@ -97,45 +93,22 @@
     flex-grow: 1;
 }
 
-.champion-list-item {
-    height: 45px;
-    margin-bottom: 8px;
-    padding: 10px;
-    font-size: 16px;
-    background-color: rgb(40, 40, 60);
-    border-color: rgb(60, 60, 80);
-    border-width: 2px;
-    border-radius: 5px;
-    color: rgb(200, 200, 220);
-    -unity-text-align: middle-left;
-}
-
-.champion-list-item:hover {
-    background-color: rgb(60, 60, 80);
-}
-
-.champion-list-item.selected {
-    background-color: rgb(80, 120, 180);
-    border-color: rgb(100, 140, 200);
-    color: rgb(255, 255, 255);
-}
-
-/* Details Panel (Right) */
+/* Champion Details Panel - Right Side */
 .details-panel {
-    width: 68%;
+    width: 63%;
     padding: 20px;
-    background-color: rgb(25, 25, 40);
-    border-radius: 8px;
+    background-color: rgba(45, 55, 75, 0.7);
+    border-radius: 12px;
     border-width: 2px;
-    border-color: rgb(80, 80, 120);
+    border-color: rgba(100, 150, 255, 0.3);
 }
 
 /* Champion Header */
 .champion-header {
-    margin-bottom: 15px;
-    padding: 15px;
-    background-color: rgb(35, 35, 50);
-    border-radius: 8px;
+    margin-bottom: 16px;
+    padding: 16px;
+    background-color: rgba(55, 65, 85, 0.6);
+    border-radius: 10px;
 }
 
 .champion-name {
@@ -148,48 +121,52 @@
 
 .champion-meta {
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
 }
 
 .champion-role {
     font-size: 18px;
-    color: rgb(150, 200, 255);
+    color: rgb(120, 200, 255);
+    -unity-font-style: bold;
+    margin-right: 16px;
 }
 
 .champion-element {
     font-size: 18px;
-    color: rgb(255, 150, 150);
+    color: rgb(255, 180, 120);
+    -unity-font-style: bold;
 }
 
 /* Status Indicators */
 .status-indicators {
     flex-direction: row;
     justify-content: center;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
 }
 
 .owned-indicator,
 .free-indicator,
 .locked-indicator {
-    padding: 8px 15px;
-    margin: 0 5px;
-    border-radius: 5px;
+    padding: 8px 16px;
+    margin: 0 4px;
+    border-radius: 8px;
     border-width: 2px;
 }
 
 .owned-indicator {
-    background-color: rgb(50, 120, 50);
-    border-color: rgb(100, 200, 100);
+    background-color: rgba(80, 180, 100, 0.3);
+    border-color: rgba(100, 220, 120, 0.5);
 }
 
 .free-indicator {
-    background-color: rgb(120, 100, 50);
-    border-color: rgb(200, 180, 100);
+    background-color: rgba(180, 150, 80, 0.3);
+    border-color: rgba(220, 190, 100, 0.5);
 }
 
 .locked-indicator {
-    background-color: rgb(100, 50, 50);
-    border-color: rgb(180, 100, 100);
+    background-color: rgba(180, 80, 80, 0.3);
+    border-color: rgba(220, 100, 100, 0.5);
 }
 
 .status-text {
@@ -198,188 +175,125 @@
 }
 
 .owned-text {
-    color: rgb(200, 255, 200);
+    color: rgb(150, 255, 180);
 }
 
 .free-text {
-    color: rgb(255, 255, 150);
+    color: rgb(255, 240, 150);
 }
 
 .locked-text {
-    color: rgb(255, 200, 200);
+    color: rgb(255, 180, 180);
 }
 
-/* Description Section */
+/* Description */
 .description-section {
-    margin-bottom: 15px;
-    padding: 12px;
-    background-color: rgb(35, 35, 50);
-    border-radius: 5px;
+    margin-bottom: 16px;
+    padding: 16px;
+    background-color: rgba(55, 65, 85, 0.5);
+    border-radius: 10px;
+    min-height: 80px;
 }
 
 .champion-description {
     font-size: 16px;
-    color: rgb(200, 200, 220);
+    color: rgb(220, 220, 240);
     white-space: normal;
 }
 
-/* Stats Section */
+/* Stats Grid */
 .stats-section {
-    margin-bottom: 15px;
-    padding: 12px;
-    background-color: rgb(35, 35, 50);
-    border-radius: 5px;
+    margin-bottom: 16px;
 }
 
 .section-title {
-    font-size: 18px;
-    color: rgb(200, 220, 255);
+    font-size: 20px;
+    color: rgb(255, 220, 100);
     -unity-font-style: bold;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     -unity-text-align: middle-center;
 }
 
 .stats-grid {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .stat-label {
-    width: 45%;
-    font-size: 18px;
+    width: 48%;
+    font-size: 16px;
     -unity-font-style: bold;
-    margin: 5px;
-    padding: 8px;
-    background-color: rgb(40, 40, 60);
-    border-radius: 5px;
+    margin-bottom: 8px;
+    padding: 12px;
+    background-color: rgba(50, 60, 80, 0.6);
+    border-radius: 8px;
     -unity-text-align: middle-center;
 }
 
-.hp-stat {
-    color: rgb(100, 255, 100);
-}
-
-.atk-stat {
-    color: rgb(255, 100, 100);
-}
-
-.def-stat {
-    color: rgb(100, 150, 255);
-}
-
-.spd-stat {
-    color: rgb(255, 255, 100);
-}
+.hp-stat { color: rgb(150, 255, 150); }
+.atk-stat { color: rgb(255, 150, 150); }
+.def-stat { color: rgb(150, 200, 255); }
+.spd-stat { color: rgb(255, 255, 150); }
 
 /* Affinity Section */
 .affinity-section {
-    margin-bottom: 15px;
-    padding: 12px;
-    background-color: rgb(35, 35, 50);
-    border-radius: 5px;
+    margin-bottom: 16px;
 }
 
 .affinity-grid {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .affinity-label {
-    width: 45%;
-    font-size: 16px;
+    width: 48%;
+    font-size: 15px;
     -unity-font-style: bold;
-    margin: 5px;
-    padding: 8px;
-    background-color: rgb(40, 40, 60);
-    border-radius: 5px;
+    margin-bottom: 8px;
+    padding: 10px;
+    background-color: rgba(50, 60, 80, 0.6);
+    border-radius: 8px;
     -unity-text-align: middle-center;
 }
 
-.math-affinity {
-    color: rgb(255, 150, 150);
-}
-
-.science-affinity {
-    color: rgb(150, 150, 255);
-}
-
-.english-affinity {
-    color: rgb(255, 255, 150);
-}
-
-.history-affinity {
-    color: rgb(150, 255, 150);
-}
+.math-affinity { color: rgb(255, 180, 180); }
+.science-affinity { color: rgb(180, 180, 255); }
+.english-affinity { color: rgb(255, 255, 180); }
+.history-affinity { color: rgb(180, 255, 180); }
 
 /* Unlock Section */
 .unlock-section {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
-    background-color: rgb(40, 40, 60);
-    border-radius: 8px;
+    padding: 16px;
+    background-color: rgba(55, 65, 85, 0.6);
+    border-radius: 10px;
 }
 
 .unlock-cost {
-    font-size: 20px;
+    font-size: 22px;
     color: rgb(255, 220, 100);
     -unity-font-style: bold;
+    margin-right: 16px;
 }
 
 .unlock-button {
-    width: 200px;
-    height: 50px;
-    font-size: 20px;
-    -unity-font-style: bold;
-    background-color: rgb(80, 180, 80);
-    border-color: rgb(60, 140, 60);
-    border-width: 3px;
-    border-radius: 8px;
-    color: rgb(255, 255, 255);
-}
-
-.unlock-button:hover {
-    background-color: rgb(100, 200, 100);
-    scale: 1.05;
-}
-
-.unlock-button:active {
-    scale: 0.95;
-}
-
-.unlock-button:disabled {
-    background-color: rgb(60, 60, 60);
-    border-color: rgb(40, 40, 40);
-    color: rgb(120, 120, 120);
+    flex-grow: 1;
+    min-height: 56px;
+    max-width: 60%;
 }
 
 /* Footer */
 .footer {
     flex-direction: row;
     justify-content: center;
-    padding: 10px;
+    padding: 12px 0;
 }
 
 .back-button {
-    width: 200px;
-    height: 50px;
-    font-size: 20px;
-    -unity-font-style: bold;
-    background-color: rgb(120, 120, 140);
-    border-color: rgb(100, 100, 120);
-    border-width: 3px;
-    border-radius: 8px;
-    color: rgb(255, 255, 255);
-}
-
-.back-button:hover {
-    background-color: rgb(140, 140, 160);
-    scale: 1.05;
-}
-
-.back-button:active {
-    scale: 0.95;
+    min-width: 200px;
+    min-height: 56px;
 }

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b2c3d4e5f6, type: 3}
+  m_Name: Champion_IronColossus
+  m_EditorClassIdentifier:
+  championId: iron_colossus
+  nameEnglish: Iron Colossus
+  nameJapanese: "\u92FC\u9244\u306E\u5DE8\u50CF"
+  descriptionEnglish: An immovable tank with massive HP and defense. History specialist who excels at absorbing damage.
+  descriptionJapanese: "\u5DE8\u5927\u306AHP\u3068\u9632\u5FA1\u3092\u6301\u3064\u4E0D\u52D5\u306E\u30BF\u30F3\u30AF\u3002\u6B74\u53F2\u30B9\u30DA\u30B7\u30E3\u30EA\u30B9\u30C8\u3067\u30C0\u30E1\u30FC\u30B8\u5438\u53CE\u306B\u512A\u308C\u308B\u3002"
+  role: 0
+  element: 1
+  baseStats:
+    HP: 1400
+    Attack: 70
+    Defense: 120
+    Speed: 55
+  subjectAffinity:
+    MathToAttackRatio: 0.3
+    ScienceToDefenseRatio: 0.7
+    EnglishToSpeedRatio: 0.2
+    HistoryToHPRatio: 2.8
+  criticalChance: 0.06
+  dodgeChance: 0.04
+  cost: 2400
+  portraitSprite: {fileID: 0}
+  modelPrefab: {fileID: 0}

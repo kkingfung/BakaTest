@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b2c3d4e5f6, type: 3}
+  m_Name: Item_ManaPotion
+  m_EditorClassIdentifier:
+  itemId: mana_potion
+  itemType: 0
+  nameEnglish: Mana Potion
+  nameJapanese: "\u30DE\u30CA\u30DD\u30FC\u30B7\u30E7\u30F3"
+  descriptionEnglish: Restores 200 HP and increases Attack by 15% for 3 turns.
+  descriptionJapanese: "HP\u30920200\u56DE\u5FA9\u3057\u30013\u30BF\u30FC\u30F3\u653B\u6483\u529B\u304C15%\u4E0A\u6607\u3002"
+  rarity: 1
+  cost: 150
+  sellPrice: 75
+  target: 0
+  effectType: 2
+  effectValue: 200
+  duration: 3
+  isConsumable: true
+  iconSprite: {fileID: 0}

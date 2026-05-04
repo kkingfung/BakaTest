@@ -1,90 +1,96 @@
-/* Root Container - Portrait Mobile 1080x1920 */
+/*
+==============================================
+Battle Screen - Responsive Design
+==============================================
+*/
+
+/* Import global theme */
+@import url("Common/GlobalTheme.uss");
+
+/* Root override */
 .root {
     flex-grow: 1;
-    background-color: rgb(245, 245, 245);
-    padding-top: 60px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 30px;
+    background-color: rgb(235, 240, 245);
+    padding: 2%;
 }
 
 /* Header */
 .header {
-    margin-bottom: 30px;
+    margin-bottom: 16px;
     align-items: center;
 }
 
 .title {
-    font-size: 48px;
-    color: rgb(33, 33, 33);
+    font-size: 32px;
+    color: rgb(40, 50, 70);
     -unity-font-style: bold;
     -unity-text-align: middle-center;
 }
 
 .status-label {
-    font-size: 24px;
+    font-size: 18px;
     color: rgb(66, 133, 244);
     -unity-font-style: bold;
     -unity-text-align: middle-center;
-    margin-top: 10px;
+    margin-top: 8px;
 }
 
-/* Battle Arena - Vertical Stack for Portrait */
+/* Battle Arena */
 .battle-arena {
     flex-direction: column;
     align-items: stretch;
-    margin-bottom: 25px;
-    padding: 30px;
+    margin-bottom: 16px;
+    padding: 20px;
     background-color: rgb(255, 255, 255);
-    border-radius: 15px;
-    border-width: 3px;
-    border-color: rgb(200, 200, 200);
+    border-radius: 12px;
+    border-width: 2px;
+    border-color: rgba(200, 200, 200, 0.6);
 }
 
 .player-section {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
 }
 
 .player-name {
-    font-size: 28px;
-    color: rgb(33, 33, 33);
+    font-size: 20px;
+    color: rgb(40, 50, 70);
     -unity-font-style: bold;
     -unity-text-align: middle-center;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .champion-card {
-    padding: 25px;
+    padding: 20px;
     background-color: rgb(250, 250, 250);
-    border-radius: 15px;
-    border-width: 3px;
-    border-color: rgb(220, 220, 220);
+    border-radius: 12px;
+    border-width: 2px;
+    border-color: rgba(220, 220, 220, 0.8);
     align-items: center;
 }
 
 .champion-portrait {
-    width: 150px;
-    height: 150px;
-    border-radius: 75px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
     background-color: rgb(200, 200, 200);
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     justify-content: center;
     align-items: center;
 }
 
 .portrait-placeholder {
-    font-size: 60px;
+    font-size: 48px;
     color: rgb(255, 255, 255);
     -unity-font-style: bold;
 }
 
 .champion-name {
-    font-size: 26px;
+    font-size: 20px;
     color: rgb(66, 133, 244);
     -unity-font-style: bold;
     -unity-text-align: middle-center;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .stats-section {
@@ -92,17 +98,17 @@
 }
 
 .hp-label {
-    font-size: 24px;
+    font-size: 18px;
     color: rgb(52, 168, 83);
     -unity-font-style: bold;
     -unity-text-align: middle-center;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .hp-bar {
     width: 100%;
-    height: 35px;
-    margin-top: 5px;
+    height: 24px;
+    margin-top: 4px;
 }
 
 /* VS Section */
@@ -110,11 +116,11 @@
     width: 100%;
     align-items: center;
     justify-content: center;
-    padding: 20px 0;
+    padding: 12px 0;
 }
 
 .vs-label {
-    font-size: 64px;
+    font-size: 48px;
     color: rgb(234, 67, 53);
     -unity-font-style: bold;
     -unity-text-align: middle-center;
@@ -122,46 +128,46 @@
 
 /* Player Specific Styles */
 .player1 .champion-card {
-    border-color: rgb(66, 133, 244);
+    border-color: rgba(66, 133, 244, 0.6);
 }
 
 .player2 .champion-card {
-    border-color: rgb(234, 67, 53);
+    border-color: rgba(234, 67, 53, 0.6);
 }
 
 /* Battle Log */
 .log-section {
-    margin-bottom: 25px;
-    padding: 25px;
+    margin-bottom: 16px;
+    padding: 20px;
     background-color: rgb(255, 255, 255);
-    border-radius: 15px;
-    border-width: 3px;
-    border-color: rgb(200, 200, 200);
-    min-height: 200px;
-    max-height: 300px;
+    border-radius: 12px;
+    border-width: 2px;
+    border-color: rgba(200, 200, 200, 0.6);
+    min-height: 150px;
+    max-height: 200px;
 }
 
 .log-title {
-    font-size: 26px;
-    color: rgb(33, 33, 33);
+    font-size: 20px;
+    color: rgb(40, 50, 70);
     -unity-font-style: bold;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .log-scroll {
     flex-grow: 1;
     background-color: rgb(250, 250, 250);
-    border-radius: 10px;
-    padding: 15px;
+    border-radius: 8px;
+    padding: 12px;
 }
 
 .log-text {
-    font-size: 20px;
-    color: rgb(33, 33, 33);
+    font-size: 16px;
+    color: rgb(40, 50, 70);
     white-space: pre-wrap;
 }
 
-/* Controls - 2x2 Grid for Portrait */
+/* Controls Section */
 .controls-section {
     flex-direction: row;
     flex-wrap: wrap;
@@ -170,12 +176,12 @@
 
 .control-button {
     width: 48%;
-    height: 85px;
-    font-size: 24px;
+    min-height: 56px;
+    font-size: 18px;
     -unity-font-style: bold;
-    border-radius: 15px;
+    border-radius: 10px;
     border-width: 0;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
 }
 
 .start-button {

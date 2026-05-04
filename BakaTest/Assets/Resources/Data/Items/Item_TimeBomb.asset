@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b2c3d4e5f6, type: 3}
+  m_Name: Item_TimeBomb
+  m_EditorClassIdentifier:
+  itemId: time_bomb
+  itemType: 0
+  nameEnglish: Time Bomb
+  nameJapanese: "\u6642\u9650\u7206\u5F3E"
+  descriptionEnglish: Deals 500 damage to enemy after 2 turns. Can be dispelled.
+  descriptionJapanese: "2\u30BF\u30FC\u30F3\u5F8C\u306B\u6575\u306B500\u30C0\u30E1\u30FC\u30B8\u3002\u89E3\u9664\u53EF\u80FD\u3002"
+  rarity: 3
+  cost: 350
+  sellPrice: 175
+  target: 1
+  effectType: 0
+  effectValue: 500
+  duration: 2
+  isConsumable: true
+  iconSprite: {fileID: 0}

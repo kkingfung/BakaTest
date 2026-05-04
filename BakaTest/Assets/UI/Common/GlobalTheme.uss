@@ -1,217 +1,302 @@
-/* BakaTest Global Theme - Common UI Styles */
+/*
+==============================================
+BakaTest Global Theme - Responsive Design System
+==============================================
+Design Principles:
+- Use percentages and flex properties for responsive layouts
+- Consistent spacing scale: 4px, 8px, 12px, 16px, 24px, 32px, 48px
+- Font scale: 14px, 16px, 18px, 20px, 24px, 32px, 48px
+- Always maintain visual hierarchy
+- Avoid absolute pixel positioning
+==============================================
+*/
 
-/* Root and Base Styles */
+/* ===== ROOT & LAYOUT ===== */
 .root {
     flex-grow: 1;
     width: 100%;
     height: 100%;
-    justify-content: center;
-    align-items: center;
+    background-color: rgb(25, 30, 40);
+    padding: 2%;
+    justify-content: flex-start;
+    align-items: stretch;
 }
 
-.background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(20, 25, 35);
-}
-
-/* Container Styles */
-.main-container {
-    width: 90%;
-    max-width: 1200px;
-    padding: 30px;
-    background-color: rgba(30, 35, 45, 0.95);
-    border-radius: 20px;
-    border-width: 2px;
-    border-color: rgba(100, 150, 255, 0.5);
-}
-
-.content-area {
+.container {
     flex-grow: 1;
-    padding: 20px;
+    padding: 2%;
+    background-color: rgba(35, 45, 60, 0.9);
+    border-radius: 12px;
+    border-width: 2px;
+    border-color: rgba(100, 150, 255, 0.3);
 }
 
-/* Typography */
-.title-label {
+.content {
+    flex-grow: 1;
+    padding: 2%;
+}
+
+.scroll-view {
+    flex-grow: 1;
+}
+
+/* ===== SPACING UTILITIES ===== */
+.spacing-xs { margin: 4px; }
+.spacing-sm { margin: 8px; }
+.spacing-md { margin: 16px; }
+.spacing-lg { margin: 24px; }
+.spacing-xl { margin: 32px; }
+
+.padding-xs { padding: 4px; }
+.padding-sm { padding: 8px; }
+.padding-md { padding: 16px; }
+.padding-lg { padding: 24px; }
+.padding-xl { padding: 32px; }
+
+/* ===== TYPOGRAPHY ===== */
+.title {
     font-size: 48px;
-    color: rgb(255, 255, 255);
+    color: rgb(255, 220, 100);
     -unity-font-style: bold;
     -unity-text-align: middle-center;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
-.subtitle-label {
+.subtitle {
     font-size: 20px;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.8);
     -unity-text-align: middle-center;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
-.section-title {
-    font-size: 28px;
-    color: rgb(255, 255, 255);
+.section-header {
+    font-size: 24px;
+    color: rgb(255, 220, 100);
     -unity-font-style: bold;
-    margin-bottom: 15px;
-    margin-top: 20px;
+    margin-top: 16px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom-width: 2px;
+    border-bottom-color: rgba(100, 150, 255, 0.3);
 }
 
 .label {
     font-size: 18px;
-    color: rgb(255, 255, 255);
+    color: rgb(220, 220, 240);
 }
 
-/* Button Styles */
-.button {
-    height: 60px;
-    font-size: 20px;
-    background-color: rgba(50, 60, 80, 0.8);
+.label-bold {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+}
+
+.text-center {
+    -unity-text-align: middle-center;
+}
+
+.text-left {
+    -unity-text-align: middle-left;
+}
+
+.text-right {
+    -unity-text-align: middle-right;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    min-height: 48px;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: 18px;
+    -unity-font-style: bold;
+    background-color: rgba(60, 70, 90, 0.9);
     border-width: 2px;
-    border-radius: 10px;
-    border-color: rgba(100, 150, 255, 0.3);
+    border-radius: 8px;
+    border-color: rgba(100, 150, 255, 0.4);
     color: rgb(255, 255, 255);
-    margin: 8px;
-    transition-duration: 0.2s;
-    transition-property: scale, background-color;
+    margin: 4px;
 }
 
-.button:hover {
-    scale: 1.05;
-    background-color: rgba(70, 80, 100, 0.9);
-    border-color: rgba(100, 150, 255, 0.6);
+.btn:hover {
+    scale: 1.03;
+    background-color: rgba(80, 90, 110, 1);
+    border-color: rgba(120, 170, 255, 0.6);
 }
 
-.button:active {
-    scale: 0.98;
-    background-color: rgba(40, 50, 70, 0.9);
+.btn:active {
+    scale: 0.97;
+    background-color: rgba(50, 60, 80, 1);
 }
 
-.button:disabled {
-    background-color: rgba(30, 35, 40, 0.5);
+.btn:disabled {
+    background-color: rgba(40, 45, 55, 0.6);
     border-color: rgba(80, 80, 80, 0.3);
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(200, 200, 200, 0.4);
+    scale: 1;
 }
 
-/* Primary Button */
-.primary-button {
-    background-color: rgba(100, 200, 100, 0.7);
-    border-color: rgba(100, 255, 100, 0.6);
+.btn-primary {
+    background-color: rgba(50, 180, 80, 0.9);
+    border-color: rgba(80, 220, 120, 0.6);
 }
 
-.primary-button:hover {
-    scale: 1.02;
-    background-color: rgba(120, 220, 120, 0.8);
-    border-color: rgba(100, 255, 100, 0.8);
+.btn-primary:hover {
+    background-color: rgba(60, 200, 90, 1);
+    border-color: rgba(100, 240, 140, 0.8);
 }
 
-.primary-button:active {
-    scale: 0.98;
-    background-color: rgba(80, 180, 80, 0.8);
+.btn-primary:active {
+    background-color: rgba(40, 160, 70, 1);
 }
 
-/* Secondary Button */
-.secondary-button {
-    background-color: rgba(80, 80, 100, 0.6);
-    border-color: rgba(120, 120, 150, 0.5);
+.btn-danger {
+    background-color: rgba(220, 70, 60, 0.9);
+    border-color: rgba(255, 100, 90, 0.6);
 }
 
-.secondary-button:hover {
-    background-color: rgba(100, 100, 120, 0.7);
+.btn-danger:hover {
+    background-color: rgba(240, 90, 80, 1);
+    border-color: rgba(255, 120, 110, 0.8);
 }
 
-/* Danger Button */
-.danger-button {
-    background-color: rgba(200, 80, 80, 0.7);
-    border-color: rgba(255, 100, 100, 0.6);
+.btn-danger:active {
+    background-color: rgba(200, 60, 50, 1);
 }
 
-.danger-button:hover {
-    background-color: rgba(220, 100, 100, 0.8);
+.btn-secondary {
+    background-color: rgba(80, 90, 110, 0.7);
+    border-color: rgba(120, 130, 150, 0.5);
 }
 
-/* Selected State */
-.selected {
-    background-color: rgba(100, 150, 255, 0.7);
-    border-color: rgb(100, 150, 255);
+.btn-secondary:hover {
+    background-color: rgba(100, 110, 130, 0.85);
+}
+
+.btn-large {
+    min-height: 64px;
+    font-size: 20px;
+}
+
+.btn-small {
+    min-height: 36px;
+    font-size: 16px;
+}
+
+/* ===== PANELS ===== */
+.panel {
+    padding: 16px;
+    background-color: rgba(45, 55, 75, 0.7);
+    border-radius: 12px;
+    border-width: 2px;
+    border-color: rgba(100, 150, 255, 0.3);
+    margin: 8px 0;
+}
+
+.panel-highlight {
+    border-color: rgba(100, 200, 255, 0.6);
+    border-width: 2px;
+}
+
+.panel-success {
+    background-color: rgba(50, 120, 70, 0.3);
+    border-color: rgba(100, 200, 120, 0.5);
+}
+
+.panel-warning {
+    background-color: rgba(180, 120, 50, 0.3);
+    border-color: rgba(255, 180, 80, 0.5);
+}
+
+.panel-danger {
+    background-color: rgba(150, 60, 60, 0.3);
+    border-color: rgba(255, 100, 100, 0.5);
+}
+
+/* ===== LIST ITEMS ===== */
+.list-item {
+    min-height: 56px;
+    padding: 12px 16px;
+    margin: 4px 0;
+    background-color: rgba(50, 60, 80, 0.6);
+    border-radius: 8px;
+    border-width: 2px;
+    border-color: rgba(80, 100, 140, 0.4);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-item:hover {
+    background-color: rgba(70, 80, 100, 0.8);
+    scale: 1.01;
+}
+
+.list-item.selected {
+    background-color: rgba(80, 130, 200, 0.7);
+    border-color: rgba(100, 170, 255, 0.8);
     border-width: 3px;
 }
 
-/* Panel Styles */
-.panel {
-    padding: 20px;
-    background-color: rgba(40, 50, 70, 0.6);
-    border-radius: 15px;
-    border-width: 2px;
-    border-color: rgba(100, 150, 255, 0.3);
-    margin: 10px 0;
-}
-
-.info-panel {
-    padding: 25px;
-    background-color: rgba(40, 50, 70, 0.6);
-    border-radius: 15px;
-    border-width: 2px;
-    border-color: rgba(100, 150, 255, 0.4);
-    margin: 20px 0;
-}
-
-/* Warning Panel */
-.warning-panel {
-    padding: 20px;
-    background-color: rgba(255, 150, 50, 0.2);
-    border-radius: 12px;
-    border-width: 2px;
-    border-color: rgba(255, 150, 50, 0.6);
-    margin: 15px 0;
-}
-
-.warning-text {
-    font-size: 20px;
-    color: rgb(255, 200, 100);
-    -unity-font-style: bold;
-    margin-bottom: 8px;
-}
-
-.warning-subtext {
-    font-size: 16px;
-    color: rgba(255, 255, 255, 0.7);
-}
-
-/* Input Fields */
-.text-field {
-    height: 40px;
-    font-size: 18px;
-    background-color: rgba(30, 35, 45, 0.8);
+/* ===== INPUTS ===== */
+.input {
+    min-height: 40px;
+    padding: 8px 12px;
+    background-color: rgba(30, 40, 55, 0.9);
     border-width: 2px;
     border-radius: 8px;
     border-color: rgba(100, 150, 255, 0.3);
     color: rgb(255, 255, 255);
-    padding: 5px 10px;
+    font-size: 16px;
 }
 
-.text-field:focus {
-    border-color: rgba(100, 150, 255, 0.8);
+.input:focus {
+    border-color: rgba(100, 170, 255, 0.7);
 }
 
-/* Progress Bar */
-.progress-bar {
-    height: 30px;
-    background-color: rgba(30, 35, 45, 0.8);
-    border-radius: 15px;
+.dropdown {
+    min-height: 48px;
+    padding: 8px 16px;
+    background-color: rgba(50, 60, 80, 0.9);
     border-width: 2px;
-    border-color: rgba(100, 150, 255, 0.3);
-    overflow: hidden;
+    border-radius: 8px;
+    border-color: rgba(100, 150, 255, 0.4);
+    color: rgb(255, 255, 255);
+    font-size: 18px;
 }
 
-.progress-fill {
-    height: 100%;
-    background-color: rgb(100, 150, 255);
-    border-radius: 15px;
-    transition-duration: 0.3s;
-    transition-property: width;
+.dropdown:hover {
+    background-color: rgba(70, 80, 100, 1);
 }
 
-/* Utility Classes */
+/* ===== SLIDERS ===== */
+.slider {
+    min-height: 32px;
+    margin: 8px 0;
+}
+
+.slider .unity-base-slider__tracker {
+    background-color: rgba(40, 50, 70, 0.8);
+    border-radius: 8px;
+    height: 8px;
+}
+
+.slider .unity-base-slider__dragger {
+    background-color: rgb(100, 170, 255);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    border-width: 2px;
+    border-color: rgb(120, 190, 255);
+}
+
+.slider .unity-base-slider__drag-container {
+    background-color: rgb(100, 170, 255);
+    border-radius: 8px;
+    height: 8px;
+}
+
+/* ===== LAYOUT UTILITIES ===== */
 .flex-row {
     flex-direction: row;
 }
@@ -220,22 +305,74 @@
     flex-direction: column;
 }
 
+.justify-start {
+    justify-content: flex-start;
+}
+
 .justify-center {
     justify-content: center;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.align-start {
+    align-items: flex-start;
 }
 
 .align-center {
     align-items: center;
 }
 
-.space-between {
-    justify-content: space-between;
+.align-end {
+    align-items: flex-end;
+}
+
+.align-stretch {
+    align-items: stretch;
 }
 
 .flex-grow {
     flex-grow: 1;
 }
 
+.flex-shrink {
+    flex-shrink: 1;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+/* ===== GRID LAYOUTS ===== */
+.grid-2col {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.grid-2col > * {
+    width: 48%;
+    margin-bottom: 8px;
+}
+
+.grid-3col {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.grid-3col > * {
+    width: 32%;
+    margin-bottom: 8px;
+}
+
+/* ===== VISIBILITY ===== */
 .hidden {
     display: none;
 }

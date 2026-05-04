@@ -41,59 +41,403 @@ MonoBehaviour:
     choice4: Lemon
     correctAnswerIndex: 1
     explanation: "Apple = \u308A\u3093\u3054"
-  - questionText: "I ___ a student. \u7A7A\u6B04\u306B\u5165\u308B\u5358\u8A9E\u306F?"
-    choice0: is
-    choice1: am
+  - questionText: "This is ___ dog. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: a
+    choice1: an
+    choice2: the
+    choice3: this
+    choice4: that
+    correctAnswerIndex: 0
+    explanation: "\u5B50\u97F3\u3067\u59CB\u307E\u308B\u5358\u8A9E\u306B\u306F a \u3092\u4F7F\u3044\u307E\u3059\u3002"
+  - questionText: "\u300C\u732B\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: Dog
+    choice1: Cat
+    choice2: Bird
+    choice3: Fish
+    choice4: Mouse
+    correctAnswerIndex: 1
+    explanation: "Cat = \u732B"
+  - questionText: "I ___ an apple. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: has
+    choice1: have
+    choice2: had
+    choice3: having
+    choice4: haves
+    correctAnswerIndex: 1
+    explanation: "I have an apple. (\u79C1\u306F\u308A\u3093\u3054\u3092\u6301\u3063\u3066\u3044\u307E\u3059)"
+  - questionText: "\u300C\u3042\u308A\u304C\u3068\u3046\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: Hello
+    choice1: Goodbye
+    choice2: Thank you
+    choice3: Sorry
+    choice4: Please
+    correctAnswerIndex: 2
+    explanation: "Thank you = \u3042\u308A\u304C\u3068\u3046"
+  - questionText: "This is ___ orange. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: a
+    choice1: an
+    choice2: the
+    choice3: this
+    choice4: that
+    correctAnswerIndex: 1
+    explanation: "\u6BCD\u97F3\u3067\u59CB\u307E\u308B\u5358\u8A9E\u306B\u306F an \u3092\u4F7F\u3044\u307E\u3059\u3002"
+  - questionText: "\u300C\u8D64\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: Blue
+    choice1: Red
+    choice2: Yellow
+    choice3: Green
+    choice4: White
+    correctAnswerIndex: 1
+    explanation: "Red = \u8D64"
+  - questionText: "She ___ my friend. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: am
+    choice1: is
     choice2: are
     choice3: be
     choice4: was
     correctAnswerIndex: 1
-    explanation: "I am a student. (\u79C1\u306F\u5B66\u751F\u3067\u3059)"
-  - questionText: "\u300C\u3053\u3093\u306B\u3061\u306F\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
-    choice0: Good morning
-    choice1: Good night
-    choice2: Hello
+    explanation: "She is my friend. (\u5F7C\u5973\u306F\u79C1\u306E\u53CB\u9054\u3067\u3059)"
+  - questionText: "\u300C\u304A\u306F\u3088\u3046\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: Hello
+    choice1: Good morning
+    choice2: Good night
     choice3: Goodbye
     choice4: Thank you
+    correctAnswerIndex: 1
+    explanation: "Good morning = \u304A\u306F\u3088\u3046"
+  - questionText: "\u300C3\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: One
+    choice1: Two
+    choice2: Three
+    choice3: Four
+    choice4: Five
     correctAnswerIndex: 2
-    explanation: "Hello = \u3053\u3093\u306B\u3061\u306F"
-  - questionText: "\u300C\u308A\u3093\u3054\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
-    choice0: Orange
-    choice1: Apple
+    explanation: "Three = 3"
+  - questionText: "They ___ students. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: am
+    choice1: is
+    choice2: are
+    choice3: be
+    choice4: was
+    correctAnswerIndex: 2
+    explanation: "They are students. (\u5F7C\u3089\u306F\u5B66\u751F\u3067\u3059)"
+  - questionText: "\u300C\u672C\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: Pen
+    choice1: Book
+    choice2: Desk
+    choice3: Chair
+    choice4: Bag
+    correctAnswerIndex: 1
+    explanation: "Book = \u672C"
+  - questionText: "I ___ happy. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: am
+    choice1: is
+    choice2: are
+    choice3: be
+    choice4: was
+    correctAnswerIndex: 0
+    explanation: "I am happy. (\u79C1\u306F\u5E78\u305B\u3067\u3059)"
+  - questionText: "\u300C\u304A\u3084\u3059\u307F\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: Good morning
+    choice1: Good afternoon
+    choice2: Good night
+    choice3: Goodbye
+    choice4: Hello
+    correctAnswerIndex: 2
+    explanation: "Good night = \u304A\u3084\u3059\u307F"
+  - questionText: "\u300C\u5927\u304D\u3044\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: Small
+    choice1: Big
+    choice2: Long
+    choice3: Short
+    choice4: Tall
+    correctAnswerIndex: 1
+    explanation: "Big = \u5927\u304D\u3044"
+  - questionText: "He ___ a teacher. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: am
+    choice1: is
+    choice2: are
+    choice3: be
+    choice4: was
+    correctAnswerIndex: 1
+    explanation: "He is a teacher. (\u5F7C\u306F\u5148\u751F\u3067\u3059)"
+  - questionText: "\u300C10\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: Eight
+    choice1: Nine
+    choice2: Ten
+    choice3: Eleven
+    choice4: Twelve
+    correctAnswerIndex: 2
+    explanation: "Ten = 10"
+  - questionText: "\u300C\u72AC\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: Cat
+    choice1: Dog
+    choice2: Bird
+    choice3: Fish
+    choice4: Rabbit
+    correctAnswerIndex: 1
+    explanation: "Dog = \u72AC"
+  - questionText: "You ___ kind. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: am
+    choice1: is
+    choice2: are
+    choice3: be
+    choice4: was
+    correctAnswerIndex: 2
+    explanation: "You are kind. (\u3042\u306A\u305F\u306F\u89AA\u5207\u3067\u3059)"
+  - questionText: "\u300C\u9752\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: Red
+    choice1: Blue
+    choice2: Yellow
+    choice3: Green
+    choice4: Black
+    correctAnswerIndex: 1
+    explanation: "Blue = \u9752"
+  - questionText: "\u300C\u6C34\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: Milk
+    choice1: Juice
+    choice2: Water
+    choice3: Tea
+    choice4: Coffee
+    correctAnswerIndex: 2
+    explanation: "Water = \u6C34"
+  - questionText: "We ___ friends. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: am
+    choice1: is
+    choice2: are
+    choice3: be
+    choice4: was
+    correctAnswerIndex: 2
+    explanation: "We are friends. (\u79C1\u305F\u3061\u306F\u53CB\u9054\u3067\u3059)"
+  - questionText: "\u300C\u5C0F\u3055\u3044\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: Big
+    choice1: Small
+    choice2: Long
+    choice3: Tall
+    choice4: Short
+    correctAnswerIndex: 1
+    explanation: "Small = \u5C0F\u3055\u3044"
+  - questionText: "\u300C\u9EC4\u8272\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: Red
+    choice1: Blue
+    choice2: Yellow
+    choice3: Green
+    choice4: Black
+    correctAnswerIndex: 2
+    explanation: "Yellow = \u9EC4\u8272"
+  - questionText: "That is ___ pencil. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: a
+    choice1: an
+    choice2: the
+    choice3: this
+    choice4: that
+    correctAnswerIndex: 0
+    explanation: "\u5B50\u97F3\u3067\u59CB\u307E\u308B\u5358\u8A9E\u306B\u306F a \u3092\u4F7F\u3044\u307E\u3059\u3002"
+  - questionText: "\u300C\u9CE5\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: Cat
+    choice1: Dog
+    choice2: Bird
+    choice3: Fish
+    choice4: Rabbit
+    correctAnswerIndex: 2
+    explanation: "Bird = \u9CE5"
+  - questionText: "My name ___ Tom. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: am
+    choice1: is
+    choice2: are
+    choice3: be
+    choice4: was
+    correctAnswerIndex: 1
+    explanation: "My name is Tom. (\u79C1\u306E\u540D\u524D\u306F\u30C8\u30E0\u3067\u3059)"
+  - questionText: "\u300C\u7DD1\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: Red
+    choice1: Blue
+    choice2: Yellow
+    choice3: Green
+    choice4: White
+    correctAnswerIndex: 3
+    explanation: "Green = \u7DD1"
+  - questionText: "\u300C\u5148\u751F\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: Student
+    choice1: Teacher
+    choice2: Friend
+    choice3: Mother
+    choice4: Father
+    correctAnswerIndex: 1
+    explanation: "Teacher = \u5148\u751F"
+  - questionText: "I like ___ . \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: apple
+    choice1: apples
+    choice2: an apple
+    choice3: the apple
+    choice4: apple's
+    correctAnswerIndex: 1
+    explanation: "\u597D\u304D\u306A\u3082\u306E\u4E00\u822C\u306B\u306F\u8907\u6570\u5F62: I like apples."
+  - questionText: "\u300C\u9ED2\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: White
+    choice1: Black
+    choice2: Red
+    choice3: Blue
+    choice4: Yellow
+    correctAnswerIndex: 1
+    explanation: "Black = \u9ED2"
+  - questionText: "It ___ a cat. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: am
+    choice1: is
+    choice2: are
+    choice3: be
+    choice4: was
+    correctAnswerIndex: 1
+    explanation: "It is a cat. (\u305D\u308C\u306F\u732B\u3067\u3059)"
+  - questionText: "\u300C\u767D\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: Black
+    choice1: Red
+    choice2: White
+    choice3: Blue
+    choice4: Green
+    correctAnswerIndex: 2
+    explanation: "White = \u767D"
+  - questionText: "\u300C\u82B1\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: Tree
+    choice1: Flower
+    choice2: Grass
+    choice3: Leaf
+    choice4: Plant
+    correctAnswerIndex: 1
+    explanation: "Flower = \u82B1"
+  - questionText: "They ___ teachers. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: am
+    choice1: is
+    choice2: are
+    choice3: be
+    choice4: was
+    correctAnswerIndex: 2
+    explanation: "They are teachers. (\u5F7C\u3089\u306F\u5148\u751F\u3067\u3059)"
+  - questionText: "\u300C\u673A\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: Chair
+    choice1: Desk
+    choice2: Book
+    choice3: Pen
+    choice4: Door
+    correctAnswerIndex: 1
+    explanation: "Desk = \u673A"
+  - questionText: "I ___ ten years old. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: am
+    choice1: is
+    choice2: are
+    choice3: be
+    choice4: was
+    correctAnswerIndex: 0
+    explanation: "I am ten years old. (\u79C1\u306F10\u6B73\u3067\u3059)"
+  - questionText: "\u300C\u9B5A\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: Cat
+    choice1: Dog
+    choice2: Bird
+    choice3: Fish
+    choice4: Mouse
+    correctAnswerIndex: 3
+    explanation: "Fish = \u9B5A"
+  - questionText: "\u300C\u6708\u66DC\u65E5\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: Sunday
+    choice1: Monday
+    choice2: Tuesday
+    choice3: Wednesday
+    choice4: Thursday
+    correctAnswerIndex: 1
+    explanation: "Monday = \u6708\u66DC\u65E5"
+  - questionText: "This is ___ umbrella. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: a
+    choice1: an
+    choice2: the
+    choice3: this
+    choice4: that
+    correctAnswerIndex: 1
+    explanation: "\u6BCD\u97F3\u3067\u59CB\u307E\u308B\u5358\u8A9E\u306B\u306F an \u3092\u4F7F\u3044\u307E\u3059\u3002"
+  - questionText: "\u300C\u6905\u5B50\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: Desk
+    choice1: Chair
+    choice2: Table
+    choice3: Bed
+    choice4: Door
+    correctAnswerIndex: 1
+    explanation: "Chair = \u6905\u5B50"
+  - questionText: "She ___ pretty. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: am
+    choice1: is
+    choice2: are
+    choice3: be
+    choice4: was
+    correctAnswerIndex: 1
+    explanation: "She is pretty. (\u5F7C\u5973\u306F\u304B\u308F\u3044\u3044\u3067\u3059)"
+  - questionText: "\u300C\u30D0\u30CA\u30CA\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: Apple
+    choice1: Orange
+    choice2: Banana
+    choice3: Grape
+    choice4: Lemon
+    correctAnswerIndex: 2
+    explanation: "Banana = \u30D0\u30CA\u30CA"
+  - questionText: "I ___ from Japan. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: am
+    choice1: is
+    choice2: are
+    choice3: be
+    choice4: was
+    correctAnswerIndex: 0
+    explanation: "I am from Japan. (\u79C1\u306F\u65E5\u672C\u51FA\u8EAB\u3067\u3059)"
+  - questionText: "\u300C\u30D1\u30F3\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: Rice
+    choice1: Bread
+    choice2: Meat
+    choice3: Fish
+    choice4: Egg
+    correctAnswerIndex: 1
+    explanation: "Bread = \u30D1\u30F3"
+  - questionText: "\u300C\u706B\u66DC\u65E5\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: Monday
+    choice1: Tuesday
+    choice2: Wednesday
+    choice3: Thursday
+    choice4: Friday
+    correctAnswerIndex: 1
+    explanation: "Tuesday = \u706B\u66DC\u65E5"
+  - questionText: "He ___ a doctor. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: am
+    choice1: is
+    choice2: are
+    choice3: be
+    choice4: was
+    correctAnswerIndex: 1
+    explanation: "He is a doctor. (\u5F7C\u306F\u533B\u8005\u3067\u3059)"
+  - questionText: "\u300C\u6C34\u66DC\u65E5\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: Monday
+    choice1: Tuesday
+    choice2: Wednesday
+    choice3: Thursday
+    choice4: Friday
+    correctAnswerIndex: 2
+    explanation: "Wednesday = \u6C34\u66DC\u65E5"
+  - questionText: "\u300C\u30AA\u30EC\u30F3\u30B8\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: Apple
+    choice1: Orange
     choice2: Banana
     choice3: Grape
     choice4: Lemon
     correctAnswerIndex: 1
-    explanation: "Apple = \u308A\u3093\u3054"
-  - questionText: "I ___ a student. \u7A7A\u6B04\u306B\u5165\u308B\u5358\u8A9E\u306F?"
-    choice0: is
-    choice1: am
+    explanation: "Orange = \u30AA\u30EC\u30F3\u30B8"
+  - questionText: "It ___ sunny. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: am
+    choice1: is
     choice2: are
     choice3: be
     choice4: was
     correctAnswerIndex: 1
-    explanation: "I am a student. (\u79C1\u306F\u5B66\u751F\u3067\u3059)"
-  - questionText: "\u300C\u3053\u3093\u306B\u3061\u306F\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
-    choice0: Good morning
-    choice1: Good night
-    choice2: Hello
-    choice3: Goodbye
-    choice4: Thank you
+    explanation: "It is sunny. (\u6674\u308C\u3066\u3044\u307E\u3059)"
+  - questionText: "\u300C\u725B\u4E73\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
+    choice0: Water
+    choice1: Juice
+    choice2: Milk
+    choice3: Tea
+    choice4: Coffee
     correctAnswerIndex: 2
-    explanation: "Hello = \u3053\u3093\u306B\u3061\u306F"
-  - questionText: "\u300C\u308A\u3093\u3054\u300D\u3092\u82F1\u8A9E\u3067\u8A00\u3046\u3068?"
-    choice0: Orange
-    choice1: Apple
-    choice2: Banana
-    choice3: Grape
-    choice4: Lemon
-    correctAnswerIndex: 1
-    explanation: "Apple = \u308A\u3093\u3054"
-  - questionText: "I ___ a student. \u7A7A\u6B04\u306B\u5165\u308B\u5358\u8A9E\u306F?"
-    choice0: is
-    choice1: am
-    choice2: are
-    choice3: be
-    choice4: was
-    correctAnswerIndex: 1
-    explanation: "I am a student. (\u79C1\u306F\u5B66\u751F\u3067\u3059)"
+    explanation: "Milk = \u725B\u4E73"

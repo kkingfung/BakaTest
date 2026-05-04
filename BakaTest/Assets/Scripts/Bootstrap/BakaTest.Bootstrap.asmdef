@@ -1,0 +1,19 @@
+{
+    "name": "BakaTest.Bootstrap",
+    "rootNamespace": "BakaTest.Bootstrap",
+    "references": [
+        "BakaTest.Core",
+        "BakaTest.Data",
+        "BakaTest.Services",
+        "BakaTest.UI"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

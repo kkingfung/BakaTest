@@ -1,92 +1,94 @@
-/* Root Container - Portrait Mobile 1080x1920 */
+/*
+==============================================
+Test Selection Screen - Responsive Design
+==============================================
+*/
+
+/* Import global theme */
+@import url("Common/GlobalTheme.uss");
+
+/* Root override */
 .root {
     flex-grow: 1;
-    background-color: rgb(30, 30, 40);
-    padding-top: 80px;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-bottom: 40px;
-    align-items: stretch;
-    justify-content: flex-start;
+    padding: 2%;
+    background-color: rgb(25, 30, 40);
 }
 
 /* Header Panel */
 .header-panel {
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 24px;
+    padding: 16px;
 }
 
 .title {
-    font-size: 52px;
-    color: rgb(255, 215, 0);
+    font-size: 36px;
+    color: rgb(255, 220, 100);
     -unity-font-style: bold;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
     -unity-text-align: middle-center;
     white-space: normal;
 }
 
 .subtitle {
-    font-size: 24px;
-    color: rgb(200, 200, 200);
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
     -unity-text-align: middle-center;
     white-space: normal;
 }
 
 /* Selection Panel */
 .selection-panel {
-    width: 100%;
-    background-color: rgb(45, 45, 60);
-    border-radius: 15px;
-    padding: 40px;
-    margin-bottom: 40px;
+    background-color: rgba(45, 55, 75, 0.7);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
     border-width: 2px;
-    border-color: rgb(100, 100, 120);
+    border-color: rgba(100, 150, 255, 0.3);
 }
 
-/* Control Container - Vertical Layout for Portrait */
+/* Control Container */
 .control-container {
     flex-direction: column;
     align-items: stretch;
-    margin: 20px 0;
+    margin: 16px 0;
 }
 
 .control-label {
-    font-size: 28px;
+    font-size: 20px;
     color: rgb(255, 255, 255);
     -unity-font-style: bold;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
     -unity-text-align: middle-left;
 }
 
 .dropdown {
-    width: 100%;
-    height: 80px;
-    font-size: 28px;
-    background-color: rgb(60, 60, 80);
+    min-height: 48px;
+    font-size: 18px;
+    background-color: rgba(55, 65, 85, 0.8);
     color: rgb(255, 255, 255);
-    border-radius: 10px;
-    border-width: 3px;
-    border-color: rgb(100, 100, 120);
-    padding-left: 20px;
-    padding-right: 20px;
+    border-radius: 8px;
+    border-width: 2px;
+    border-color: rgba(100, 150, 255, 0.4);
+    padding-left: 12px;
+    padding-right: 12px;
 }
 
 /* Points Info Panel */
 .points-info-panel {
-    width: 100%;
-    background-color: rgb(45, 45, 60);
-    border-radius: 15px;
-    padding: 40px;
-    margin-bottom: 40px;
+    background-color: rgba(45, 55, 75, 0.7);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
     border-width: 2px;
-    border-color: rgb(100, 100, 120);
+    border-color: rgba(100, 150, 255, 0.3);
 }
 
 .section-title {
-    font-size: 32px;
-    color: rgb(255, 255, 255);
+    font-size: 24px;
+    color: rgb(255, 220, 100);
     -unity-font-style: bold;
-    margin-bottom: 30px;
+    margin-bottom: 16px;
     -unity-text-align: middle-center;
 }
 
@@ -96,93 +98,54 @@
 }
 
 .points-stat-label {
-    font-size: 26px;
-    margin: 10px 0;
+    font-size: 18px;
+    margin: 8px 0;
+    padding: 12px;
     -unity-font-style: bold;
     -unity-text-align: middle-center;
+    background-color: rgba(55, 65, 85, 0.6);
+    border-radius: 8px;
 }
 
 .points-stat-label.remaining {
-    color: rgb(100, 255, 100);
-    font-size: 32px;
+    color: rgb(150, 255, 180);
+    font-size: 22px;
 }
 
 .points-stat-label.earned {
-    color: rgb(100, 200, 255);
+    color: rgb(120, 200, 255);
 }
 
 .points-stat-label.cap {
-    color: rgb(200, 200, 200);
+    color: rgb(200, 200, 220);
 }
 
 .note-label {
-    font-size: 22px;
-    color: rgb(180, 180, 180);
+    font-size: 16px;
+    color: rgb(180, 180, 200);
     -unity-text-align: middle-center;
-    margin-top: 20px;
+    margin-top: 12px;
     -unity-font-style: italic;
     white-space: normal;
 }
 
-/* Action Panel - Vertical Stack for Portrait */
+/* Action Panel */
 .action-panel {
-    width: 100%;
     flex-direction: column;
     align-items: stretch;
     margin-top: auto;
+    padding-top: 12px;
 }
 
 .start-button {
-    width: 100%;
-    height: 100px;
-    font-size: 36px;
-    background-color: rgb(50, 180, 50);
-    color: rgb(255, 255, 255);
-    border-radius: 15px;
-    border-width: 3px;
-    border-color: rgb(80, 220, 80);
+    min-height: 60px;
+    font-size: 22px;
     -unity-font-style: bold;
-    transition-duration: 0.2s;
-    margin-bottom: 20px;
-}
-
-.start-button:hover:enabled {
-    background-color: rgb(70, 200, 70);
-    border-color: rgb(100, 240, 100);
-    scale: 1.02;
-}
-
-.start-button:active:enabled {
-    background-color: rgb(40, 160, 40);
-    scale: 0.98;
-}
-
-.start-button:disabled {
-    background-color: rgb(80, 80, 80);
-    border-color: rgb(100, 100, 100);
-    color: rgb(150, 150, 150);
+    margin-bottom: 12px;
 }
 
 .back-button {
-    width: 100%;
-    height: 85px;
-    font-size: 30px;
-    background-color: rgb(100, 100, 120);
-    color: rgb(255, 255, 255);
-    border-radius: 15px;
-    border-width: 3px;
-    border-color: rgb(130, 130, 150);
+    min-height: 56px;
+    font-size: 20px;
     -unity-font-style: bold;
-    transition-duration: 0.2s;
-}
-
-.back-button:hover {
-    background-color: rgb(120, 120, 140);
-    border-color: rgb(150, 150, 170);
-    scale: 1.02;
-}
-
-.back-button:active {
-    background-color: rgb(80, 80, 100);
-    scale: 0.98;
 }

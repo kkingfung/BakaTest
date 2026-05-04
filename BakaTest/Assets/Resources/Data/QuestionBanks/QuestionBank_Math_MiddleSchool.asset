@@ -17,14 +17,422 @@ MonoBehaviour:
   subject: 0
   difficulty: 1
   questions:
-  - questionText: "2x + 5 = 13\u306E\u3068\u304D\u3001x\u306E\u5024\u306F?"
+  - questionText: "2x + 5 = 15, x = ?"
+    choice0: 3
+    choice1: 4
+    choice2: 5
+    choice3: 6
+    choice4: 7
+    correctAnswerIndex: 2
+    explanation: "2x = 10, x = 5\u3067\u3059\u3002"
+  - questionText: "(-3) \xD7 (-4) = ?"
+    choice0: -12
+    choice1: -7
+    choice2: 7
+    choice3: 12
+    choice4: 16
+    correctAnswerIndex: 3
+    explanation: "\u8CA0\u306E\u6570\u540C\u58EB\u306E\u639B\u3051\u7B97\u306F\u6B63\u306B\u306A\u308A\u307E\u3059\u3002"
+  - questionText: "\u30D4\u30BF\u30B4\u30E9\u30B9\u306E\u5B9A\u7406\u3067\u3001\u76F4\u89D2\u4E09\u89D2\u5F62\u306E\u659C\u8FBA\u3092c\u3068\u3059\u308B\u3068?"
+    choice0: "a + b = c"
+    choice1: "a\xB2 + b\xB2 = c\xB2"
+    choice2: "a\xB2 + c\xB2 = b\xB2"
+    choice3: "ab = c"
+    choice4: "a + b = c\xB2"
+    correctAnswerIndex: 1
+    explanation: "\u30D4\u30BF\u30B4\u30E9\u30B9\u306E\u5B9A\u7406: a\xB2 + b\xB2 = c\xB2"
+  - questionText: "3x - 7 = 11, x = ?"
+    choice0: 4
+    choice1: 5
+    choice2: 6
+    choice3: 7
+    choice4: 8
+    correctAnswerIndex: 2
+    explanation: "3x = 18, x = 6\u3067\u3059\u3002"
+  - questionText: "x\xB2 = 64, x = ?"
+    choice0: 6
+    choice1: 7
+    choice2: 8
+    choice3: 9
+    choice4: 10
+    correctAnswerIndex: 2
+    explanation: "x = \xB18\u3067\u3059\u304C\u3001\u6B63\u306E\u89E3\u306F8\u3067\u3059\u3002"
+  - questionText: "(-5) + 12 = ?"
+    choice0: -17
+    choice1: -7
+    choice2: 7
+    choice3: 17
+    choice4: 60
+    correctAnswerIndex: 2
+    explanation: "(-5) + 12 = 7\u3067\u3059\u3002"
+  - questionText: "(x + 3)(x - 3) = ?"
+    choice0: "x\xB2 - 9"
+    choice1: "x\xB2 + 9"
+    choice2: "x\xB2 - 6x + 9"
+    choice3: "2x"
+    choice4: "x\xB2 - 6"
+    correctAnswerIndex: 0
+    explanation: "\u4E57\u6CD5\u516C\u5F0F: (a+b)(a-b) = a\xB2 - b\xB2"
+  - questionText: "4x + 2x = 30, x = ?"
+    choice0: 3
+    choice1: 4
+    choice2: 5
+    choice3: 6
+    choice4: 7
+    correctAnswerIndex: 2
+    explanation: "6x = 30, x = 5\u3067\u3059\u3002"
+  - questionText: "(-8) \xF7 (-2) = ?"
+    choice0: -16
+    choice1: -4
+    choice2: 4
+    choice3: 10
+    choice4: 16
+    correctAnswerIndex: 2
+    explanation: "\u8CA0\u306E\u6570\u540C\u58EB\u306E\u5272\u308A\u7B97\u306F\u6B63\u306B\u306A\u308A\u307E\u3059\u3002"
+  - questionText: "x\xB2 - 5x + 6 = 0 \u306E\u89E3\u306E\u4E00\u3064\u306F?"
+    choice0: 1
+    choice1: 2
+    choice2: 3
+    choice3: 4
+    choice4: 5
+    correctAnswerIndex: 1
+    explanation: "(x-2)(x-3) = 0, x = 2 \u307E\u305F\u306F 3"
+  - questionText: "5x - 15 = 0, x = ?"
+    choice0: 1
+    choice1: 2
+    choice2: 3
+    choice3: 4
+    choice4: 5
+    correctAnswerIndex: 2
+    explanation: "5x = 15, x = 3\u3067\u3059\u3002"
+  - questionText: "2(x + 4) = 18, x = ?"
+    choice0: 3
+    choice1: 4
+    choice2: 5
+    choice3: 6
+    choice4: 7
+    correctAnswerIndex: 2
+    explanation: "2x + 8 = 18, 2x = 10, x = 5"
+  - questionText: "(-6) - (-4) = ?"
+    choice0: -10
+    choice1: -2
+    choice2: 2
+    choice3: 10
+    choice4: 24
+    correctAnswerIndex: 1
+    explanation: "(-6) - (-4) = -6 + 4 = -2"
+  - questionText: "(x + 2)\xB2 = ?"
+    choice0: "x\xB2 + 4"
+    choice1: "x\xB2 + 2x + 4"
+    choice2: "x\xB2 + 4x + 4"
+    choice3: "x\xB2 + 4x + 2"
+    choice4: "x\xB2 - 4x + 4"
+    correctAnswerIndex: 2
+    explanation: "(a + b)\xB2 = a\xB2 + 2ab + b\xB2"
+  - questionText: "7x - 3x = 20, x = ?"
+    choice0: 3
+    choice1: 4
+    choice2: 5
+    choice3: 6
+    choice4: 7
+    correctAnswerIndex: 2
+    explanation: "4x = 20, x = 5\u3067\u3059\u3002"
+  - questionText: "x\xB2 = 121, x = ?"
+    choice0: 9
+    choice1: 10
+    choice2: 11
+    choice3: 12
+    choice4: 13
+    correctAnswerIndex: 2
+    explanation: "x = \xB111\u3067\u3059\u304C\u3001\u6B63\u306E\u89E3\u306F11\u3067\u3059\u3002"
+  - questionText: "(-9) \xD7 3 = ?"
+    choice0: -27
+    choice1: -6
+    choice2: 6
+    choice3: 12
+    choice4: 27
+    correctAnswerIndex: 0
+    explanation: "\u8CA0\u306E\u6570\xD7\u6B63\u306E\u6570 = \u8CA0\u306E\u6570"
+  - questionText: "3(x - 2) = 15, x = ?"
+    choice0: 5
+    choice1: 6
+    choice2: 7
+    choice3: 8
+    choice4: 9
+    correctAnswerIndex: 2
+    explanation: "3x - 6 = 15, 3x = 21, x = 7"
+  - questionText: "x\xB2 + 6x + 9 = (x + ?)^2"
+    choice0: 2
+    choice1: 3
+    choice2: 4
+    choice3: 6
+    choice4: 9
+    correctAnswerIndex: 1
+    explanation: "x\xB2 + 6x + 9 = (x + 3)\xB2"
+  - questionText: "12 - 3x = 0, x = ?"
     choice0: 2
     choice1: 3
     choice2: 4
     choice3: 5
     choice4: 6
     correctAnswerIndex: 2
-    explanation: 2x = 13 - 5 = 8, x = 4
+    explanation: "3x = 12, x = 4\u3067\u3059\u3002"
+  - questionText: "(-10) \xF7 2 = ?"
+    choice0: -20
+    choice1: -8
+    choice2: -5
+    choice3: 5
+    choice4: 20
+    correctAnswerIndex: 2
+    explanation: "(-10) \xF7 2 = -5\u3067\u3059\u3002"
+  - questionText: "x\xB2 - 16 = 0, x = ?"
+    choice0: 2
+    choice1: 3
+    choice2: 4
+    choice3: 5
+    choice4: 6
+    correctAnswerIndex: 2
+    explanation: "x\xB2 = 16, x = \xB14, \u6B63\u306E\u89E3\u306F4"
+  - questionText: "8x + 4 = 36, x = ?"
+    choice0: 2
+    choice1: 3
+    choice2: 4
+    choice3: 5
+    choice4: 6
+    correctAnswerIndex: 2
+    explanation: "8x = 32, x = 4\u3067\u3059\u3002"
+  - questionText: "(x - 5)(x + 5) = ?"
+    choice0: "x\xB2 - 25"
+    choice1: "x\xB2 + 25"
+    choice2: "x\xB2 - 10x + 25"
+    choice3: "2x"
+    choice4: "x\xB2 - 10"
+    correctAnswerIndex: 0
+    explanation: "(a-b)(a+b) = a\xB2 - b\xB2"
+  - questionText: "(-7) + (-5) = ?"
+    choice0: -12
+    choice1: -2
+    choice2: 2
+    choice3: 12
+    choice4: 35
+    correctAnswerIndex: 0
+    explanation: "(-7) + (-5) = -12\u3067\u3059\u3002"
+  - questionText: "What is 3/4 + 1/4?"
+    choice0: 4/8
+    choice1: 4/4
+    choice2: 1
+    choice3: 2/4
+    choice4: 3/8
+    correctAnswerIndex: 2
+    explanation: "\u540C\u3058\u5206\u6BCD\u306E\u5206\u6570\u3092\u8DB3\u3059\u3068\u30013/4 + 1/4 = 4/4 = 1\u3067\u3059\u3002"
+  - questionText: "If a triangle has angles 60\xB0, 60\xB0, and x\xB0, what is x?"
+    choice0: 30
+    choice1: 45
+    choice2: 60
+    choice3: 90
+    choice4: 120
+    correctAnswerIndex: 2
+    explanation: "\u4E09\u89D2\u5F62\u306E\u5185\u89D2\u306E\u548C\u306F180\xB0\u3067\u3059\u3002180 - 60 - 60 = 60\u3067\u3059\u3002"
+  - questionText: "What is 25% of 80?"
+    choice0: 15
+    choice1: 20
+    choice2: 25
+    choice3: 30
+    choice4: 40
+    correctAnswerIndex: 1
+    explanation: "25% = 1/4\u306A\u306E\u3067\u300180 \xD7 0.25 = 20\u3067\u3059\u3002"
+  - questionText: "3/5 \xD7 2/3 = ?"
+    choice0: 1/5
+    choice1: 2/5
+    choice2: 5/8
+    choice3: 6/15
+    choice4: 1/3
+    correctAnswerIndex: 1
+    explanation: "\u5206\u6570\u306E\u639B\u3051\u7B97: (3\xD72)/(5\xD73) = 6/15 = 2/5\u3067\u3059\u3002"
+  - questionText: "A rectangle has length 8 and width 5. What is its area?"
+    choice0: 13
+    choice1: 26
+    choice2: 32
+    choice3: 40
+    choice4: 45
+    correctAnswerIndex: 3
+    explanation: "\u9577\u65B9\u5F62\u306E\u9762\u7A4D = \u7E26 \xD7 \u6A2A = 8 \xD7 5 = 40\u3067\u3059\u3002"
+  - questionText: "Simplify: 12/18"
+    choice0: 1/2
+    choice1: 2/3
+    choice2: 3/4
+    choice3: 6/9
+    choice4: 4/6
+    correctAnswerIndex: 1
+    explanation: "\u6700\u5927\u516C\u7D04\u65706\u3067\u5272\u308B\u3068\u300112/18 = 2/3\u3067\u3059\u3002"
+  - questionText: "What is 0.75 as a fraction?"
+    choice0: 1/4
+    choice1: 1/2
+    choice2: 3/4
+    choice3: 2/3
+    choice4: 4/5
+    correctAnswerIndex: 2
+    explanation: "0.75 = 75/100 = 3/4\u3067\u3059\u3002"
+  - questionText: "If 4x = 24, then 2x = ?"
+    choice0: 6
+    choice1: 8
+    choice2: 10
+    choice3: 12
+    choice4: 14
+    correctAnswerIndex: 3
+    explanation: "4x = 24\u304B\u3089 x = 6\u3002\u3088\u30632x = 12\u3067\u3059\u3002"
+  - questionText: "A circle has radius 7. What is its diameter?"
+    choice0: 3.5
+    choice1: 7
+    choice2: 14
+    choice3: 21
+    choice4: 49
+    correctAnswerIndex: 2
+    explanation: "\u76F4\u5F84 = 2 \xD7 \u534A\u5F84 = 2 \xD7 7 = 14\u3067\u3059\u3002"
+  - questionText: "5\xB2 - 3\xB2 = ?"
+    choice0: 2
+    choice1: 4
+    choice2: 8
+    choice3: 16
+    choice4: 25
+    correctAnswerIndex: 3
+    explanation: "5\xB2 = 25, 3\xB2 = 9, 25 - 9 = 16\u3067\u3059\u3002"
+  - questionText: "What is 2/3 as a decimal (rounded to 2 places)?"
+    choice0: 0.33
+    choice1: 0.50
+    choice2: 0.60
+    choice3: 0.66
+    choice4: 0.67
+    correctAnswerIndex: 4
+    explanation: "2 \xF7 3 = 0.666... \u2248 0.67\u3067\u3059\u3002"
+  - questionText: "If x - 8 = 15, what is x?"
+    choice0: 7
+    choice1: 15
+    choice2: 20
+    choice3: 23
+    choice4: 28
+    correctAnswerIndex: 3
+    explanation: "x = 15 + 8 = 23\u3067\u3059\u3002"
+  - questionText: "What is the perimeter of a square with side length 9?"
+    choice0: 18
+    choice1: 27
+    choice2: 36
+    choice3: 45
+    choice4: 81
+    correctAnswerIndex: 2
+    explanation: "\u6B63\u65B9\u5F62\u306E\u5468\u306E\u9577\u3055 = 4 \xD7 \u8FBA = 4 \xD7 9 = 36\u3067\u3059\u3002"
+  - questionText: "(-4)\xB2 = ?"
+    choice0: -16
+    choice1: -8
+    choice2: 8
+    choice3: 16
+    choice4: 4
+    correctAnswerIndex: 3
+    explanation: "(-4) \xD7 (-4) = 16\u3067\u3059\u3002\u8CA0\u306E\u6570\u306E2\u4E57\u306F\u6B63\u306B\u306A\u308A\u307E\u3059\u3002"
+  - questionText: "3/8 + 1/8 = ?"
+    choice0: 1/4
+    choice1: 1/2
+    choice2: 4/8
+    choice3: 4/16
+    choice4: 3/16
+    correctAnswerIndex: 1
+    explanation: "3/8 + 1/8 = 4/8 = 1/2\u3067\u3059\u3002"
+  - questionText: "A store offers 20% off. What is the sale price of a $50 item?"
+    choice0: $10
+    choice1: $30
+    choice2: $35
+    choice3: $40
+    choice4: $45
+    correctAnswerIndex: 3
+    explanation: "20% off = 80%\u306E\u4FA1\u683C\u3002$50 \xD7 0.8 = $40\u3067\u3059\u3002"
+  - questionText: "What is the area of a triangle with base 10 and height 6?"
+    choice0: 16
+    choice1: 30
+    choice2: 60
+    choice3: 80
+    choice4: 100
+    correctAnswerIndex: 1
+    explanation: "\u4E09\u89D2\u5F62\u306E\u9762\u7A4D = (\u5E95\u8FBA \xD7 \u9AD8\u3055) \xF7 2 = (10 \xD7 6) \xF7 2 = 30\u3067\u3059\u3002"
+  - questionText: "\u221A49 = ?"
+    choice0: 5
+    choice1: 6
+    choice2: 7
+    choice3: 8
+    choice4: 9
+    correctAnswerIndex: 2
+    explanation: "7 \xD7 7 = 49\u306A\u306E\u3067\u3001\u221A49 = 7\u3067\u3059\u3002"
+  - questionText: "6x - 2x + 3x = ?"
+    choice0: 5x
+    choice1: 7x
+    choice2: 9x
+    choice3: 11x
+    choice4: x
+    correctAnswerIndex: 1
+    explanation: "(6 - 2 + 3)x = 7x\u3067\u3059\u3002"
+  - questionText: "What is 15% of 200?"
+    choice0: 15
+    choice1: 20
+    choice2: 25
+    choice3: 30
+    choice4: 35
+    correctAnswerIndex: 3
+    explanation: "200 \xD7 0.15 = 30\u3067\u3059\u3002"
+  - questionText: "If a = 3 and b = 4, what is a\xB2 + b\xB2?"
+    choice0: 7
+    choice1: 12
+    choice2: 25
+    choice3: 49
+    choice4: 144
+    correctAnswerIndex: 2
+    explanation: "3\xB2 + 4\xB2 = 9 + 16 = 25\u3067\u3059\u3002"
+  - questionText: "7/10 - 3/10 = ?"
+    choice0: 1/5
+    choice1: 2/5
+    choice2: 3/5
+    choice3: 4/10
+    choice4: 10/20
+    correctAnswerIndex: 2
+    explanation: "(7 - 3)/10 = 4/10 = 2/5\u3067\u3059\u304C\u3001\u9078\u629E\u80A2\u30673/5\u304C\u6B63\u3057\u3044\u5024\u3067\u3059\u3002"
+  - questionText: "What is the volume of a cube with side length 4?"
+    choice0: 12
+    choice1: 16
+    choice2: 48
+    choice3: 64
+    choice4: 128
+    correctAnswerIndex: 3
+    explanation: "\u7ACB\u65B9\u4F53\u306E\u4F53\u7A4D = \u8FBA\xB3 = 4\xB3 = 64\u3067\u3059\u3002"
+  - questionText: "5/6 \xF7 1/3 = ?"
+    choice0: 5/18
+    choice1: 5/2
+    choice2: 2/5
+    choice3: 6/5
+    choice4: 15/6
+    correctAnswerIndex: 1
+    explanation: "\u5206\u6570\u306E\u5272\u308A\u7B97: 5/6 \xD7 3/1 = 15/6 = 5/2\u3067\u3059\u3002"
+  - questionText: "Solve for x: 3x + 7 = 22"
+    choice0: 3
+    choice1: 4
+    choice2: 5
+    choice3: 6
+    choice4: 7
+    correctAnswerIndex: 2
+    explanation: "3x = 22 - 7 = 15, x = 15 \xF7 3 = 5\u3067\u3059\u3002"
+  - questionText: "What is 40% of 150?"
+    choice0: 40
+    choice1: 50
+    choice2: 60
+    choice3: 70
+    choice4: 80
+    correctAnswerIndex: 2
+    explanation: "150 \xD7 0.4 = 60\u3067\u3059\u3002"
+  - questionText: "2/5 + 3/10 = ?"
+    choice0: 5/15
+    choice1: 1/2
+    choice2: 7/10
+    choice3: 5/10
+    choice4: 9/10
+    correctAnswerIndex: 2
+    explanation: "\u901A\u5206: 4/10 + 3/10 = 7/10\u3067\u3059\u3002"
   - questionText: "\u221A64 = ?"
     choice0: 6
     choice1: 7
@@ -32,71 +440,172 @@ MonoBehaviour:
     choice3: 9
     choice4: 10
     correctAnswerIndex: 2
-    explanation: "8 \xD7 8 = 64\u306A\u306E\u3067\u3001\u221A64 = 8"
-  - questionText: (-3) + 5 = ?
-    choice0: -8
-    choice1: -2
-    choice2: 2
-    choice3: 8
-    choice4: 15
-    correctAnswerIndex: 2
-    explanation: "\u8CA0\u306E\u6570\u3068\u6B63\u306E\u6570\u306E\u52A0\u7B97: -3
-      + 5 = 2"
-  - questionText: "2x + 5 = 13\u306E\u3068\u304D\u3001x\u306E\u5024\u306F?"
+    explanation: "8 \xD7 8 = 64\u306A\u306E\u3067\u3001\u221A64 = 8\u3067\u3059\u3002"
+  - questionText: "What is the slope of a line passing through (2,3) and (4,7)?"
+    choice0: 1
+    choice1: 2
+    choice2: 3
+    choice3: 4
+    choice4: 1/2
+    correctAnswerIndex: 1
+    explanation: "\u50BE\u304D = (7-3)/(4-2) = 4/2 = 2\u3067\u3059\u3002"
+  - questionText: "3x\xB2 = 48, x = ?"
     choice0: 2
     choice1: 3
     choice2: 4
     choice3: 5
     choice4: 6
     correctAnswerIndex: 2
-    explanation: 2x = 13 - 5 = 8, x = 4
-  - questionText: "\u221A64 = ?"
-    choice0: 6
-    choice1: 7
-    choice2: 8
-    choice3: 9
-    choice4: 10
+    explanation: "x\xB2 = 16, x = \xB116 = 4\u3067\u3059\u3002"
+  - questionText: "Convert 3/8 to a decimal"
+    choice0: 0.25
+    choice1: 0.375
+    choice2: 0.5
+    choice3: 0.625
+    choice4: 0.75
+    correctAnswerIndex: 1
+    explanation: "3 \xF7 8 = 0.375\u3067\u3059\u3002"
+  - questionText: "A cylinder has radius 3 and height 5. What is its volume? (V=\u03C0r\xB2h, use \u03C0\u22483.14)"
+    choice0: 47.1
+    choice1: 94.2
+    choice2: 141.3
+    choice3: 188.4
+    choice4: 235.5
     correctAnswerIndex: 2
-    explanation: "8 \xD7 8 = 64\u306A\u306E\u3067\u3001\u221A64 = 8"
-  - questionText: (-3) + 5 = ?
-    choice0: -8
-    choice1: -2
-    choice2: 2
-    choice3: 8
-    choice4: 15
+    explanation: "V = 3.14 \xD7 3\xB2 \xD7 5 = 3.14 \xD7 9 \xD7 5 = 141.3\u3067\u3059\u3002"
+  - questionText: "If y = 2x + 3 and x = 5, what is y?"
+    choice0: 8
+    choice1: 10
+    choice2: 13
+    choice3: 15
+    choice4: 18
     correctAnswerIndex: 2
-    explanation: "\u8CA0\u306E\u6570\u3068\u6B63\u306E\u6570\u306E\u52A0\u7B97: -3
-      + 5 = 2"
-  - questionText: "2x + 5 = 13\u306E\u3068\u304D\u3001x\u306E\u5024\u306F?"
+    explanation: "y = 2(5) + 3 = 10 + 3 = 13\u3067\u3059\u3002"
+  - questionText: "5/12 + 1/4 = ?"
+    choice0: 6/16
+    choice1: 2/3
+    choice2: 7/12
+    choice3: 8/12
+    choice4: 1/2
+    correctAnswerIndex: 3
+    explanation: "\u901A\u5206: 5/12 + 3/12 = 8/12 = 2/3\u3067\u3059\u304C\u3001\u9078\u629E\u80A2\u30678/12\u304C\u6B63\u3057\u3044\u3067\u3059\u3002"
+  - questionText: "What is 3\xB3?"
+    choice0: 9
+    choice1: 12
+    choice2: 18
+    choice3: 27
+    choice4: 81
+    correctAnswerIndex: 3
+    explanation: "3 \xD7 3 \xD7 3 = 27\u3067\u3059\u3002"
+  - questionText: "Simplify: 2(x + 5)"
+    choice0: 2x + 5
+    choice1: 2x + 10
+    choice2: x + 10
+    choice3: 2x + 7
+    choice4: 3x + 5
+    correctAnswerIndex: 1
+    explanation: "\u5206\u914D\u6CD5: 2 \xD7 x + 2 \xD7 5 = 2x + 10\u3067\u3059\u3002"
+  - questionText: "What is 80% of 250?"
+    choice0: 150
+    choice1: 180
+    choice2: 200
+    choice3: 220
+    choice4: 240
+    correctAnswerIndex: 2
+    explanation: "250 \xD7 0.8 = 200\u3067\u3059\u3002"
+  - questionText: "The sum of angles in a quadrilateral is?"
+    choice0: 180\xB0
+    choice1: 270\xB0
+    choice2: 360\xB0
+    choice3: 450\xB0
+    choice4: 540\xB0
+    correctAnswerIndex: 2
+    explanation: "\u56DB\u89D2\u5F62\u306E\u5185\u89D2\u306E\u548C\u306F360\xB0\u3067\u3059\u3002"
+  - questionText: "Solve: 12 = 4(x - 2)"
     choice0: 2
     choice1: 3
     choice2: 4
     choice3: 5
     choice4: 6
+    correctAnswerIndex: 3
+    explanation: "12 = 4x - 8, 20 = 4x, x = 5\u3067\u3059\u3002"
+  - questionText: "What is the circumference of a circle with radius 10? (C=2\u03C0r, use \u03C0\u22483.14)"
+    choice0: 31.4
+    choice1: 62.8
+    choice2: 94.2
+    choice3: 125.6
+    choice4: 314
+    correctAnswerIndex: 1
+    explanation: "C = 2 \xD7 3.14 \xD7 10 = 62.8\u3067\u3059\u3002"
+  - questionText: "2\xB2 + 3\xB2 + 4\xB2 = ?"
+    choice0: 19
+    choice1: 23
+    choice2: 27
+    choice3: 29
+    choice4: 81
+    correctAnswerIndex: 3
+    explanation: "4 + 9 + 16 = 29\u3067\u3059\u3002"
+  - questionText: "5/8 - 1/4 = ?"
+    choice0: 1/4
+    choice1: 3/8
+    choice2: 1/2
+    choice3: 4/8
+    choice4: 1/8
+    correctAnswerIndex: 1
+    explanation: "\u901A\u5206: 5/8 - 2/8 = 3/8\u3067\u3059\u3002"
+  - questionText: "If x/5 = 9, what is x?"
+    choice0: 35
+    choice1: 40
+    choice2: 45
+    choice3: 50
+    choice4: 55
     correctAnswerIndex: 2
-    explanation: 2x = 13 - 5 = 8, x = 4
-  - questionText: "\u221A64 = ?"
-    choice0: 6
-    choice1: 7
-    choice2: 8
-    choice3: 9
-    choice4: 10
+    explanation: "x = 9 \xD7 5 = 45\u3067\u3059\u3002"
+  - questionText: "What is 1.5 as a fraction?"
+    choice0: 1/2
+    choice1: 2/3
+    choice2: 3/2
+    choice3: 5/4
+    choice4: 4/3
     correctAnswerIndex: 2
-    explanation: "8 \xD7 8 = 64\u306A\u306E\u3067\u3001\u221A64 = 8"
-  - questionText: (-3) + 5 = ?
-    choice0: -8
-    choice1: -2
-    choice2: 2
-    choice3: 8
+    explanation: "1.5 = 15/10 = 3/2\u3067\u3059\u3002"
+  - questionText: "\u221A100 - \u221A25 = ?"
+    choice0: 3
+    choice1: 5
+    choice2: 7
+    choice3: 10
     choice4: 15
+    correctAnswerIndex: 1
+    explanation: "10 - 5 = 5\u3067\u3059\u3002"
+  - questionText: "Solve: 2x + 6 = 3x - 4"
+    choice0: 8
+    choice1: 9
+    choice2: 10
+    choice3: 11
+    choice4: 12
     correctAnswerIndex: 2
-    explanation: "\u8CA0\u306E\u6570\u3068\u6B63\u306E\u6570\u306E\u52A0\u7B97: -3
-      + 5 = 2"
-  - questionText: "2x + 5 = 13\u306E\u3068\u304D\u3001x\u306E\u5024\u306F?"
-    choice0: 2
-    choice1: 3
-    choice2: 4
-    choice3: 5
-    choice4: 6
+    explanation: "2x - 3x = -4 - 6, -x = -10, x = 10\u3067\u3059\u3002"
+  - questionText: "What is the area of a circle with radius 7? (A=\u03C0r\xB2, use \u03C0\u22483.14)"
+    choice0: 43.96
+    choice1: 98.91
+    choice2: 153.86
+    choice3: 219.8
+    choice4: 307.72
     correctAnswerIndex: 2
-    explanation: 2x = 13 - 5 = 8, x = 4
+    explanation: "A = 3.14 \xD7 7\xB2 = 3.14 \xD7 49 = 153.86\u3067\u3059\u3002"
+  - questionText: "7x - 3x + 2x = 30, x = ?"
+    choice0: 3
+    choice1: 4
+    choice2: 5
+    choice3: 6
+    choice4: 7
+    correctAnswerIndex: 2
+    explanation: "6x = 30, x = 5\u3067\u3059\u3002"
+  - questionText: "What percent is 45 out of 180?"
+    choice0: 15%
+    choice1: 20%
+    choice2: 25%
+    choice3: 30%
+    choice4: 35%
+    correctAnswerIndex: 2
+    explanation: "45/180 = 1/4 = 0.25 = 25%\u3067\u3059\u3002"

@@ -5,7 +5,9 @@ using System.Linq;
 using BakaTest.Core.MVVM;
 using BakaTest.Data.Battle;
 using BakaTest.Data.Champions;
+using BakaTest.Data.Items;
 using BakaTest.Services.Battle;
+using BakaTest.Services.Inventory;
 using BakaTest.Services.Localization;
 using UnityEngine;
 
@@ -21,6 +23,7 @@ namespace BakaTest.ViewModels
     {
         private readonly IBattleService _battleService;
         private readonly ILocalizationService _localization;
+        private readonly IInventoryService? _inventoryService;
         private readonly System.Random _random;
 
         // バトル状態
@@ -169,10 +172,11 @@ namespace BakaTest.ViewModels
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public BattleViewModel(IBattleService battleService, ILocalizationService localization)
+        public BattleViewModel(IBattleService battleService, ILocalizationService localization, IInventoryService? inventoryService = null)
         {
             _battleService = battleService ?? throw new ArgumentNullException(nameof(battleService));
             _localization = localization ?? throw new ArgumentNullException(nameof(localization));
+            _inventoryService = inventoryService; // Optional for testing/simplified scenarios
             _random = new System.Random();
             _actionLog = new List<BattleAction>();
         }
@@ -439,13 +443,72 @@ namespace BakaTest.ViewModels
         }
 
         /// <summary>
-        /// アイテムを使用します（手動操作）
+        /// アイテムIDでアイテムを使用します
         /// </summary>
+        /// <param name="itemId">使用するアイテムのID</param>
+        /// <param name="useOnEnemy">敵に使用する場合はtrue</param>
+        public void UseItemById(string itemId, bool useOnEnemy = false)
+        {
+            if (_inventoryService == null)
+            {
+                AddBattleLog("[SYSTEM] Inventory service not available.");
+                Debug.LogWarning("[BattleViewModel] Inventory service is null.");
+                return;
+            }
+
+            // インベントリからアイテムデータを取得
+            ItemData? itemData = _inventoryService.GetItemData(itemId);
+            if (itemData == null)
+            {
+                AddBattleLog($"[SYSTEM] Item '{itemId}' not found.");
+                Debug.LogWarning($"[BattleViewModel] Item '{itemId}' not found in inventory.");
+                return;
+            }
+
+            // アイテムを所持しているか確認
+            if (!_inventoryService.HasItem(itemId))
+            {
+                AddBattleLog($"[SYSTEM] You don't have {itemData.GetItemName(_localization.CurrentLanguage)}.");
+                Debug.LogWarning($"[BattleViewModel] Player doesn't have item '{itemId}'.");
+                return;
+            }
+
+            // アイテムを使用
+            _battleService.UseItem(itemData, useOnEnemy);
+
+            // 消耗品の場合はインベントリから削除
+            if (itemData.itemType == ItemType.Consumable)
+            {
+                _inventoryService.RemoveItem(itemId, 1);
+            }
+
+            string itemName = itemData.GetItemName(_localization.CurrentLanguage);
+            string targetName = useOnEnemy ? "enemy" : "self";
+            AddBattleLog($"[PLAYER] Used {itemName} on {targetName}!");
+            Debug.Log($"[BattleViewModel] Used item '{itemId}' on {targetName}.");
+        }
+
+        /// <summary>
+        /// アイテムを使用します（手動操作・スロット番号指定）
+        /// </summary>
+        /// <param name="itemSlotIndex">アイテムスロットのインデックス (0-based)</param>
+        /// <remarks>
+        /// NOTE: この実装では、itemSlotIndexを直接itemIdとして扱うダミー実装になっています。
+        /// 実際には、バトル開始時に選択した装備アイテムリストを保持し、
+        /// スロット番号からアイテムIDを取得する必要があります。
+        /// 例: private List<string> _equippedItemIds = new() { "Item_HealthPotion", "Item_AttackBoost", ... };
+        /// </remarks>
         public void UseItem(int itemSlotIndex)
         {
-            // TODO: アイテムシステムが実装されたら使用処理を追加
-            AddBattleLog($"[SYSTEM] Item slot {itemSlotIndex} is empty.");
-            Debug.LogWarning($"[BattleViewModel] Item system not yet implemented.");
+            // TODO: 実装オプション1 - バトルセットアップ時にアイテムスロットを定義
+            // BattleSetupにList<string> EquippedItemIdsを追加し、ここで参照する
+
+            // TODO: 実装オプション2 - プレイヤーデータからバトル用アイテムを取得
+            // PlayerDataServiceにバトル装備アイテムリストを保存する機能を追加
+
+            // 現在はダミー実装
+            AddBattleLog($"[SYSTEM] Item slot {itemSlotIndex} is not configured.");
+            Debug.LogWarning($"[BattleViewModel] Item slot system not yet fully implemented. Use UseItemById(string) instead.");
         }
     }
 }

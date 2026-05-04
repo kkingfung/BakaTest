@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b2c3d4e5f6, type: 3}
+  m_Name: Item_CursedDagger
+  m_EditorClassIdentifier:
+  itemId: cursed_dagger
+  itemType: 0
+  nameEnglish: Cursed Dagger
+  nameJapanese: "\u547C\u308F\u308C\u305F\u77ED\u5200"
+  descriptionEnglish: Deals 150 damage to enemy and applies bleeding (50 damage per turn for 3 turns).
+  descriptionJapanese: "\u6575\u306B150\u30C0\u30E1\u30FC\u30B8\u30923\u30BF\u30FC\u30F3\u6BCE\u30BF\u30FC\u30F350\u30C0\u30E1\u30FC\u30B8\u306E\u51FA\u8840\u3092\u4ED8\u4E0E\u3002"
+  rarity: 2
+  cost: 220
+  sellPrice: 110
+  target: 1
+  effectType: 0
+  effectValue: 150
+  duration: 3
+  isConsumable: true
+  iconSprite: {fileID: 0}

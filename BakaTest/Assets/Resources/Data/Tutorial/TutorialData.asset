@@ -1,0 +1,183 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f05db98aa22e1d14084c3d465b0868c5, type: 3}
+  m_Name: TutorialData
+  m_EditorClassIdentifier: BakaTest.Data::BakaTest.Data.Tutorial.TutorialData 
+  steps:
+  - stepId: welcome
+    stepType: 0
+    titleKey: tutorial.welcome.title
+    descriptionKey: tutorial.welcome.description
+    targetScene: 
+    highlightElementName: 
+    completionCondition:
+      type: 0
+      targetValue: 
+      numericValue: 0
+    nextStepId: test_selection
+    canSkip: 1
+  - stepId: test_selection
+    stepType: 3
+    titleKey: tutorial.test_selection.title
+    descriptionKey: tutorial.test_selection.description
+    targetScene: TestSelection
+    highlightElementName: 
+    completionCondition:
+      type: 0
+      targetValue: 
+      numericValue: 0
+    nextStepId: test_intro
+    canSkip: 1
+  - stepId: test_intro
+    stepType: 0
+    titleKey: tutorial.test_intro.title
+    descriptionKey: tutorial.test_intro.description
+    targetScene: 
+    highlightElementName: 
+    completionCondition:
+      type: 0
+      targetValue: 
+      numericValue: 0
+    nextStepId: test_taking
+    canSkip: 1
+  - stepId: test_taking
+    stepType: 2
+    titleKey: tutorial.test_taking.title
+    descriptionKey: tutorial.test_taking.description
+    targetScene: 
+    highlightElementName: StartTestButton
+    completionCondition:
+      type: 2
+      targetValue: 
+      numericValue: 1
+    nextStepId: test_complete
+    canSkip: 0
+  - stepId: test_complete
+    stepType: 0
+    titleKey: tutorial.test_complete.title
+    descriptionKey: tutorial.test_complete.description
+    targetScene: 
+    highlightElementName: 
+    completionCondition:
+      type: 0
+      targetValue: 
+      numericValue: 0
+    nextStepId: champion_intro
+    canSkip: 1
+  - stepId: champion_intro
+    stepType: 3
+    titleKey: tutorial.champion_intro.title
+    descriptionKey: tutorial.champion_intro.description
+    targetScene: ChampionSelection
+    highlightElementName: 
+    completionCondition:
+      type: 0
+      targetValue: 
+      numericValue: 0
+    nextStepId: champion_select
+    canSkip: 1
+  - stepId: champion_select
+    stepType: 2
+    titleKey: tutorial.champion_select.title
+    descriptionKey: tutorial.champion_select.description
+    targetScene: 
+    highlightElementName: 
+    completionCondition:
+      type: 4
+      targetValue: 
+      numericValue: 0
+    nextStepId: point_allocation
+    canSkip: 0
+  - stepId: point_allocation
+    stepType: 3
+    titleKey: tutorial.point_allocation.title
+    descriptionKey: tutorial.point_allocation.description
+    targetScene: PointAllocation
+    highlightElementName: 
+    completionCondition:
+      type: 0
+      targetValue: 
+      numericValue: 0
+    nextStepId: point_allocation_explain
+    canSkip: 1
+  - stepId: point_allocation_explain
+    stepType: 0
+    titleKey: tutorial.point_allocation_explain.title
+    descriptionKey: tutorial.point_allocation_explain.description
+    targetScene: 
+    highlightElementName: 
+    completionCondition:
+      type: 0
+      targetValue: 
+      numericValue: 0
+    nextStepId: battle_intro
+    canSkip: 1
+  - stepId: battle_intro
+    stepType: 3
+    titleKey: tutorial.battle_intro.title
+    descriptionKey: tutorial.battle_intro.description
+    targetScene: Battle
+    highlightElementName: 
+    completionCondition:
+      type: 0
+      targetValue: 
+      numericValue: 0
+    nextStepId: battle_complete
+    canSkip: 1
+  - stepId: battle_complete
+    stepType: 4
+    titleKey: tutorial.battle_complete.title
+    descriptionKey: tutorial.battle_complete.description
+    targetScene: 
+    highlightElementName: 
+    completionCondition:
+      type: 7
+      targetValue: 
+      numericValue: 0
+    nextStepId: items_intro
+    canSkip: 0
+  - stepId: items_intro
+    stepType: 3
+    titleKey: tutorial.items_intro.title
+    descriptionKey: tutorial.items_intro.description
+    targetScene: Inventory
+    highlightElementName: 
+    completionCondition:
+      type: 0
+      targetValue: 
+      numericValue: 0
+    nextStepId: settings_intro
+    canSkip: 1
+  - stepId: settings_intro
+    stepType: 3
+    titleKey: tutorial.settings_intro.title
+    descriptionKey: tutorial.settings_intro.description
+    targetScene: Settings
+    highlightElementName: 
+    completionCondition:
+      type: 0
+      targetValue: 
+      numericValue: 0
+    nextStepId: tutorial_complete
+    canSkip: 1
+  - stepId: tutorial_complete
+    stepType: 0
+    titleKey: tutorial.complete.title
+    descriptionKey: tutorial.complete.description
+    targetScene: 
+    highlightElementName: 
+    completionCondition:
+      type: 0
+      targetValue: 
+      numericValue: 0
+    nextStepId: 
+    canSkip: 1

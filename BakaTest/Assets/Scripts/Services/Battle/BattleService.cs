@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using BakaTest.Data.Battle;
 using BakaTest.Data.Champions;
+using BakaTest.Data.Items;
 using BakaTest.Services.Localization;
 
 namespace BakaTest.Services.Battle
@@ -41,6 +42,11 @@ namespace BakaTest.Services.Battle
         /// バトルが進行中かどうか
         /// </summary>
         public bool IsBattleInProgress => _currentBattle != null && _player1Unit != null && _player2Unit != null;
+
+        /// <summary>
+        /// 次のバトルのセットアップ（シーン間データ受け渡し用）
+        /// </summary>
+        public BattleSetup? PendingBattleSetup { get; set; }
 
         /// <summary>
         /// プレイヤー1のバトルユニット（現在のHP含む）
@@ -172,17 +178,57 @@ namespace BakaTest.Services.Battle
 
             // 先攻ユニットの攻撃
             PerformAttack(faster, slower);
-            if (!slower.IsAlive)
+
+            // 復活チェック
+            if (!slower.IsAlive && slower.TryRevive(_localization.CurrentLanguage))
+            {
+                string revivedName = slower.ChampionData.GetChampionName(_localization.CurrentLanguage);
+                BattleAction reviveAction = new BattleAction(
+                    BattleActionType.StatusEffect,
+                    revivedName,
+                    revivedName,
+                    $"🔄 {revivedName} was revived!",
+                    _turnCount,
+                    0,
+                    slower.CurrentHP
+                );
+                _actionLog.Add(reviveAction);
+                ActionPerformed?.Invoke(reviveAction);
+                Debug.Log($"[BattleService] {reviveAction.Description}");
+            }
+            else if (!slower.IsAlive)
             {
                 return FinalizeBattle();
             }
 
             // 後攻ユニットの反撃
             PerformAttack(slower, faster);
-            if (!faster.IsAlive)
+
+            // 復活チェック
+            if (!faster.IsAlive && faster.TryRevive(_localization.CurrentLanguage))
+            {
+                string revivedName = faster.ChampionData.GetChampionName(_localization.CurrentLanguage);
+                BattleAction reviveAction = new BattleAction(
+                    BattleActionType.StatusEffect,
+                    revivedName,
+                    revivedName,
+                    $"🔄 {revivedName} was revived!",
+                    _turnCount,
+                    0,
+                    faster.CurrentHP
+                );
+                _actionLog.Add(reviveAction);
+                ActionPerformed?.Invoke(reviveAction);
+                Debug.Log($"[BattleService] {reviveAction.Description}");
+            }
+            else if (!faster.IsAlive)
             {
                 return FinalizeBattle();
             }
+
+            // ターン終了時のステータス効果処理
+            _player1Unit.ProcessEndOfTurnEffects(_localization.CurrentLanguage);
+            _player2Unit.ProcessEndOfTurnEffects(_localization.CurrentLanguage);
 
             // ターン終了、バトル継続
             Debug.Log($"[BattleService] Turn {_turnCount} complete. P1 HP: {_player1Unit.CurrentHP}/{_player1Unit.MaxHP}, P2 HP: {_player2Unit.CurrentHP}/{_player2Unit.MaxHP}");
@@ -317,8 +363,9 @@ namespace BakaTest.Services.Battle
         }
 
         /// <summary>
-        /// アイテムを使用します
+        /// アイテムを使用します（レガシー）
         /// </summary>
+        [Obsolete("Use UseItem(ItemData) instead")]
         public void UseItem(string itemId)
         {
             if (!IsBattleInProgress || _player1Unit == null)
@@ -327,12 +374,65 @@ namespace BakaTest.Services.Battle
                 return;
             }
 
-            // TODO: アイテムシステム実装
-            // 現在はダミー実装（回復ポーション）
-            int healAmount = 100;
-            BattleAction itemAction = BattleAction.CreateItemUse(_player1Unit, itemId, healAmount, _localization.CurrentLanguage);
+            // レガシー実装（ダミー回復ポーション）
+#pragma warning disable CS0618 // Type or member is obsolete
+            BattleAction itemAction = BattleAction.CreateItemUse(_player1Unit, itemId, 100, _localization.CurrentLanguage);
+#pragma warning restore CS0618
             _actionLog.Add(itemAction);
             ActionPerformed?.Invoke(itemAction);
+
+            Debug.Log($"[BattleService] {itemAction.Description}");
+        }
+
+        /// <summary>
+        /// アイテムを使用します（完全版）
+        /// </summary>
+        /// <param name="itemData">使用するアイテム</param>
+        /// <param name="useOnEnemy">敵に使用する場合はtrue（デバフアイテム等）</param>
+        public void UseItem(ItemData itemData, bool useOnEnemy = false)
+        {
+            if (!IsBattleInProgress || _player1Unit == null || _player2Unit == null)
+            {
+                Debug.LogWarning("[BattleService] Cannot use item: no battle in progress!");
+                return;
+            }
+
+            // アイテムの対象を決定
+            BattleUnit user = _player1Unit;
+            BattleUnit? target = null;
+
+            switch (itemData.target)
+            {
+                case ItemTarget.Self:
+                    target = _player1Unit;
+                    break;
+                case ItemTarget.Enemy:
+                    target = _player2Unit;
+                    break;
+                case ItemTarget.Both:
+                    // 両方に効果がある場合、まず自分に適用
+                    target = _player1Unit;
+                    break;
+            }
+
+            // useOnEnemyフラグがある場合は強制的に敵を対象にする（UI操作用）
+            if (useOnEnemy && itemData.target != ItemTarget.Both)
+            {
+                target = _player2Unit;
+            }
+
+            // アイテム効果を適用
+            BattleAction itemAction = BattleAction.CreateItemUse(user, target, itemData, _localization.CurrentLanguage);
+            _actionLog.Add(itemAction);
+            ActionPerformed?.Invoke(itemAction);
+
+            // 両方に効果がある場合、敵にも適用
+            if (itemData.target == ItemTarget.Both)
+            {
+                BattleAction itemAction2 = BattleAction.CreateItemUse(user, _player2Unit, itemData, _localization.CurrentLanguage);
+                _actionLog.Add(itemAction2);
+                ActionPerformed?.Invoke(itemAction2);
+            }
 
             Debug.Log($"[BattleService] {itemAction.Description}");
         }

@@ -1,654 +1,470 @@
-# ゲーム企画書：アカデミックバトルアリーナ
-## 「バカとテストと召喚獣」より着想
+# BakaTest - Educational Quiz Battle Game
+
+**BakaTest** is an educational quiz-based battle game built with Unity. Players answer questions from various subjects (Math, Science, English, History) to power their champions in strategic turn-based battles.
 
 ---
 
-## 🎮 ハイコンセプト
+## Table of Contents
 
-教育と戦略的オートバトルゲームプレイを組み合わせたモバイル対戦ゲーム。プレイヤーはAI生成の学力テストを受けて能力ポイントを獲得し、それらのポイントを戦略的に配分してPvP/PvEバトルでチャンピオンを強化します。成功には知識と戦術の両方が必要です。
-
-**コアループ：** テストを受ける → ポイント獲得 → チャンピオンに配分 → バトル → コイン獲得 → アップグレード/アンロック → 繰り返し
-
----
-
-## 📚 コアメカニクス
-
-### 1. テストシステム
-
-#### 構造
-- **形式：** 5択の選択問題
-- **問題数：** 固定数（全学年共通）
-- **制限時間：** 固定時間（全学年共通、高学年ほど難しくなる）
-- **採点：** 時間切れで自動提出、回答済み問題のみ採点
-
-#### 教科と難易度
-- **コア教科：** 数学、理科、英語、歴史
-- **難易度レベル：** 学年ベース（小学校 → 中学校 → 高校 → 大学）
-- **高学年 = 問題1問あたりの獲得ポイントが高い**
-- **プレイヤーの選択：** 任意の教科/学年の組み合わせを選択可能
-
-#### 1日の制限
-- **テスト受験回数は無制限**（練習用）
-- **教科ごとにスコア獲得上限あり**（1日あたりの各教科の合計ポイント上限）
-- **全教科で同じ上限**（多様性を促進）
-- **効果：** 練習を通じた学習を促進しつつ、過度な周回を防止
-
-#### AI生成システム
-- **AI生成器：** 各教科/学年の1日分テストプールを作成
-- **AIレビュアー：** 問題、解答、難易度を検証
-- **自動公開：** レビュアーが承認すれば自動的にテスト配信
-- **毎日更新：** 新しいテストプールが毎日生成され、全プレイヤーが同じプールから出題
+1. [Prerequisites](#prerequisites)
+2. [Project Setup](#project-setup)
+3. [Project Structure](#project-structure)
+4. [Running the Game](#running-the-game)
+5. [Unity Editor Tools](#unity-editor-tools)
+6. [Architecture Overview](#architecture-overview)
+7. [Troubleshooting](#troubleshooting)
+8. [Documentation](#documentation)
 
 ---
 
-### 2. チャンピオンシステム
+## Prerequisites
 
-#### コレクションモデル（LoL風）
-- **無料チャンピオンローテーション**（定期的に変更）
-- **永久アンロック：** バトルコインまたは課金通貨で直接購入
-- **チャンピオンガチャなし**（プレイヤーフレンドリー）
+### Required Software
+- **Unity 6000.0.9f1** (Unity 6 - 2024 LTS)
+  - Download from [Unity Hub](https://unity.com/download)
+  - Ensure you select Unity version **6000.0.9f1** specifically
+- **Git** (for cloning the repository)
+- **Visual Studio 2022** or **JetBrains Rider** (recommended IDEs)
 
-#### チャンピオンアビリティ
-- **パッシブアビリティ：** 常時発動
-- **アクティブスキル1つ：** 戦略的に使用する主要アビリティ
-- **シンプルデザイン：** モバイルオートバトル向けに最適化
-
-#### チャンピオン分類
-- **ロールシステム：** タンク、DPS、サポート、メイジ、アサシンなど
-- **属性タイプ：** 火/水/土/風（三すくみ相性）
-- **追加システム：** さらなる深みの可能性（例：陣営ボーナス）
-
-#### 教科親和性システム（独自機能！）
-- **各チャンピオンは教科ごとに固有のボーナスを持つ**
-- 例： 
-  - チャンピオンA：数学で攻撃力2倍、理科で防御力1.5倍
-  - チャンピオンB：歴史でHP2倍、英語で速度2倍
-- **戦略的深み：** 自分の得意教科に合うチャンピオンを選択
+### Unity Modules Required
+When installing Unity 6000.0.9f1, make sure to include:
+- Windows Build Support (or your target platform)
+- Visual Studio Community (if you don't have an IDE)
 
 ---
 
-### 3. ポイント配分システム
+## Project Setup
 
-#### 戦略的リソース管理
-- **バトル前：** 獲得ポイントプールからポイントをコミット
-- **ポイント変換：** ポイント → キャラクター固有の比率でステータスに変換
-- **コミットしたポイントは全て消費**（勝敗に関わらず）
-- **自己バランス経済：** 
-  - 大量投入すれば勝てるが資源が枯渇
-  - ポイントがゼロになったらテスト再受験必須
-  - 戦略的リソース管理を促進
+### 1. Clone the Repository
 
-#### P2W防止
-- **ポイント購入不可：** テストポイントは課金で買えない
-- **スキルが重要：** RNG + 戦略 + ポイント配分で深みを創出
-- **カムバックメカニクス：** ポイントゼロのプレイヤーはテスト再受験（アニメと同じ！）
+```bash
+git clone <repository-url>
+cd BakaTest
+```
 
----
+### 2. Open in Unity
 
-### 4. バトルシステム
+1. Open **Unity Hub**
+2. Click **"Open"** or **"Add"**
+3. Navigate to the cloned repository folder
+4. Select the **`BakaTest/BakaTest`** folder (the inner BakaTest folder)
+5. Click **"Open"**
 
-#### 戦闘スタイル
-- **オートバトル：** チャンピオンが自動で戦闘
-- **手動アイテム使用：** プレイヤーは戦闘中に消費アイテムをタップして使用可能
-- **時間：** バトルラウンド1回あたり約1分
-- **マッチ：** 1本勝負またはBO5形式
+Unity will import the project and compile all scripts. This may take a few minutes on first import.
 
-#### バトル要素
-- **配置/陣形：** 戦闘効果に影響
-- **チャンピオン相性：** ロールと属性の有利不利
-- **アイテムビルド：** 戦略的な消費アイテム使用（回復、バフなど）
-- **チームシナジー：** チャンピオンの組み合わせが重要
+### 3. Verify Project Settings
 
-#### RNG要素（興奮ファクター）
-- **クリティカルヒット：** ボーナスダメージのチャンス
-- **回避：** 攻撃を避けるチャンス
-- **アビリティ発動：** 確率効果スキル（例：30%スタン確率）
-- **バランス：** 戦闘を面白くし、純粋なステータス勝負を防ぐ
+After Unity opens:
 
-#### アイテムと消費品
-- **バトル前ロードアウト：** 試合前に消費アイテムを装備
-- **手動起動：** オートバトル中にタップで使用
-- **種類：** 回復ポーション、攻撃バフ、防御シールドなど
-- **ビジュアルギミック：** 演出用の見た目効果
+1. Go to **Edit → Project Settings → Player**
+2. Verify **Company Name** and **Product Name** are set correctly
+3. Check **Scripting Backend** (recommended: IL2CPP for builds, Mono for development)
+4. Verify **API Compatibility Level**: .NET Standard 2.1
+
+### 4. Package Installation
+
+The project uses Unity's Package Manager. Required packages should auto-install:
+- **UI Toolkit** (built-in)
+- **Input System** (com.unity.inputsystem)
+- **TextMeshPro** (com.unity.textmeshpro)
+- **2D Sprite** (com.unity.2d.sprite)
+- **2D Animation** (com.unity.2d.animation)
+
+If packages are missing:
+1. Go to **Window → Package Manager**
+2. Search for the missing package
+3. Click **Install**
 
 ---
 
-### 5. ゲームモード
+## Project Structure
 
-#### バトルタイプ（参加人数ベース）
-全モードで同じバトルメカニクスを使用、参加人数のみが異なる：
+```
+BakaTest/
+├── Assets/
+│   ├── Resources/
+│   │   └── Data/
+│   │       ├── Champions/          # Champion ScriptableObjects
+│   │       ├── Items/              # Item ScriptableObjects
+│   │       ├── QuestionBanks/      # 16 question banks (4 subjects × 4 difficulties)
+│   │       └── Localization/       # Language data (Japanese/English)
+│   ├── Scenes/
+│   │   ├── Startup.unity           # Game initialization scene (START HERE)
+│   │   ├── MainMenu.unity
+│   │   ├── TestSelection.unity
+│   │   ├── TestTaking.unity
+│   │   ├── PointAllocation.unity
+│   │   ├── ChampionSelection.unity
+│   │   ├── Battle.unity
+│   │   └── Results.unity
+│   ├── Scripts/
+│   │   ├── Bootstrap/              # GameBootstrap (BakaTest.Bootstrap.asmdef)
+│   │   ├── Core/                   # MVVM base classes (BakaTest.Core.asmdef)
+│   │   ├── Data/                   # Data models (BakaTest.Data.asmdef)
+│   │   ├── Services/               # Service layer (BakaTest.Services.asmdef)
+│   │   ├── ViewModels/             # ViewModels (BakaTest.ViewModels.asmdef)
+│   │   ├── Views/                  # Views (BakaTest.Views.asmdef)
+│   │   ├── UI/                     # UI utilities (BakaTest.UI.asmdef)
+│   │   └── Editor/                 # Editor scripts (BakaTest.Editor.asmdef)
+│   └── UI/                         # UXML and USS files
+├── ProjectSettings/
+└── README.md (this file)
+```
 
-1. **個人戦（1v1）**
-   - ランダムマッチング
-   - 個人ランキングに影響
-   - クイックマッチ
+### Assembly Definitions
 
-2. **チーム戦（5v5）**
-   - 各プレイヤーが1チャンピオンを操作
-   - ランダムマッチングまたは事前編成チーム
-   - チーム連携スキルに影響
+The project uses **8 assembly definitions** for modular compilation:
 
-3. **ギルド戦**
-   - **挑戦ベース**（バカとテストと同じ！）
-   - ギルドは特定のライバルに挑戦可能、またはランダムでボーナス報酬
-   - オプトイン参加（強制なし）
-   - 報酬はイベントタイプに依存
-   - 複数の5v5バトルが同時進行
+1. **BakaTest.Data** - Data models (no dependencies)
+2. **BakaTest.Core** - MVVM framework, ServiceLocator
+3. **BakaTest.Services** - Service implementations
+4. **BakaTest.ViewModels** - UI ViewModels
+5. **BakaTest.Views** - UI Views
+6. **BakaTest.UI** - UI utilities (animations, loading screen)
+7. **BakaTest.Bootstrap** - Game initialization
+8. **BakaTest.Editor** - Unity Editor tools (Editor-only)
 
-4. **王国戦**
-   - **より大規模：** 複数ギルドが所属王国のために戦う
-   - **短時間：** 激しく爆発的なイベント
-   - **複数の5v5バトルが同時進行**
-   - 王国の合計スコアで勝者決定
-
-5. **シミュレーション戦**
-   - **ノーリスク：** ポイント消費なしで任意のポイント設定可能
-   - **カジュアル/楽しみ：** 戦略テスト、新チャンピオン試用
-   - **影響なし：** 個人ランキングやリソースに影響しない
-
-6. **PvE練習モード**
-   - AI相手に戦闘
-   - リスクなしで戦略テスト
-   - チャンピオンメカニクスを学習
-
----
-
-### 6. 進行システム
-
-#### ランキング（複数のリーダーボード）
-- **個人PvPランキング**
-- **個人スコアランキング**（全教科の合計獲得ポイント）
-- **ギルドランキング**
-- **王国ランキング**
-- **教科別ランキング**（トップ数学プレイヤー、理科マスターなど）
-
-#### ランキングの影響（バカとテスト風）
-- **ビジュアル世界の変化：** 上位ランクのギルド/王国は施設の見た目が良くなる
-- **特権アンロック：** 特別な低ポイントイベントへのアクセス
-- **社会的名声：** 公開表示（バナー、記念碑、ギルドホール）
-- **コスメティックアップグレード：** より良い環境、装飾、視覚効果
-
-#### シーズンシステム（月次）
-- **期間：** 1シーズン1ヶ月
-- **ソフトリセット：** ランキングがリセットまたはソフトリセット
-- **永続性：** 所有チャンピオン、アイテム、コインは引き継ぎ
-- **新鮮な競争：** 毎月全員がランキング新規スタート
-- **シーズン報酬：** 限定コスメティック、称号など
+This provides:
+- Fast incremental compilation
+- Clear dependency boundaries
+- Better code organization
 
 ---
 
-### 7. ソーシャル構造
+## Running the Game
 
-#### 階層
-**プレイヤー → ギルド → 王国**（入れ子構造）
+### First Time Setup
 
-#### ギルドシステム
-- **規模：** 可変（テストに基づき決定予定）
-- **メリット：** 
-  - ギルドランキング
-  - メンバーへのボーナスポイント
-  - ビジュアル施設アップグレード
-  - ソーシャルコミュニティ
-- **ギルド戦：** 挑戦ベース、オプトイン参加
+1. **Open the Startup Scene**
+   - In Unity Editor, navigate to **Assets/Scenes/Startup.unity**
+   - Double-click to open it
+   - This is the entry point scene
 
-#### 王国システム
-- **構成：** 複数ギルドで王国を形成
-- **メリット：**
-  - 王国全体のランキング
-  - 領土支配/ビジュアル表現
-  - 大規模イベント参加
-- **王国戦：** 大規模同時バトル、短時間イベント
+2. **Press Play**
+   - Click the **Play button** in Unity Editor
+   - The game will initialize services and load the Main Menu
 
-#### ソーシャル機能
-- **バトルエモート/リアクション：** 戦闘中に自己表現
-- **ギルドチャット：**（将来の機能候補）
-- **フレンドシステム：**（将来の機能候補）
+### Game Flow
 
----
+```
+Startup → MainMenu → TestSelection → TestTaking → PointAllocation 
+                                                       ↓
+                      Results ← Battle ← ChampionSelection
+```
 
-### 8. マネタイゼーション
+1. **Startup**: Initializes ServiceLocator and registers all services
+2. **MainMenu**: Start game, access settings, shop, inventory
+3. **TestSelection**: Choose subject and difficulty
+4. **TestTaking**: Answer quiz questions
+5. **PointAllocation**: Allocate earned points to champion stats
+6. **ChampionSelection**: Select your champion for battle
+7. **Battle**: Turn-based battle using allocated stats
+8. **Results**: View battle results and rewards
 
-#### 課金通貨の用途
-1. **チャンピオンアンロック**（コイン稼ぎより速い）
-2. **コスメティックアイテム**（スキン、エフェクト、エモート）
-3. **バトルパス**（シーズン進行報酬）
-4. **ブースター**（1日スコア上限増加、コイン獲得速度上昇）
-5. **ガチャシステム**（コスメ/アイテム用、チャンピオンは対象外）
+### Testing Specific Features
 
-#### フェアトゥプレイデザイン
-- **テストポイント購入不可：** スキルと知識が必須
-- **チャンピオンはF2P入手可能：** バトルコインで周回可能
-- **無料ローテーション：** 購入前にチャンピオン試用可能
-- **コスメティック中心：** ほとんどの課金アイテムは見た目のみ
-- **ブースターは利便性：** パワーではない（進行が速いだけ）
-
-#### バトルコイン（獲得通貨）
-- **獲得方法：** バトル勝利
-- **用途：**
-  - チャンピオン購入
-  - 施設アップグレード（ギルド/個人）
-  - 消費アイテム
-  - ガチャ
-  - 各種ショップアイテム
+To test individual scenes:
+1. Open the desired scene (e.g., `Battle.unity`)
+2. Make sure **Startup.unity** is included in **Build Settings** (File → Build Settings)
+3. Services may not be initialized if you skip Startup scene
 
 ---
 
-## 🎨 アートとアセット
+## Unity Editor Tools
 
-### 利用可能なアセット
+The project includes comprehensive Editor tools under the **Tools** menu:
 
-#### 3Dモデル（Synty Sidekick Characters）
-- **HumanSpeciesバリアント：** 4キャラクタータイプ
-- **Starterバリアント：** 4キャラクタータイプ
-- **スタイル：** ローポリ、モバイル最適化済み
-- **最適用途：** バトルビジュアライゼーション、チャンピオンモデル
+### Data Generators
 
-#### 2Dアート（Tomatocol Character Variety Pack）
-- **20キャラクターイラスト**（DEMO版、拡張可能）
-- **スタイル：** アニメ/漫画風
-- **最適用途：** チャンピオンポートレート、UIカード、選択画面
+**Tools → BakaTest → Generate Champion Data**
+- Creates champion ScriptableObjects with predefined stats
+- Automatically sets up subject affinities (Math→Attack, Science→Defense, etc.)
 
-### ビジュアルデザイン
-- **バトルシーン：** Syntyモデル使用の3D
-- **UI/メニュー：** Tomatocolアート使用のアニメ風2D
-- **一貫したスタイル：** 3Dゲームプレイとアニメ風プレゼンテーションの融合
-- **ギルド/王国ビジュアル：** ランキングに基づく動的アップグレード
+**Tools → BakaTest → Generate Item Data**
+- Creates item ScriptableObjects (HP Potion, Revive, Strength Boost, etc.)
+- Sets up item effects and costs
 
----
+**Tools → BakaTest → Generate Question Banks**
+- Creates 16 question bank files (4 subjects × 4 difficulties)
+- Each bank contains 25 unique questions
+- Automatically organized by subject and difficulty
 
-## 🎯 ターゲットオーディエンス
+**Tools → BakaTest → Generate Localization Data**
+- Sets up Japanese and English localization files
+- Creates translation entries for UI text
 
-### プライマリー
-- **年齢：** 12〜25歳
-- **興味：** アニメファン、競技ゲーマー、学生
-- **動機：** 楽しいゲームプレイ + 教育的価値
-- **プラットフォーム：** モバイル（iOS/Android）
+### Scene Setup Utilities
 
-### セカンダリー
-- **保護者：** 教育的側面を評価
-- **カジュアルプレイヤー：** 低い時間投資（クイックバトル）
-- **競技プレイヤー：** 深いランキング/メタシステム
+**Tools → BakaTest → Setup → Setup All Scenes**
+- Automatically sets up all scenes with proper UI Document references
+- Assigns UXML/USS files to UI Documents
+- Configures View components
 
----
+**Tools → BakaTest → Setup → Setup [SceneName]**
+- Individual scene setup utilities:
+  - Setup Main Menu
+  - Setup Battle Scene
+  - Setup Test Taking Scene
+  - Setup Point Allocation Scene
+  - Setup Champion Selection Scene
+  - Setup Champion Shop Scene
+  - Setup Inventory Scene
+  - Setup Test Results Scene
+  - Setup Settings Scene
 
-## 🌟 独自セールスポイント
+### Debug Tools
 
-1. **教育と競争の融合**
-   - 学習を報酬化し、かつ楽しくする唯一のゲーム
-   - ゲームプレイを通じた実際の学力向上
+**Tools → BakaTest → Debug → Force Recompile**
+- Forces Unity to recompile all scripts
+- Useful for resolving compilation issues
 
-2. **戦略的リソース管理**
-   - ユニークなポイント配分システム
-   - 毎回のバトルでリスク/リワード判断
-   - 自己バランス経済
-
-3. **キャラクター固有の教科ボーナス**
-   - チャンピオンが自分の得意教科とシナジー
-   - 複数の有効な戦略とチーム構成
-
-4. **公平なマネタイゼーション**
-   - テストポイント購入不可 = パワー購入不可
-   - スキルと知識が最重要
-   - オプションのコスメありF2Pフレンドリー
-
-5. **アニメIPの魅力**
-   - バカとテストには熱心なファンベースあり
-   - クラス戦争コンセプトは人気
-   - ライセンスの可能性
-
-6. **動的世界**
-   - ギルド/王国ランキングに基づく世界の変化
-   - ビジュアル進行に意味を持たせる
-   - アニメのクラスシステムから着想
+**Tools → BakaTest → Debug → Print Service Status**
+- Logs the status of all registered services
+- Helps debug ServiceLocator issues
 
 ---
 
-## 📊 技術的考慮事項
+## Architecture Overview
 
-### プラットフォーム
-- **プライマリー：** モバイル（iOS & Android）
-- **エンジン：** Unity（既に進行中）
-- **レンダリング：** モバイル最適化用URP
+### MVVM Pattern
 
-### バックエンド要件
-1. **サーバーアーキテクチャ**
-   - プレイヤーデータ管理
-   - リアルタイムマッチメイキング
-   - バトル結果検証
-   - ランキング計算
+The project uses **Model-View-ViewModel (MVVM)** architecture:
 
-2. **AIシステム**
-   - テスト生成AI（日次プール作成）
-   - レビュアーAI（問題検証）
-   - 自動公開用コンテンツパイプライン
+- **Model**: Data classes and Services (business logic)
+- **View**: UI Toolkit Views (inherits from `ViewBase<TViewModel>`)
+- **ViewModel**: UI logic (inherits from `ViewModelBase`)
 
-3. **アンチチート**
-   - サーバーサイドバトル検証
-   - テスト解答暗号化
-   - ポイント獲得検証
+**Example:**
+```csharp
+// ViewModel
+public class MainMenuViewModel : ViewModelBase
+{
+    private readonly ISceneManagementService _sceneService;
+    
+    public ICommand StartGameCommand { get; }
+    
+    public MainMenuViewModel(ISceneManagementService sceneService)
+    {
+        _sceneService = sceneService;
+        StartGameCommand = new RelayCommand(ExecuteStartGame);
+    }
+    
+    private void ExecuteStartGame() => _sceneService.LoadTestSelection();
+}
 
-4. **データベース**
-   - プレイヤープロフィールと進行
-   - チャンピオンコレクション
-   - ギルド/王国データ
-   - テスト問題バンク
-   - バトル履歴とリプレイ
+// View
+public class MainMenuView : ViewBase<MainMenuViewModel>
+{
+    protected override void Awake()
+    {
+        base.Awake();
+        var sceneService = ServiceLocator.Instance.Get<ISceneManagementService>();
+        SetViewModel(new MainMenuViewModel(sceneService));
+    }
+    
+    protected override void BindViewModel(MainMenuViewModel viewModel)
+    {
+        base.BindViewModel(viewModel);
+        _startButton.clicked += () => viewModel.StartGameCommand.Execute(null);
+    }
+}
+```
 
-### パフォーマンス目標
-- **バトルロード時間：** 3秒未満
-- **テストロード：** 2秒未満
-- **フレームレート：** 60FPS目標（最低30FPS）
-- **バッテリー消費：** 中程度（モバイル最適化済み）
+### ServiceLocator Pattern
 
----
+Services are registered in **GameBootstrap.cs** on game start:
 
-## 🗺️ 開発ロードマップ
+```csharp
+ServiceLocator.Instance.Register<IQuestionBankService>(new QuestionBankService());
+ServiceLocator.Instance.Register<ITestService>(new TestService());
+ServiceLocator.Instance.Register<IBattleService>(new BattleService());
+// ... etc
+```
 
-### フェーズ1：コア基盤（MVP）
-**目標：** プレイ可能なバーティカルスライス
+**Accessing services:**
+```csharp
+var testService = ServiceLocator.Instance.Get<ITestService>();
+```
 
-1. **テストシステム**
-   - 単一教科（数学）実装
-   - 2難易度レベル（小学校、高校）
-   - 手動問題バンク（各レベル20問）
-   - 基本採点システム
+### UI Toolkit
 
-2. **チャンピオンシステム**
-   - 4〜6体のスターターチャンピオン
-   - 基本ステータス（HP、ATK、DEF、SPD）
-   - 各チャンピオンパッシブ＋アクティブスキル1つ
-   - 教科親和性実装
-
-3. **バトルシステム**
-   - 1v1オートバトル
-   - 基本戦闘計算
-   - 勝敗条件
-   - シンプルUI
-
-4. **ポイント配分**
-   - バトル前ポイントコミット
-   - ステータス変換
-   - バトル後ポイント消費
-
-5. **基本UI**
-   - メインメニュー
-   - テスト受験画面
-   - チャンピオン選択
-   - バトル画面
-
-**タイムライン：** 3〜4ヶ月
+All UI is built with **Unity's UI Toolkit**:
+- **UXML** files define structure (Assets/UI/)
+- **USS** files define styling (Assets/UI/)
+- **C# Views** handle logic and data binding
 
 ---
 
-### フェーズ2：コンテンツとシステム拡張
-**目標：** 全機能セット、ソフトローンチ準備完了
+## Troubleshooting
 
-1. **テストシステム拡張**
-   - 全4コア教科
-   - 各教科全4難易度レベル
-   - 1日スコア上限実装
-   - AIテスト生成器（基本版）
+### Common Issues
 
-2. **チャンピオン拡張**
-   - 合計15〜20体
-   - 無料ローテーションシステム
-   - チャンピオンショップ（バトルコイン）
-   - ロールと属性タイプシステム
+#### 1. "Assembly definition file not found" errors
 
-3. **追加バトルモード**
-   - 5v5チーム戦
-   - PvE練習モード
-   - シミュレーション戦
+**Solution:**
+- Ensure all 8 .asmdef files exist in their respective folders
+- Delete the `Library` folder and let Unity reimport
+- Go to **Assets → Reimport All**
 
-4. **ソーシャルシステム**
-   - ギルド作成と管理
-   - ギルド戦（挑戦システム）
-   - 基本チャット/エモート
+#### 2. "ServiceLocator has not been initialized" error
 
-5. **進行**
-   - 個人ランキング
-   - ギルドランキング
-   - 基本報酬システム
+**Cause:** You're testing a scene without starting from Startup.unity
 
-6. **マネタイゼーション**
-   - 課金通貨ショップ
-   - コスメティックアイテム
-   - 最初のバトルパス
+**Solution:**
+- Always start from **Startup.unity** scene
+- Or manually initialize services in your test scene
 
-**タイムライン：** 4〜6ヶ月
+#### 3. Missing UI references (null UIDocument)
 
----
+**Solution:**
+- Use the Scene Setup Utilities: **Tools → BakaTest → Setup → Setup [Scene Name]**
+- Or manually assign UIDocument component in Inspector
 
-### フェーズ3：高度な機能と磨き込み
-**目標：** フルローンチ、王国、イベント
+#### 4. Question banks are empty or have duplicate questions
 
-1. **王国システム**
-   - 王国構造
-   - 王国戦
-   - 領土システム
-   - ビジュアル世界変化
+**Solution:**
+- Question banks have been fully populated with 25 unique questions each
+- If you see issues, regenerate: **Tools → BakaTest → Generate Question Banks**
 
-2. **AI強化**
-   - デュアルAIレビューシステム
-   - 自動公開パイプライン
-   - 問題バリエーション改善
+#### 5. Compilation errors after pulling latest changes
 
-3. **イベントとシーズン**
-   - 月次シーズン
-   - 特別イベント
-   - イベント限定報酬
-   - 期間限定チャレンジ
+**Solution:**
+1. Close Unity
+2. Delete the `Library` folder
+3. Reopen Unity and let it reimport everything
+4. If issues persist: **Tools → BakaTest → Debug → Force Recompile**
 
-4. **高度なマッチメイキング**
-   - 改善されたアルゴリズム
-   - 接続品質マッチング
-   - 公平なペアリングシステム
+#### 6. Items or Champions not appearing in game
 
-5. **磨き込みと最適化**
-   - パフォーマンス最適化
-   - ビジュアルエフェクト
-   - サウンドデザイン
-   - チュートリアル改善
+**Cause:** ScriptableObjects may not be generated
 
-**タイムライン：** 3〜4ヶ月
+**Solution:**
+- Generate champions: **Tools → BakaTest → Generate Champion Data**
+- Generate items: **Tools → BakaTest → Generate Item Data**
+- Check `Assets/Resources/Data/Champions/` and `Assets/Resources/Data/Items/`
 
 ---
 
-### フェーズ4：ライブオペレーション
-**目標：** 継続的コンテンツ、コミュニティ構築
+## Documentation
 
-1. **定期コンテンツ配信**
-   - 月次新チャンピオン
-   - 新規コスメティック
-   - シーズンイベント
+Additional documentation files:
 
-2. **バランス更新**
-   - チャンピオン調整
-   - メタシフト
-   - コミュニティフィードバック実装
-
-3. **機能追加**
-   - 観戦モード
-   - リプレイシステム
-   - 高度なギルド機能
-   - フレンドリスト
-
-4. **コミュニティ管理**
-   - ソーシャルメディアプレゼンス
-   - コミュニティイベント
-   - 競技トーナメント
-   - コンテンツクリエイターサポート
-
-**タイムライン：** 継続中
+- **CLAUDE.md** - Development guide and coding conventions (Japanese)
+- **IMPLEMENTATION_STATUS.md** - Current implementation status
+- **ITEM_SYSTEM_IMPLEMENTATION.md** - Item system documentation
+- **QUESTION_BANK_SYSTEM.md** - Question bank structure and usage
+- **LOCALIZATION_GUIDE.md** - Multi-language system guide
+- **TROUBLESHOOTING.md** - Extended troubleshooting guide
+- **ASSET_CREATION_GUIDE.md** - Guide for creating game assets
+- **PROJECT_STATUS.md** - Project completion status
 
 ---
 
-## 📈 成功指標（KPI）
+## Game Features
 
-### エンゲージメント
-- **デイリーアクティブユーザー（DAU）**
-- **マンスリーアクティブユーザー（MAU）**
-- **DAU/MAU比率**（目標：>25%）
-- **平均セッション長**（目標：15〜20分）
-- **1日あたりセッション数**（目標：3〜4回）
+### Subjects & Difficulties
 
-### リテンション
-- **1日目リテンション**（目標：>50%）
-- **7日目リテンション**（目標：>30%）
-- **30日目リテンション**（目標：>15%）
+**4 Subjects:**
+- Math (数学)
+- Science (理科)
+- English (英語)
+- History (歴史)
 
-### 教育的影響
-- **プレイヤーあたりテスト受験数**（平均）
-- **時間経過によるテスト正答率向上**
-- **教科多様性**（複数教科を試すプレイヤー）
+**4 Difficulty Levels:**
+- Elementary (小学校) - 15 questions
+- MiddleSchool (中学校) - 20 questions
+- HighSchool (高校) - 25 questions
+- University (大学) - 30 questions
 
-### マネタイゼーション
-- **コンバージョン率**（F2Pから課金へ）（目標：3〜5%）
-- **ARPU**（ユーザーあたり平均収益）
-- **ARPPU**（課金ユーザーあたり平均収益）
-- **LTV**（ライフタイムバリュー）
+### Subject Affinities
 
-### ソーシャル
-- **ギルド加入率**（目標：>70%）
-- **ギルド戦参加率**（目標：ギルドメンバーの>50%）
-- **バトルエモート使用**
+Each subject boosts specific stats:
+- **Math** → Attack
+- **Science** → Defense
+- **English** → Speed
+- **History** → HP
 
----
+### Champion Elements
 
-## ⚠️ リスクと対策
+Champions have elemental affinities:
+- Fire (炎)
+- Water (水)
+- Earth (地)
+- Wind (風)
+- Light (光)
+- Dark (闇)
 
-### リスク1：AI生成テストの品質
-**リスク：** AIが不正確または不適切な問題を作成
-**対策：**
-- デュアルAIレビューシステム
-- コミュニティ報告システム
-- フラグ問題の手動レビュー
-- キュレート問題バンクから開始、徐々にAI導入
+Element advantages provide damage multipliers in battle.
 
-### リスク2：教科バランス
-**リスク：** 1教科がメタを支配（数学が強すぎ、歴史が弱すぎ）
-**対策：**
-- 定期的なバランスパッチ
-- 各教科親和性に複数チャンピオンデザイン
-- 多様なチーム構成を奨励
-- 使用統計のモニタリング
+### Battle System
 
-### リスク3：ポイント経済の悪用
-**リスク：** プレイヤーがポイント獲得やテストチートの方法を発見
-**対策：**
-- サーバーサイド検証
-- 日次上限で過度な周回防止
-- アンチチート検知
-- 不規則なテストプール（解答暗記不可）
-
-### リスク4：低プレイヤーベース（マルチプレイヤー依存）
-**リスク：** マッチメイキングに十分なプレイヤーがいない
-**対策：**
-- フォールバックとしてAI対戦相手
-- ボットプレイヤー（明示的に表示）
-- クロスリージョンマッチメイキング
-- 魅力的なPvEコンテンツ
-
-### リスク5：教育的価値への疑問
-**リスク：** 保護者/教育者が実際の学習効果を見出せない
-**対策：**
-- 教育専門家との提携
-- 問題をカリキュラム基準に整合
-- プレイヤー進捗レポート表示
-- ケーススタディと体験談
-
-### リスク6：バカとテストIP権利
-**リスク：** ライセンスなしでIP使用は問題を引き起こす可能性
-**対策：**
-- **オプションA：** 公式ライセンス取得（高コストだが本物）
-- **オプションB：** 類似メカニクスでオリジナルIP作成（より安全）
-- **オプションC：** ファンプロジェクトとして開始、成功すればピボット
+- Turn-based combat
+- Item usage (HP Potion, Revive, stat boosts)
+- Status effects (Attack Boost, Defense Boost, Speed Boost)
+- AI opponent with strategic behavior
 
 ---
 
-## 💡 将来の拡張アイデア
+## Build Instructions
 
-### コンテンツ
-- さらに多くの教科（地理、言語、芸術、プログラミング）
-- 専門教科（SAT準備、JLPT、コーディングチャレンジ）
-- 協力ギルド学習セッション
-- チャンピオンのロアとストーリーモード
+### Creating a Build
 
-### 機能
-- クロスプラットフォームプレイ（モバイル + PC）
-- 観戦モードとeスポーツ
-- 賞金付きトーナメントシステム
-- 高度なギルド施設
-- ペット/コンパニオンシステム
-- 実績システム
+1. **Go to File → Build Settings**
+2. **Add Scenes** in this order:
+   - Startup
+   - MainMenu
+   - TestSelection
+   - TestTaking
+   - PointAllocation
+   - ChampionSelection
+   - Battle
+   - Results
+   - Settings
+   - ChampionShop
+   - Inventory
+   - TestResults
 
-### パートナーシップ
-- 教育機関（カリキュラム整合）
-- アニメスタジオ（公式ライセンス）
-- コンテンツクリエイター（インフルエンサーチャンピオン）
-- eスポーツ組織（トーナメント）
+3. **Select Platform** (Windows, Mac, Linux, etc.)
+4. **Click "Build"** and choose output folder
+5. **Run the executable** from the build folder
 
----
+### Build Settings Recommendations
 
-## 🎓 教育哲学
-
-### 遊びを通じた学習
-- **ポジティブ強化：** 完璧さだけでなく努力への報酬
-- **失敗に寛容：** 無制限の練習テスト
-- **進捗トラッキング：** 時間経過による改善を確認
-- **多様な教科：** バランスの取れた教育を奨励
-
-### アクセシビリティ
-- **複数難易度レベル：** 誰でも自分のチャレンジを見つける
-- **教科選択：** 興味に焦点
-- **恥ずかしくない：** 低スコアは自分にのみ影響（選んで参加しない限りチームメイトには影響しない）
-- **キャッチアップメカニクス：** 低ランクプレイヤー向け特別イベント
+- **Development Build**: Enable for testing
+- **Script Debugging**: Enable for debugging
+- **Compression Method**: LZ4 (faster) or Default (smaller)
+- **Scripting Backend**: IL2CPP (faster runtime) or Mono (faster builds)
 
 ---
 
-## 🏆 競技哲学
+## Contributing
 
-### バランスの取れた競争
-- **スキル + 知識：** 両方が等しく重要
-- **ステータスより戦略：** ポイント配分とチャンピオン選択
-- **興奮のためのRNG：** 逆転が可能
-- **公平なマッチメイキング：** ランダムだが魅力的
+When contributing to this project:
 
-### 動機付け
-- **ランキング：** 可視的な進行
-- **ビジュアル報酬：** ギルド/王国の外観アップグレード
-- **しかし主に楽しみ：** ユーモラスでアニメ風のトーン
-- **社会的絆：** ギルドの仲間意識
+1. Follow the **MVVM pattern** for UI code
+2. Use **ServiceLocator** for dependency injection
+3. Write **Japanese comments** in code (see CLAUDE.md)
+4. Create/update assembly definitions when adding new folders
+5. Use Editor tools to regenerate data when needed
+6. Test from **Startup.unity** scene
+7. Update documentation when adding new features
 
 ---
 
-## 📝 結論
+## License
 
-**アカデミックバトルアリーナ**（仮称）は、「バカとテストと召喚獣」の愛される要素と現代のモバイルゲームトレンドを組み合わせます：
-
-✅ **教育的価値** 学習を実際に動機づける
-✅ **戦略的深み** ポイント配分とチャンピオン選択
-✅ **公平なマネタイゼーション** 知識は購入できない
-✅ **ソーシャル競争** ギルドと王国を通じて
-✅ **アニメ美学** 既に利用可能な高品質アセット
-✅ **スケーラブルデザイン** 明確な開発ロードマップ
-
-このゲームはユニークなニッチを埋めます：**保護者が認め、学生が心から楽しむ競技モバイルゲーム**。学習を力への道にすることで（周回や課金ではなく）、プレイヤーは楽しみながら実際の学力スキルを伸ばします。
-
-**次のステップ：**
-1. ゲームタイトルとブランディングの確定
-2. 詳細な技術設計書の作成
-3. MVP開発（フェーズ1）
-4. ターゲットオーディエンスとのプレイテスト
-5. フィードバックに基づく反復
-6. ソフトローンチ → フルローンチ
+[Specify your license here]
 
 ---
 
-**ドキュメントバージョン：** 1.0
-**作成日：** 2026年4月2日
-**ステータス：** レビュー待ち企画書
+## Credits
+
+- **Unity Version**: 6000.0.9f1
+- **UI Framework**: Unity UI Toolkit
+- **Architecture**: MVVM with ServiceLocator
 
 ---
 
-*「知識は力なり...文字通り！」*
+## Contact
+
+[Add contact information or links here]

@@ -1,0 +1,20 @@
+{
+    "name": "BakaTest.Views",
+    "rootNamespace": "BakaTest.Views",
+    "references": [
+        "BakaTest.Core",
+        "BakaTest.Data",
+        "BakaTest.Services",
+        "BakaTest.ViewModels",
+        "BakaTest.UI"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -131,7 +131,10 @@ namespace BakaTest.ViewModels
 
         // Events
         public event EventHandler? TestSubmitted;
+
+        #pragma warning disable CS0067 // Event is declared but never used
         public event EventHandler? TestAborted;
+        #pragma warning restore CS0067
 
         public TestTakingViewModel(ITestService testService, ILocalizationService localization)
         {

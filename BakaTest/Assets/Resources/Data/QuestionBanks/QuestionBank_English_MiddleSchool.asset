@@ -41,59 +41,371 @@ MonoBehaviour:
     choice4: gone
     correctAnswerIndex: 1
     explanation: "\u4E09\u4EBA\u79F0\u5358\u6570\u73FE\u5728\u5F62: She goes"
-  - questionText: "\u300C\u5F7C\u5973\u306F\u82F1\u8A9E\u3092\u52C9\u5F37\u3057\u3066\u3044\u308B\u300D\u306E\u82F1\u8A33\u306F?"
-    choice0: She study English
-    choice1: She studied English
-    choice2: She is studying English
-    choice3: She studies English
-    choice4: She will study English
-    correctAnswerIndex: 2
-    explanation: "\u73FE\u5728\u9032\u884C\u5F62: is studying"
-  - questionText: "\"Beautiful\"\u306E\u6BD4\u8F03\u7D1A\u306F?"
-    choice0: beautifuler
-    choice1: more beautiful
-    choice2: most beautiful
-    choice3: beautifully
-    choice4: beautifulest
+  - questionText: "I have ___ this book. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: read
+    choice1: reading
+    choice2: reads
+    choice3: readed
+    choice4: to read
+    correctAnswerIndex: 0
+    explanation: "\u73FE\u5728\u5B8C\u4E86\u5F62: have + \u904E\u53BB\u5206\u8A5E"
+  - questionText: "\u300C\u3082\u3057~\u306A\u3089\u300D\u3092\u8868\u3059\u63A5\u7D9A\u8A5E\u306F?"
+    choice0: because
+    choice1: if
+    choice2: when
+    choice3: but
+    choice4: and
     correctAnswerIndex: 1
-    explanation: "\u9577\u3044\u5F62\u5BB9\u8A5E: more beautiful"
-  - questionText: "She ___ to school every day. \u7A7A\u6B04\u306B\u5165\u308B\u52D5\u8A5E\u306F?"
+    explanation: "if = \u3082\u3057~\u306A\u3089"
+  - questionText: "He is ___ than me. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: tall
+    choice1: taller
+    choice2: tallest
+    choice3: more tall
+    choice4: most tall
+    correctAnswerIndex: 1
+    explanation: "\u6BD4\u8F03\u7D1A: -er \u3092\u3064\u3051\u308B"
+  - questionText: "\u300C\u5F7C\u306F\u6628\u65E5\u516C\u5712\u306B\u884C\u3063\u305F\u300D\u306E\u82F1\u8A33\u306F?"
+    choice0: He go to the park yesterday
+    choice1: He goes to the park yesterday
+    choice2: He went to the park yesterday
+    choice3: He is going to the park yesterday
+    choice4: He will go to the park yesterday
+    correctAnswerIndex: 2
+    explanation: "\u904E\u53BB\u5F62: went"
+  - questionText: "I ___ to Tokyo next week. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: go
+    choice1: went
+    choice2: going
+    choice3: will go
+    choice4: gone
+    correctAnswerIndex: 3
+    explanation: "\u672A\u6765\u5F62: will go"
+  - questionText: "\u300C~\u3059\u308B\u3053\u3068\u300D\u3092\u8868\u3059\u52D5\u540D\u8A5E\u306F?"
+    choice0: to do
+    choice1: doing
+    choice2: to doing
+    choice3: do
+    choice4: did
+    correctAnswerIndex: 1
+    explanation: "\u52D5\u540D\u8A5E: -ing \u5F62"
+  - questionText: "This is the ___ book I've ever read. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: good
+    choice1: better
+    choice2: best
+    choice3: more good
+    choice4: most good
+    correctAnswerIndex: 2
+    explanation: "\u6700\u4E0A\u7D1A: the best"
+  - questionText: "She can ___ English well. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: speaks
+    choice1: spoke
+    choice2: speaking
+    choice3: speak
+    choice4: spoken
+    correctAnswerIndex: 3
+    explanation: "can + \u52D5\u8A5E\u306E\u539F\u5F62"
+  - questionText: "\u300C~\u306A\u306E\u3067\u300D\u3092\u8868\u3059\u63A5\u7D9A\u8A5E\u306F?"
+    choice0: but
+    choice1: because
+    choice2: if
+    choice3: when
+    choice4: although
+    correctAnswerIndex: 1
+    explanation: "because = ~\u306A\u306E\u3067"
+  - questionText: "I have been ___ for two hours. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: study
+    choice1: studied
+    choice2: studying
+    choice3: studies
+    choice4: to study
+    correctAnswerIndex: 2
+    explanation: "\u73FE\u5728\u5B8C\u4E86\u9032\u884C\u5F62: have been -ing"
+  - questionText: "The book ___ by him yesterday. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: read
+    choice1: reads
+    choice2: was read
+    choice3: is read
+    choice4: reading
+    correctAnswerIndex: 2
+    explanation: "\u53D7\u52D5\u614B\u904E\u53BB\u5F62: was read"
+  - questionText: "I want ___ a doctor. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: be
+    choice1: to be
+    choice2: being
+    choice3: am
+    choice4: been
+    correctAnswerIndex: 1
+    explanation: "want to + \u52D5\u8A5E\u306E\u539F\u5F62"
+  - questionText: "\u300C~\u3059\u308B\u305F\u3081\u306B\u300D\u3092\u8868\u3059\u306E\u306F?"
+    choice0: for
+    choice1: to
+    choice2: in order to
+    choice3: at
+    choice4: on
+    correctAnswerIndex: 2
+    explanation: "in order to = ~\u3059\u308B\u305F\u3081\u306B"
+  - questionText: "He made me ___ . \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: to laugh
+    choice1: laugh
+    choice2: laughing
+    choice3: laughed
+    choice4: laughs
+    correctAnswerIndex: 1
+    explanation: "make + \u76EE\u7684\u8A9E + \u52D5\u8A5E\u306E\u539F\u5F62"
+  - questionText: "\u300C~\u3060\u3051\u308C\u3069\u3082\u300D\u3092\u8868\u3059\u63A5\u7D9A\u8A5E\u306F?"
+    choice0: but
+    choice1: although
+    choice2: because
+    choice3: if
+    choice4: when
+    correctAnswerIndex: 1
+    explanation: "although = ~\u3060\u3051\u308C\u3069\u3082"
+  - questionText: "There ___ many books on the desk. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: is
+    choice1: are
+    choice2: was
+    choice3: be
+    choice4: been
+    correctAnswerIndex: 1
+    explanation: "There are + \u8907\u6570\u540D\u8A5E"
+  - questionText: "I enjoy ___ music. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: listen to
+    choice1: to listen to
+    choice2: listening to
+    choice3: listened to
+    choice4: listens to
+    correctAnswerIndex: 2
+    explanation: "enjoy + -ing"
+  - questionText: "She is interested ___ English. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: at
+    choice1: in
+    choice2: on
+    choice3: to
+    choice4: for
+    correctAnswerIndex: 1
+    explanation: "be interested in = ~\u306B\u8208\u5473\u304C\u3042\u308B"
+  - questionText: "It is important ___ study hard. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: for
+    choice1: to
+    choice2: of
+    choice3: in
+    choice4: at
+    correctAnswerIndex: 1
+    explanation: "It is important to + \u52D5\u8A5E\u306E\u539F\u5F62"
+  - questionText: "I have ___ finished my homework. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: yet
+    choice1: already
+    choice2: still
+    choice3: never
+    choice4: ever
+    correctAnswerIndex: 1
+    explanation: "already = \u3082\u3046\u3059\u3067\u306B"
+  - questionText: "He told me ___ wait. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: for
+    choice1: to
+    choice2: of
+    choice3: in
+    choice4: at
+    correctAnswerIndex: 1
+    explanation: "tell + \u76EE\u7684\u8A9E + to + \u52D5\u8A5E\u306E\u539F\u5F62"
+  - questionText: "I don't know ___ to do. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: how
+    choice1: what
+    choice2: which
+    choice3: when
+    choice4: where
+    correctAnswerIndex: 1
+    explanation: "what to do = \u4F55\u3092\u3059\u3079\u304D\u304B"
+  - questionText: "The man ___ is talking to her is my father. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: which
+    choice1: who
+    choice2: whose
+    choice3: whom
+    choice4: what
+    correctAnswerIndex: 1
+    explanation: "\u4EBA\u3092\u4FEE\u98FE\u3059\u308B\u95A2\u4FC2\u4EE3\u540D\u8A5E: who"
+  - questionText: "I had ___ my homework before dinner. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: finish
+    choice1: finished
+    choice2: finishing
+    choice3: finishes
+    choice4: to finish
+    correctAnswerIndex: 1
+    explanation: "\u904E\u53BB\u5B8C\u4E86\u5F62: had + \u904E\u53BB\u5206\u8A5E"
+  - questionText: "You should ___ your teeth every day. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: brush
+    choice1: brushes
+    choice2: brushing
+    choice3: brushed
+    choice4: to brush
+    correctAnswerIndex: 0
+    explanation: "should + \u52D5\u8A5E\u306E\u539F\u5F62"
+  - questionText: "The window ___ by Tom. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: break
+    choice1: breaks
+    choice2: was broken
+    choice3: is breaking
+    choice4: broke
+    correctAnswerIndex: 2
+    explanation: "\u53D7\u52D5\u614B\u904E\u53BB\u5F62: was broken"
+  - questionText: "If it ___ tomorrow, I will stay home. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: rain
+    choice1: rains
+    choice2: rained
+    choice3: will rain
+    choice4: raining
+    correctAnswerIndex: 1
+    explanation: "\u4EEE\u5B9A\u6CD5\uFF08\u73FE\u5728\uFF09: If + \u73FE\u5728\u5F62, will ~"
+  - questionText: "She is good ___ playing the piano. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: in
+    choice1: at
+    choice2: on
+    choice3: for
+    choice4: to
+    correctAnswerIndex: 1
+    explanation: "be good at = ~\u304C\u4E0A\u624B\u3067\u3042\u308B"
+  - questionText: "I have ___ seen that movie. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: yet
+    choice1: already
+    choice2: never
+    choice3: ever
+    choice4: still
+    correctAnswerIndex: 2
+    explanation: "never = \u4E00\u5EA6\u3082~\u306A\u3044"
+  - questionText: "He runs ___ than his brother. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: fast
+    choice1: faster
+    choice2: fastest
+    choice3: more fast
+    choice4: most fast
+    correctAnswerIndex: 1
+    explanation: "\u6BD4\u8F03\u7D1A: faster"
+  - questionText: "She must ___ tired after work. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: is
+    choice1: be
+    choice2: being
+    choice3: been
+    choice4: was
+    correctAnswerIndex: 1
+    explanation: "must + \u52D5\u8A5E\u306E\u539F\u5F62 (be)"
+  - questionText: "The book ___ I bought yesterday is interesting. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: who
+    choice1: which
+    choice2: whose
+    choice3: whom
+    choice4: what
+    correctAnswerIndex: 1
+    explanation: "\u7269\u3092\u4FEE\u98FE\u3059\u308B\u95A2\u4FC2\u4EE3\u540D\u8A5E: which"
+  - questionText: "I look forward ___ you again. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: see
+    choice1: to see
+    choice2: to seeing
+    choice3: seeing
+    choice4: saw
+    correctAnswerIndex: 2
+    explanation: "look forward to + -ing"
+  - questionText: "Let's ___ to the park. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
     choice0: go
     choice1: goes
     choice2: going
     choice3: went
-    choice4: gone
+    choice4: to go
+    correctAnswerIndex: 0
+    explanation: "Let's + \u52D5\u8A5E\u306E\u539F\u5F62"
+  - questionText: "She asked me ___ I was busy. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: that
+    choice1: if
+    choice2: what
+    choice3: which
+    choice4: who
     correctAnswerIndex: 1
-    explanation: "\u4E09\u4EBA\u79F0\u5358\u6570\u73FE\u5728\u5F62: She goes"
-  - questionText: "\u300C\u5F7C\u5973\u306F\u82F1\u8A9E\u3092\u52C9\u5F37\u3057\u3066\u3044\u308B\u300D\u306E\u82F1\u8A33\u306F?"
-    choice0: She study English
-    choice1: She studied English
-    choice2: She is studying English
-    choice3: She studies English
-    choice4: She will study English
+    explanation: "\u9593\u63A5\u7591\u554F\u6587: if = ~\u304B\u3069\u3046\u304B"
+  - questionText: "This pen is ___ of all. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: cheap
+    choice1: cheaper
+    choice2: cheapest
+    choice3: the cheapest
+    choice4: more cheap
+    correctAnswerIndex: 3
+    explanation: "\u6700\u4E0A\u7D1A: the cheapest"
+  - questionText: "He gave ___ a present. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: I
+    choice1: me
+    choice2: my
+    choice3: mine
+    choice4: myself
+    correctAnswerIndex: 1
+    explanation: "\u76EE\u7684\u8A9E: me"
+  - questionText: "I'm sorry ___ being late. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: to
+    choice1: for
+    choice2: of
+    choice3: in
+    choice4: at
+    correctAnswerIndex: 1
+    explanation: "be sorry for = ~\u3092\u8A6B\u3073\u308B"
+  - questionText: "The train will arrive ___ 3 PM. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: in
+    choice1: on
+    choice2: at
+    choice3: for
+    choice4: to
     correctAnswerIndex: 2
-    explanation: "\u73FE\u5728\u9032\u884C\u5F62: is studying"
-  - questionText: "\"Beautiful\"\u306E\u6BD4\u8F03\u7D1A\u306F?"
-    choice0: beautifuler
-    choice1: more beautiful
-    choice2: most beautiful
-    choice3: beautifully
-    choice4: beautifulest
-    correctAnswerIndex: 1
-    explanation: "\u9577\u3044\u5F62\u5BB9\u8A5E: more beautiful"
-  - questionText: "She ___ to school every day. \u7A7A\u6B04\u306B\u5165\u308B\u52D5\u8A5E\u306F?"
-    choice0: go
-    choice1: goes
-    choice2: going
-    choice3: went
-    choice4: gone
-    correctAnswerIndex: 1
-    explanation: "\u4E09\u4EBA\u79F0\u5358\u6570\u73FE\u5728\u5F62: She goes"
-  - questionText: "\u300C\u5F7C\u5973\u306F\u82F1\u8A9E\u3092\u52C9\u5F37\u3057\u3066\u3044\u308B\u300D\u306E\u82F1\u8A33\u306F?"
-    choice0: She study English
-    choice1: She studied English
-    choice2: She is studying English
-    choice3: She studies English
-    choice4: She will study English
+    explanation: "\u6642\u523B\u306B\u306F at \u3092\u4F7F\u3046"
+  - questionText: "Would you mind ___ the window? \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: open
+    choice1: to open
+    choice2: opening
+    choice3: opened
+    choice4: opens
     correctAnswerIndex: 2
-    explanation: "\u73FE\u5728\u9032\u884C\u5F62: is studying"
+    explanation: "Would you mind + -ing"
+  - questionText: "This bag is ___ than that one. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: heavy
+    choice1: heavier
+    choice2: heaviest
+    choice3: more heavy
+    choice4: most heavy
+    correctAnswerIndex: 1
+    explanation: "\u6BD4\u8F03\u7D1A: heavier"
+  - questionText: "She has lived here ___ 2010. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: for
+    choice1: since
+    choice2: from
+    choice3: until
+    choice4: during
+    correctAnswerIndex: 1
+    explanation: "since + \u904E\u53BB\u306E\u4E00\u6642\u70B9"
+  - questionText: "It is ___ hot today. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: so
+    choice1: such
+    choice2: very much
+    choice3: many
+    choice4: a lot
+    correctAnswerIndex: 0
+    explanation: "so + \u5F62\u5BB9\u8A5E"
+  - questionText: "Neither Tom ___ John came to the party. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: and
+    choice1: or
+    choice2: nor
+    choice3: but
+    choice4: so
+    correctAnswerIndex: 2
+    explanation: "neither A nor B = A\u3082B\u3082~\u306A\u3044"
+  - questionText: "I have ___ been to Paris. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: yet
+    choice1: already
+    choice2: ever
+    choice3: never
+    choice4: still
+    correctAnswerIndex: 2
+    explanation: "ever = \u4ECA\u307E\u3067\u306B\uFF08\u7591\u554F\u6587\uFF09"
+  - questionText: "The boy ___ father is a doctor is my friend. \u7A7A\u6B04\u306B\u5165\u308B\u306E\u306F?"
+    choice0: who
+    choice1: which
+    choice2: whose
+    choice3: whom
+    choice4: what
+    correctAnswerIndex: 2
+    explanation: "\u6240\u6709\u3092\u8868\u3059\u95A2\u4FC2\u4EE3\u540D\u8A5E: whose"

@@ -1,6 +1,7 @@
 #nullable enable
 using System;
 using BakaTest.Data.Battle;
+using BakaTest.Data.Items;
 
 namespace BakaTest.Services.Battle
 {
@@ -18,6 +19,15 @@ namespace BakaTest.Services.Battle
         /// バトルが進行中かどうか
         /// </summary>
         bool IsBattleInProgress { get; }
+
+        /// <summary>
+        /// 次のバトルのセットアップ（シーン間データ受け渡し用）
+        /// </summary>
+        /// <remarks>
+        /// PointAllocationViewでバトルセットアップを作成後、ここに設定してBattleシーンに遷移します。
+        /// BattleViewはこのプロパティを読み取ってバトルを開始します。
+        /// </remarks>
+        BattleSetup? PendingBattleSetup { get; set; }
 
         /// <summary>
         /// プレイヤー1のバトルユニット（現在のHP含む）
@@ -53,10 +63,17 @@ namespace BakaTest.Services.Battle
         BattleResult? ProcessSingleTurn();
 
         /// <summary>
-        /// アイテムを使用します（プレイヤー1のみ）
+        /// アイテムを使用します（プレイヤー1のみ・レガシー）
         /// </summary>
         /// <param name="itemId">アイテムID</param>
         void UseItem(string itemId);
+
+        /// <summary>
+        /// アイテムを使用します（プレイヤー1のみ）
+        /// </summary>
+        /// <param name="itemData">使用するアイテム</param>
+        /// <param name="useOnEnemy">敵に使用する場合はtrue（デバフアイテム等）</param>
+        void UseItem(ItemData itemData, bool useOnEnemy = false);
 
         /// <summary>
         /// バトルを中断します

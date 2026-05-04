@@ -17,14 +17,14 @@ MonoBehaviour:
   subject: 0
   difficulty: 3
   questions:
-  - questionText: "lim(x\u21920) (sin x)/x = ?"
+  - questionText: "lim(x→0) (sin x)/x = ?"
     choice0: 0
     choice1: 1
-    choice2: "\u221E"
+    choice2: "∞"
     choice3: -1
     choice4: "\u4E0D\u5B9A"
     correctAnswerIndex: 1
-    explanation: "\u6709\u540D\u306A\u6975\u9650: lim(x\u21920) (sin x)/x = 1"
+    explanation: "\u6709\u540D\u306A\u6975\u9650: lim(x→0) (sin x)/x = 1"
   - questionText: d/dx (e^x) = ?
     choice0: e^x
     choice1: e
@@ -33,70 +33,380 @@ MonoBehaviour:
     choice4: x
     correctAnswerIndex: 0
     explanation: "e^x\u306E\u5C0E\u95A2\u6570\u306Fe^x\u81EA\u8EAB\u3067\u3059\u3002"
-  - questionText: "\u222B 2x dx = ?"
+  - questionText: "∫ 2x dx = ?"
     choice0: x
-    choice1: "x\xB2 + C"
-    choice2: "2x\xB2 + C"
-    choice3: "x\xB2/2 + C"
+    choice1: "x² + C"
+    choice2: "2x² + C"
+    choice3: "x²/2 + C"
     choice4: 2x + C
     correctAnswerIndex: 1
-    explanation: "x\u306E\u7A4D\u5206\u306F x\xB2/2\u306A\u306E\u3067\u30012x\u306E\u7A4D\u5206\u306F
-      x\xB2 + C"
-  - questionText: "lim(x\u21920) (sin x)/x = ?"
-    choice0: 0
-    choice1: 1
-    choice2: "\u221E"
-    choice3: -1
-    choice4: "\u4E0D\u5B9A"
-    correctAnswerIndex: 1
-    explanation: "\u6709\u540D\u306A\u6975\u9650: lim(x\u21920) (sin x)/x = 1"
-  - questionText: d/dx (e^x) = ?
-    choice0: e^x
-    choice1: e
-    choice2: xe^(x-1)
-    choice3: ln x
-    choice4: x
+    explanation: "x\u306E\u7A4D\u5206\u306F x²/2\u306A\u306E\u3067\u30012x\u306E\u7A4D\u5206\u306F x² + C"
+  - questionText: "d/dx (ln x) = ?"
+    choice0: 1/x
+    choice1: x
+    choice2: ln x
+    choice3: e^x
+    choice4: 1
     correctAnswerIndex: 0
-    explanation: "e^x\u306E\u5C0E\u95A2\u6570\u306Fe^x\u81EA\u8EAB\u3067\u3059\u3002"
-  - questionText: "\u222B 2x dx = ?"
-    choice0: x
-    choice1: "x\xB2 + C"
-    choice2: "2x\xB2 + C"
-    choice3: "x\xB2/2 + C"
-    choice4: 2x + C
-    correctAnswerIndex: 1
-    explanation: "x\u306E\u7A4D\u5206\u306F x\xB2/2\u306A\u306E\u3067\u30012x\u306E\u7A4D\u5206\u306F
-      x\xB2 + C"
-  - questionText: "lim(x\u21920) (sin x)/x = ?"
-    choice0: 0
-    choice1: 1
-    choice2: "\u221E"
-    choice3: -1
-    choice4: "\u4E0D\u5B9A"
-    correctAnswerIndex: 1
-    explanation: "\u6709\u540D\u306A\u6975\u9650: lim(x\u21920) (sin x)/x = 1"
-  - questionText: d/dx (e^x) = ?
-    choice0: e^x
+    explanation: "\u5BFE\u6570\u95A2\u6570\u306E\u5C0E\u95A2\u6570: d/dx (ln x) = 1/x"
+  - questionText: "lim(x→∞) (1 + 1/x)^x = ?"
+    choice0: 1
     choice1: e
-    choice2: xe^(x-1)
-    choice3: ln x
-    choice4: x
-    correctAnswerIndex: 0
-    explanation: "e^x\u306E\u5C0E\u95A2\u6570\u306Fe^x\u81EA\u8EAB\u3067\u3059\u3002"
-  - questionText: "\u222B 2x dx = ?"
-    choice0: x
-    choice1: "x\xB2 + C"
-    choice2: "2x\xB2 + C"
-    choice3: "x\xB2/2 + C"
-    choice4: 2x + C
+    choice2: "∞"
+    choice3: 0
+    choice4: "π"
     correctAnswerIndex: 1
-    explanation: "x\u306E\u7A4D\u5206\u306F x\xB2/2\u306A\u306E\u3067\u30012x\u306E\u7A4D\u5206\u306F
-      x\xB2 + C"
-  - questionText: "lim(x\u21920) (sin x)/x = ?"
+    explanation: "\u30CD\u30A4\u30D4\u30A2\u6570e\u306E\u5B9A\u7FA9: lim(x→∞) (1 + 1/x)^x = e"
+  - questionText: "∫ cos x dx = ?"
+    choice0: "-sin x + C"
+    choice1: "sin x + C"
+    choice2: "-cos x + C"
+    choice3: "tan x + C"
+    choice4: "cos x + C"
+    correctAnswerIndex: 1
+    explanation: "cos x\u306E\u7A4D\u5206\u306F sin x + C"
+  - questionText: "\u30D9\u30AF\u30C8\u30EB(1,2)·(3,4) = ?"
+    choice0: 7
+    choice1: 11
+    choice2: 5
+    choice3: 9
+    choice4: 12
+    correctAnswerIndex: 1
+    explanation: "\u5185\u7A4D: (1)(3) + (2)(4) = 3 + 8 = 11"
+  - questionText: "d²/dx² (x³) = ?"
+    choice0: "3x²"
+    choice1: 6x
+    choice2: "x²"
+    choice3: 3x
+    choice4: 6
+    correctAnswerIndex: 1
+    explanation: "\u4E8C\u968E\u5FAE\u5206: d/dx(3x²) = 6x"
+  - questionText: "∫₀¹ x dx = ?"
+    choice0: 0
+    choice1: 1/2
+    choice2: 1
+    choice3: 2
+    choice4: 1/3
+    correctAnswerIndex: 1
+    explanation: "[x²/2]₀¹ = 1/2 - 0 = 1/2"
+  - questionText: "det([[1,2],[3,4]]) = ?"
+    choice0: -2
+    choice1: 0
+    choice2: 2
+    choice3: 10
+    choice4: 7
+    correctAnswerIndex: 0
+    explanation: "\u884C\u5217\u5F0F: (1)(4) - (2)(3) = 4 - 6 = -2"
+  - questionText: "lim(x→0) (e^x - 1)/x = ?"
     choice0: 0
     choice1: 1
-    choice2: "\u221E"
+    choice2: e
+    choice3: "∞"
+    choice4: -1
+    correctAnswerIndex: 1
+    explanation: "\u57FA\u672C\u6975\u9650: lim(x→0) (e^x - 1)/x = 1"
+  - questionText: "∫ sin x dx = ?"
+    choice0: "cos x + C"
+    choice1: "-cos x + C"
+    choice2: "sin x + C"
+    choice3: "-sin x + C"
+    choice4: "tan x + C"
+    correctAnswerIndex: 1
+    explanation: "sin x\u306E\u7A4D\u5206\u306F -cos x + C"
+  - questionText: "d/dx (x^n) = ?"
+    choice0: "nx^n"
+    choice1: "nx^(n-1)"
+    choice2: "x^(n-1)"
+    choice3: "n"
+    choice4: "(n-1)x^(n-1)"
+    correctAnswerIndex: 1
+    explanation: "\u30D9\u30AD\u306E\u6CD5\u5247: d/dx (x^n) = nx^(n-1)"
+  - questionText: "∫ 1/x dx = ?"
+    choice0: "ln x + C"
+    choice1: "x² + C"
+    choice2: "1/x² + C"
+    choice3: "e^x + C"
+    choice4: "x + C"
+    correctAnswerIndex: 0
+    explanation: "1/x\u306E\u7A4D\u5206\u306F ln|x| + C"
+  - questionText: "Taylor\u5C55\u958B: e^x = ?"
+    choice0: "1 + x + x²/2! + x³/3! + ..."
+    choice1: "x + x²/2 + x³/3 + ..."
+    choice2: "1 - x + x² - x³ + ..."
+    choice3: "x - x³/3! + x⁵/5! - ..."
+    choice4: "1 + x²/2! + x⁴/4! + ..."
+    correctAnswerIndex: 0
+    explanation: "e^x\u306ETaylor\u5C55\u958B: e^x = Σ(x^n/n!)"
+  - questionText: "lim(x→0) (1 - cos x)/x² = ?"
+    choice0: 0
+    choice1: 1/2
+    choice2: 1
+    choice3: "∞"
+    choice4: -1
+    correctAnswerIndex: 1
+    explanation: "\u30ED\u30D4\u30BF\u30EB\u306E\u5B9A\u7406\u307E\u305F\u306FTaylor\u5C55\u958B\u3088\u308A1/2"
+  - questionText: "∫ e^x dx = ?"
+    choice0: "e^x"
+    choice1: "e^x + C"
+    choice2: "xe^x + C"
+    choice3: "ln x + C"
+    choice4: "x + C"
+    correctAnswerIndex: 1
+    explanation: "e^x\u306E\u7A4D\u5206\u306F e^x + C"
+  - questionText: "d/dx (sin x) = ?"
+    choice0: "-cos x"
+    choice1: "cos x"
+    choice2: "-sin x"
+    choice3: "tan x"
+    choice4: "sin x"
+    correctAnswerIndex: 1
+    explanation: "sin x\u306E\u5C0E\u95A2\u6570\u306F cos x"
+  - questionText: "\u30D9\u30AF\u30C8\u30EB(2,3,4)\u306E\u5927\u304D\u3055\u306F?"
+    choice0: "√9"
+    choice1: "√21"
+    choice2: "√29"
+    choice3: 9
+    choice4: 29
+    correctAnswerIndex: 2
+    explanation: "||v|| = √(2² + 3² + 4²) = √29"
+  - questionText: "∫₀^π sin x dx = ?"
+    choice0: 0
+    choice1: 1
+    choice2: 2
+    choice3: "π"
+    choice4: -1
+    correctAnswerIndex: 2
+    explanation: "[-cos x]₀^π = -cos(π) + cos(0) = 1 + 1 = 2"
+  - questionText: "d/dx (cos x) = ?"
+    choice0: "sin x"
+    choice1: "-sin x"
+    choice2: "cos x"
+    choice3: "-cos x"
+    choice4: "tan x"
+    correctAnswerIndex: 1
+    explanation: "cos x\u306E\u5C0E\u95A2\u6570\u306F -sin x"
+  - questionText: "lim(x→∞) 1/x = ?"
+    choice0: 0
+    choice1: 1
+    choice2: "∞"
     choice3: -1
     choice4: "\u4E0D\u5B9A"
+    correctAnswerIndex: 0
+    explanation: "x\u304C\u7121\u9650\u5927\u306B\u306A\u308B\u30681/x\u306F0\u306B\u8FD1\u3065\u304F"
+  - questionText: "∫ x² dx = ?"
+    choice0: "x³ + C"
+    choice1: "x³/3 + C"
+    choice2: "2x + C"
+    choice3: "x²/2 + C"
+    choice4: "3x² + C"
     correctAnswerIndex: 1
-    explanation: "\u6709\u540D\u306A\u6975\u9650: lim(x\u21920) (sin x)/x = 1"
+    explanation: "x²\u306E\u7A4D\u5206\u306F x³/3 + C"
+  - questionText: "d/dx (tan x) = ?"
+    choice0: "sec² x"
+    choice1: "-sec² x"
+    choice2: "tan² x"
+    choice3: "1 + tan² x"
+    choice4: "cos² x"
+    correctAnswerIndex: 0
+    explanation: "tan x\u306E\u5C0E\u95A2\u6570\u306F sec² x"
+  - questionText: "\u884C\u5217 [[a,b],[c,d]] \u306E\u9006\u884C\u5217\u304C\u5B58\u5728\u3059\u308B\u6761\u4EF6\u306F?"
+    choice0: "ad - bc = 0"
+    choice1: "ad - bc ≠ 0"
+    choice2: "a + d = 0"
+    choice3: "b + c = 0"
+    choice4: "a = d"
+    correctAnswerIndex: 1
+    explanation: "\u9006\u884C\u5217\u304C\u5B58\u5728\u3059\u308B\u6761\u4EF6: det ≠ 0"
+  - questionText: "∫ e\u02E3 dx = ?"
+    choice0: "e\u02E3 + C"
+    choice1: "xe\u02E3 + C"
+    choice2: "e\u02E3/x + C"
+    choice3: "e\u02E3\u207B\xB9 + C"
+    choice4: "e + C"
+    correctAnswerIndex: 0
+    explanation: "e\u02E3\u306E\u7A4D\u5206\u306Fe\u02E3 + C"
+  - questionText: "d/dx (ln x) = ?"
+    choice0: "x"
+    choice1: "1"
+    choice2: "1/x"
+    choice3: "ln x"
+    choice4: "e\u02E3"
+    correctAnswerIndex: 2
+    explanation: "\u81EA\u7136\u5BFE\u6570\u306E\u5C0E\u95A2\u6570\u306F 1/x"
+  - questionText: "Taylor series of e\u02E3 at x=0: e\u02E3 = ?"
+    choice0: "1 + x + x\xB2/2! + x\xB3/3! + ..."
+    choice1: "1 - x + x\xB2 - x\xB3 + ..."
+    choice2: "x + x\xB2/2 + x\xB3/3 + ..."
+    choice3: "1 + x + x\xB2 + x\xB3 + ..."
+    choice4: "x - x\xB3/3! + x\u2075/5! - ..."
+    correctAnswerIndex: 0
+    explanation: "e\u02E3\u306E\u30DE\u30AF\u30ED\u30FC\u30EA\u30F3\u5C55\u958B"
+  - questionText: "Laplace transform of f(t) = 1 is?"
+    choice0: "s"
+    choice1: "1"
+    choice2: "1/s"
+    choice3: "s\xB2"
+    choice4: "0"
+    correctAnswerIndex: 2
+    explanation: "L{1} = 1/s"
+  - questionText: "Eigenvalue equation: Av = λv. What is λ?"
+    choice0: "Eigenvector"
+    choice1: "Eigenvalue"
+    choice2: "Determinant"
+    choice3: "Trace"
+    choice4: "Inverse"
+    correctAnswerIndex: 1
+    explanation: "λ\u306F\u56FA\u6709\u5024(eigenvalue)"
+  - questionText: "∫₀^∞ e\u207B\u02E3 dx = ?"
+    choice0: 0
+    choice1: 1
+    choice2: "∞"
+    choice3: "e"
+    choice4: "1/e"
+    correctAnswerIndex: 1
+    explanation: "[-e\u207B\u02E3]₀^∞ = 0 - (-1) = 1"
+  - questionText: "d\xB2y/dx\xB2 + y = 0. General solution?"
+    choice0: "y = A sin x + B cos x"
+    choice1: "y = Ae\u02E3 + Be\u207B\u02E3"
+    choice2: "y = Ax + B"
+    choice3: "y = Ax\xB2 + B"
+    choice4: "y = A ln x + B"
+    correctAnswerIndex: 0
+    explanation: "\u5358\u632F\u52D5\u65B9\u7A0B\u5F0F\u306E\u89E3"
+  - questionText: "Gradient of f(x,y) = x\xB2 + y\xB2 at (1,1) is?"
+    choice0: "(1, 1)"
+    choice1: "(2, 2)"
+    choice2: "(0, 0)"
+    choice3: "(1, 2)"
+    choice4: "(2, 1)"
+    correctAnswerIndex: 1
+    explanation: "∇f = (2x, 2y) = (2, 2) at (1,1)"
+  - questionText: "∫ 1/(1+x\xB2) dx = ?"
+    choice0: "ln|1+x\xB2| + C"
+    choice1: "tan\u207B\xB9 x + C"
+    choice2: "arctan x + C"
+    choice3: "arcsin x + C"
+    choice4: "x/(1+x\xB2) + C"
+    correctAnswerIndex: 2
+    explanation: "∫ 1/(1+x\xB2) dx = arctan x + C"
+  - questionText: "Fourier series: a₀ = (1/π) ∫ f(x) dx from?"
+    choice0: "0 to π"
+    choice1: "-π to π"
+    choice2: "0 to 2π"
+    choice3: "-∞ to ∞"
+    choice4: "0 to 1"
+    correctAnswerIndex: 1
+    explanation: "a₀ = (1/π) ∫₋π^π f(x) dx"
+  - questionText: "d/dx (x\u207F) = nx\u207F\u207B\xB9. What is n for x\xB9/\xB2?"
+    choice0: "1/4"
+    choice1: "1/3"
+    choice2: "1/2"
+    choice3: "2"
+    choice4: "1"
+    correctAnswerIndex: 2
+    explanation: "n = 1/2, so d/dx(√x) = (1/2)x\u207B\xB9/\xB2"
+  - questionText: "Divergence of F = (x, y, z) is?"
+    choice0: 0
+    choice1: 1
+    choice2: 2
+    choice3: 3
+    choice4: "x + y + z"
+    correctAnswerIndex: 3
+    explanation: "div F = ∂x/∂x + ∂y/∂y + ∂z/∂z = 1+1+1 = 3"
+  - questionText: "∫ sin x dx = ?"
+    choice0: "cos x + C"
+    choice1: "-cos x + C"
+    choice2: "sin x + C"
+    choice3: "-sin x + C"
+    choice4: "tan x + C"
+    correctAnswerIndex: 1
+    explanation: "sin x\u306E\u7A4D\u5206\u306F -cos x + C"
+  - questionText: "Matrix multiplication: [1 2] × [3] = ?"
+                                             [4]
+    choice0: "7"
+    choice1: "11"
+    choice2: "[3, 8]"
+    choice3: "[11]"
+    choice4: "[7, 6]"
+    correctAnswerIndex: 3
+    explanation: "1×3 + 2×4 = 3 + 8 = 11"
+  - questionText: "lim(x→0) (sin x)/x = ?"
+    choice0: 0
+    choice1: 1
+    choice2: "∞"
+    choice3: "-1"
+    choice4: "\u4E0D\u5B9A"
+    correctAnswerIndex: 1
+    explanation: "\u91CD\u8981\u306A\u6975\u9650: lim(x→0) (sin x)/x = 1"
+  - questionText: "Partial derivative ∂f/∂x of f(x,y) = xy\xB2 is?"
+    choice0: "y\xB2"
+    choice1: "2xy"
+    choice2: "x\xB2y"
+    choice3: "xy"
+    choice4: "2y"
+    correctAnswerIndex: 0
+    explanation: "y\xB2\u3092\u5B9A\u6570\u3068\u898B\u308B\u3068 ∂f/∂x = y\xB2"
+  - questionText: "Cauchy-Riemann equations: ∂u/∂x = ∂v/∂y and?"
+    choice0: "∂u/∂y = ∂v/∂x"
+    choice1: "∂u/∂y = -∂v/∂x"
+    choice2: "∂u/∂x = -∂v/∂y"
+    choice3: "∂u/∂y = ∂v/∂y"
+    choice4: "∂u/∂x = ∂v/∂x"
+    correctAnswerIndex: 1
+    explanation: "Cauchy-Riemann: ∂u/∂x = ∂v/∂y, ∂u/∂y = -∂v/∂x"
+  - questionText: "Green's theorem relates line integral to?"
+    choice0: "Surface integral"
+    choice1: "Double integral"
+    choice2: "Triple integral"
+    choice3: "Volume integral"
+    choice4: "Path integral"
+    correctAnswerIndex: 1
+    explanation: "Green\u5B9A\u7406\u306F\u7DDA\u7A4D\u5206\u3068\u4E8C\u91CD\u7A4D\u5206\u3092\u95A2\u4FC2\u4ED8\u3051\u308B"
+  - questionText: "d/dx (arcsin x) = ?"
+    choice0: "1/√(1-x\xB2)"
+    choice1: "1/(1+x\xB2)"
+    choice2: "-1/√(1-x\xB2)"
+    choice3: "√(1-x\xB2)"
+    choice4: "1/x"
+    correctAnswerIndex: 0
+    explanation: "arcsin x\u306E\u5C0E\u95A2\u6570\u306F 1/√(1-x\xB2)"
+  - questionText: "∫∫ dA over unit circle = ?"
+    choice0: "π"
+    choice1: "2π"
+    choice2: "4π"
+    choice3: "π/2"
+    choice4: "1"
+    correctAnswerIndex: 0
+    explanation: "\u5358\u4F4D\u5186\u306E\u9762\u7A4D\u306Fπr\xB2 = π"
+  - questionText: "Curl of F = (y, -x, 0) is?"
+    choice0: "(0, 0, 0)"
+    choice1: "(0, 0, -2)"
+    choice2: "(0, 0, 2)"
+    choice3: "(1, 1, 0)"
+    choice4: "(-1, -1, 0)"
+    correctAnswerIndex: 1
+    explanation: "curl F = (0, 0, -∂x/∂y - ∂y/∂x) = (0, 0, -2)"
+  - questionText: "Determinant of [[2, 1], [4, 3]] = ?"
+    choice0: 0
+    choice1: 1
+    choice2: 2
+    choice3: 5
+    choice4: 10
+    correctAnswerIndex: 2
+    explanation: "det = 2×3 - 1×4 = 6 - 4 = 2"
+  - questionText: "∫ x e\u02E3 dx = ? (integration by parts)"
+    choice0: "xe\u02E3 + C"
+    choice1: "e\u02E3 + C"
+    choice2: "(x-1)e\u02E3 + C"
+    choice3: "x\xB2e\u02E3/2 + C"
+    choice4: "(x+1)e\u02E3 + C"
+    correctAnswerIndex: 2
+    explanation: "\u90E8\u5206\u7A4D\u5206: ∫ x e\u02E3 dx = xe\u02E3 - e\u02E3 + C = (x-1)e\u02E3 + C"
+  - questionText: "Homogeneous diff eq: dy/dx = y/x. Solution?"
+    choice0: "y = Cx"
+    choice1: "y = C ln x"
+    choice2: "y = Ce\u02E3"
+    choice3: "y = Cx\xB2"
+    choice4: "y = C√x"
+    correctAnswerIndex: 0
+    explanation: "\u540C\u6B21\u5FAE\u5206\u65B9\u7A0B\u5F0F: dy/y = dx/x → ln y = ln x + C → y = Cx"

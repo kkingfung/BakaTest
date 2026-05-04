@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b2c3d4e5f6, type: 3}
+  m_Name: Item_MirrorShield
+  m_EditorClassIdentifier:
+  itemId: mirror_shield
+  itemType: 1
+  nameEnglish: Mirror Shield
+  nameJapanese: "\u93E1\u306E\u76FE"
+  descriptionEnglish: Reflects 30% of incoming damage back to attacker for 4 turns.
+  descriptionJapanese: "4\u30BF\u30FC\u30F3\u53D7\u3051\u305F\u30C0\u30E1\u30FC\u30B8\u306E30%\u3092\u653B\u6483\u8005\u306B\u8FD4\u3059\u3002"
+  rarity: 3
+  cost: 400
+  sellPrice: 200
+  target: 0
+  effectType: 1
+  effectValue: 30
+  duration: 4
+  isConsumable: true
+  iconSprite: {fileID: 0}

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b2c3d4e5f6, type: 3}
+  m_Name: Item_ShieldOfValor
+  m_EditorClassIdentifier:
+  itemId: shield_of_valor
+  itemType: 1
+  nameEnglish: Shield of Valor
+  nameJapanese: "\u52C7\u6C17\u306E\u76FE"
+  descriptionEnglish: Grants a shield that absorbs 400 damage for 5 turns.
+  descriptionJapanese: "5\u30BF\u30FC\u30F3\u306E\u9593400\u30C0\u30E1\u30FC\u30B8\u3092\u5438\u53CE\u3059\u308B\u30B7\u30FC\u30EB\u30C9\u3092\u4ED8\u4E0E\u3002"
+  rarity: 2
+  cost: 250
+  sellPrice: 125
+  target: 0
+  effectType: 1
+  effectValue: 400
+  duration: 5
+  isConsumable: true
+  iconSprite: {fileID: 0}

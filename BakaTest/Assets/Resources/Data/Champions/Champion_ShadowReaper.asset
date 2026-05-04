@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b2c3d4e5f6, type: 3}
+  m_Name: Champion_ShadowReaper
+  m_EditorClassIdentifier:
+  championId: shadow_reaper
+  nameEnglish: Shadow Reaper
+  nameJapanese: "\u5F71\u306E\u6B7B\u795E"
+  descriptionEnglish: A deadly assassin who strikes from the shadows with lethal precision. History specialist with extreme critical damage.
+  descriptionJapanese: "\u5F71\u304B\u3089\u81F4\u547D\u7684\u306A\u653B\u6483\u3092\u7E70\u308A\u51FA\u3059\u6B7B\u306E\u30A2\u30B5\u30B7\u30F3\u3002\u6B74\u53F2\u30B9\u30DA\u30B7\u30E3\u30EA\u30B9\u30C8\u3067\u8D85\u9AD8\u30AF\u30EA\u30C6\u30A3\u30AB\u30EB\u3002"
+  role: 4
+  element: 1
+  baseStats:
+    HP: 800
+    Attack: 140
+    Defense: 50
+    Speed: 110
+  subjectAffinity:
+    MathToAttackRatio: 0.6
+    ScienceToDefenseRatio: 0.2
+    EnglishToSpeedRatio: 0.5
+    HistoryToHPRatio: 1.5
+  criticalChance: 0.35
+  dodgeChance: 0.18
+  cost: 3500
+  portraitSprite: {fileID: 0}
+  modelPrefab: {fileID: 0}

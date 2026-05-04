@@ -1,5 +1,6 @@
 #nullable enable
 using System;
+using BakaTest.Data.Items;
 using BakaTest.Data.Localization;
 
 namespace BakaTest.Data.Battle
@@ -138,8 +139,9 @@ namespace BakaTest.Data.Battle
         }
 
         /// <summary>
-        /// アイテム使用アクションを作成します
+        /// アイテム使用アクションを作成します（レガシー）
         /// </summary>
+        [Obsolete("Use CreateItemUse(BattleUnit, BattleUnit?, ItemData, Language) instead")]
         public static BattleAction CreateItemUse(BattleUnit user, string itemId, int healAmount, Language language)
         {
             string userName = user.ChampionData.GetChampionName(language);
@@ -156,6 +158,58 @@ namespace BakaTest.Data.Battle
 
             user.Heal(healAmount, language);
             return action;
+        }
+
+        /// <summary>
+        /// アイテム使用アクションを作成します（完全版）
+        /// </summary>
+        /// <param name="user">使用者</param>
+        /// <param name="target">対象（null = 自分）</param>
+        /// <param name="itemData">使用するアイテム</param>
+        /// <param name="language">言語</param>
+        public static BattleAction CreateItemUse(BattleUnit user, BattleUnit? target, ItemData itemData, Language language)
+        {
+            string userName = user.ChampionData.GetChampionName(language);
+            string itemName = itemData.GetItemName(language);
+            BattleUnit actualTarget = target ?? user;
+            string targetName = actualTarget.ChampionData.GetChampionName(language);
+
+            // アイテム効果を適用
+            string effectDescription = "";
+
+            // 回復効果
+            if (itemData.healAmount > 0)
+            {
+                actualTarget.Heal(itemData.healAmount, language);
+                effectDescription = $"restored {itemData.healAmount} HP";
+            }
+
+            // ステータス効果（バフ/デバフ）
+            if (itemData.attackBonus != 0 || itemData.defenseBonus != 0 || itemData.speedBonus != 0 ||
+                itemData.criticalBonus > 0 || itemData.dodgeBonus > 0 || itemData.damageMultiplier != 1.0f ||
+                itemData.hasInvincibilityEffect || itemData.hasReviveEffect)
+            {
+                actualTarget.ApplyStatusEffect(itemData, language);
+                if (!string.IsNullOrEmpty(effectDescription))
+                {
+                    effectDescription += " and applied status effect";
+                }
+                else
+                {
+                    effectDescription = "applied status effect";
+                }
+            }
+
+            string message = $"{userName} used {itemName} on {targetName} and {effectDescription}!";
+
+            return new BattleAction(
+                BattleActionType.Item,
+                userName,
+                targetName,
+                message,
+                turn: 0,
+                healing: itemData.healAmount
+            );
         }
 
         public override string ToString()

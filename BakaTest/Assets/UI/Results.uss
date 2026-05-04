@@ -1,18 +1,25 @@
-/* Root Container */
+/*
+==============================================
+Results Screen - Responsive Design
+==============================================
+*/
+
+/* Import global theme */
+@import url("Common/GlobalTheme.uss");
+
+/* Root override */
 .root {
     flex-grow: 1;
-    background-color: rgb(20, 20, 30);
-    padding: 20px;
-    align-items: center;
+    padding: 2%;
+    background-color: rgb(25, 30, 40);
+    align-items: stretch;
 }
 
 /* Header */
 .header {
     align-items: center;
-    justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     padding: 20px;
-    width: 90%;
 }
 
 .title {
@@ -20,31 +27,31 @@
     color: rgb(255, 220, 100);
     -unity-font-style: bold;
     -unity-text-align: middle-center;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
 }
 
 /* Victory/Defeat Indicators */
 .victory-indicator {
-    padding: 15px 30px;
-    background-color: rgb(50, 150, 50);
-    border-radius: 10px;
+    padding: 20px;
+    background-color: rgba(80, 180, 100, 0.3);
+    border-radius: 12px;
     border-width: 3px;
-    border-color: rgb(100, 255, 100);
+    border-color: rgba(100, 220, 120, 0.6);
 }
 
 .victory-text {
     font-size: 28px;
-    color: rgb(255, 255, 100);
+    color: rgb(255, 255, 150);
     -unity-font-style: bold;
     -unity-text-align: middle-center;
 }
 
 .defeat-indicator {
-    padding: 15px 30px;
-    background-color: rgb(150, 50, 50);
-    border-radius: 10px;
+    padding: 20px;
+    background-color: rgba(180, 80, 80, 0.3);
+    border-radius: 12px;
     border-width: 3px;
-    border-color: rgb(255, 100, 100);
+    border-color: rgba(220, 100, 100, 0.6);
 }
 
 .defeat-text {
@@ -57,52 +64,51 @@
 /* Summary Section */
 .summary-section {
     align-items: center;
-    margin-bottom: 25px;
-    padding: 15px;
-    background-color: rgb(30, 30, 45);
-    border-radius: 8px;
-    width: 85%;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: rgba(45, 55, 75, 0.7);
+    border-radius: 12px;
 }
 
 .summary-text {
-    font-size: 24px;
+    font-size: 20px;
     color: rgb(200, 220, 255);
     -unity-font-style: bold;
     -unity-text-align: middle-center;
+    white-space: normal;
 }
 
 /* Result Section */
 .result-section {
-    margin-bottom: 25px;
-    padding: 20px;
-    background-color: rgb(25, 25, 40);
-    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 24px;
+    background-color: rgba(45, 55, 75, 0.7);
+    border-radius: 12px;
     border-width: 2px;
-    width: 85%;
 }
 
 .test-result-section {
-    border-color: rgb(80, 120, 180);
+    border-color: rgba(100, 170, 255, 0.6);
 }
 
 .battle-result-section {
-    border-color: rgb(180, 80, 80);
+    border-color: rgba(255, 130, 120, 0.6);
 }
 
 .section-title {
-    font-size: 22px;
-    color: rgb(200, 200, 255);
+    font-size: 24px;
+    color: rgb(255, 220, 100);
     -unity-font-style: bold;
-    margin-bottom: 15px;
-    padding: 8px;
-    background-color: rgb(40, 40, 60);
-    border-radius: 5px;
+    margin-bottom: 16px;
+    padding: 12px;
+    background-color: rgba(55, 65, 85, 0.6);
+    border-radius: 10px;
     -unity-text-align: middle-center;
 }
 
 /* Result Grid */
 .result-grid {
-    padding: 10px;
+    padding: 12px 0;
 }
 
 .result-row {
@@ -110,15 +116,16 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 12px;
-    padding: 10px 15px;
-    background-color: rgb(35, 35, 50);
-    border-radius: 5px;
+    padding: 14px 20px;
+    background-color: rgba(55, 65, 85, 0.6);
+    border-radius: 8px;
 }
 
 .result-label {
     font-size: 18px;
-    color: rgb(180, 180, 220);
-    min-width: 150px;
+    color: rgb(200, 200, 220);
+    min-width: 140px;
+    -unity-font-style: bold;
 }
 
 .result-value {
@@ -128,122 +135,55 @@
     -unity-text-align: middle-right;
 }
 
-/* Test Result Values */
-.subject-value {
-    color: rgb(100, 200, 255);
-}
-
-.difficulty-value {
-    color: rgb(255, 200, 100);
-}
-
-.score-value {
-    color: rgb(255, 255, 255);
-}
-
-.accuracy-value {
-    color: rgb(100, 255, 150);
-}
-
-.points-value {
-    color: rgb(255, 220, 100);
-    font-size: 24px;
-}
-
-.time-value {
-    color: rgb(200, 200, 255);
-}
-
-/* Battle Result Values */
-.winner-value {
-    color: rgb(100, 255, 100);
-    font-size: 22px;
-}
-
-.loser-value {
-    color: rgb(255, 150, 150);
-    font-size: 22px;
-}
-
-.turn-value {
-    color: rgb(200, 200, 255);
-}
-
-.duration-value {
-    color: rgb(180, 220, 255);
-}
-
-.coins-value {
-    color: rgb(255, 220, 100);
-    font-size: 24px;
-}
+/* Result Value Colors */
+.subject-value { color: rgb(120, 200, 255); }
+.difficulty-value { color: rgb(255, 200, 120); }
+.score-value { color: rgb(255, 255, 255); }
+.accuracy-value { color: rgb(150, 255, 180); }
+.points-value { color: rgb(255, 220, 100); font-size: 24px; }
+.time-value { color: rgb(180, 200, 255); }
+.winner-value { color: rgb(150, 255, 180); font-size: 22px; }
+.loser-value { color: rgb(255, 180, 180); font-size: 22px; }
+.turn-value { color: rgb(180, 200, 255); }
+.duration-value { color: rgb(180, 200, 255); }
+.coins-value { color: rgb(255, 220, 100); font-size: 24px; }
 
 /* Warning Label */
 .warning-label {
-    margin-top: 15px;
-    padding: 10px;
+    margin-top: 16px;
+    padding: 16px;
     font-size: 16px;
-    color: rgb(255, 200, 100);
-    background-color: rgb(80, 60, 40);
-    border-radius: 5px;
+    color: rgb(255, 200, 120);
+    background-color: rgba(180, 120, 50, 0.2);
+    border-radius: 10px;
     border-width: 2px;
-    border-color: rgb(255, 150, 50);
+    border-color: rgba(255, 180, 80, 0.5);
     -unity-text-align: middle-center;
+    white-space: normal;
 }
 
 /* Action Section */
 .action-section {
     flex-direction: row;
-    justify-content: space-around;
-    padding: 10px;
-    width: 85%;
-    margin-top: 10px;
+    justify-content: space-between;
+    padding: 12px 0;
+    margin-top: 16px;
 }
 
 .action-button {
-    width: 30%;
-    height: 55px;
-    font-size: 20px;
-    -unity-font-style: bold;
-    border-radius: 8px;
-    border-width: 3px;
-    transition-duration: 0.2s;
-}
-
-.action-button:hover {
-    scale: 1.05;
-}
-
-.action-button:active {
-    scale: 0.95;
+    flex-grow: 1;
+    margin: 0 8px;
+    min-height: 56px;
 }
 
 .continue-button {
-    background-color: rgb(80, 180, 80);
-    border-color: rgb(60, 140, 60);
-    color: rgb(255, 255, 255);
-}
-
-.continue-button:hover {
-    background-color: rgb(100, 200, 100);
+    max-width: 35%;
 }
 
 .play-again-button {
-    background-color: rgb(100, 150, 220);
-    border-color: rgb(80, 120, 180);
-    color: rgb(255, 255, 255);
-}
-
-.play-again-button:hover {
-    background-color: rgb(120, 170, 240);
+    max-width: 35%;
 }
 
 .menu-button {
-    background-color: rgb(120, 120, 140);
-    border-color: rgb(100, 100, 120);
-    color: rgb(255, 255, 255);
-}
-
-.menu-button:hover {
-    background-color: rgb(140, 140, 160);
+    max-width: 25%;
 }

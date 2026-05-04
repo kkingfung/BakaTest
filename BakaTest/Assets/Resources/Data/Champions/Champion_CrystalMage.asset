@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b2c3d4e5f6, type: 3}
+  m_Name: Champion_CrystalMage
+  m_EditorClassIdentifier:
+  championId: crystal_mage
+  nameEnglish: Crystal Mage
+  nameJapanese: "\u6C34\u6676\u306E\u9B54\u6CD5\u4F7F\u3044"
+  descriptionEnglish: A balanced mage who manipulates crystals for offense and defense. Math and Science balanced specialist.
+  descriptionJapanese: "\u6C34\u6676\u3092\u64CD\u308A\u653B\u6483\u3068\u9632\u5FA1\u3092\u884C\u3046\u30D0\u30E9\u30F3\u30B9\u578B\u30E1\u30A4\u30B8\u3002\u6570\u5B66\u3068\u7406\u79D1\u306E\u30D0\u30E9\u30F3\u30B9\u578B\u3002"
+  role: 3
+  element: 3
+  baseStats:
+    HP: 1000
+    Attack: 110
+    Defense: 80
+    Speed: 85
+  subjectAffinity:
+    MathToAttackRatio: 0.6
+    ScienceToDefenseRatio: 0.6
+    EnglishToSpeedRatio: 0.4
+    HistoryToHPRatio: 1.9
+  criticalChance: 0.16
+  dodgeChance: 0.12
+  cost: 2900
+  portraitSprite: {fileID: 0}
+  modelPrefab: {fileID: 0}

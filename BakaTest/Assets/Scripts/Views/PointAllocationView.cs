@@ -1,14 +1,20 @@
 #nullable enable
+using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.UIElements;
 using BakaTest.Core.MVVM;
 using BakaTest.Core.Services;
-using BakaTest.Services.SceneManagement;
-using BakaTest.Services.Player;
+using BakaTest.Data.Battle;
+using BakaTest.Data.Champions;
+using BakaTest.Data.Tests;
+using BakaTest.Services.AI;
+using BakaTest.Services.Battle;
 using BakaTest.Services.Champions;
 using BakaTest.Services.Localization;
+using BakaTest.Services.Player;
+using BakaTest.Services.SceneManagement;
 using BakaTest.ViewModels;
-using System.ComponentModel;
 
 namespace BakaTest.Views
 {
@@ -519,11 +525,68 @@ namespace BakaTest.Views
         /// </summary>
         private void OnAllocationConfirmed(object? sender, System.EventArgs e)
         {
-            Debug.Log("[PointAllocationView] Allocation confirmed. Loading champion selection...");
+            if (ViewModel == null || ViewModel.SelectedChampion == null)
+            {
+                Debug.LogError("[PointAllocationView] Cannot create battle setup: ViewModel or Champion is null.");
+                return;
+            }
 
-            // チャンピオン選択画面に遷移（実装予定）
-            // var sceneService = ServiceLocator.Instance.Get<ISceneManagementService>();
-            // sceneService?.LoadChampionSelection();
+            Debug.Log("[PointAllocationView] Allocation confirmed. Creating battle setup...");
+
+            // サービス取得
+            var battleService = ServiceLocator.Instance.Get<IBattleService>();
+            var aiService = ServiceLocator.Instance.Get<IAIOpponentService>();
+            var playerDataService = ServiceLocator.Instance.Get<IPlayerDataService>();
+            var sceneService = ServiceLocator.Instance.Get<ISceneManagementService>();
+
+            if (battleService == null || aiService == null || sceneService == null)
+            {
+                Debug.LogError("[PointAllocationView] Required services not found.");
+                return;
+            }
+
+            // プレイヤーの配分ポイントを取得
+            var playerPoints = new Dictionary<Subject, int>
+            {
+                { Subject.Math, ViewModel.MathAllocated },
+                { Subject.Science, ViewModel.ScienceAllocated },
+                { Subject.English, ViewModel.EnglishAllocated },
+                { Subject.History, ViewModel.HistoryAllocated }
+            };
+
+            // AIの難易度とチャンピオン選択
+            var championService = ServiceLocator.Instance.Get<IChampionService>();
+            var availableChampions = championService?.AvailableChampions ?? new List<ChampionData>();
+            var aiChampion = aiService.SelectChampion(availableChampions, AIDifficulty.Medium);
+
+            if (aiChampion == null && availableChampions.Count > 0)
+            {
+                // フォールバック: ランダムに選択
+                aiChampion = availableChampions[UnityEngine.Random.Range(0, availableChampions.Count)];
+            }
+
+            // AI対戦相手のポイント配分を生成
+            var aiPoints = aiService.AllocatePoints(AIDifficulty.Medium, AIPersonality.Tactical, aiChampion!);
+            var aiName = aiService.GenerateAIName(AIDifficulty.Medium);
+
+            // BattleSetupを作成
+            var battleSetup = new BattleSetup(
+                mode: BattleMode.Individual,
+                player1Champion: ViewModel.SelectedChampion,
+                player1Name: "Player",
+                player1Points: playerPoints,
+                player2Champion: aiChampion!,
+                player2Name: aiName,
+                player2Points: aiPoints
+            );
+
+            // BattleServiceに設定
+            battleService.PendingBattleSetup = battleSetup;
+
+            Debug.Log($"[PointAllocationView] Battle setup created. Player: {battleSetup.Player1Name} vs Opponent: {battleSetup.Player2Name}");
+
+            // Battleシーンに遷移
+            sceneService.LoadBattle();
         }
 
         /// <summary>

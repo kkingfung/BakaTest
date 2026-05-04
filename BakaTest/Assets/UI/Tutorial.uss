@@ -1,0 +1,141 @@
+/*
+==============================================
+Tutorial Screen - Responsive Design
+==============================================
+*/
+
+/* Import global theme */
+@import url("Common/GlobalTheme.uss");
+
+/* Root override */
+.root {
+    flex-grow: 1;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== HIGHLIGHT OVERLAY ===== */
+.highlight-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 100;
+}
+
+/* ===== TUTORIAL PANEL ===== */
+.tutorial-panel {
+    width: 90%;
+    max-width: 800px;
+    min-height: 60%;
+    max-height: 80%;
+    background-color: rgba(35, 45, 60, 0.95);
+    border-radius: 16px;
+    border-width: 3px;
+    border-color: rgba(100, 170, 255, 0.6);
+    padding: 24px;
+    flex-direction: column;
+}
+
+/* ===== HEADER PANEL ===== */
+.header-panel {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom-width: 2px;
+    border-bottom-color: rgba(100, 150, 255, 0.3);
+}
+
+.header-label {
+    font-size: 32px;
+    color: rgb(255, 220, 100);
+    -unity-font-style: bold;
+}
+
+.progress-label {
+    font-size: 20px;
+    color: rgb(120, 200, 255);
+    -unity-font-style: bold;
+    padding: 8px 16px;
+    background-color: rgba(50, 80, 120, 0.6);
+    border-radius: 12px;
+}
+
+/* ===== CONTENT AREA ===== */
+.content-scroll {
+    flex-grow: 1;
+    margin-bottom: 24px;
+}
+
+.content-panel {
+    padding: 16px;
+}
+
+.step-title {
+    font-size: 28px;
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+    margin-bottom: 16px;
+    -unity-text-align: middle-left;
+}
+
+.step-description {
+    font-size: 18px;
+    color: rgb(220, 220, 240);
+    line-height: 160%;
+    white-space: normal;
+    -unity-text-align: middle-left;
+    margin-bottom: 16px;
+}
+
+/* ===== IMAGE PANEL ===== */
+.image-panel {
+    min-height: 200px;
+    margin: 16px 0;
+    background-color: rgba(50, 60, 80, 0.5);
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== BUTTON PANEL ===== */
+.button-panel {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.button-panel > .btn {
+    flex-grow: 1;
+    min-height: 56px;
+    font-size: 20px;
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+
+/* Small screens - stack buttons vertically */
+@media (max-width: 600px) {
+    .button-panel {
+        flex-direction: column;
+    }
+    
+    .button-panel > .btn {
+        width: 100%;
+    }
+}
+
+/* ===== VISIBILITY ===== */
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: flex;
+}

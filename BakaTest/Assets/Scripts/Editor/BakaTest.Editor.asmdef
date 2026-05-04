@@ -5,7 +5,10 @@
         "BakaTest.Core",
         "BakaTest.Data",
         "BakaTest.Services",
-        "BakaTest.UI"
+        "BakaTest.UI",
+        "BakaTest.ViewModels",
+        "BakaTest.Views",
+        "BakaTest.Bootstrap"
     ],
     "includePlatforms": [
         "Editor"

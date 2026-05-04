@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using BakaTest.Data.Champions;
 using BakaTest.Data.Settings;
+using BakaTest.Data.Tutorial;
 
 namespace BakaTest.Data.Save
 {
@@ -32,6 +33,9 @@ namespace BakaTest.Data.Save
 
         /// <summary>設定データ</summary>
         public SettingsData settingsData = SettingsData.GetDefault();
+
+        /// <summary>チュートリアル進行状況</summary>
+        public TutorialProgress? tutorialProgress;
 
         public SaveData()
         {

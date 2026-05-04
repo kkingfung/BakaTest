@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b2c3d4e5f6, type: 3}
+  m_Name: Champion_EarthShaker
+  m_EditorClassIdentifier:
+  championId: earth_shaker
+  nameEnglish: Earth Shaker
+  nameJapanese: "\u5730\u9707\u306E\u5DE8\u4EBA"
+  descriptionEnglish: A powerful bruiser who deals devastating area damage. Math and History specialist with high HP and attack.
+  descriptionJapanese: "\u5F37\u529B\u306A\u7BC4\u56F2\u30C0\u30E1\u30FC\u30B8\u3092\u4E0E\u3048\u308B\u30D6\u30EB\u30FC\u30B6\u30FC\u3002\u6570\u5B66\u3068\u6B74\u53F2\u30B9\u30DA\u30B7\u30E3\u30EA\u30B9\u30C8\u3067\u9AD8HP\u3068\u9AD8\u653B\u6483\u3002"
+  role: 1
+  element: 1
+  baseStats:
+    HP: 1150
+    Attack: 105
+    Defense: 85
+    Speed: 70
+  subjectAffinity:
+    MathToAttackRatio: 0.7
+    ScienceToDefenseRatio: 0.4
+    EnglishToSpeedRatio: 0.3
+    HistoryToHPRatio: 2.5
+  criticalChance: 0.15
+  dodgeChance: 0.08
+  cost: 2800
+  portraitSprite: {fileID: 0}
+  modelPrefab: {fileID: 0}

@@ -17,83 +17,395 @@ MonoBehaviour:
   subject: 0
   difficulty: 2
   questions:
-  - questionText: "sin 30\xB0 = ?"
+  - questionText: "sin\xB2\u03B8 + cos\xB2\u03B8 = ?"
     choice0: 0
-    choice1: 1/2
-    choice2: "\u221A2/2"
-    choice3: "\u221A3/2"
+    choice1: 1
+    choice2: 2
+    choice3: sin\u03B8cos\u03B8
+    choice4: tan\u03B8
+    correctAnswerIndex: 1
+    explanation: "\u4E09\u89D2\u95A2\u6570\u306E\u57FA\u672C\u516C\u5F0F\u3067\u3059\u3002"
+  - questionText: "2\xB3 = ?"
+    choice0: 6
+    choice1: 7
+    choice2: 8
+    choice3: 9
+    choice4: 10
+    correctAnswerIndex: 2
+    explanation: "2\xB3 = 2 \xD7 2 \xD7 2 = 8"
+  - questionText: "log\u2082 8 = ?"
+    choice0: 2
+    choice1: 3
+    choice2: 4
+    choice3: 8
+    choice4: 16
+    correctAnswerIndex: 1
+    explanation: "2\xB3 = 8\u306A\u306E\u3067\u3001log\u2082 8 = 3"
+  - questionText: "\u4E8C\u6B21\u65B9\u7A0B\u5F0F x\xB2 - 4x + 3 = 0 \u306E\u89E3\u306F?"
+    choice0: "x = 1, 2"
+    choice1: "x = 1, 3"
+    choice2: "x = 2, 3"
+    choice3: "x = 1, 4"
+    choice4: "x = 3, 4"
+    correctAnswerIndex: 1
+    explanation: "(x-1)(x-3) = 0, x = 1, 3"
+  - questionText: "\u5FAE\u5206: d/dx(x\xB2) = ?"
+    choice0: x
+    choice1: 2x
+    choice2: "x\xB2"
+    choice3: "2x\xB2"
     choice4: 1
     correctAnswerIndex: 1
-    explanation: "30\u5EA6\u306E\u6B63\u5F26\u306F1/2\u3067\u3059\u3002"
-  - questionText: "log\u2082 8 = ?"
+    explanation: "\u30D9\u30AD\u306E\u6CD5\u5247: d/dx(x^n) = nx^(n-1)"
+  - questionText: "sin(90\xB0) = ?"
+    choice0: 0
+    choice1: 0.5
+    choice2: 1
+    choice3: "\u221A2/2"
+    choice4: "\u221A3/2"
+    correctAnswerIndex: 2
+    explanation: "sin(90\xB0) = 1\u3067\u3059\u3002"
+  - questionText: "log\u2081\u2080 100 = ?"
     choice0: 1
     choice1: 2
-    choice2: 3
-    choice3: 4
-    choice4: 5
-    correctAnswerIndex: 2
-    explanation: "2\xB3 = 8\u306A\u306E\u3067\u3001log\u2082 8 = 3"
-  - questionText: "(x + 2)(x - 3)\u3092\u5C55\u958B\u3059\u308B\u3068?"
-    choice0: "x\xB2 - x - 6"
-    choice1: "x\xB2 + x - 6"
-    choice2: "x\xB2 - x + 6"
-    choice3: "x\xB2 + x + 6"
-    choice4: "x\xB2 - 5x - 6"
-    correctAnswerIndex: 0
-    explanation: "(x+2)(x-3) = x\xB2 - 3x + 2x - 6 = x\xB2 - x - 6"
-  - questionText: "sin 30\xB0 = ?"
-    choice0: 0
-    choice1: 1/2
-    choice2: "\u221A2/2"
-    choice3: "\u221A3/2"
-    choice4: 1
+    choice2: 10
+    choice3: 100
+    choice4: 1000
     correctAnswerIndex: 1
-    explanation: "30\u5EA6\u306E\u6B63\u5F26\u306F1/2\u3067\u3059\u3002"
-  - questionText: "log\u2082 8 = ?"
+    explanation: "10\xB2 = 100\u306A\u306E\u3067\u3001log\u2081\u2080 100 = 2"
+  - questionText: "(x + y)\xB2 = ?"
+    choice0: "x\xB2 + y\xB2"
+    choice1: "x\xB2 + 2xy + y\xB2"
+    choice2: "x\xB2 - 2xy + y\xB2"
+    choice3: "x\xB2 + xy + y\xB2"
+    choice4: "2x + 2y"
+    correctAnswerIndex: 1
+    explanation: "\u4E57\u6CD5\u516C\u5F0F: (a+b)\xB2 = a\xB2 + 2ab + b\xB2"
+  - questionText: "\u7A4D\u5206: \u222B x dx = ?"
+    choice0: "x\xB2"
+    choice1: "x\xB2/2 + C"
+    choice2: "2x + C"
+    choice3: "x + C"
+    choice4: "1"
+    correctAnswerIndex: 1
+    explanation: "\u222B x dx = x\xB2/2 + C"
+  - questionText: "cos(0\xB0) = ?"
+    choice0: 0
+    choice1: 0.5
+    choice2: 1
+    choice3: "\u221A2/2"
+    choice4: "\u221A3/2"
+    correctAnswerIndex: 2
+    explanation: "cos(0\xB0) = 1\u3067\u3059\u3002"
+  - questionText: "e^0 = ?"
+    choice0: 0
+    choice1: 1
+    choice2: e
+    choice3: 10
+    choice4: "\u221E"
+    correctAnswerIndex: 1
+    explanation: "\u4EFB\u610F\u306E\u6570\u306E0\u4E57\u306F1\u3067\u3059\u3002"
+  - questionText: "\u4E8C\u6B21\u65B9\u7A0B\u5F0F x\xB2 + 6x + 8 = 0 \u306E\u89E3\u306F?"
+    choice0: "x = -2, -3"
+    choice1: "x = -2, -4"
+    choice2: "x = -3, -4"
+    choice3: "x = 2, 4"
+    choice4: "x = 3, 4"
+    correctAnswerIndex: 1
+    explanation: "(x+2)(x+4) = 0, x = -2, -4"
+  - questionText: "tan(45\xB0) = ?"
+    choice0: 0
+    choice1: 0.5
+    choice2: 1
+    choice3: "\u221A2"
+    choice4: "\u221A3"
+    correctAnswerIndex: 2
+    explanation: "tan(45\xB0) = 1\u3067\u3059\u3002"
+  - questionText: "log\u2081\u2080 1 = ?"
+    choice0: 0
+    choice1: 1
+    choice2: 10
+    choice3: -1
+    choice4: "\u221E"
+    correctAnswerIndex: 0
+    explanation: "10\u2070 = 1\u306A\u306E\u3067\u3001log\u2081\u2080 1 = 0"
+  - questionText: "\u5FAE\u5206: d/dx(x\xB3) = ?"
+    choice0: "x\xB2"
+    choice1: "2x\xB2"
+    choice2: "3x\xB2"
+    choice3: "3x"
+    choice4: "x\xB3"
+    correctAnswerIndex: 2
+    explanation: "d/dx(x\xB3) = 3x\xB2"
+  - questionText: "(a + b)(a - b) = ?"
+    choice0: "a\xB2 - b\xB2"
+    choice1: "a\xB2 + b\xB2"
+    choice2: "a\xB2 - 2ab + b\xB2"
+    choice3: "2a"
+    choice4: "2ab"
+    correctAnswerIndex: 0
+    explanation: "\u4E57\u6CD5\u516C\u5F0F: (a+b)(a-b) = a\xB2 - b\xB2"
+  - questionText: "sin(30\xB0) = ?"
+    choice0: 0
+    choice1: 0.5
+    choice2: 1
+    choice3: "\u221A2/2"
+    choice4: "\u221A3/2"
+    correctAnswerIndex: 1
+    explanation: "sin(30\xB0) = 1/2 = 0.5"
+  - questionText: "\u7A4D\u5206: \u222B 2x dx = ?"
+    choice0: "x"
+    choice1: "x\xB2 + C"
+    choice2: "2x\xB2 + C"
+    choice3: "2 + C"
+    choice4: "x\xB2/2 + C"
+    correctAnswerIndex: 1
+    explanation: "\u222B 2x dx = x\xB2 + C"
+  - questionText: "2\u2075 = ?"
+    choice0: 10
+    choice1: 16
+    choice2: 32
+    choice3: 64
+    choice4: 128
+    correctAnswerIndex: 2
+    explanation: "2\u2075 = 2 \xD7 2 \xD7 2 \xD7 2 \xD7 2 = 32"
+  - questionText: "\u4E8C\u6B21\u65B9\u7A0B\u5F0F x\xB2 - 9 = 0 \u306E\u89E3\u306F?"
+    choice0: "x = \xB12"
+    choice1: "x = \xB13"
+    choice2: "x = \xB14"
+    choice3: "x = \xB15"
+    choice4: "x = \xB19"
+    correctAnswerIndex: 1
+    explanation: "x\xB2 = 9, x = \xB13"
+  - questionText: "cos(60\xB0) = ?"
+    choice0: 0
+    choice1: 0.5
+    choice2: 1
+    choice3: "\u221A2/2"
+    choice4: "\u221A3/2"
+    correctAnswerIndex: 1
+    explanation: "cos(60\xB0) = 1/2 = 0.5"
+  - questionText: "log\u2082 16 = ?"
+    choice0: 2
+    choice1: 3
+    choice2: 4
+    choice3: 8
+    choice4: 16
+    correctAnswerIndex: 2
+    explanation: "2\u2074 = 16\u306A\u306E\u3067\u3001log\u2082 16 = 4"
+  - questionText: "\u5FAE\u5206: d/dx(5x) = ?"
+    choice0: 1
+    choice1: 5
+    choice2: 5x
+    choice3: x
+    choice4: 0
+    correctAnswerIndex: 1
+    explanation: "\u5B9A\u6570\u500D\u306E\u5FAE\u5206: d/dx(cx) = c"
+  - questionText: "(x - 3)\xB2 = ?"
+    choice0: "x\xB2 - 9"
+    choice1: "x\xB2 - 6x + 9"
+    choice2: "x\xB2 + 6x + 9"
+    choice3: "x\xB2 - 3x + 9"
+    choice4: "x\xB2 - 6"
+    correctAnswerIndex: 1
+    explanation: "(a-b)\xB2 = a\xB2 - 2ab + b\xB2"
+  - questionText: "\u7A4D\u5206: \u222B 1 dx = ?"
+    choice0: 0
+    choice1: 1
+    choice2: x
+    choice3: "x + C"
+    choice4: "x\xB2 + C"
+    correctAnswerIndex: 3
+    explanation: "\u222B 1 dx = x + C"
+  - questionText: "Solve: x\xB2 - 5x + 6 = 0"
+    choice0: "x = 1, 6"
+    choice1: "x = 2, 3"
+    choice2: "x = -2, -3"
+    choice3: "x = 1, -6"
+    choice4: "x = -1, 6"
+    correctAnswerIndex: 1
+    explanation: "\u56E0\u6570\u5206\u89E3: (x-2)(x-3) = 0\u3001x = 2 or 3"
+  - questionText: "sin(90\xB0) = ?"
+    choice0: 0
+    choice1: 0.5
+    choice2: 1
+    choice3: "\u221A2/2"
+    choice4: "\u221A3/2"
+    correctAnswerIndex: 2
+    explanation: "sin(90\xB0) = 1"
+  - questionText: "If f(x) = 3x + 2, what is f(4)?"
+    choice0: 10
+    choice1: 11
+    choice2: 12
+    choice3: 14
+    choice4: 15
+    correctAnswerIndex: 3
+    explanation: "f(4) = 3(4) + 2 = 12 + 2 = 14"
+  - questionText: "What is the discriminant of 2x\xB2 + 3x - 5 = 0?"
+    choice0: 9
+    choice1: 29
+    choice2: 31
+    choice3: 40
+    choice4: 49
+    correctAnswerIndex: 4
+    explanation: "b\xB2 - 4ac = 3\xB2 - 4(2)(-5) = 9 + 40 = 49"
+  - questionText: "tan(45\xB0) = ?"
+    choice0: 0
+    choice1: 0.5
+    choice2: 1
+    choice3: "\u221A2"
+    choice4: "\u221A3"
+    correctAnswerIndex: 2
+    explanation: "tan(45\xB0) = 1"
+  - questionText: "Simplify: (x\xB3y\xB2)/(xy)"
+    choice0: "x\xB2y"
+    choice1: "x\xB3y"
+    choice2: "x\xB2y\xB2"
+    choice3: "xy"
+    choice4: "x\xB3y\xB2"
+    correctAnswerIndex: 0
+    explanation: "x\xB3\u207B\xB9 \xD7 y\xB2\u207B\xB9 = x\xB2y"
+  - questionText: "log(100) = ? (base 10)"
     choice0: 1
     choice1: 2
-    choice2: 3
-    choice3: 4
-    choice4: 5
-    correctAnswerIndex: 2
-    explanation: "2\xB3 = 8\u306A\u306E\u3067\u3001log\u2082 8 = 3"
-  - questionText: "(x + 2)(x - 3)\u3092\u5C55\u958B\u3059\u308B\u3068?"
-    choice0: "x\xB2 - x - 6"
-    choice1: "x\xB2 + x - 6"
-    choice2: "x\xB2 - x + 6"
-    choice3: "x\xB2 + x + 6"
-    choice4: "x\xB2 - 5x - 6"
-    correctAnswerIndex: 0
-    explanation: "(x+2)(x-3) = x\xB2 - 3x + 2x - 6 = x\xB2 - x - 6"
-  - questionText: "sin 30\xB0 = ?"
-    choice0: 0
-    choice1: 1/2
-    choice2: "\u221A2/2"
-    choice3: "\u221A3/2"
-    choice4: 1
+    choice2: 10
+    choice3: 50
+    choice4: 100
     correctAnswerIndex: 1
-    explanation: "30\u5EA6\u306E\u6B63\u5F26\u306F1/2\u3067\u3059\u3002"
-  - questionText: "log\u2082 8 = ?"
-    choice0: 1
-    choice1: 2
-    choice2: 3
-    choice3: 4
-    choice4: 5
+    explanation: "10\xB2 = 100\u306A\u306E\u3067\u3001log(100) = 2"
+  - questionText: "Solve for x: 2\u02E3 = 32"
+    choice0: 3
+    choice1: 4
+    choice2: 5
+    choice3: 6
+    choice4: 7
     correctAnswerIndex: 2
-    explanation: "2\xB3 = 8\u306A\u306E\u3067\u3001log\u2082 8 = 3"
-  - questionText: "(x + 2)(x - 3)\u3092\u5C55\u958B\u3059\u308B\u3068?"
-    choice0: "x\xB2 - x - 6"
-    choice1: "x\xB2 + x - 6"
-    choice2: "x\xB2 - x + 6"
-    choice3: "x\xB2 + x + 6"
-    choice4: "x\xB2 - 5x - 6"
-    correctAnswerIndex: 0
-    explanation: "(x+2)(x-3) = x\xB2 - 3x + 2x - 6 = x\xB2 - x - 6"
-  - questionText: "sin 30\xB0 = ?"
-    choice0: 0
-    choice1: 1/2
-    choice2: "\u221A2/2"
-    choice3: "\u221A3/2"
-    choice4: 1
+    explanation: "2\u2075 = 32\u306A\u306E\u3067\u3001x = 5"
+  - questionText: "What is the period of sin(x)?"
+    choice0: "\u03C0"
+    choice1: "2\u03C0"
+    choice2: "\u03C0/2"
+    choice3: "4\u03C0"
+    choice4: "1"
     correctAnswerIndex: 1
-    explanation: "30\u5EA6\u306E\u6B63\u5F26\u306F1/2\u3067\u3059\u3002"
+    explanation: "sin(x)\u306E\u5468\u671F\u306F2\u03C0"
+  - questionText: "Factor: x\xB2 - 16"
+    choice0: "(x-4)(x-4)"
+    choice1: "(x+4)(x+4)"
+    choice2: "(x-4)(x+4)"
+    choice3: "(x-2)(x+8)"
+    choice4: "(x-8)(x+2)"
+    correctAnswerIndex: 2
+    explanation: "\u5E73\u65B9\u306E\u5DEE: a\xB2 - b\xB2 = (a-b)(a+b)"
+  - questionText: "d/dx(x\xB3) = ?"
+    choice0: "3x"
+    choice1: "x\xB2"
+    choice2: "3x\xB2"
+    choice3: "x\xB3"
+    choice4: "3"
+    correctAnswerIndex: 2
+    explanation: "\u51AA\u4E57\u5247: d/dx(x\u207F) = nx\u207F\u207B\xB9"
+  - questionText: "Arithmetic sequence: 2, 5, 8, 11, ... What is the 10th term?"
+    choice0: 26
+    choice1: 28
+    choice2: 29
+    choice3: 30
+    choice4: 32
+    correctAnswerIndex: 2
+    explanation: "a\u2099 = a\u2081 + (n-1)d = 2 + 9(3) = 29"
+  - questionText: "sin\xB2(x) + cos\xB2(x) = ?"
+    choice0: 0
+    choice1: 1
+    choice2: 2
+    choice3: "sin(2x)"
+    choice4: "cos(2x)"
+    correctAnswerIndex: 1
+    explanation: "\u4E09\u89D2\u95A2\u6570\u306E\u57FA\u672C\u6050\u7B49\u5F0F: sin\xB2(x) + cos\xB2(x) = 1"
+  - questionText: "Geometric sequence: 3, 6, 12, 24, ... What is the 6th term?"
+    choice0: 48
+    choice1: 72
+    choice2: 96
+    choice3: 120
+    choice4: 144
+    correctAnswerIndex: 2
+    explanation: "a\u2086 = 3 \xD7 2\u2075 = 3 \xD7 32 = 96"
+  - questionText: "Solve: |x - 3| = 7"
+    choice0: "x = 4, 10"
+    choice1: "x = 10, -4"
+    choice2: "x = -4, 10"
+    choice3: "x = -10, 4"
+    choice4: "x = 3, 7"
+    correctAnswerIndex: 1
+    explanation: "x - 3 = 7 or x - 3 = -7\u3001x = 10 or -4"
+  - questionText: "\u222B x dx = ?"
+    choice0: "1"
+    choice1: "x"
+    choice2: "x\xB2/2 + C"
+    choice3: "2x + C"
+    choice4: "x\xB2 + C"
+    correctAnswerIndex: 2
+    explanation: "\u222B x dx = x\xB2/2 + C"
+  - questionText: "What is the range of f(x) = x\xB2?"
+    choice0: "All real numbers"
+    choice1: "x \u2265 0"
+    choice2: "x > 0"
+    choice3: "y \u2265 0"
+    choice4: "y > 0"
+    correctAnswerIndex: 3
+    explanation: "x\xB2\u306F\u5E38\u306B\u975E\u8CA0\u306A\u306E\u3067\u3001\u5024\u57DF\u306Fy \u2265 0"
+  - questionText: "If log\u2083(x) = 4, what is x?"
+    choice0: 12
+    choice1: 27
+    choice2: 64
+    choice3: 81
+    choice4: 243
+    correctAnswerIndex: 3
+    explanation: "3\u2074 = 81\u306A\u306E\u3067\u3001x = 81"
+  - questionText: "Expand: (x + 2)(x - 5)"
+    choice0: "x\xB2 - 3x - 10"
+    choice1: "x\xB2 + 3x - 10"
+    choice2: "x\xB2 - 3x + 10"
+    choice3: "x\xB2 - 7x - 10"
+    choice4: "x\xB2 + 7x + 10"
+    correctAnswerIndex: 0
+    explanation: "x\xB2 - 5x + 2x - 10 = x\xB2 - 3x - 10"
+  - questionText: "cos(0\xB0) = ?"
+    choice0: 0
+    choice1: 0.5
+    choice2: 1
+    choice3: "-1"
+    choice4: "\u221A2/2"
+    correctAnswerIndex: 2
+    explanation: "cos(0\xB0) = 1"
+  - questionText: "Solve the system: x + y = 10, x - y = 2"
+    choice0: "x = 5, y = 5"
+    choice1: "x = 6, y = 4"
+    choice2: "x = 7, y = 3"
+    choice3: "x = 8, y = 2"
+    choice4: "x = 4, y = 6"
+    correctAnswerIndex: 1
+    explanation: "\u52A0\u6E1B\u6CD5: 2x = 12, x = 6\u3001y = 4"
+  - questionText: "d/dx(e\u02E3) = ?"
+    choice0: "1"
+    choice1: "e"
+    choice2: "e\u02E3"
+    choice3: "x\u00B7e\u02E3"
+    choice4: "e\u02E3\u207B\xB9"
+    correctAnswerIndex: 2
+    explanation: "\u81EA\u7136\u5BFE\u6570\u306E\u5E95e\u306E\u5FAE\u5206: d/dx(e\u02E3) = e\u02E3"
+  - questionText: "What is the vertex of y = x\xB2 - 4x + 3?"
+    choice0: "(1, 0)"
+    choice1: "(2, -1)"
+    choice2: "(2, 0)"
+    choice3: "(3, 0)"
+    choice4: "(4, 3)"
+    correctAnswerIndex: 1
+    explanation: "\u9802\u70B9\u306Ex = -b/2a = 4/2 = 2\u3001y = 4 - 8 + 3 = -1"
+  - questionText: "sin(30\xB0) = ?"
+    choice0: 0
+    choice1: 0.5
+    choice2: 1
+    choice3: "\u221A2/2"
+    choice4: "\u221A3/2"
+    correctAnswerIndex: 1
+    explanation: "sin(30\xB0) = 1/2 = 0.5"

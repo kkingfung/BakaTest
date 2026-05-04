@@ -9,6 +9,7 @@ using BakaTest.ViewModels;
 using BakaTest.Services.Battle;
 using BakaTest.Services.SceneManagement;
 using BakaTest.Services.Localization;
+using BakaTest.Services.Inventory;
 using BakaTest.Data.Battle;
 using BakaTest.Data.Champions;
 
@@ -77,13 +78,26 @@ namespace BakaTest.Views
                 return;
             }
 
-            // ViewModelを作成
-            var viewModel = new BattleViewModel(battleService, localizationService);
+            // ViewModelを作成（インベントリサービスも渡す）
+            var inventoryService = ServiceLocator.Instance.Get<IInventoryService>();
+            var viewModel = new BattleViewModel(battleService, localizationService, inventoryService);
             SetViewModel(viewModel);
 
-            // バトルセットアップを取得（前画面から渡される想定）
-            // TODO: 実際には前画面から渡されたセットアップを使用
-            var setup = CreateDummyBattleSetup();
+            // バトルセットアップを取得（前画面から渡される）
+            BattleSetup? setup = battleService.PendingBattleSetup;
+
+            // セットアップがない場合はダミーデータを使用（デバッグ用）
+            if (setup == null)
+            {
+                Debug.LogWarning("[BattleView] No PendingBattleSetup found. Using dummy data for testing.");
+                setup = CreateDummyBattleSetup();
+            }
+            else
+            {
+                // セットアップを使用したらクリア
+                battleService.PendingBattleSetup = null;
+            }
+
             viewModel.InitializeBattle(setup);
         }
 
@@ -359,28 +373,46 @@ namespace BakaTest.Views
 
         private void OnViewDetailsClicked()
         {
-            // TODO: 詳細結果画面に遷移
-            Debug.Log("[BattleView] View Details clicked (not yet implemented)");
+            // 詳細結果画面に遷移（現在は未実装なのでResultsシーンを使用）
+            // TODO: 専用の詳細結果画面が実装されたらそちらに遷移
+            var sceneService = ServiceLocator.Instance.Get<ISceneManagementService>();
+            if (sceneService != null)
+            {
+                Debug.Log("[BattleView] Navigating to Results screen for detailed view.");
+                sceneService.LoadResults();
+            }
+            else
+            {
+                Debug.LogWarning("[BattleView] SceneManagementService not found.");
+            }
         }
 
         private void OnContinueClicked()
         {
-            // TODO: メインメニューまたは次の画面へ遷移
+            // バトル終了後、メインメニューに戻る
             var sceneService = ServiceLocator.Instance.Get<ISceneManagementService>();
             if (sceneService != null)
             {
-                // sceneService.LoadMainMenu();
-                Debug.Log("[BattleView] Continue clicked - transition to Main Menu (commented out)");
+                Debug.Log("[BattleView] Returning to Main Menu.");
+                sceneService.LoadMainMenu();
+            }
+            else
+            {
+                Debug.LogWarning("[BattleView] SceneManagementService not found.");
             }
         }
 
         /// <summary>
         /// ダミーのバトルセットアップを作成します（テスト用）
         /// </summary>
+        /// <remarks>
+        /// NOTE: この関数はデバッグ/テスト用です。
+        /// 実際の運用では、PointAllocationViewがBattleService.PendingBattleSetupに
+        /// セットアップを設定してからBattleシーンに遷移します。
+        /// </remarks>
         private BattleSetup CreateDummyBattleSetup()
         {
-            // TODO: 実際には前画面から渡されたセットアップを使用
-            // ここでは動作確認用のダミーデータを作成
+            // ダミーデータでバトルセットアップを作成
 
             // ダミーチャンピオンデータを作成（実際にはChampionServiceから取得）
             var playerChampion = ScriptableObject.CreateInstance<ChampionData>();

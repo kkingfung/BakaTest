@@ -1,0 +1,46 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="Tutorial.uss" />
+    <ui:VisualElement name="Root" class="root">
+        
+        <!-- ハイライトオーバーレイ（チュートリアル用） -->
+        <ui:VisualElement name="HighlightOverlay" class="highlight-overlay hidden" />
+        
+        <!-- チュートリアルパネル -->
+        <ui:VisualElement name="TutorialPanel" class="tutorial-panel">
+            
+            <!-- ヘッダー -->
+            <ui:VisualElement name="HeaderPanel" class="header-panel">
+                <ui:Label text="チュートリアル" name="HeaderLabel" class="header-label" />
+                <ui:Label text="ステップ 1/10" name="ProgressLabel" class="progress-label" />
+            </ui:VisualElement>
+            
+            <!-- コンテンツエリア -->
+            <ui:ScrollView name="ContentScrollView" class="content-scroll">
+                <ui:VisualElement name="ContentPanel" class="content-panel">
+                    
+                    <!-- ステップタイトル -->
+                    <ui:Label text="ようこそ！" name="StepTitleLabel" class="step-title" />
+                    
+                    <!-- ステップ説明 -->
+                    <ui:Label text="BakaTest（Academic Battle Arena）へようこそ！このチュートリアルでは、ゲームの基本的な遊び方を学びます。" 
+                             name="StepDescriptionLabel" 
+                             class="step-description" />
+                    
+                    <!-- 画像エリア（将来的に追加可能） -->
+                    <ui:VisualElement name="ImagePanel" class="image-panel hidden">
+                        <!-- TODO: チュートリアル画像やアニメーションを追加 -->
+                    </ui:VisualElement>
+                    
+                </ui:VisualElement>
+            </ui:ScrollView>
+            
+            <!-- ボタンパネル -->
+            <ui:VisualElement name="ButtonPanel" class="button-panel">
+                <ui:Button text="スキップ" name="SkipButton" class="btn btn-secondary" />
+                <ui:Button text="次へ" name="NextButton" class="btn btn-primary" />
+            </ui:VisualElement>
+            
+        </ui:VisualElement>
+        
+    </ui:VisualElement>
+</ui:UXML>

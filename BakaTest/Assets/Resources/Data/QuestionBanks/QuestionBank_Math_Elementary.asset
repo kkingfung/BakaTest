@@ -41,59 +41,371 @@ MonoBehaviour:
     choice4: 16
     correctAnswerIndex: 1
     explanation: "5 + 8 = 13\u3067\u3059\u3002"
-  - questionText: 12 - 7 = ?
-    choice0: 3
-    choice1: 4
-    choice2: 5
-    choice3: 6
-    choice4: 7
+  - questionText: "18 \xF7 3 = ?"
+    choice0: 4
+    choice1: 5
+    choice2: 6
+    choice3: 7
+    choice4: 8
     correctAnswerIndex: 2
-    explanation: "12 - 7 = 5\u3067\u3059\u3002"
-  - questionText: "4 \xD7 6 = ?"
-    choice0: 20
-    choice1: 22
-    choice2: 24
-    choice3: 26
-    choice4: 28
+    explanation: "18 \xF7 3 = 6\u3067\u3059\u3002"
+  - questionText: "7 \xD7 8 = ?"
+    choice0: 48
+    choice1: 54
+    choice2: 56
+    choice3: 62
+    choice4: 64
     correctAnswerIndex: 2
-    explanation: "4 \xD7 6 = 24\u3067\u3059\u3002"
-  - questionText: 5 + 8 = ?
-    choice0: 12
-    choice1: 13
-    choice2: 14
-    choice3: 15
-    choice4: 16
-    correctAnswerIndex: 1
-    explanation: "5 + 8 = 13\u3067\u3059\u3002"
-  - questionText: 12 - 7 = ?
-    choice0: 3
-    choice1: 4
-    choice2: 5
-    choice3: 6
-    choice4: 7
+    explanation: "7 \xD7 8 = 56\u3067\u3059\u3002"
+  - questionText: 25 + 17 = ?
+    choice0: 40
+    choice1: 41
+    choice2: 42
+    choice3: 43
+    choice4: 44
     correctAnswerIndex: 2
-    explanation: "12 - 7 = 5\u3067\u3059\u3002"
-  - questionText: "4 \xD7 6 = ?"
-    choice0: 20
-    choice1: 22
-    choice2: 24
-    choice3: 26
-    choice4: 28
+    explanation: "25 + 17 = 42\u3067\u3059\u3002"
+  - questionText: 50 - 23 = ?
+    choice0: 25
+    choice1: 26
+    choice2: 27
+    choice3: 28
+    choice4: 29
     correctAnswerIndex: 2
-    explanation: "4 \xD7 6 = 24\u3067\u3059\u3002"
-  - questionText: 5 + 8 = ?
-    choice0: 12
-    choice1: 13
-    choice2: 14
-    choice3: 15
-    choice4: 16
-    correctAnswerIndex: 1
-    explanation: "5 + 8 = 13\u3067\u3059\u3002"
-  - questionText: 12 - 7 = ?
-    choice0: 3
-    choice1: 4
-    choice2: 5
-    choice3: 6
-    choice4: 7
+    explanation: "50 - 23 = 27\u3067\u3059\u3002"
+  - questionText: "9 \xD7 9 = ?"
+    choice0: 72
+    choice1: 78
+    choice2: 81
+    choice3: 84
+    choice4: 90
     correctAnswerIndex: 2
-    explanation: "12 - 7 = 5\u3067\u3059\u3002"
+    explanation: "9 \xD7 9 = 81\u3067\u3059\u3002"
+  - questionText: "36 \xF7 4 = ?"
+    choice0: 6
+    choice1: 7
+    choice2: 8
+    choice3: 9
+    choice4: 10
+    correctAnswerIndex: 3
+    explanation: "36 \xF7 4 = 9\u3067\u3059\u3002"
+  - questionText: 14 + 28 = ?
+    choice0: 40
+    choice1: 41
+    choice2: 42
+    choice3: 43
+    choice4: 44
+    correctAnswerIndex: 2
+    explanation: "14 + 28 = 42\u3067\u3059\u3002"
+  - questionText: "6 \xD7 7 = ?"
+    choice0: 38
+    choice1: 40
+    choice2: 42
+    choice3: 44
+    choice4: 46
+    correctAnswerIndex: 2
+    explanation: "6 \xD7 7 = 42\u3067\u3059\u3002"
+  - questionText: 100 - 47 = ?
+    choice0: 51
+    choice1: 52
+    choice2: 53
+    choice3: 54
+    choice4: 55
+    correctAnswerIndex: 2
+    explanation: "100 - 47 = 53\u3067\u3059\u3002"
+  - questionText: "8 \xD7 9 = ?"
+    choice0: 63
+    choice1: 70
+    choice2: 72
+    choice3: 76
+    choice4: 81
+    correctAnswerIndex: 2
+    explanation: "8 \xD7 9 = 72\u3067\u3059\u3002"
+  - questionText: "45 \xF7 5 = ?"
+    choice0: 7
+    choice1: 8
+    choice2: 9
+    choice3: 10
+    choice4: 11
+    correctAnswerIndex: 2
+    explanation: "45 \xF7 5 = 9\u3067\u3059\u3002"
+  - questionText: 33 + 29 = ?
+    choice0: 60
+    choice1: 61
+    choice2: 62
+    choice3: 63
+    choice4: 64
+    correctAnswerIndex: 2
+    explanation: "33 + 29 = 62\u3067\u3059\u3002"
+  - questionText: 85 - 38 = ?
+    choice0: 45
+    choice1: 46
+    choice2: 47
+    choice3: 48
+    choice4: 49
+    correctAnswerIndex: 2
+    explanation: "85 - 38 = 47\u3067\u3059\u3002"
+  - questionText: "11 \xD7 5 = ?"
+    choice0: 50
+    choice1: 52
+    choice2: 55
+    choice3: 60
+    choice4: 65
+    correctAnswerIndex: 2
+    explanation: "11 \xD7 5 = 55\u3067\u3059\u3002"
+  - questionText: "64 \xF7 8 = ?"
+    choice0: 6
+    choice1: 7
+    choice2: 8
+    choice3: 9
+    choice4: 10
+    correctAnswerIndex: 2
+    explanation: "64 \xF7 8 = 8\u3067\u3059\u3002"
+  - questionText: 56 + 38 = ?
+    choice0: 92
+    choice1: 93
+    choice2: 94
+    choice3: 95
+    choice4: 96
+    correctAnswerIndex: 2
+    explanation: "56 + 38 = 94\u3067\u3059\u3002"
+  - questionText: 72 - 29 = ?
+    choice0: 41
+    choice1: 42
+    choice2: 43
+    choice3: 44
+    choice4: 45
+    correctAnswerIndex: 2
+    explanation: "72 - 29 = 43\u3067\u3059\u3002"
+  - questionText: "12 \xD7 4 = ?"
+    choice0: 44
+    choice1: 46
+    choice2: 48
+    choice3: 50
+    choice4: 52
+    correctAnswerIndex: 2
+    explanation: "12 \xD7 4 = 48\u3067\u3059\u3002"
+  - questionText: "81 \xF7 9 = ?"
+    choice0: 7
+    choice1: 8
+    choice2: 9
+    choice3: 10
+    choice4: 11
+    correctAnswerIndex: 2
+    explanation: "81 \xF7 9 = 9\u3067\u3059\u3002"
+  - questionText: 48 + 37 = ?
+    choice0: 83
+    choice1: 84
+    choice2: 85
+    choice3: 86
+    choice4: 87
+    correctAnswerIndex: 2
+    explanation: "48 + 37 = 85\u3067\u3059\u3002"
+  - questionText: 90 - 56 = ?
+    choice0: 32
+    choice1: 33
+    choice2: 34
+    choice3: 35
+    choice4: 36
+    correctAnswerIndex: 2
+    explanation: "90 - 56 = 34\u3067\u3059\u3002"
+  - questionText: "13 \xD7 3 = ?"
+    choice0: 36
+    choice1: 38
+    choice2: 39
+    choice3: 40
+    choice4: 42
+    correctAnswerIndex: 2
+    explanation: "13 \xD7 3 = 39\u3067\u3059\u3002"
+  - questionText: "56 \xF7 7 = ?"
+    choice0: 6
+    choice1: 7
+    choice2: 8
+    choice3: 9
+    choice4: 10
+    correctAnswerIndex: 2
+    explanation: "56 \xF7 7 = 8\u3067\u3059\u3002"
+  - questionText: 63 + 29 = ?
+    choice0: 90
+    choice1: 91
+    choice2: 92
+    choice3: 93
+    choice4: 94
+    correctAnswerIndex: 2
+    explanation: "63 + 29 = 92\u3067\u3059\u3002"
+  - questionText: 84 - 37 = ?
+    choice0: 45
+    choice1: 46
+    choice2: 47
+    choice3: 48
+    choice4: 49
+    correctAnswerIndex: 2
+    explanation: "84 - 37 = 47\u3067\u3059\u3002"
+  - questionText: "15 \xD7 4 = ?"
+    choice0: 55
+    choice1: 58
+    choice2: 60
+    choice3: 62
+    choice4: 65
+    correctAnswerIndex: 2
+    explanation: "15 \xD7 4 = 60\u3067\u3059\u3002"
+  - questionText: "72 \xF7 6 = ?"
+    choice0: 10
+    choice1: 11
+    choice2: 12
+    choice3: 13
+    choice4: 14
+    correctAnswerIndex: 2
+    explanation: "72 \xF7 6 = 12\u3067\u3059\u3002"
+  - questionText: 19 + 43 = ?
+    choice0: 60
+    choice1: 61
+    choice2: 62
+    choice3: 63
+    choice4: 64
+    correctAnswerIndex: 2
+    explanation: "19 + 43 = 62\u3067\u3059\u3002"
+  - questionText: 95 - 48 = ?
+    choice0: 45
+    choice1: 46
+    choice2: 47
+    choice3: 48
+    choice4: 49
+    correctAnswerIndex: 2
+    explanation: "95 - 48 = 47\u3067\u3059\u3002"
+  - questionText: "11 \xD7 7 = ?"
+    choice0: 73
+    choice1: 75
+    choice2: 77
+    choice3: 79
+    choice4: 81
+    correctAnswerIndex: 2
+    explanation: "11 \xD7 7 = 77\u3067\u3059\u3002"
+  - questionText: "96 \xF7 8 = ?"
+    choice0: 10
+    choice1: 11
+    choice2: 12
+    choice3: 13
+    choice4: 14
+    correctAnswerIndex: 2
+    explanation: "96 \xF7 8 = 12\u3067\u3059\u3002"
+  - questionText: 37 + 55 = ?
+    choice0: 90
+    choice1: 91
+    choice2: 92
+    choice3: 93
+    choice4: 94
+    correctAnswerIndex: 2
+    explanation: "37 + 55 = 92\u3067\u3059\u3002"
+  - questionText: 103 - 67 = ?
+    choice0: 34
+    choice1: 35
+    choice2: 36
+    choice3: 37
+    choice4: 38
+    correctAnswerIndex: 2
+    explanation: "103 - 67 = 36\u3067\u3059\u3002"
+  - questionText: "12 \xD7 8 = ?"
+    choice0: 88
+    choice1: 92
+    choice2: 96
+    choice3: 100
+    choice4: 104
+    correctAnswerIndex: 2
+    explanation: "12 \xD7 8 = 96\u3067\u3059\u3002"
+  - questionText: "108 \xF7 9 = ?"
+    choice0: 10
+    choice1: 11
+    choice2: 12
+    choice3: 13
+    choice4: 14
+    correctAnswerIndex: 2
+    explanation: "108 \xF7 9 = 12\u3067\u3059\u3002"
+  - questionText: 76 + 18 = ?
+    choice0: 92
+    choice1: 93
+    choice2: 94
+    choice3: 95
+    choice4: 96
+    correctAnswerIndex: 2
+    explanation: "76 + 18 = 94\u3067\u3059\u3002"
+  - questionText: 121 - 78 = ?
+    choice0: 41
+    choice1: 42
+    choice2: 43
+    choice3: 44
+    choice4: 45
+    correctAnswerIndex: 2
+    explanation: "121 - 78 = 43\u3067\u3059\u3002"
+  - questionText: "14 \xD7 6 = ?"
+    choice0: 78
+    choice1: 82
+    choice2: 84
+    choice3: 86
+    choice4: 90
+    correctAnswerIndex: 2
+    explanation: "14 \xD7 6 = 84\u3067\u3059\u3002"
+  - questionText: "132 \xF7 11 = ?"
+    choice0: 10
+    choice1: 11
+    choice2: 12
+    choice3: 13
+    choice4: 14
+    correctAnswerIndex: 2
+    explanation: "132 \xF7 11 = 12\u3067\u3059\u3002"
+  - questionText: 89 + 46 = ?
+    choice0: 133
+    choice1: 134
+    choice2: 135
+    choice3: 136
+    choice4: 137
+    correctAnswerIndex: 2
+    explanation: "89 + 46 = 135\u3067\u3059\u3002"
+  - questionText: 145 - 89 = ?
+    choice0: 54
+    choice1: 55
+    choice2: 56
+    choice3: 57
+    choice4: 58
+    correctAnswerIndex: 2
+    explanation: "145 - 89 = 56\u3067\u3059\u3002"
+  - questionText: "16 \xD7 5 = ?"
+    choice0: 75
+    choice1: 78
+    choice2: 80
+    choice3: 82
+    choice4: 85
+    correctAnswerIndex: 2
+    explanation: "16 \xD7 5 = 80\u3067\u3059\u3002"
+  - questionText: "144 \xF7 12 = ?"
+    choice0: 10
+    choice1: 11
+    choice2: 12
+    choice3: 13
+    choice4: 14
+    correctAnswerIndex: 2
+    explanation: "144 \xF7 12 = 12\u3067\u3059\u3002"
+  - questionText: 54 + 67 = ?
+    choice0: 119
+    choice1: 120
+    choice2: 121
+    choice3: 122
+    choice4: 123
+    correctAnswerIndex: 2
+    explanation: "54 + 67 = 121\u3067\u3059\u3002"
+  - questionText: 156 - 98 = ?
+    choice0: 56
+    choice1: 57
+    choice2: 58
+    choice3: 59
+    choice4: 60
+    correctAnswerIndex: 2
+    explanation: "156 - 98 = 58\u3067\u3059\u3002"
+  - questionText: "17 \xD7 4 = ?"
+    choice0: 64
+    choice1: 66
+    choice2: 68
+    choice3: 70
+    choice4: 72
+    correctAnswerIndex: 2
+    explanation: "17 \xD7 4 = 68\u3067\u3059\u3002"

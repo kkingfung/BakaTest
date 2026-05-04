@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b2c3d4e5f6, type: 3}
+  m_Name: Item_BerserkersRage
+  m_EditorClassIdentifier:
+  itemId: berserkers_rage
+  itemType: 0
+  nameEnglish: Berserker's Rage
+  nameJapanese: "\u72C2\u6226\u58EB\u306E\u6012\u308A"
+  descriptionEnglish: Increases Attack by 50% but reduces Defense by 30% for 4 turns.
+  descriptionJapanese: "4\u30BF\u30FC\u30F3\u653B\u6483\u529B\u304C50%\u4E0A\u6607\u3059\u308B\u304C\u9632\u5FA1\u529B\u304C30%\u6E1B\u5C11\u3002"
+  rarity: 2
+  cost: 300
+  sellPrice: 150
+  target: 0
+  effectType: 2
+  effectValue: 50
+  duration: 4
+  isConsumable: true
+  iconSprite: {fileID: 0}

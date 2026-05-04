@@ -1,47 +1,61 @@
-/* Root Container */
+/*
+==============================================
+Inventory Screen - Responsive Design
+==============================================
+*/
+
+/* Import global theme */
+@import url("Common/GlobalTheme.uss");
+
+/* Root override */
 .root {
     flex-grow: 1;
-    background-color: rgb(30, 30, 40);
-    padding: 20px;
-    justify-content: space-between;
+    padding: 2%;
+    background-color: rgb(25, 30, 40);
 }
 
-/* Title Panel */
+/* Header */
 .title-panel {
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+    padding: 16px;
+    background-color: rgba(45, 55, 75, 0.7);
+    border-radius: 12px;
 }
 
 .title {
-    font-size: 40px;
-    color: rgb(100, 255, 150);
+    font-size: 36px;
+    color: rgb(150, 255, 180);
     -unity-font-style: bold;
-    -unity-text-align: middle-center;
+    margin-bottom: 8px;
 }
 
 .subtitle {
-    font-size: 20px;
-    color: rgb(200, 200, 200);
-    -unity-text-align: middle-center;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
 }
 
-/* Player Info Panel */
+/* Player Info */
 .player-info-panel {
     flex-direction: row;
     justify-content: center;
-    margin-bottom: 15px;
+    align-items: center;
+    margin-bottom: 16px;
+    padding: 12px;
+    background-color: rgba(45, 55, 75, 0.7);
+    border-radius: 10px;
 }
 
 .coins-label {
-    font-size: 20px;
-    color: rgb(255, 215, 0);
+    font-size: 22px;
+    color: rgb(255, 220, 100);
     -unity-font-style: bold;
-    margin-right: 40px;
+    margin-right: 24px;
 }
 
 .items-label {
     font-size: 20px;
-    color: rgb(150, 200, 255);
+    color: rgb(150, 255, 200);
     -unity-font-style: bold;
 }
 
@@ -49,162 +63,117 @@
 .main-content {
     flex-direction: row;
     flex-grow: 1;
-    min-height: 500px;
+    margin-bottom: 16px;
 }
 
-/* Item List Panel */
+/* Item List - Left Side */
 .item-list-panel {
     width: 35%;
-    background-color: rgb(45, 45, 60);
-    border-radius: 10px;
-    padding: 15px;
-    margin-right: 20px;
+    margin-right: 2%;
+    padding: 16px;
+    background-color: rgba(45, 55, 75, 0.7);
+    border-radius: 12px;
     border-width: 2px;
-    border-color: rgb(100, 100, 120);
+    border-color: rgba(100, 150, 255, 0.3);
 }
 
-/* Filter Buttons */
 .filter-buttons-panel {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
-    margin-bottom: 15px;
+    justify-content: space-between;
+    margin-bottom: 12px;
 }
 
 .filter-button {
-    flex-grow: 1;
-    margin: 3px;
-    padding: 8px;
-    background-color: rgb(60, 60, 80);
-    border-color: rgb(100, 100, 120);
-    border-width: 1px;
-    border-radius: 5px;
-    color: rgb(220, 220, 220);
-    font-size: 12px;
-    min-width: 80px;
+    width: 30%;
+    margin-bottom: 8px;
+    font-size: 15px;
 }
 
-.filter-button:hover {
-    background-color: rgb(80, 80, 100);
-}
-
-.filter-button.selected {
-    background-color: rgb(100, 200, 150);
-    border-color: rgb(150, 255, 200);
-}
-
-/* Item List Scroll */
 .item-list-scroll {
     flex-grow: 1;
-    background-color: rgb(35, 35, 50);
-    border-radius: 5px;
-    padding: 10px;
 }
 
 .placeholder-text {
-    color: rgb(150, 150, 150);
-    font-size: 14px;
+    color: rgba(200, 200, 220, 0.6);
+    font-size: 16px;
     -unity-text-align: middle-center;
-    margin-top: 50px;
+    margin-top: 80px;
 }
 
-/* Item Details Panel */
+/* Item Details - Right Side */
 .item-details-panel {
-    width: 65%;
-    background-color: rgb(45, 45, 60);
-    border-radius: 10px;
+    width: 63%;
     padding: 20px;
+    background-color: rgba(45, 55, 75, 0.7);
+    border-radius: 12px;
     border-width: 2px;
-    border-color: rgb(100, 100, 120);
+    border-color: rgba(100, 150, 255, 0.3);
 }
 
-/* Item Basic Info */
 .item-basic-info {
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    border-bottom-width: 1px;
-    border-bottom-color: rgb(100, 100, 120);
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom-width: 2px;
+    border-bottom-color: rgba(100, 150, 255, 0.3);
 }
 
 .item-name {
-    font-size: 32px;
-    color: rgb(255, 255, 255);
+    font-size: 28px;
+    color: rgb(150, 255, 180);
     -unity-font-style: bold;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    -unity-text-align: middle-center;
 }
 
 .item-meta-info {
     flex-direction: row;
-    margin-bottom: 10px;
+    justify-content: center;
+    margin-bottom: 12px;
 }
 
 .meta-label {
     font-size: 16px;
-    color: rgb(150, 200, 255);
-    margin-right: 20px;
+    color: rgb(120, 200, 255);
+    -unity-font-style: bold;
+    margin: 0 8px;
 }
 
 .item-description {
-    font-size: 14px;
-    color: rgb(200, 200, 200);
+    font-size: 16px;
+    color: rgb(220, 220, 240);
     white-space: normal;
-    margin-top: 10px;
+    -unity-text-align: middle-center;
 }
 
 /* Sell Info */
 .item-sell-info {
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: rgb(35, 35, 50);
-    border-radius: 5px;
+    margin-bottom: 12px;
+    padding: 16px;
+    background-color: rgba(55, 65, 85, 0.6);
+    border-radius: 10px;
 }
 
 .sell-price-label {
-    font-size: 20px;
-    color: rgb(255, 215, 0);
+    font-size: 22px;
+    color: rgb(255, 220, 100);
     -unity-font-style: bold;
+    -unity-text-align: middle-center;
 }
 
-/* Sell Button */
 .sell-button {
-    width: 100%;
-    height: 50px;
+    min-height: 56px;
     font-size: 20px;
-    -unity-font-style: bold;
-    background-color: rgb(200, 100, 50);
-    border-color: rgb(255, 150, 100);
-    border-width: 2px;
-    border-radius: 8px;
-    color: rgb(255, 255, 255);
 }
 
-.sell-button:hover {
-    background-color: rgb(220, 120, 70);
-}
-
-.sell-button:disabled {
-    background-color: rgb(80, 80, 80);
-    border-color: rgb(100, 100, 100);
-    color: rgb(150, 150, 150);
-}
-
-/* Footer Panel */
+/* Footer */
 .footer-panel {
-    align-items: center;
-    margin-top: 15px;
+    flex-direction: row;
+    justify-content: center;
+    padding: 12px 0;
 }
 
 .back-button {
-    width: 200px;
-    height: 40px;
-    font-size: 18px;
-    background-color: rgb(60, 60, 80);
-    border-color: rgb(100, 100, 120);
-    border-width: 2px;
-    border-radius: 5px;
-    color: rgb(220, 220, 220);
-}
-
-.back-button:hover {
-    background-color: rgb(80, 80, 100);
+    min-width: 200px;
+    min-height: 56px;
 }
